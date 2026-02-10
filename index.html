@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Tips — Central de Ajuda do Full Funnel</title>
+<meta name="description" content="Tutoriais interativos para dominar o Full Funnel. Aprenda passo a passo como usar cada funcionalidade.">
+<style>
+  :root {
+    --primary: #7c3aed;
+    --primary-light: #a78bfa;
+    --bg: #0f0f1a;
+    --card-bg: #1a1a2e;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border: #2d2d44;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  .hero {
+    text-align: center;
+    padding: 80px 24px 40px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--primary-light), #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .hero .subtitle {
+    font-size: 14px;
+    color: #64748b;
+  }
+  .tutorials-grid {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .tutorial-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+  .tutorial-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.15);
+  }
+  .tutorial-card.coming {
+    opacity: 0.5;
+    cursor: default;
+  }
+  .tutorial-card.coming:hover {
+    border-color: var(--border);
+    transform: none;
+    box-shadow: none;
+  }
+  .tutorial-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .tutorial-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .tutorial-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .tutorial-badge {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+  .tutorial-badge.available {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+  }
+  .tutorial-badge.coming {
+    background: rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
+  }
+  .section-title {
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+  }
+  .footer {
+    text-align: center;
+    padding: 60px 24px 40px;
+    color: #475569;
+    font-size: 13px;
+  }
+  .footer a { color: var(--primary-light); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>📚 Full Tips</h1>
+  <p>Tutoriais interativos para dominar o Full Funnel.<br>Aprenda passo a passo, na prática.</p>
+  <p class="subtitle">Clique em um tutorial para começar ↓</p>
+</div>
+
+<div class="section-title">📋 Contatos</div>
+<div class="tutorials-grid">
+  <a href="/tutorials/importacao-contatos/" class="tutorial-card">
+    <div class="tutorial-icon">📥</div>
+    <h3>Como Importar Contatos</h3>
+    <p>Importe sua lista de contatos via arquivo CSV em poucos passos. Ideal para migrar leads de outras plataformas.</p>
+    <span class="tutorial-badge available">✅ Disponível</span>
+  </a>
+
+  <div class="tutorial-card coming">
+    <div class="tutorial-icon">🔍</div>
+    <h3>Como Usar Filtros Avançados</h3>
+    <p>Encontre contatos específicos usando filtros por tag, data, campo personalizado e mais.</p>
+    <span class="tutorial-badge coming">🔜 Em breve</span>
+  </div>
+
+  <div class="tutorial-card coming">
+    <div class="tutorial-icon">📋</div>
+    <h3>Como Criar Smart Lists</h3>
+    <p>Organize seus contatos em listas inteligentes que se atualizam automaticamente.</p>
+    <span class="tutorial-badge coming">🔜 Em breve</span>
+  </div>
+
+  <div class="tutorial-card coming">
+    <div class="tutorial-icon">🏷️</div>
+    <h3>Como Usar Tags</h3>
+    <p>Classifique e segmente seus contatos com tags personalizadas.</p>
+    <span class="tutorial-badge coming">🔜 Em breve</span>
+  </div>
+</div>
+
+<div class="section-title">💬 Conversas</div>
+<div class="tutorials-grid">
+  <div class="tutorial-card coming">
+    <div class="tutorial-icon">💬</div>
+    <h3>Como Enviar Mensagens</h3>
+    <p>Envie mensagens por WhatsApp, SMS ou e-mail direto pela plataforma.</p>
+    <span class="tutorial-badge coming">🔜 Em breve</span>
+  </div>
+
+  <div class="tutorial-card coming">
+    <div class="tutorial-icon">📝</div>
+    <h3>Como Usar Templates</h3>
+    <p>Crie e utilize templates de mensagens para agilizar sua comunicação.</p>
+    <span class="tutorial-badge coming">🔜 Em breve</span>
+  </div>
+</div>
+
+<div class="section-title">📅 Calendários</div>
+<div class="tutorials-grid">
+  <div class="tutorial-card coming">
+    <div class="tutorial-icon">📅</div>
+    <h3>Como Criar um Calendário</h3>
+    <p>Configure calendários de agendamento para seus clientes.</p>
+    <span class="tutorial-badge coming">🔜 Em breve</span>
+  </div>
+</div>
+
+<div class="section-title">⚡ Automações</div>
+<div class="tutorials-grid">
+  <div class="tutorial-card coming">
+    <div class="tutorial-icon">⚡</div>
+    <h3>Como Criar um Workflow</h3>
+    <p>Automatize tarefas repetitivas com workflows poderosos.</p>
+    <span class="tutorial-badge coming">🔜 Em breve</span>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Full Tips — Central de Ajuda do <a href="https://fullfunnel.app" target="_blank">Full Funnel</a></p>
+</div>
+
+</body>
+</html>
