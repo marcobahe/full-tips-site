@@ -8,7 +8,7 @@
   :root {
     --primary: #7c3aed;
     --primary-light: #a78bfa;
-    --hotspot: #ef4444;
+    --highlight: #ef4444;
     --bg: #0f0f1a;
     --card-bg: #1a1a2e;
     --text: #e2e8f0;
@@ -22,122 +22,117 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--bg); color: var(--text);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
     overflow: hidden;
   }
+
+  /* Header */
   .header {
     position: fixed; top: 0; left: 0; right: 0;
     padding: 16px 24px;
     display: flex; align-items: center; justify-content: space-between;
-    background: rgba(15,15,26,0.9);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    z-index: 100;
+    background: rgba(15,15,26,0.9); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); z-index: 100;
   }
-  .header-brand {
-    display: flex; align-items: center; gap: 10px;
-    font-weight: 700; font-size: 16px; color: var(--primary-light);
-  }
+  .header-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; color: var(--primary-light); }
   .header-brand svg { width: 24px; height: 24px; }
   .header-title { font-size: 14px; color: var(--text-muted); }
-  .header-steps {
-    font-size: 13px; color: var(--text-muted);
-    background: var(--card-bg); padding: 6px 14px;
-    border-radius: 20px; border: 1px solid var(--border);
-  }
-  .container {
-    width: 100%; max-width: 1200px;
-    padding: 80px 24px 120px; position: relative;
-  }
+  .header-steps { font-size: 13px; color: var(--text-muted); background: var(--card-bg); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); }
+
+  /* Container */
+  .container { width: 100%; max-width: 1200px; padding: 80px 24px 120px; position: relative; }
+
+  /* Screenshot */
   .screenshot-wrapper {
     position: relative; width: 100%;
-    border-radius: var(--radius); overflow: hidden;
+    border-radius: var(--radius); overflow: visible;
     box-shadow: var(--shadow); border: 1px solid var(--border);
     background: var(--card-bg);
   }
-  .screenshot-wrapper img {
-    width: 100%; display: block;
-    transition: opacity 0.4s ease;
-  }
+  .screenshot-wrapper img { width: 100%; display: block; border-radius: var(--radius); transition: opacity 0.4s ease; }
   .screenshot-wrapper img.fade-out { opacity: 0; }
   .screenshot-wrapper img.fade-in { opacity: 1; }
-  .hotspot {
-    position: absolute; width: 44px; height: 44px;
-    border-radius: 50%;
-    background: rgba(239, 68, 68, 0.3);
-    border: 3px solid var(--hotspot);
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    transition: all 0.4s ease; z-index: 10;
+
+  /* Highlight Frame - retângulo de destaque no ponto de clique */
+  .click-highlight {
+    position: absolute;
+    border: 3px solid var(--highlight);
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.08);
+    transition: all 0.4s ease;
+    z-index: 10;
+    pointer-events: none;
   }
-  .hotspot::before {
-    content: ''; position: absolute; inset: -8px;
-    border-radius: 50%;
-    border: 2px solid rgba(239, 68, 68, 0.4);
-    animation: pulse 2s ease-in-out infinite;
+  .click-highlight::after {
+    content: '';
+    position: absolute; inset: -6px;
+    border: 2px solid rgba(239, 68, 68, 0.3);
+    border-radius: 11px;
+    animation: frame-pulse 2s ease-in-out infinite;
   }
-  .hotspot::after {
-    content: ''; position: absolute; inset: -16px;
-    border-radius: 50%;
-    border: 1px solid rgba(239, 68, 68, 0.2);
-    animation: pulse 2s ease-in-out infinite 0.5s;
+  @keyframes frame-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
   }
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.3); opacity: 0; }
+
+  /* SVG Arrow Line */
+  .arrow-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 15;
+    overflow: visible;
   }
+  .arrow-line {
+    stroke: var(--highlight);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 6 4;
+    opacity: 0.7;
+  }
+  .arrow-dot {
+    fill: var(--highlight);
+    opacity: 0.9;
+  }
+
+  /* Tooltip - agora posicionado em área segura */
   .tooltip {
-    position: absolute; z-index: 20;
+    position: absolute;
+    z-index: 20;
     background: var(--tooltip-bg); color: var(--tooltip-text);
-    padding: 16px 20px; border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    max-width: 340px; min-width: 240px;
+    padding: 20px 24px; border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    max-width: 340px; min-width: 260px;
     transition: all 0.4s ease;
   }
   .tooltip-step {
-    display: inline-block;
-    background: var(--primary); color: white;
-    font-size: 11px; font-weight: 700;
-    padding: 3px 8px; border-radius: 4px;
-    margin-bottom: 8px;
-    text-transform: uppercase; letter-spacing: 0.5px;
+    display: inline-block; background: var(--primary); color: white;
+    font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px;
+    margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;
   }
-  .tooltip-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
-  .tooltip-text { font-size: 13px; color: #64748b; line-height: 1.5; }
-  .tooltip-arrow {
-    position: absolute; width: 12px; height: 12px;
-    background: var(--tooltip-bg); transform: rotate(45deg);
-  }
-  .tooltip[data-position="right"] .tooltip-arrow { left: -6px; top: 20px; }
-  .tooltip[data-position="left"] .tooltip-arrow { right: -6px; top: 20px; }
-  .tooltip[data-position="bottom"] .tooltip-arrow { top: -6px; left: 24px; }
-  .tooltip[data-position="top"] .tooltip-arrow { bottom: -6px; left: 24px; }
+  .tooltip-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+  .tooltip-text { font-size: 13px; color: #64748b; line-height: 1.6; }
   .tooltip-tip {
-    margin-top: 10px; padding: 8px 10px;
+    margin-top: 12px; padding: 10px 12px;
     background: #f0f9ff; border-left: 3px solid #3b82f6;
-    border-radius: 4px; font-size: 12px;
-    color: #1e40af; line-height: 1.4;
+    border-radius: 4px; font-size: 12px; color: #1e40af; line-height: 1.5;
   }
+
+  /* Navigation */
   .nav-bar {
     position: fixed; bottom: 0; left: 0; right: 0;
     padding: 16px 24px;
     display: flex; align-items: center; justify-content: space-between;
-    background: rgba(15,15,26,0.95);
-    backdrop-filter: blur(12px);
+    background: rgba(15,15,26,0.95); backdrop-filter: blur(12px);
     border-top: 1px solid var(--border); z-index: 100;
   }
   .nav-btn {
     padding: 10px 24px; border-radius: 8px;
-    border: 1px solid var(--border);
-    background: var(--card-bg); color: var(--text);
-    font-size: 14px; font-weight: 600; cursor: pointer;
-    transition: all 0.2s;
+    border: 1px solid var(--border); background: var(--card-bg); color: var(--text);
+    font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;
     display: flex; align-items: center; gap: 8px;
   }
   .nav-btn:hover { background: #252540; border-color: var(--primary); }
@@ -145,50 +140,47 @@
   .nav-btn:disabled:hover { background: var(--card-bg); border-color: var(--border); }
   .nav-btn.primary { background: var(--primary); border-color: var(--primary); color: white; }
   .nav-btn.primary:hover { background: #6d28d9; }
+
+  /* Progress */
   .progress { display: flex; align-items: center; gap: 6px; }
-  .progress-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--border); transition: all 0.3s; cursor: pointer;
-  }
+  .progress-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: all 0.3s; cursor: pointer; }
   .progress-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
   .progress-dot.completed { background: var(--primary-light); }
-  @media (max-width: 768px) {
-    .container { padding: 70px 12px 100px; }
-    .tooltip { max-width: 260px; min-width: 180px; padding: 12px 14px; }
-    .tooltip-title { font-size: 14px; }
-    .tooltip-text { font-size: 12px; }
-    .header-title { display: none; }
-    .nav-btn { padding: 8px 16px; font-size: 13px; }
-    .hotspot { width: 36px; height: 36px; }
-  }
+
+  /* Intro */
   .intro-overlay {
-    position: fixed; inset: 0;
-    background: rgba(15,15,26,0.95);
+    position: fixed; inset: 0; background: rgba(15,15,26,0.95);
     display: flex; align-items: center; justify-content: center;
     z-index: 200; transition: opacity 0.4s;
   }
   .intro-overlay.hidden { opacity: 0; pointer-events: none; }
   .intro-card {
     background: var(--card-bg); border: 1px solid var(--border);
-    border-radius: 16px; padding: 40px;
-    text-align: center; max-width: 500px;
-    box-shadow: var(--shadow);
+    border-radius: 16px; padding: 40px; text-align: center;
+    max-width: 500px; box-shadow: var(--shadow);
   }
   .intro-card h1 {
     font-size: 24px; margin-bottom: 12px;
     background: linear-gradient(135deg, var(--primary-light), #f472b6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   }
   .intro-card p { color: var(--text-muted); font-size: 15px; margin-bottom: 8px; line-height: 1.5; }
   .intro-card .steps-count { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
   .intro-start {
     padding: 12px 32px; border-radius: 8px; border: none;
-    background: var(--primary); color: white;
-    font-size: 16px; font-weight: 700; cursor: pointer;
-    transition: background 0.2s;
+    background: var(--primary); color: white; font-size: 16px; font-weight: 700;
+    cursor: pointer; transition: background 0.2s;
   }
   .intro-start:hover { background: #6d28d9; }
+
+  @media (max-width: 768px) {
+    .container { padding: 70px 12px 100px; }
+    .tooltip { max-width: 260px; min-width: 200px; padding: 14px 16px; }
+    .tooltip-title { font-size: 14px; }
+    .tooltip-text { font-size: 12px; }
+    .header-title { display: none; }
+    .nav-btn { padding: 8px 16px; font-size: 13px; }
+  }
 </style>
 </head>
 <body>
@@ -214,9 +206,19 @@
 <div class="container">
   <div class="screenshot-wrapper" id="screenshot-wrapper">
     <img id="screenshot" src="" alt="Screenshot do passo">
-    <div class="hotspot" id="hotspot" onclick="nextStep()"></div>
-    <div class="tooltip" id="tooltip" data-position="right">
-      <div class="tooltip-arrow"></div>
+    
+    <!-- Frame de destaque no ponto de clique -->
+    <div class="click-highlight" id="click-highlight"></div>
+    
+    <!-- Linha SVG conectando tooltip ao destaque -->
+    <svg class="arrow-svg" id="arrow-svg">
+      <line class="arrow-line" id="arrow-line" x1="0" y1="0" x2="0" y2="0"/>
+      <circle class="arrow-dot" id="arrow-dot-start" r="4" cx="0" cy="0"/>
+      <circle class="arrow-dot" id="arrow-dot-end" r="6" cx="0" cy="0"/>
+    </svg>
+    
+    <!-- Tooltip em área segura -->
+    <div class="tooltip" id="tooltip">
       <div class="tooltip-step" id="tooltip-step"></div>
       <div class="tooltip-title" id="tooltip-title"></div>
       <div class="tooltip-text" id="tooltip-text"></div>
@@ -235,59 +237,61 @@
 const STEPS = [
   {
     image: "passo-01.png",
-    hotspot: { x: 4, y: 37 },
-    tooltipPosition: "right",
+    // Frame de destaque (x%, y%, largura%, altura%)
+    highlight: { x: 2, y: 30, w: 4, h: 50 },
+    // Posição do tooltip: "left-center", "left-top", "right-center", "center-top"
+    tooltipPos: "center-top",
     title: "Acesse a seção de Contatos",
     text: "No menu lateral esquerdo, clique no ícone de Contatos (ícone de pessoa). A tela principal mostra todos os seus contatos cadastrados com nome, telefone, e-mail, tags e última atividade.",
     tip: "💡 Use filtros avançados e listas inteligentes para organizar melhor seus contatos antes de importar."
   },
   {
     image: "passo-01.png",
-    hotspot: { x: 80, y: 17 },
-    tooltipPosition: "left",
+    highlight: { x: 76, y: 14, w: 10, h: 5 },
+    tooltipPos: "left-center",
     title: "Clique no botão \"Importar\"",
     text: "No canto superior direito, ao lado de 'Adicionar Contato', clique no botão 'Importar'. É por aqui que começa o processo de importação via CSV.",
     tip: "💡 Importações anteriores ficam acessíveis pela aba 'Ações em massa'."
   },
   {
     image: "passo-02.png",
-    hotspot: { x: 30, y: 42 },
-    tooltipPosition: "right",
+    highlight: { x: 9, y: 35, w: 45, h: 15 },
+    tooltipPos: "right-center",
     title: "Selecione \"Contatos\"",
     text: "Escolha o tipo de objeto que deseja importar. Selecione 'Contatos' para importar sua lista de leads, clientes ou prospects. A opção já vem selecionada por padrão.",
     tip: "⚠️ A opção 'Leads' serve para importar negociações do pipeline, não pessoas. Se quer importar uma lista de pessoas, mantenha 'Contatos' selecionado."
   },
   {
     image: "passo-02.png",
-    hotspot: { x: 95, y: 95 },
-    tooltipPosition: "top",
+    highlight: { x: 88, y: 92, w: 10, h: 5 },
+    tooltipPos: "left-center",
     title: "Clique em \"Seguinte\"",
     text: "Com 'Contatos' selecionado, clique no botão azul 'Seguinte' no canto inferior direito para avançar para a etapa de upload do arquivo.",
     tip: null
   },
   {
     image: "passo-03.png",
-    hotspot: { x: 52, y: 50 },
-    tooltipPosition: "bottom",
+    highlight: { x: 30, y: 38, w: 40, h: 24 },
+    tooltipPos: "left-top",
     title: "Faça upload do seu arquivo CSV",
     text: "Arraste e solte seu arquivo CSV na área indicada, ou clique para selecionar o arquivo do seu computador. O limite é de 30 MB por arquivo.",
     tip: "💡 Seu CSV deve ter cabeçalhos na primeira linha (ex: Nome, Email, Telefone). Use vírgula ou ponto-e-vírgula como separador. Clique em 'Baixar arquivo de amostra' para ver o formato ideal."
   },
   {
     image: "passo-05.png",
-    hotspot: { x: 65, y: 78 },
-    tooltipPosition: "top",
+    highlight: { x: 10, y: 68, w: 80, h: 25 },
+    tooltipPos: "left-top",
     title: "Mapeie os campos do CSV",
-    text: "Esta é a etapa mais importante! O sistema mostra cada coluna do seu CSV e você precisa associá-la ao campo correto. Campos como Nome, Email e Telefone são nativos. Para campos personalizados, selecione no dropdown 'Please Select'.",
-    tip: "💡 Se seu CSV tem colunas como 'Origem do Lead' ou 'Interesse', crie campos personalizados em Configurações > Campos ANTES de importar. Marque 'Don't update to an empty value' para não apagar dados existentes de contatos duplicados."
+    text: "Esta é a etapa mais importante! O sistema mostra cada coluna do seu CSV e você precisa associá-la ao campo correto. Campos como Nome, Email e Telefone são nativos. Para campos personalizados, selecione no dropdown.",
+    tip: "💡 Se seu CSV tem colunas como 'Origem do Lead' ou 'Interesse', crie campos personalizados em Configurações > Campos ANTES de importar. Marque 'Don't update to an empty value' para não apagar dados existentes."
   },
   {
     image: "passo-05.png",
-    hotspot: { x: 95, y: 95 },
-    tooltipPosition: "top",
+    highlight: { x: 90, y: 90, w: 8, h: 6 },
+    tooltipPos: "left-center",
     title: "Verifique e confirme a importação",
     text: "Após mapear todos os campos, clique em 'Next' para ir à tela de verificação. Revise o resumo — número de contatos novos vs. atualizações — e clique em 'Confirmar' para iniciar o processo.",
-    tip: "⚠️ A importação não pode ser desfeita! Teste com poucos contatos primeiro. O sistema detecta duplicatas automaticamente por ID, telefone ou e-mail (configurável em 'Encontrar contatos existentes com base em')."
+    tip: "⚠️ A importação não pode ser desfeita! Teste com poucos contatos primeiro. O sistema detecta duplicatas automaticamente por ID, telefone ou e-mail."
   }
 ];
 
@@ -308,71 +312,140 @@ function startTutorial() {
   goToStep(0);
 }
 
+function getTooltipPosition(pos, wrapper) {
+  const rect = wrapper.getBoundingClientRect();
+  const w = rect.width;
+  const h = rect.height;
+  const tooltipW = 340;
+  const tooltipH = 280;
+  const pad = 20;
+
+  switch(pos) {
+    case 'left-top':
+      return { left: pad + 'px', top: pad + 'px' };
+    case 'left-center':
+      return { left: pad + 'px', top: '50%', transform: 'translateY(-50%)' };
+    case 'left-bottom':
+      return { left: pad + 'px', bottom: pad + 'px' };
+    case 'right-center':
+      return { right: pad + 'px', top: '50%', transform: 'translateY(-50%)' };
+    case 'right-top':
+      return { right: pad + 'px', top: pad + 'px' };
+    case 'center-top':
+      return { left: '50%', top: pad + 'px', transform: 'translateX(-50%)' };
+    case 'center-bottom':
+      return { left: '50%', bottom: pad + 'px', transform: 'translateX(-50%)' };
+    default:
+      return { left: pad + 'px', top: pad + 'px' };
+  }
+}
+
 function goToStep(index) {
   if (index < 0 || index >= STEPS.length) return;
   const step = STEPS[index];
   const img = document.getElementById('screenshot');
-  const hotspot = document.getElementById('hotspot');
+  const highlight = document.getElementById('click-highlight');
   const tooltip = document.getElementById('tooltip');
+  const wrapper = document.getElementById('screenshot-wrapper');
+
   img.classList.add('fade-out');
   img.classList.remove('fade-in');
+
   setTimeout(() => {
     img.src = step.image;
+    img.onload = () => updateArrow(step);
     img.classList.remove('fade-out');
     img.classList.add('fade-in');
-    hotspot.style.left = step.hotspot.x + '%';
-    hotspot.style.top = step.hotspot.y + '%';
-    const pos = step.tooltipPosition || 'right';
-    tooltip.setAttribute('data-position', pos);
-    const off = 40;
-    if (pos === 'right') {
-      tooltip.style.left = `calc(${step.hotspot.x}% + ${off}px)`;
-      tooltip.style.top = `calc(${step.hotspot.y}% - 20px)`;
-    } else if (pos === 'left') {
-      tooltip.style.left = `calc(${step.hotspot.x}% - 380px)`;
-      tooltip.style.top = `calc(${step.hotspot.y}% - 20px)`;
-    } else if (pos === 'bottom') {
-      tooltip.style.left = `calc(${step.hotspot.x}% - 140px)`;
-      tooltip.style.top = `calc(${step.hotspot.y}% + ${off}px)`;
-    } else if (pos === 'top') {
-      tooltip.style.left = `calc(${step.hotspot.x}% - 140px)`;
-      tooltip.style.top = `calc(${step.hotspot.y}% - 180px)`;
-    }
+
+    // Position highlight frame
+    const h = step.highlight;
+    highlight.style.left = h.x + '%';
+    highlight.style.top = h.y + '%';
+    highlight.style.width = h.w + '%';
+    highlight.style.height = h.h + '%';
+
+    // Position tooltip in safe area
+    const tPos = getTooltipPosition(step.tooltipPos, wrapper);
+    tooltip.style.left = tPos.left || 'auto';
+    tooltip.style.right = tPos.right || 'auto';
+    tooltip.style.top = tPos.top || 'auto';
+    tooltip.style.bottom = tPos.bottom || 'auto';
+    tooltip.style.transform = tPos.transform || 'none';
+
+    // Update tooltip content
     document.getElementById('tooltip-step').textContent = `Passo ${index + 1} de ${STEPS.length}`;
     document.getElementById('tooltip-title').textContent = step.title;
     document.getElementById('tooltip-text').textContent = step.text;
     const tipEl = document.getElementById('tooltip-tip');
-    if (step.tip) {
-      tipEl.textContent = step.tip;
-      tipEl.style.display = 'block';
-    } else {
-      tipEl.style.display = 'none';
-    }
+    if (step.tip) { tipEl.textContent = step.tip; tipEl.style.display = 'block'; }
+    else { tipEl.style.display = 'none'; }
+
+    // Update header + progress
     document.getElementById('header-steps').textContent = `Passo ${index + 1} de ${STEPS.length}`;
     document.querySelectorAll('.progress-dot').forEach((dot, i) => {
       dot.className = 'progress-dot';
       if (i < index) dot.classList.add('completed');
       if (i === index) dot.classList.add('active');
     });
+
+    // Update nav buttons
     document.getElementById('btn-prev').disabled = index === 0;
     const btnNext = document.getElementById('btn-next');
     if (index === STEPS.length - 1) {
       btnNext.innerHTML = '✅ Concluir';
-      btnNext.onclick = () => {
-        goToStep(0);
-        document.getElementById('intro').classList.remove('hidden');
-      };
+      btnNext.onclick = () => { goToStep(0); document.getElementById('intro').classList.remove('hidden'); };
     } else {
       btnNext.innerHTML = 'Próximo →';
       btnNext.onclick = nextStep;
     }
+
     currentStep = index;
+
+    // Draw arrow after layout settles
+    requestAnimationFrame(() => requestAnimationFrame(() => updateArrow(step)));
   }, 200);
+}
+
+function updateArrow(step) {
+  const wrapper = document.getElementById('screenshot-wrapper');
+  const tooltip = document.getElementById('tooltip');
+  const highlight = document.getElementById('click-highlight');
+  const line = document.getElementById('arrow-line');
+  const dotStart = document.getElementById('arrow-dot-start');
+  const dotEnd = document.getElementById('arrow-dot-end');
+
+  const wRect = wrapper.getBoundingClientRect();
+  const tRect = tooltip.getBoundingClientRect();
+  const hRect = highlight.getBoundingClientRect();
+
+  // Arrow start: edge of tooltip closest to highlight
+  const tCx = tRect.left + tRect.width / 2 - wRect.left;
+  const tCy = tRect.top + tRect.height / 2 - wRect.top;
+
+  // Arrow end: center of highlight
+  const hCx = hRect.left + hRect.width / 2 - wRect.left;
+  const hCy = hRect.top + hRect.height / 2 - wRect.top;
+
+  // Find the edge point of tooltip closest to highlight
+  const angle = Math.atan2(hCy - tCy, hCx - tCx);
+  const startX = tCx + Math.cos(angle) * Math.min(tRect.width / 2, 170);
+  const startY = tCy + Math.sin(angle) * Math.min(tRect.height / 2, 140);
+
+  line.setAttribute('x1', startX);
+  line.setAttribute('y1', startY);
+  line.setAttribute('x2', hCx);
+  line.setAttribute('y2', hCy);
+
+  dotStart.setAttribute('cx', startX);
+  dotStart.setAttribute('cy', startY);
+  dotEnd.setAttribute('cx', hCx);
+  dotEnd.setAttribute('cy', hCy);
 }
 
 function nextStep() { goToStep(currentStep + 1); }
 function prevStep() { goToStep(currentStep - 1); }
 
+// Keyboard navigation
 document.addEventListener('keydown', (e) => {
   if (document.getElementById('intro').classList.contains('hidden')) {
     if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); }
@@ -380,6 +453,11 @@ document.addEventListener('keydown', (e) => {
   } else {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startTutorial(); }
   }
+});
+
+// Recalculate arrow on resize
+window.addEventListener('resize', () => {
+  if (currentStep >= 0 && currentStep < STEPS.length) updateArrow(STEPS[currentStep]);
 });
 
 init();
