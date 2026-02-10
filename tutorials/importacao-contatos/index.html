@@ -237,59 +237,59 @@
 const STEPS = [
   {
     image: "passo-01.png",
-    highlight: { x: 2, y: 30, w: 4, h: 50 },
+    highlight: { x: 0, y: 25, w: 13, h: 5 },
     tooltipPos: "center-top",
     title: "Acesse a seção de Contatos",
-    text: "Na barra lateral esquerda, localize o ícone de pessoa (silhueta humana) e clique nele. Essa é a seção de Contatos — onde ficam armazenados todos os leads, clientes e prospects cadastrados na plataforma.",
-    tip: "💡 A lista exibe nome, telefone, e-mail, tags e data da última atividade de cada contato. Recomendamos verificar os contatos existentes antes de importar, para evitar duplicidades."
+    text: "Na barra lateral esquerda (sidebar), localize e clique em 'Contatos'. A seção abrirá mostrando uma lista com todos os contatos cadastrados na sua conta — leads, clientes, prospects. Cada linha mostra o nome, telefone, e-mail, empresa, data de criação e última atividade do contato.",
+    tip: "💡 Antes de importar, vale dar uma olhada nos contatos que já existem na plataforma. Isso evita criar duplicatas. Use o campo 'Pesquisar Contatos' no topo para buscar por nome, e-mail ou telefone."
   },
   {
     image: "passo-01.png",
-    highlight: { x: 76, y: 14, w: 10, h: 5 },
+    highlight: { x: 82, y: 12, w: 9, h: 4 },
     tooltipPos: "left-center",
-    title: "Clique no botão \"Import\"",
-    text: "No canto superior direito da tela, localize o botão 'Import' (ao lado de 'Add Contact'). Esse botão abre o assistente de importação, que permite trazer contatos de um arquivo externo — como uma planilha — para dentro da plataforma.",
-    tip: "💡 O histórico de importações anteriores fica disponível na aba 'Bulk Actions' (Ações em massa), no topo da página de Contatos."
+    title: "Clique no botão \"Importar\"",
+    text: "No canto superior direito da tela, localize o botão 'Importar' (ícone de download, ao lado de 'Adicionar Contato'). Esse botão abre o assistente de importação — um passo a passo que vai guiar você para trazer contatos de um arquivo externo (como uma planilha do Excel ou Google Sheets) para dentro da plataforma.",
+    tip: "💡 Se você já fez importações antes, o histórico fica disponível na aba 'Ações em massa', no topo da página de Contatos."
   },
   {
     image: "passo-02.png",
     highlight: { x: 9, y: 35, w: 45, h: 15 },
     tooltipPos: "right-center",
-    title: "Selecione o tipo \"Contacts\"",
-    text: "O sistema apresenta dois tipos de importação: 'Contacts' (pessoas — leads, clientes, prospects) e 'Opportunities' (negociações comerciais do pipeline de vendas). Para importar uma lista de pessoas, mantenha 'Contacts' selecionado. Essa opção já vem marcada por padrão.",
-    tip: "⚠️ A opção 'Opportunities' serve exclusivamente para importar dados de negócios e vendas, não pessoas. Se o seu arquivo contém nomes, telefones e e-mails de contatos, a opção correta é 'Contacts'."
+    title: "Selecione \"Contatos\"",
+    text: "O sistema apresenta dois tipos de importação: 'Contatos' (pessoas — leads, clientes, prospects) e 'Leads' (negociações comerciais do pipeline de vendas). Para importar uma lista de pessoas, mantenha 'Contatos' selecionado. Essa opção já vem marcada por padrão.",
+    tip: "⚠️ A opção 'Leads' serve exclusivamente para importar dados de negociações e vendas, não pessoas. Se o seu arquivo contém nomes, telefones e e-mails de contatos, a opção correta é 'Contatos'."
   },
   {
     image: "passo-02.png",
     highlight: { x: 88, y: 92, w: 10, h: 5 },
     tooltipPos: "left-center",
-    title: "Clique em \"Next\" para avançar",
-    text: "Com a opção 'Contacts' selecionada, clique no botão azul 'Next' no canto inferior direito. O sistema avançará para a etapa de envio do arquivo.",
+    title: "Clique em \"Seguinte\" para avançar",
+    text: "Com a opção 'Contatos' selecionada, clique no botão azul 'Seguinte' no canto inferior direito da tela. O sistema vai avançar para a próxima etapa, onde você enviará o arquivo com seus contatos.",
     tip: null
   },
   {
     image: "passo-03.png",
     highlight: { x: 30, y: 38, w: 40, h: 24 },
     tooltipPos: "left-top",
-    title: "Faça o upload do arquivo CSV",
-    text: "Nesta etapa você envia o arquivo com seus contatos. Arraste o arquivo da sua pasta para a área pontilhada no centro da tela, ou clique nessa área para selecionar o arquivo manualmente. O formato aceito é CSV, com tamanho máximo de 30 MB.",
-    tip: "💡 CSV é um formato de planilha onde os dados são separados por vírgula ou ponto-e-vírgula. Para gerar um CSV a partir do Excel ou Google Sheets, use 'Salvar como > CSV'. A primeira linha do arquivo deve conter os nomes das colunas (ex: Nome, Email, Telefone). Clique em 'Download sample file' para baixar um modelo de referência."
+    title: "Envie o arquivo com seus contatos",
+    text: "Agora você precisa enviar o arquivo que contém seus contatos. Arraste o arquivo da pasta do seu computador para a área pontilhada no centro da tela (onde aparece 'Clique para carregar ou arraste e solte'), ou clique nessa área para selecionar o arquivo manualmente. O formato aceito é CSV (arquivo de texto com dados separados por vírgula), com tamanho máximo de 30 MB.",
+    tip: "💡 Se sua lista está em Excel (.xlsx) ou Google Sheets, você precisa salvar como CSV antes: vá em Arquivo > Salvar como > selecione 'CSV'. A primeira linha do arquivo DEVE conter os cabeçalhos das colunas (ex: nome, email, telefone). Sem esses cabeçalhos, o sistema não consegue identificar os dados. Clique em 'Baixar arquivo de amostra' para ver o formato ideal."
   },
   {
     image: "passo-05.png",
     highlight: { x: 10, y: 68, w: 80, h: 25 },
     tooltipPos: "left-top",
-    title: "Faça o mapeamento dos campos",
-    text: "Mapeamento é o processo de dizer ao sistema qual coluna do seu arquivo corresponde a qual campo dentro da plataforma. Por exemplo: a coluna 'Nome' do CSV vai preencher o campo 'First Name' no Full Funnel. Campos comuns (nome, e-mail, telefone) geralmente já vêm mapeados automaticamente. Verifique cada linha e ajuste no dropdown 'Fields' quando necessário.",
-    tip: "💡 Se o seu arquivo contém colunas que não existem como campos padrão na plataforma (ex: 'Origem do Lead', 'Interesse', 'Segmento'), você precisa criar esses campos personalizados ANTES da importação, em Configurações > Campos Personalizados. Caso contrário, esses dados serão ignorados. Mantenha a opção 'Don't update to an empty value' marcada para preservar dados já existentes nos contatos."
+    title: "Mapeie as colunas do seu arquivo",
+    text: "Esta é a etapa mais importante. Mapeamento significa dizer ao sistema qual coluna do seu arquivo corresponde a qual campo dentro da plataforma. Por exemplo: a coluna 'nome' do seu CSV vai preencher o campo 'Nome do Contato' no Full Funnel. A boa notícia é que os campos mais comuns (nome, e-mail, telefone) geralmente já vêm mapeados automaticamente — o sistema reconhece os cabeçalhos mais usados. Verifique cada linha da tabela e, se alguma estiver como 'Pending' (pendente), selecione o campo correto no dropdown 'Fields'.",
+    tip: "💡 IMPORTANTE: Se o seu arquivo contém colunas que NÃO existem como campos padrão (ex: 'Origem do Lead', 'Interesse', 'Segmento'), você precisa criar esses campos ANTES da importação. Vá em Configurações > Campos Personalizados, crie os campos, e só depois faça a importação. Caso contrário, esses dados serão simplesmente ignorados. Mantenha a opção 'Don't update to an empty value' marcada — isso protege dados que já existem nos contatos de serem apagados."
   },
   {
     image: "passo-05.png",
     highlight: { x: 90, y: 90, w: 8, h: 6 },
     tooltipPos: "left-center",
-    title: "Revise o resumo e confirme",
-    text: "Após o mapeamento, clique em 'Next'. O sistema exibirá um resumo com a quantidade de contatos novos que serão criados e quantos já existem e serão atualizados. Revise essas informações com atenção. Se estiver tudo correto, clique em 'Confirm' para iniciar a importação. Os contatos aparecerão na lista em alguns segundos.",
-    tip: "⚠️ A importação não pode ser revertida. Se houver erros, será necessário corrigir ou remover os contatos manualmente. Por isso, recomendamos testar primeiro com um arquivo pequeno (5 a 10 contatos) para validar que o mapeamento está correto. O sistema detecta duplicatas automaticamente com base no telefone ou e-mail."
+    title: "Revise o resumo e confirme a importação",
+    text: "Após mapear todos os campos, clique em 'Seguinte'. O sistema mostrará um resumo final: quantos contatos novos serão criados e quantos já existem na plataforma e serão atualizados. Leia esse resumo com atenção — ele mostra exatamente o que vai acontecer. Se tudo estiver correto, clique em 'Confirmar Importação' para iniciar o processo. Os novos contatos aparecerão na sua lista em poucos segundos.",
+    tip: "⚠️ ATENÇÃO: A importação NÃO pode ser desfeita. Se importar dados errados, será necessário corrigir ou remover os contatos um por um. Por isso, nossa recomendação é: teste primeiro com um arquivo pequeno (5 a 10 contatos) para validar que o mapeamento está funcionando como esperado. Depois, importe o arquivo completo. O sistema detecta duplicatas automaticamente pelo telefone ou e-mail — contatos que já existem serão atualizados, não duplicados."
   }
 ];
 
