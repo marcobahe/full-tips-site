@@ -237,61 +237,59 @@
 const STEPS = [
   {
     image: "passo-01.png",
-    // Frame de destaque (x%, y%, largura%, altura%)
     highlight: { x: 2, y: 30, w: 4, h: 50 },
-    // Posição do tooltip: "left-center", "left-top", "right-center", "center-top"
     tooltipPos: "center-top",
-    title: "Acesse a seção de Contatos",
-    text: "No menu lateral esquerdo, clique no ícone de Contatos (ícone de pessoa). A tela principal mostra todos os seus contatos cadastrados com nome, telefone, e-mail, tags e última atividade.",
-    tip: "💡 Use filtros avançados e listas inteligentes para organizar melhor seus contatos antes de importar."
+    title: "Abra a lista de Contatos",
+    text: "Olhe para a barra lateral esquerda — aquela coluna estreita com ícones. Procure o ícone de uma pessoa (bonequinho). Clique nele. Isso vai abrir a tela onde ficam TODOS os contatos que já estão cadastrados no seu sistema.",
+    tip: "💡 Essa lista mostra nome, telefone, e-mail, tags e quando cada contato foi ativo pela última vez. Antes de importar novos contatos, dê uma olhada aqui pra saber o que já tem."
   },
   {
     image: "passo-01.png",
     highlight: { x: 76, y: 14, w: 10, h: 5 },
     tooltipPos: "left-center",
-    title: "Clique no botão \"Importar\"",
-    text: "No canto superior direito, ao lado de 'Adicionar Contato', clique no botão 'Importar'. É por aqui que começa o processo de importação via CSV.",
-    tip: "💡 Importações anteriores ficam acessíveis pela aba 'Ações em massa'."
+    title: "Clique no botão \"Import\"",
+    text: "Agora olhe no canto superior direito da tela. Você vai ver dois botões: 'Import' e 'Add Contact'. Clique no botão 'Import' (com o ícone de seta para baixo). É esse botão que inicia o processo de trazer seus contatos de um arquivo para dentro do sistema.",
+    tip: "💡 Se você já fez importações antes, pode ver o histórico clicando na aba 'Bulk Actions' (Ações em massa) no topo da página."
   },
   {
     image: "passo-02.png",
     highlight: { x: 9, y: 35, w: 45, h: 15 },
     tooltipPos: "right-center",
-    title: "Selecione \"Contatos\"",
-    text: "Escolha o tipo de objeto que deseja importar. Selecione 'Contatos' para importar sua lista de leads, clientes ou prospects. A opção já vem selecionada por padrão.",
-    tip: "⚠️ A opção 'Leads' serve para importar negociações do pipeline, não pessoas. Se quer importar uma lista de pessoas, mantenha 'Contatos' selecionado."
+    title: "Escolha importar \"Contacts\"",
+    text: "O sistema pergunta O QUE você quer importar. Existem duas opções: 'Contacts' (pessoas — leads, clientes, prospects) e 'Opportunities' (negociações de vendas). Como queremos trazer uma lista de PESSOAS, deixe 'Contacts' marcado. Ele já vem selecionado por padrão (com a caixa azul marcada).",
+    tip: "⚠️ NÃO clique em 'Opportunities'! Essa opção é para importar negócios/vendas do pipeline, não pessoas. Se você quer trazer uma planilha com nomes, telefones e e-mails, a opção certa é 'Contacts'."
   },
   {
     image: "passo-02.png",
     highlight: { x: 88, y: 92, w: 10, h: 5 },
     tooltipPos: "left-center",
-    title: "Clique em \"Seguinte\"",
-    text: "Com 'Contatos' selecionado, clique no botão azul 'Seguinte' no canto inferior direito para avançar para a etapa de upload do arquivo.",
+    title: "Avance clicando em \"Next\"",
+    text: "Conferiu que 'Contacts' está marcado? Ótimo! Agora olhe no canto inferior direito da tela e clique no botão azul 'Next' para ir para a próxima etapa, onde você vai enviar seu arquivo.",
     tip: null
   },
   {
     image: "passo-03.png",
     highlight: { x: 30, y: 38, w: 40, h: 24 },
     tooltipPos: "left-top",
-    title: "Faça upload do seu arquivo CSV",
-    text: "Arraste e solte seu arquivo CSV na área indicada, ou clique para selecionar o arquivo do seu computador. O limite é de 30 MB por arquivo.",
-    tip: "💡 Seu CSV deve ter cabeçalhos na primeira linha (ex: Nome, Email, Telefone). Use vírgula ou ponto-e-vírgula como separador. Clique em 'Baixar arquivo de amostra' para ver o formato ideal."
+    title: "Envie seu arquivo CSV",
+    text: "Chegou a hora de enviar seu arquivo! Veja a área pontilhada no centro da tela — é ali que você coloca o arquivo. Você tem duas opções: arrastar o arquivo direto do seu computador e soltar nessa área, ou clicar nela para abrir o seletor de arquivos. O arquivo precisa ser um CSV (planilha salva como .csv) de até 30 MB.",
+    tip: "💡 Não sabe o que é CSV? É uma planilha simples onde os dados são separados por vírgula. Você pode criar um no Excel ou Google Sheets: basta ir em 'Salvar como' e escolher o formato CSV. A primeira linha DEVE ter os nomes das colunas (Nome, Email, Telefone, etc). Clique em 'Download sample file' para baixar um modelo pronto."
   },
   {
     image: "passo-05.png",
     highlight: { x: 10, y: 68, w: 80, h: 25 },
     tooltipPos: "left-top",
-    title: "Mapeie os campos do CSV",
-    text: "Esta é a etapa mais importante! O sistema mostra cada coluna do seu CSV e você precisa associá-la ao campo correto. Campos como Nome, Email e Telefone são nativos. Para campos personalizados, selecione no dropdown.",
-    tip: "💡 Se seu CSV tem colunas como 'Origem do Lead' ou 'Interesse', crie campos personalizados em Configurações > Campos ANTES de importar. Marque 'Don't update to an empty value' para não apagar dados existentes."
+    title: "Conecte as colunas do arquivo aos campos do sistema",
+    text: "Esta é a etapa mais importante — o MAPEAMENTO. Funciona assim: cada coluna do seu arquivo (ex: 'Nome', 'Email') precisa ser conectada ao campo correspondente dentro do sistema. O sistema tenta fazer isso automaticamente — campos comuns como Nome, Email e Telefone geralmente já vêm conectados. Confira se cada linha da tabela está com o campo certo selecionado no dropdown 'Fields'.",
+    tip: "💡 IMPORTANTE: Se seu arquivo tem colunas extras (como 'Origem do Lead' ou 'Interesse'), esses campos NÃO existem no sistema por padrão. Você precisa criá-los ANTES em Configurações > Campos Personalizados. Se não criar, esses dados serão ignorados na importação. Marque 'Don't update to an empty value' para não apagar dados que já existem nos contatos."
   },
   {
     image: "passo-05.png",
     highlight: { x: 90, y: 90, w: 8, h: 6 },
     tooltipPos: "left-center",
-    title: "Verifique e confirme a importação",
-    text: "Após mapear todos os campos, clique em 'Next' para ir à tela de verificação. Revise o resumo — número de contatos novos vs. atualizações — e clique em 'Confirmar' para iniciar o processo.",
-    tip: "⚠️ A importação não pode ser desfeita! Teste com poucos contatos primeiro. O sistema detecta duplicatas automaticamente por ID, telefone ou e-mail."
+    title: "Confira tudo e confirme",
+    text: "Mapeou todos os campos? Clique em 'Next' no canto inferior direito. O sistema vai mostrar um resumo: quantos contatos novos serão criados e quantos já existem e serão atualizados. Leia esse resumo com atenção! Se tudo estiver certo, clique em 'Confirm' para iniciar a importação. Os contatos aparecerão na sua lista em alguns segundos.",
+    tip: "⚠️ CUIDADO: A importação NÃO pode ser desfeita! Se você importar 5.000 contatos errados, vai precisar apagar um por um. Por isso, TESTE PRIMEIRO com um arquivo pequeno (5 a 10 contatos) para ver se tudo está mapeado certo. O sistema evita duplicatas automaticamente por telefone ou e-mail."
   }
 ];
 
@@ -352,8 +350,25 @@ function goToStep(index) {
   img.classList.remove('fade-in');
 
   setTimeout(() => {
+    // Robust arrow update: triple rAF + fallback timeout
+    function scheduleArrowUpdate(step) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            updateArrow(step);
+          });
+        });
+      });
+      // Fallback in case rAF fires before full layout
+      setTimeout(() => updateArrow(step), 500);
+    }
+
     img.src = step.image;
-    img.onload = () => updateArrow(step);
+    img.onload = () => scheduleArrowUpdate(step);
+    // If image is cached and onload doesn't fire
+    if (img.complete && img.naturalWidth > 0) {
+      scheduleArrowUpdate(step);
+    }
     img.classList.remove('fade-out');
     img.classList.add('fade-in');
 
@@ -459,6 +474,14 @@ document.addEventListener('keydown', (e) => {
 window.addEventListener('resize', () => {
   if (currentStep >= 0 && currentStep < STEPS.length) updateArrow(STEPS[currentStep]);
 });
+
+// ResizeObserver to recalculate arrow when wrapper dimensions change (image load, layout shift)
+const resizeObserver = new ResizeObserver(() => {
+  if (currentStep >= 0 && currentStep < STEPS.length) {
+    requestAnimationFrame(() => updateArrow(STEPS[currentStep]));
+  }
+});
+resizeObserver.observe(document.getElementById('screenshot-wrapper'));
 
 init();
 </script>
