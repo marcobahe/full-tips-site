@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navegando no Inbox de Conversas | Full Funnel</title>
+<title>Como Criar e Compartilhar Listas Inteligentes | Full Funnel</title>
 <style>
   :root {
     --primary: #7c3aed;
@@ -69,6 +69,7 @@
   .screenshot-wrapper img.fade-out { opacity: 0; }
   .screenshot-wrapper img.fade-in { opacity: 1; }
 
+  /* Frame retangular no ponto de clique */
   .hotspot {
     position: absolute;
     border: 3px solid var(--hotspot);
@@ -113,6 +114,7 @@
     color: #1e40af; line-height: 1.4;
   }
 
+  /* Linha tracejada SVG — viewBox percentual */
   .connector-svg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none; z-index: 15;
@@ -189,9 +191,9 @@
 
 <div class="intro-overlay" id="intro">
   <div class="intro-card">
-    <h1>💬 Navegando no Inbox de Conversas</h1>
-    <p>Domine o inbox unificado do Full Funnel — filtre, busque e gerencie todas as suas conversas de WhatsApp, SMS e Email em um só lugar.</p>
-    <p class="steps-count">📋 7 passos • ⏱️ ~3 min</p>
+    <h1>📋 Como Criar e Compartilhar Listas Inteligentes</h1>
+    <p>Aprenda a salvar filtros como listas dinâmicas que se atualizam automaticamente — e compartilhe com sua equipe.</p>
+    <p class="steps-count">📋 8 passos • ⏱️ ~5 min</p>
     <button class="intro-start" onclick="startTutorial()">Começar Tutorial →</button>
   </div>
 </div>
@@ -201,8 +203,8 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     Full Funnel
   </a>
-  <div class="header-title">Navegando no Inbox de Conversas</div>
-  <div class="header-steps" id="header-steps">Passo 1 de 7</div>
+  <div class="header-title">Como Criar e Compartilhar Listas Inteligentes</div>
+  <div class="header-steps" id="header-steps">Passo 1 de 8</div>
 </div>
 
 <div class="container">
@@ -230,81 +232,76 @@
 <script>
 const STEPS = [
   {
-    // Passo 1: Acesse as Conversas (sidebar expandida, print do Marco)
-    // Hotspot: "Conversas" text in sidebar menu
     image: "passo-01.png",
-    hotspot: { x: 2.1, y: 17.2, w: 8.6, h: 3.5 },
-    tooltip: { x: 15, y: 30 },
-    line: { x1: 10.7, y1: 19, x2: 15, y2: 36 },
-    title: "Acesse a seção de Conversas",
-    text: "No menu lateral esquerdo, clique em 'Conversas' para abrir o Inbox de conversas unificado.",
-    tip: "💡 Aqui você gerencia todas as conversas de WhatsApp, SMS, Email e outros canais em um só lugar."
+    hotspot: { x: 1.2, y: 22.8, w: 10.5, h: 2.5 },
+    tooltip: { x: 50, y: 50 },
+    line: { x1: 11.7, y1: 24, x2: 50, y2: 57 },
+    title: "Acesse a seção de Contatos",
+    text: "No menu lateral esquerdo, clique em 'Contatos' para acessar a seção onde ficam todos os seus leads e clientes.",
+    tip: "💡 Nesta tela você pode ver quantos contatos tem ao todo, além de nome, telefone, e-mail, tags e última atividade de cada um."
   },
   {
-    // Passo 2: Conheça o Inbox (print do Marco com sidebar expandida)
-    // Hotspot: visão geral da área central
     image: "passo-02.png",
-    hotspot: { x: 33, y: 45, w: 30, h: 12 },
-    tooltip: { x: 35, y: 15 },
-    line: { x1: 48, y1: 45, x2: 48, y2: 28 },
-    title: "Conheça a interface do Inbox",
-    text: "O Inbox é dividido em 3 áreas: à esquerda a lista de conversas, no centro o chat ativo, e à direita as ações rápidas do contato.",
-    tip: "💡 A conversa mais recente aparece sempre no topo da lista."
+    hotspot: { x: 10.5, y: 19.5, w: 12, h: 2.5 },
+    tooltip: { x: 50, y: 47 },
+    line: { x1: 16.5, y1: 22, x2: 50, y2: 54 },
+    title: "Clique em '+ Adicionar lista inteligente'",
+    text: "Com um filtro já ativo, clique em '+ Adicionar lista inteligente' para salvar essa seleção como uma lista que se atualiza automaticamente.",
+    tip: "⚠️ Para criar uma lista inteligente, é preciso ter um filtro ativo. Se você ainda não sabe como criar filtros, acesse o tutorial de Filtros Avançados."
   },
   {
-    // Passo 3: Filtros de leitura (print do Marco)
-    // Hotspot: filter tabs (Não lidos, Todos, Recentes, Importante)
     image: "passo-03.png",
-    hotspot: { x: 15.2, y: 10.9, w: 17.2, h: 5.5 },
-    tooltip: { x: 35, y: 22 },
-    line: { x1: 23.8, y1: 16.4, x2: 35, y2: 28 },
-    title: "Filtre suas conversas",
-    text: "Use as abas para organizar: 'Não lidos' mostra apenas mensagens pendentes, 'Todos' exibe tudo, 'Recentes' ordena por data, e 'Marcado como importante' mostra seus favoritos.",
-    tip: "💡 O badge vermelho indica quantas conversas não lidas você tem."
+    hotspot: { x: 77, y: 7.5, w: 21, h: 4 },
+    tooltip: { x: 20, y: 25 },
+    line: { x1: 77, y1: 9.5, x2: 50, y2: 32 },
+    title: "Dê um nome para a lista",
+    text: "No painel que abre à direita, digite um nome descritivo para sua lista inteligente — por exemplo, 'Clientes Trial'.",
+    tip: "💡 Escolha nomes claros e descritivos. Seus colegas de equipe verão esse nome quando você compartilhar a lista."
   },
   {
-    // Passo 4: Busque uma conversa (busca-conversas.png)
-    // Hotspot: search field
+    image: "passo-03.png",
+    hotspot: { x: 94.5, y: 95, w: 4.5, h: 3 },
+    tooltip: { x: 25, y: 42 },
+    line: { x1: 94.5, y1: 96.5, x2: 55, y2: 52 },
+    title: "Configure os filtros e clique em Criar",
+    text: "Expanda 'Filtros avançados' para definir os critérios da lista. Quando estiver pronto, clique em 'Criar' para salvar.",
+    tip: "💡 Você também pode configurar 'Ordenar por' e selecionar quais 'Campos' aparecem na lista."
+  },
+  {
     image: "passo-04.png",
-    hotspot: { x: 26.4, y: 6.5, w: 31.1, h: 3.9 },
-    tooltip: { x: 30, y: 60 },
-    line: { x1: 42, y1: 10.4, x2: 42, y2: 66 },
-    title: "Busque uma conversa",
-    text: "Use a busca para encontrar qualquer conversa rapidamente. Pesquise por nome, email ou telefone do contato.",
-    tip: "💡 Atalho: pressione ⌘K (Mac) ou Ctrl+K (Windows) para abrir a busca rápida de qualquer tela."
+    hotspot: { x: 11, y: 19.5, w: 6, h: 2 },
+    tooltip: { x: 50, y: 45 },
+    line: { x1: 17, y1: 20.5, x2: 50, y2: 52 },
+    title: "Lista criada como nova aba",
+    text: "Pronto! Sua lista inteligente aparece como uma nova aba ao lado de 'Todos'. Clique nela a qualquer momento para ver os contatos que atendem aos critérios.",
+    tip: "💡 Listas inteligentes são dinâmicas: quando um contato passa a cumprir os critérios, ele entra automaticamente na lista."
   },
   {
-    // Passo 5: Navegue entre conversas (print do Marco)
-    // Hotspot: conversation list area
     image: "passo-05.png",
-    hotspot: { x: 14.7, y: 18, w: 18, h: 30 },
-    tooltip: { x: 50, y: 30 },
-    line: { x1: 32.7, y1: 33, x2: 50, y2: 36 },
-    title: "Navegue entre conversas",
-    text: "Clique em qualquer conversa da lista para abri-la no painel central. Você verá o histórico completo com mensagens de texto, áudios, links e arquivos.",
-    tip: "💡 Conversas não lidas aparecem com destaque e badge de contagem."
+    hotspot: { x: 88, y: 19.5, w: 9, h: 2 },
+    tooltip: { x: 30, y: 35 },
+    line: { x1: 88, y1: 20.5, x2: 60, y2: 42 },
+    title: "Personalize ou compartilhe a lista",
+    text: "Para editar, compartilhar ou excluir sua lista, clique em 'Personalizar lista' no canto superior direito.",
+    tip: "💡 Aqui você também pode alterar os filtros, a ordenação e os campos visíveis da lista."
   },
   {
-    // Passo 6: Ações rápidas (print do Marco)
-    // Hotspot: action icons top-right of chat
     image: "passo-06.png",
-    hotspot: { x: 84.6, y: 7.5, w: 13.7, h: 3.5 },
-    tooltip: { x: 50, y: 18 },
-    line: { x1: 91.4, y1: 11, x2: 67, y2: 24 },
-    title: "Use as ações rápidas",
-    text: "No topo da conversa, use os ícones para: ativar notificações, ligar para o contato, abrir pasta de arquivos, marcar como favorito, enviar email ou excluir a conversa.",
-    tip: null
+    hotspot: { x: 77, y: 42, w: 21, h: 3 },
+    tooltip: { x: 15, y: 35 },
+    line: { x1: 77, y1: 43.5, x2: 45, y2: 42 },
+    title: "Acesse Compartilhamento e permissões",
+    text: "No painel de personalização, clique em 'Compartilhamento e permissões' para definir quem pode ver esta lista.",
+    tip: "💡 Por padrão, listas inteligentes são visíveis apenas para quem as criou. É preciso compartilhar manualmente para que outros usuários tenham acesso."
   },
   {
-    // Passo 7: Ações em massa (bulk-actions.png)
-    // Hotspot: bulk action buttons
-    image: "passo-07.png",
-    hotspot: { x: 40.2, y: 34, w: 29.1, h: 14 },
-    tooltip: { x: 30, y: 55 },
-    line: { x1: 54.8, y1: 48, x2: 47, y2: 61 },
-    title: "Gerencie múltiplas conversas",
-    text: "Marque o checkbox ao lado das conversas para selecioná-las. Use as ações em massa para marcar como lido/não lido, adicionar estrela ou excluir várias conversas de uma vez.",
-    tip: "💡 Clique no checkbox do topo para selecionar todas as conversas da página."
+    image: "passo-06.png",
+    hotspot: { x: 77, y: 42, w: 21, h: 3 },
+    tooltip: { x: 15, y: 55 },
+    line: { x1: 77, y1: 43.5, x2: 45, y2: 62 },
+    title: "Escolha com quem compartilhar",
+    text: "Você pode compartilhar a lista com usuários específicos ou com todos da conta. Selecione os usuários desejados e salve.",
+    tip: "💡 Compartilhe com 'Todos' se a lista é útil para toda a equipe, como 'Clientes em Trial' ou 'Leads Quentes'."
   }
 ];
 
@@ -343,19 +340,23 @@ function goToStep(index) {
       img.classList.add('fade-in');
     };
 
+    // Frame retangular
     hotspot.style.left = step.hotspot.x + '%';
     hotspot.style.top = step.hotspot.y + '%';
     hotspot.style.width = step.hotspot.w + '%';
     hotspot.style.height = step.hotspot.h + '%';
 
+    // Tooltip
     tooltip.style.left = step.tooltip.x + '%';
     tooltip.style.top = step.tooltip.y + '%';
 
+    // Linha tracejada — coordenadas puramente percentuais via viewBox
     line.setAttribute('x1', step.line.x1);
     line.setAttribute('y1', step.line.y1);
     line.setAttribute('x2', step.line.x2);
     line.setAttribute('y2', step.line.y2);
 
+    // Conteúdo
     document.getElementById('tooltip-step').textContent = `Passo ${index + 1} de ${STEPS.length}`;
     document.getElementById('tooltip-title').textContent = step.title;
     document.getElementById('tooltip-text').textContent = step.text;
@@ -367,6 +368,7 @@ function goToStep(index) {
       tipEl.style.display = 'none';
     }
 
+    // Header e progress
     document.getElementById('header-steps').textContent = `Passo ${index + 1} de ${STEPS.length}`;
     document.querySelectorAll('.progress-dot').forEach((dot, i) => {
       dot.className = 'progress-dot';
@@ -374,6 +376,7 @@ function goToStep(index) {
       if (i === index) dot.classList.add('active');
     });
 
+    // Navegação
     document.getElementById('btn-prev').disabled = index === 0;
     const btnNext = document.getElementById('btn-next');
     if (index === STEPS.length - 1) {

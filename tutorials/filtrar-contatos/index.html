@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navegando no Inbox de Conversas | Full Funnel</title>
+<title>Como Usar Filtros Avançados de Contatos | Full Funnel</title>
 <style>
   :root {
     --primary: #7c3aed;
@@ -69,6 +69,7 @@
   .screenshot-wrapper img.fade-out { opacity: 0; }
   .screenshot-wrapper img.fade-in { opacity: 1; }
 
+  /* Frame retangular no ponto de clique */
   .hotspot {
     position: absolute;
     border: 3px solid var(--hotspot);
@@ -113,6 +114,7 @@
     color: #1e40af; line-height: 1.4;
   }
 
+  /* Linha tracejada SVG — viewBox percentual */
   .connector-svg {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none; z-index: 15;
@@ -189,9 +191,9 @@
 
 <div class="intro-overlay" id="intro">
   <div class="intro-card">
-    <h1>💬 Navegando no Inbox de Conversas</h1>
-    <p>Domine o inbox unificado do Full Funnel — filtre, busque e gerencie todas as suas conversas de WhatsApp, SMS e Email em um só lugar.</p>
-    <p class="steps-count">📋 7 passos • ⏱️ ~3 min</p>
+    <h1>🔍 Como Usar Filtros Avançados de Contatos</h1>
+    <p>Aprenda a filtrar sua lista de contatos usando critérios como tags, data de criação, cidade e muito mais.</p>
+    <p class="steps-count">📋 9 passos • ⏱️ ~4 min</p>
     <button class="intro-start" onclick="startTutorial()">Começar Tutorial →</button>
   </div>
 </div>
@@ -201,8 +203,8 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     Full Funnel
   </a>
-  <div class="header-title">Navegando no Inbox de Conversas</div>
-  <div class="header-steps" id="header-steps">Passo 1 de 7</div>
+  <div class="header-title">Como Usar Filtros Avançados de Contatos</div>
+  <div class="header-steps" id="header-steps">Passo 1 de 9</div>
 </div>
 
 <div class="container">
@@ -228,83 +230,94 @@
 </div>
 
 <script>
+/*
+  Cada passo define:
+    - hotspot: {x, y, w, h} em % da imagem (frame retangular)
+    - tooltip: {x, y} em % da imagem (canto superior-esquerdo do tooltip)
+    - line: {x1, y1, x2, y2} em % — pontos exatos da linha tracejada
+      (x1,y1 = ponta perto do hotspot, x2,y2 = ponta perto do tooltip)
+*/
 const STEPS = [
   {
-    // Passo 1: Acesse as Conversas (sidebar expandida, print do Marco)
-    // Hotspot: "Conversas" text in sidebar menu
-    image: "passo-01.png",
-    hotspot: { x: 2.1, y: 17.2, w: 8.6, h: 3.5 },
-    tooltip: { x: 15, y: 30 },
-    line: { x1: 10.7, y1: 19, x2: 15, y2: 36 },
-    title: "Acesse a seção de Conversas",
-    text: "No menu lateral esquerdo, clique em 'Conversas' para abrir o Inbox de conversas unificado.",
-    tip: "💡 Aqui você gerencia todas as conversas de WhatsApp, SMS, Email e outros canais em um só lugar."
+    image: "passo-01-novo.png",
+    hotspot: { x: 1, y: 22.5, w: 11, h: 3 },
+    tooltip: { x: 50, y: 50 },
+    line: { x1: 12, y1: 24, x2: 50, y2: 57 },
+    title: "Acesse a seção de Contatos",
+    text: "No menu lateral esquerdo, clique em 'Contatos'. É nessa seção que ficam armazenados todos os seus leads e clientes cadastrados na plataforma.",
+    tip: "💡 Nesta tela você pode ver quantos contatos tem ao todo, além de nome, telefone, e-mail, tags e última atividade de cada um."
   },
   {
-    // Passo 2: Conheça o Inbox (print do Marco com sidebar expandida)
-    // Hotspot: visão geral da área central
+    image: "passo-01-novo.png",
+    hotspot: { x: 14, y: 17, w: 8, h: 3 },
+    tooltip: { x: 50, y: 50 },
+    line: { x1: 22, y1: 18.5, x2: 50, y2: 57 },
+    title: "Clique em Filtros Avançados",
+    text: "Acima da tabela, à esquerda, você verá o botão 'Filtros avançados' com um ícone de funil. Clique nele para abrir o painel de filtros.",
+    tip: "💡 Ao lado dos Filtros avançados há também o botão 'Classificar' para ordenar seus contatos por diferentes critérios."
+  },
+  {
     image: "passo-02.png",
-    hotspot: { x: 33, y: 45, w: 30, h: 12 },
-    tooltip: { x: 35, y: 15 },
-    line: { x1: 48, y1: 45, x2: 48, y2: 28 },
-    title: "Conheça a interface do Inbox",
-    text: "O Inbox é dividido em 3 áreas: à esquerda a lista de conversas, no centro o chat ativo, e à direita as ações rápidas do contato.",
-    tip: "💡 A conversa mais recente aparece sempre no topo da lista."
+    hotspot: { x: 77, y: 93.5, w: 15, h: 3.5 },
+    tooltip: { x: 25, y: 40 },
+    line: { x1: 77, y1: 95, x2: 55, y2: 50 },
+    title: "Escolha o campo para filtrar",
+    text: "O painel 'Advanced Filters' abre à direita. Os campos estão organizados em categorias. Role a lista e clique no campo desejado — por exemplo, 'Marcação' para filtrar por tags.",
+    tip: "💡 Use o campo de busca 'Search Field' no topo para encontrar o campo rapidamente sem precisar rolar a lista inteira."
   },
   {
-    // Passo 3: Filtros de leitura (print do Marco)
-    // Hotspot: filter tabs (Não lidos, Todos, Recentes, Importante)
     image: "passo-03.png",
-    hotspot: { x: 15.2, y: 10.9, w: 17.2, h: 5.5 },
-    tooltip: { x: 35, y: 22 },
-    line: { x1: 23.8, y1: 16.4, x2: 35, y2: 28 },
-    title: "Filtre suas conversas",
-    text: "Use as abas para organizar: 'Não lidos' mostra apenas mensagens pendentes, 'Todos' exibe tudo, 'Recentes' ordena por data, e 'Marcado como importante' mostra seus favoritos.",
-    tip: "💡 O badge vermelho indica quantas conversas não lidas você tem."
+    hotspot: { x: 82, y: 8, w: 16, h: 5 },
+    tooltip: { x: 25, y: 25 },
+    line: { x1: 82, y1: 10.5, x2: 55, y2: 32 },
+    title: "Escolha a condição",
+    text: "Após selecionar 'Marcação', o filtro aparece com três campos. O segundo campo é o operador. Clique nele para ver as opções: É, Não é, Não está vazio, Está vazio e É qualquer um de.",
+    tip: "💡 Use 'Está vazio' para encontrar contatos SEM nenhuma tag — ótimo para identificar quem precisa ser categorizado."
   },
   {
-    // Passo 4: Busque uma conversa (busca-conversas.png)
-    // Hotspot: search field
-    image: "passo-04.png",
-    hotspot: { x: 26.4, y: 6.5, w: 31.1, h: 3.9 },
-    tooltip: { x: 30, y: 60 },
-    line: { x1: 42, y1: 10.4, x2: 42, y2: 66 },
-    title: "Busque uma conversa",
-    text: "Use a busca para encontrar qualquer conversa rapidamente. Pesquise por nome, email ou telefone do contato.",
-    tip: "💡 Atalho: pressione ⌘K (Mac) ou Ctrl+K (Windows) para abrir a busca rápida de qualquer tela."
-  },
-  {
-    // Passo 5: Navegue entre conversas (print do Marco)
-    // Hotspot: conversation list area
     image: "passo-05.png",
-    hotspot: { x: 14.7, y: 18, w: 18, h: 30 },
-    tooltip: { x: 50, y: 30 },
-    line: { x1: 32.7, y1: 33, x2: 50, y2: 36 },
-    title: "Navegue entre conversas",
-    text: "Clique em qualquer conversa da lista para abri-la no painel central. Você verá o histórico completo com mensagens de texto, áudios, links e arquivos.",
-    tip: "💡 Conversas não lidas aparecem com destaque e badge de contagem."
+    hotspot: { x: 73, y: 12, w: 20, h: 5 },
+    tooltip: { x: 20, y: 25 },
+    line: { x1: 73, y1: 14.5, x2: 50, y2: 32 },
+    title: "Selecione o valor",
+    text: "No terceiro campo, escolha o valor do filtro. Ao clicar, aparecerá uma lista com todas as tags disponíveis na sua conta. Clique na tag desejada.",
+    tip: "💡 Você pode digitar para buscar a tag desejada. A lista filtra em tempo real conforme você digita."
   },
   {
-    // Passo 6: Ações rápidas (print do Marco)
-    // Hotspot: action icons top-right of chat
     image: "passo-06.png",
-    hotspot: { x: 84.6, y: 7.5, w: 13.7, h: 3.5 },
-    tooltip: { x: 50, y: 18 },
-    line: { x1: 91.4, y1: 11, x2: 67, y2: 24 },
-    title: "Use as ações rápidas",
-    text: "No topo da conversa, use os ícones para: ativar notificações, ligar para o contato, abrir pasta de arquivos, marcar como favorito, enviar email ou excluir a conversa.",
-    tip: null
+    hotspot: { x: 74, y: 42, w: 12, h: 4 },
+    tooltip: { x: 20, y: 35 },
+    line: { x1: 74, y1: 44, x2: 50, y2: 42 },
+    title: "Adicione mais filtros (opcional)",
+    text: "Quer refinar ainda mais? Clique em 'Add Filter' para adicionar outro critério. Por exemplo, além da tag, filtre também por cidade ou data de criação.",
+    tip: "💡 Use 'Add nested filter' para criar condições agrupadas — isso dá mais controle sobre a lógica de busca."
   },
   {
-    // Passo 7: Ações em massa (bulk-actions.png)
-    // Hotspot: bulk action buttons
     image: "passo-07.png",
-    hotspot: { x: 40.2, y: 34, w: 29.1, h: 14 },
-    tooltip: { x: 30, y: 55 },
-    line: { x1: 54.8, y1: 48, x2: 47, y2: 61 },
-    title: "Gerencie múltiplas conversas",
-    text: "Marque o checkbox ao lado das conversas para selecioná-las. Use as ações em massa para marcar como lido/não lido, adicionar estrela ou excluir várias conversas de uma vez.",
-    tip: "💡 Clique no checkbox do topo para selecionar todas as conversas da página."
+    hotspot: { x: 5, y: 24, w: 14, h: 3.5 },
+    tooltip: { x: 50, y: 45 },
+    line: { x1: 19, y1: 25.5, x2: 50, y2: 52 },
+    title: "Aplique os filtros",
+    text: "Após clicar em 'Apply', a tabela é atualizada. Note que o contador mudou — de 3.518 para 656 contatos. Só aparece quem tem a tag selecionada!",
+    tip: "💡 O botão 'Filtros avançados' agora mostra '(1)' indicando que há 1 filtro ativo."
+  },
+  {
+    image: "passo-08.png",
+    hotspot: { x: 14, y: 19.5, w: 12, h: 3 },
+    tooltip: { x: 50, y: 45 },
+    line: { x1: 26, y1: 21, x2: 50, y2: 52 },
+    title: "Salve como Lista Inteligente (opcional)",
+    text: "Se quiser usar esse filtro novamente no futuro, clique em '+ Adicionar lista inteligente'. Dê um nome descritivo e pronto — o filtro fica salvo!",
+    tip: "💡 Listas inteligentes são dinâmicas: conforme novos contatos recebem a tag, eles aparecem automaticamente na lista."
+  },
+  {
+    image: "passo-09.png",
+    hotspot: { x: 72, y: 94, w: 17, h: 3 },
+    tooltip: { x: 25, y: 42 },
+    line: { x1: 72, y1: 95.5, x2: 55, y2: 52 },
+    title: "Limpando os filtros",
+    text: "Para voltar a ver todos os contatos, abra os Filtros avançados novamente e clique em 'Limpar todos os filtros'. A lista voltará a mostrar todos os contatos.",
+    tip: "💡 Você também pode usar o X de cada filtro para remover apenas um filtro específico."
   }
 ];
 
@@ -343,19 +356,23 @@ function goToStep(index) {
       img.classList.add('fade-in');
     };
 
+    // Frame retangular
     hotspot.style.left = step.hotspot.x + '%';
     hotspot.style.top = step.hotspot.y + '%';
     hotspot.style.width = step.hotspot.w + '%';
     hotspot.style.height = step.hotspot.h + '%';
 
+    // Tooltip
     tooltip.style.left = step.tooltip.x + '%';
     tooltip.style.top = step.tooltip.y + '%';
 
+    // Linha tracejada — coordenadas puramente percentuais via viewBox
     line.setAttribute('x1', step.line.x1);
     line.setAttribute('y1', step.line.y1);
     line.setAttribute('x2', step.line.x2);
     line.setAttribute('y2', step.line.y2);
 
+    // Conteúdo
     document.getElementById('tooltip-step').textContent = `Passo ${index + 1} de ${STEPS.length}`;
     document.getElementById('tooltip-title').textContent = step.title;
     document.getElementById('tooltip-text').textContent = step.text;
@@ -367,6 +384,7 @@ function goToStep(index) {
       tipEl.style.display = 'none';
     }
 
+    // Header e progress
     document.getElementById('header-steps').textContent = `Passo ${index + 1} de ${STEPS.length}`;
     document.querySelectorAll('.progress-dot').forEach((dot, i) => {
       dot.className = 'progress-dot';
@@ -374,6 +392,7 @@ function goToStep(index) {
       if (i === index) dot.classList.add('active');
     });
 
+    // Navegação
     document.getElementById('btn-prev').disabled = index === 0;
     const btnNext = document.getElementById('btn-next');
     if (index === STEPS.length - 1) {

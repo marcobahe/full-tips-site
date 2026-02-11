@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navegando no Inbox de Conversas | Full Funnel</title>
+<title>Como Usar Tags | Full Funnel</title>
 <style>
   :root {
     --primary: #7c3aed;
@@ -189,9 +189,9 @@
 
 <div class="intro-overlay" id="intro">
   <div class="intro-card">
-    <h1>💬 Navegando no Inbox de Conversas</h1>
-    <p>Domine o inbox unificado do Full Funnel — filtre, busque e gerencie todas as suas conversas de WhatsApp, SMS e Email em um só lugar.</p>
-    <p class="steps-count">📋 7 passos • ⏱️ ~3 min</p>
+    <h1>🏷️ Como Usar Tags</h1>
+    <p>Aprenda a organizar seus contatos com tags — individualmente ou em massa — para segmentar sua base com eficiência.</p>
+    <p class="steps-count">📋 7 passos • ⏱️ ~4 min</p>
     <button class="intro-start" onclick="startTutorial()">Começar Tutorial →</button>
   </div>
 </div>
@@ -201,7 +201,7 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     Full Funnel
   </a>
-  <div class="header-title">Navegando no Inbox de Conversas</div>
+  <div class="header-title">Como Usar Tags</div>
   <div class="header-steps" id="header-steps">Passo 1 de 7</div>
 </div>
 
@@ -230,81 +230,67 @@
 <script>
 const STEPS = [
   {
-    // Passo 1: Acesse as Conversas (sidebar expandida, print do Marco)
-    // Hotspot: "Conversas" text in sidebar menu
     image: "passo-01.png",
-    hotspot: { x: 2.1, y: 17.2, w: 8.6, h: 3.5 },
-    tooltip: { x: 15, y: 30 },
-    line: { x1: 10.7, y1: 19, x2: 15, y2: 36 },
-    title: "Acesse a seção de Conversas",
-    text: "No menu lateral esquerdo, clique em 'Conversas' para abrir o Inbox de conversas unificado.",
-    tip: "💡 Aqui você gerencia todas as conversas de WhatsApp, SMS, Email e outros canais em um só lugar."
+    hotspot: { x: 1.2, y: 22.9, w: 10.7, h: 2.5 },
+    tooltip: { x: 50, y: 45 },
+    line: { x1: 11.9, y1: 24.1, x2: 50, y2: 52 },
+    title: "Acesse a seção de Contatos",
+    text: "No menu lateral esquerdo, clique em 'Contatos' para acessar todos os seus leads e clientes.",
+    tip: "💡 Na coluna 'Tags' da tabela você pode ver rapidamente quais tags cada contato possui."
   },
   {
-    // Passo 2: Conheça o Inbox (print do Marco com sidebar expandida)
-    // Hotspot: visão geral da área central
     image: "passo-02.png",
-    hotspot: { x: 33, y: 45, w: 30, h: 12 },
-    tooltip: { x: 35, y: 15 },
-    line: { x1: 48, y1: 45, x2: 48, y2: 28 },
-    title: "Conheça a interface do Inbox",
-    text: "O Inbox é dividido em 3 áreas: à esquerda a lista de conversas, no centro o chat ativo, e à direita as ações rápidas do contato.",
-    tip: "💡 A conversa mais recente aparece sempre no topo da lista."
+    hotspot: { x: 62, y: 27, w: 8, h: 3 },
+    tooltip: { x: 20, y: 42 },
+    line: { x1: 62, y1: 28.5, x2: 48, y2: 48 },
+    title: "Veja as tags na lista de contatos",
+    text: "Na lista de contatos, a coluna 'Tags' mostra as tags de cada contato. Tags como 'news', 'trial' e 'onboarding' ajudam a segmentar sua base.",
+    tip: "💡 Se a coluna Tags não estiver visível, clique em 'Gerenciar campos' no canto superior direito para ativá-la."
   },
   {
-    // Passo 3: Filtros de leitura (print do Marco)
-    // Hotspot: filter tabs (Não lidos, Todos, Recentes, Importante)
     image: "passo-03.png",
-    hotspot: { x: 15.2, y: 10.9, w: 17.2, h: 5.5 },
-    tooltip: { x: 35, y: 22 },
-    line: { x1: 23.8, y1: 16.4, x2: 35, y2: 28 },
-    title: "Filtre suas conversas",
-    text: "Use as abas para organizar: 'Não lidos' mostra apenas mensagens pendentes, 'Todos' exibe tudo, 'Recentes' ordena por data, e 'Marcado como importante' mostra seus favoritos.",
-    tip: "💡 O badge vermelho indica quantas conversas não lidas você tem."
+    hotspot: { x: 8, y: 25.5, w: 19, h: 5 },
+    tooltip: { x: 50, y: 38 },
+    line: { x1: 27, y1: 28, x2: 50, y2: 44 },
+    title: "Para adicionar tags a um único contato",
+    text: "Clique no contato desejado para abrir seu perfil. No painel esquerdo, localize a seção 'Tags' e clique no ícone '+' para adicionar novas tags.",
+    tip: "💡 O número entre parênteses indica quantas tags o contato possui. Para remover uma tag, clique no 'x' ao lado dela."
   },
   {
-    // Passo 4: Busque uma conversa (busca-conversas.png)
-    // Hotspot: search field
     image: "passo-04.png",
-    hotspot: { x: 26.4, y: 6.5, w: 31.1, h: 3.9 },
-    tooltip: { x: 30, y: 60 },
-    line: { x1: 42, y1: 10.4, x2: 42, y2: 66 },
-    title: "Busque uma conversa",
-    text: "Use a busca para encontrar qualquer conversa rapidamente. Pesquise por nome, email ou telefone do contato.",
-    tip: "💡 Atalho: pressione ⌘K (Mac) ou Ctrl+K (Windows) para abrir a busca rápida de qualquer tela."
+    hotspot: { x: 9, y: 28, w: 19, h: 20 },
+    tooltip: { x: 52, y: 35 },
+    line: { x1: 28, y1: 38, x2: 52, y2: 42 },
+    title: "Adicione uma tag ao contato",
+    text: "Clique no ícone '+' ao lado de 'Tags' para abrir o seletor. Você verá todas as tags da conta com checkboxes. Marque as tags desejadas para aplicá-las.",
+    tip: "💡 Use o campo 'Pesquisar' para encontrar rapidamente a tag desejada. Você também pode criar uma nova tag digitando um nome que não existe."
   },
   {
-    // Passo 5: Navegue entre conversas (print do Marco)
-    // Hotspot: conversation list area
     image: "passo-05.png",
-    hotspot: { x: 14.7, y: 18, w: 18, h: 30 },
-    tooltip: { x: 50, y: 30 },
-    line: { x1: 32.7, y1: 33, x2: 50, y2: 36 },
-    title: "Navegue entre conversas",
-    text: "Clique em qualquer conversa da lista para abri-la no painel central. Você verá o histórico completo com mensagens de texto, áudios, links e arquivos.",
-    tip: "💡 Conversas não lidas aparecem com destaque e badge de contagem."
+    hotspot: { x: 3.5, y: 27.5, w: 3.5, h: 14 },
+    tooltip: { x: 45, y: 38 },
+    line: { x1: 7, y1: 34.5, x2: 45, y2: 44 },
+    title: "Para adicionar tags a múltiplos contatos",
+    text: "Na lista de contatos, marque as caixas de seleção à esquerda de cada contato desejado. Depois, use as ações em massa no próximo passo para aplicar tags a todos de uma vez.",
+    tip: "💡 Clique no checkbox do cabeçalho para selecionar todos os contatos da página de uma vez."
   },
   {
-    // Passo 6: Ações rápidas (print do Marco)
-    // Hotspot: action icons top-right of chat
     image: "passo-06.png",
-    hotspot: { x: 84.6, y: 7.5, w: 13.7, h: 3.5 },
-    tooltip: { x: 50, y: 18 },
-    line: { x1: 91.4, y1: 11, x2: 67, y2: 24 },
-    title: "Use as ações rápidas",
-    text: "No topo da conversa, use os ícones para: ativar notificações, ligar para o contato, abrir pasta de arquivos, marcar como favorito, enviar email ou excluir a conversa.",
-    tip: null
+    hotspot: { x: 63, y: 34, w: 12, h: 8 },
+    tooltip: { x: 18, y: 30 },
+    line: { x1: 63, y1: 38, x2: 46, y2: 37 },
+    title: "Use Ações em massa para adicionar tags",
+    text: "Com os contatos selecionados, clique em 'Mais' na barra de ações e depois em 'Adicionar tags'. Você pode aplicar uma ou mais tags a todos os contatos selecionados de uma vez.",
+    tip: "💡 Para remover tags em massa, use a opção 'Remover tags' logo abaixo no mesmo menu — o procedimento é o mesmo."
   },
   {
-    // Passo 7: Ações em massa (bulk-actions.png)
-    // Hotspot: bulk action buttons
-    image: "passo-07.png",
-    hotspot: { x: 40.2, y: 34, w: 29.1, h: 14 },
-    tooltip: { x: 30, y: 55 },
-    line: { x1: 54.8, y1: 48, x2: 47, y2: 61 },
-    title: "Gerencie múltiplas conversas",
-    text: "Marque o checkbox ao lado das conversas para selecioná-las. Use as ações em massa para marcar como lido/não lido, adicionar estrela ou excluir várias conversas de uma vez.",
-    tip: "💡 Clique no checkbox do topo para selecionar todas as conversas da página."
+    image: "passo-02.png",
+    hotspot: { x: 62, y: 30, w: 8, h: 22 },
+    tooltip: { x: 18, y: 38 },
+    line: { x1: 62, y1: 41, x2: 42, y2: 44 },
+    title: "Dica final — Tags + Filtros + Listas",
+    text: "Pronto! Agora seus contatos estão organizados com tags. Use os Filtros Avançados para encontrar contatos por tag, ou crie Listas Inteligentes para segmentações automáticas.",
+    tip: "💡 Tags são a base da organização no Full Funnel. Combine tags com automações para aplicá-las automaticamente quando um contato realiza uma ação."
   }
 ];
 

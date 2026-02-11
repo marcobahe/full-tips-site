@@ -189,16 +189,16 @@
   <div class="intro-card">
     <h1>📥 Como Importar Contatos</h1>
     <p>Aprenda a importar sua lista de contatos via arquivo CSV no Full Funnel. Ideal para migrar leads de outras plataformas ou planilhas.</p>
-    <p class="steps-count">📋 7 passos • ⏱️ ~3 min</p>
+    <p class="steps-count">📋 10 passos • ⏱️ ~4 min</p>
     <button class="intro-start" onclick="startTutorial()">Começar Tutorial →</button>
   </div>
 </div>
 
 <div class="header">
-  <div class="header-brand">
+  <a href="/" class="header-brand" style="text-decoration:none;color:inherit;">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     Full Funnel
-  </div>
+  </a>
   <div class="header-title">Como Importar Contatos</div>
   <div class="header-steps" id="header-steps">Passo 1 de 7</div>
 </div>
@@ -236,84 +236,84 @@
 <script>
 const STEPS = [
   {
-    image: "passo-01.png",
-    highlight: { x: 0, y: 25, w: 13, h: 5 },
+    image: "passo-01-sidebar.jpg",
+    highlight: { x: 0, y: 22, w: 13, h: 4 },
     tooltipPos: "right-center",
-    title: "Clique em \"Contatos\"",
-    text: "No menu lateral, clique em 'Contatos'. É aqui que ficam todos os seus leads e clientes.",
+    title: "Acesse a seção \"Contatos\"",
+    text: "No menu lateral esquerdo, clique em 'Contatos'. É nessa seção que ficam armazenados todos os seus leads e clientes cadastrados na plataforma.",
     tip: null
   },
   {
-    image: "passo-01.png",
-    highlight: { x: 74, y: 17, w: 7, h: 4 },
+    image: "passo-01-sidebar.jpg",
+    highlight: { x: 82, y: 10, w: 8, h: 4 },
     tooltipPos: "left-center",
     title: "Clique em \"Importar\"",
-    text: "No canto superior direito, clique no botão 'Importar'. Ele abre o assistente de importação.",
-    tip: "💡 Verifique seus contatos existentes antes de importar para evitar duplicatas."
+    text: "No canto superior direito, clique no botão 'Importar'. Esse botão abre o assistente que vai guiar você em todo o processo de importação.",
+    tip: "💡 Antes de importar, dê uma olhada nos contatos que já existem para evitar duplicatas."
   },
   {
-    image: "passo-02.png",
-    highlight: { x: 9, y: 35, w: 45, h: 15 },
+    image: "demo-passo-02-final.png",
+    highlight: { x: 7, y: 33, w: 40, h: 18 },
     tooltipPos: "right-center",
     title: "Selecione \"Contatos\"",
-    text: "Escolha o tipo 'Contatos' (pessoas). A opção 'Leads' é para negociações de vendas — não selecione essa.",
+    text: "Escolha a opção 'Contatos' (pessoas/leads). A opção 'Leads' ao lado é para negociações de vendas (pipeline) — não selecione essa opção agora.",
     tip: null
   },
   {
-    image: "passo-02.png",
+    image: "demo-passo-02-final.png",
     highlight: { x: 88, y: 92, w: 10, h: 5 },
     tooltipPos: "left-center",
     title: "Clique em \"Seguinte\"",
-    text: "Com 'Contatos' selecionado, clique no botão azul 'Seguinte' para avançar.",
+    text: "Com 'Contatos' marcado (checkbox azul), clique no botão 'Seguinte' no canto inferior direito para ir ao próximo passo.",
     tip: null
   },
   {
-    image: "passo-03.png",
-    highlight: { x: 30, y: 38, w: 40, h: 24 },
+    image: "demo-passo-03-final.png",
+    highlight: { x: 28, y: 37, w: 44, h: 25 },
     tooltipPos: "right-top",
     title: "Envie seu arquivo CSV",
-    text: "Arraste seu arquivo para a área pontilhada ou clique nela para selecionar. O formato aceito é CSV (até 30 MB).",
-    tip: "💡 CSV é um tipo de planilha. No Excel ou Google Sheets: Arquivo > Salvar como > CSV."
+    text: "Arraste seu arquivo para a área cinza ou clique nela para selecionar do computador. O formato aceito é CSV (planilha) com até 30 MB.",
+    tip: "💡 O que é CSV? É um tipo de planilha simples. No Excel ou Google Sheets, vá em Arquivo → Salvar como → selecione 'CSV'."
   },
   {
-    image: "passo-03.png",
-    highlight: { x: 30, y: 52, w: 40, h: 5 },
-    tooltipPos: "right-center",
-    title: "Seu arquivo precisa de cabeçalhos",
-    text: "A primeira linha do CSV deve ter os nomes das colunas: nome, email, telefone. Sem isso, o sistema não reconhece os dados.",
-    tip: "💡 Clique em 'Baixar arquivo de amostra' para ver o formato correto."
+    image: "demo-passo-03b-final.png",
+    highlight: { x: 28, y: 37, w: 44, h: 14 },
+    tooltipPos: "right-top",
+    title: "Arquivo carregado com sucesso",
+    text: "Quando o upload terminar, você verá o nome do arquivo e '100% carregado'. Abaixo, mantenha a opção 'Crie e atualize contatos' selecionada.",
+    tip: "💡 A opção 'Crie e atualize' é a mais segura: cria contatos novos e atualiza os que já existem (sem duplicar)."
   },
   {
-    image: "passo-03.png",
-    highlight: { x: 30, y: 60, w: 40, h: 8 },
-    tooltipPos: "right-center",
-    title: "Escolha como importar",
-    text: "Em 'Selecionar como importar contatos', mantenha 'Crie e atualize contatos'. Isso cria novos e atualiza os que já existem.",
-    tip: null
-  },
-  {
-    image: "passo-05.png",
-    highlight: { x: 10, y: 68, w: 80, h: 25 },
+    image: "demo-passo-04b-final.png",
+    highlight: { x: 8, y: 52, w: 85, h: 42 },
     tooltipPos: "left-top",
-    title: "Confira o mapeamento",
-    text: "O sistema conecta cada coluna do seu arquivo a um campo da plataforma. Os mais comuns (nome, email, telefone) já vêm mapeados automaticamente.",
-    tip: null
+    title: "Mapeie as colunas do arquivo",
+    text: "O sistema mostra cada coluna do seu CSV e tenta mapear automaticamente. Campos como E-mail e Tags já vêm mapeados (status verde 'Mapeado'). Os pendentes precisam ser associados manualmente.",
+    tip: "💡 Na coluna 'Campos', clique no dropdown e busque o campo correspondente. Ex: 'Nome' → 'First Name', 'Telefone' → 'Phone'."
   },
   {
-    image: "passo-05.png",
-    highlight: { x: 10, y: 68, w: 80, h: 25 },
+    image: "demo-passo-05-mapeado.png",
+    highlight: { x: 40, y: 5, w: 20, h: 90 },
     tooltipPos: "left-top",
-    title: "Ajuste campos pendentes",
-    text: "Se alguma coluna aparecer como 'Pending', selecione o campo correto no dropdown. Campos personalizados precisam ser criados antes em Configurações.",
-    tip: "⚠️ Colunas sem campo correspondente serão ignoradas na importação."
+    title: "Todos os campos mapeados!",
+    text: "Quando todos os campos estiverem com status 'Mapeado' (verde), o botão 'Seguinte' será habilitado. Confira se cada coluna está conectada ao campo correto.",
+    tip: "⚠️ Colunas que você não mapear serão ignoradas na importação. Se precisar de um campo que não existe, crie-o antes em Configurações → Campos."
   },
   {
-    image: "passo-05.png",
-    highlight: { x: 90, y: 90, w: 8, h: 6 },
+    image: "demo-passo-06-verificar.png",
+    highlight: { x: 7, y: 28, w: 60, h: 50 },
+    tooltipPos: "right-top",
+    title: "Revise as preferências",
+    text: "Nesta tela final, você pode: criar uma lista inteligente automática com os contatos importados, adicioná-los a um fluxo de trabalho (automação), ou adicionar tags em massa.",
+    tip: "💡 Criar uma lista inteligente é muito útil para segmentar e acompanhar os contatos que você acabou de importar."
+  },
+  {
+    image: "demo-passo-06-verificar.png",
+    highlight: { x: 78, y: 92, w: 20, h: 6 },
     tooltipPos: "left-center",
-    title: "Confirme a importação",
-    text: "Clique em 'Seguinte' para ver o resumo. Confira os números e clique em 'Confirmar'. Os contatos aparecerão na lista em segundos.",
-    tip: "⚠️ A importação não pode ser desfeita. Teste primeiro com um arquivo pequeno (5-10 contatos)."
+    title: "Inicie a importação!",
+    text: "Marque a caixa confirmando que os contatos consentiram em receber suas comunicações. Depois clique em 'Iniciar importação em massa'. Os contatos aparecerão na lista em segundos!",
+    tip: "⚠️ A importação não pode ser desfeita facilmente. Teste primeiro com um arquivo pequeno (5 a 10 contatos) para garantir que tudo está correto."
   }
 ];
 
