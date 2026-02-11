@@ -230,78 +230,78 @@
 <script>
 const STEPS = [
   {
-    // Passo 1: Acesse as Conversas (sidebar expandida, print do Marco)
+    // Passo 1: Acesse as Conversas (sidebar expandida, ultrawide 1280x535)
     // Hotspot: "Conversas" text in sidebar menu
     image: "passo-01.png",
-    hotspot: { x: 2.1, y: 17.2, w: 8.6, h: 3.5 },
-    tooltip: { x: 15, y: 30 },
-    line: { x1: 10.7, y1: 19, x2: 15, y2: 36 },
+    hotspot: { x: 0.8, y: 24, w: 6, h: 4 },
+    tooltip: { x: 12, y: 40 },
+    line: { x1: 6.8, y1: 26, x2: 12, y2: 46 },
     title: "Acesse a seção de Conversas",
     text: "No menu lateral esquerdo, clique em 'Conversas' para abrir o Inbox de conversas unificado.",
     tip: "💡 Aqui você gerencia todas as conversas de WhatsApp, SMS, Email e outros canais em um só lugar."
   },
   {
-    // Passo 2: Conheça o Inbox (print do Marco com sidebar expandida)
-    // Hotspot: visão geral da área central
+    // Passo 2: Conheça o Inbox (ultrawide com sidebar expandida)
+    // Hotspot: visão geral da área central (chat + lista)
     image: "passo-02.png",
-    hotspot: { x: 33, y: 45, w: 30, h: 12 },
-    tooltip: { x: 35, y: 15 },
-    line: { x1: 48, y1: 45, x2: 48, y2: 28 },
+    hotspot: { x: 20, y: 30, w: 40, h: 25 },
+    tooltip: { x: 25, y: 10 },
+    line: { x1: 40, y1: 30, x2: 38, y2: 18 },
     title: "Conheça a interface do Inbox",
     text: "O Inbox é dividido em 3 áreas: à esquerda a lista de conversas, no centro o chat ativo, e à direita as ações rápidas do contato.",
     tip: "💡 A conversa mais recente aparece sempre no topo da lista."
   },
   {
-    // Passo 3: Filtros de leitura (print do Marco)
+    // Passo 3: Filtros de leitura (ultrawide)
     // Hotspot: filter tabs (Não lidos, Todos, Recentes, Importante)
     image: "passo-03.png",
-    hotspot: { x: 15.2, y: 10.9, w: 17.2, h: 5.5 },
-    tooltip: { x: 35, y: 22 },
-    line: { x1: 23.8, y1: 16.4, x2: 35, y2: 28 },
+    hotspot: { x: 9.8, y: 11, w: 12, h: 5 },
+    tooltip: { x: 25, y: 25 },
+    line: { x1: 15.8, y1: 16, x2: 25, y2: 31 },
     title: "Filtre suas conversas",
     text: "Use as abas para organizar: 'Não lidos' mostra apenas mensagens pendentes, 'Todos' exibe tudo, 'Recentes' ordena por data, e 'Marcado como importante' mostra seus favoritos.",
     tip: "💡 O badge vermelho indica quantas conversas não lidas você tem."
   },
   {
-    // Passo 4: Busque uma conversa (busca-conversas.png)
-    // Hotspot: search field
+    // Passo 4: Busque uma conversa (modal ⌘K, ultrawide)
+    // Hotspot: search input field at top of modal
     image: "passo-04.png",
-    hotspot: { x: 26.4, y: 6.5, w: 31.1, h: 3.9 },
-    tooltip: { x: 30, y: 60 },
-    line: { x1: 42, y1: 10.4, x2: 42, y2: 66 },
+    hotspot: { x: 30, y: 6.5, w: 28, h: 5 },
+    tooltip: { x: 30, y: 65 },
+    line: { x1: 44, y1: 11.5, x2: 43, y2: 71 },
     title: "Busque uma conversa",
     text: "Use a busca para encontrar qualquer conversa rapidamente. Pesquise por nome, email ou telefone do contato.",
     tip: "💡 Atalho: pressione ⌘K (Mac) ou Ctrl+K (Windows) para abrir a busca rápida de qualquer tela."
   },
   {
-    // Passo 5: Navegue entre conversas (print do Marco)
+    // Passo 5: Navegue entre conversas (ultrawide)
     // Hotspot: conversation list area
     image: "passo-05.png",
-    hotspot: { x: 14.7, y: 18, w: 18, h: 30 },
-    tooltip: { x: 50, y: 30 },
-    line: { x1: 32.7, y1: 33, x2: 50, y2: 36 },
+    hotspot: { x: 8.4, y: 20, w: 12, h: 35 },
+    tooltip: { x: 45, y: 30 },
+    line: { x1: 20.4, y1: 37, x2: 45, y2: 36 },
     title: "Navegue entre conversas",
     text: "Clique em qualquer conversa da lista para abri-la no painel central. Você verá o histórico completo com mensagens de texto, áudios, links e arquivos.",
     tip: "💡 Conversas não lidas aparecem com destaque e badge de contagem."
   },
   {
-    // Passo 6: Ações rápidas (print do Marco)
+    // Passo 6: Ações rápidas (ultrawide)
     // Hotspot: action icons top-right of chat
     image: "passo-06.png",
-    hotspot: { x: 84.6, y: 7.5, w: 13.7, h: 3.5 },
-    tooltip: { x: 50, y: 18 },
-    line: { x1: 91.4, y1: 11, x2: 67, y2: 24 },
+    hotspot: { x: 80, y: 11, w: 15, h: 5 },
+    tooltip: { x: 50, y: 22 },
+    line: { x1: 87.5, y1: 16, x2: 65, y2: 28 },
     title: "Use as ações rápidas",
     text: "No topo da conversa, use os ícones para: ativar notificações, ligar para o contato, abrir pasta de arquivos, marcar como favorito, enviar email ou excluir a conversa.",
     tip: null
   },
   {
-    // Passo 7: Ações em massa (bulk-actions.png)
-    // Hotspot: bulk action buttons
+    // Passo 7: Ações em massa (ultrawide, bulk actions)
+    // Hotspot: bulk action buttons in center panel
     image: "passo-07.png",
-    hotspot: { x: 40.2, y: 34, w: 29.1, h: 14 },
-    tooltip: { x: 30, y: 55 },
-    line: { x1: 54.8, y1: 48, x2: 47, y2: 61 },
+    hotspot: { x: 30, y: 35, w: 30, h: 20 },
+    tooltip: { x: 25, y: 65 },
+    line: { x1: 45, y1: 55, x2: 40, y2: 71 },
     title: "Gerencie múltiplas conversas",
     text: "Marque o checkbox ao lado das conversas para selecioná-las. Use as ações em massa para marcar como lido/não lido, adicionar estrela ou excluir várias conversas de uma vez.",
     tip: "💡 Clique no checkbox do topo para selecionar todas as conversas da página."
