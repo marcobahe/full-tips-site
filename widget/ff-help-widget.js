@@ -553,8 +553,7 @@
     const widget = document.createElement('div');
     widget.id = 'ff-help-widget';
 
-    const count = getAvailableCount();
-    const badgeHtml = count > 0 ? `<span class="badge">${count}</span>` : '';
+    const badgeHtml = '';
 
     widget.innerHTML = `
       <button id="ff-help-btn" onclick="window.__ffWidget.toggle()">
@@ -581,17 +580,7 @@
         lastPath = window.location.pathname;
         const panel = document.getElementById('ff-help-panel');
         if (panel) panel.innerHTML = renderPanel();
-        // Update badge
-        const btn = document.getElementById('ff-help-btn');
-        const newCount = getAvailableCount();
-        const existingBadge = btn.querySelector('.badge');
-        if (existingBadge) existingBadge.remove();
-        if (newCount > 0) {
-          const badge = document.createElement('span');
-          badge.className = 'badge';
-          badge.textContent = newCount;
-          btn.appendChild(badge);
-        }
+        // Badge removido
       }
     }, 1000);
   }
@@ -622,18 +611,7 @@
       iframe.src = url;
       modal.classList.add('open');
       
-      // Marcar como visto e atualizar badge
       if (id) markTutorialSeen(id);
-      const btn = document.getElementById('ff-help-btn');
-      const existingBadge = btn.querySelector('.badge');
-      if (existingBadge) existingBadge.remove();
-      const newCount = getAvailableCount();
-      if (newCount > 0) {
-        const badge = document.createElement('span');
-        badge.className = 'badge';
-        badge.textContent = newCount;
-        btn.appendChild(badge);
-      }
 
       // Close panel
       document.getElementById('ff-help-panel').classList.remove('open');
