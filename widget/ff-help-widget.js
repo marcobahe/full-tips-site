@@ -70,8 +70,16 @@
       match: ['/conversations'],
       tutorials: [
         {
-          id: 'enviar-mensagem',
+          id: 'navegando-inbox',
           icon: '💬',
+          title: 'Navegando no Inbox de Conversas',
+          description: 'Domine o inbox unificado — filtre, busque e gerencie conversas',
+          url: '/tutorials/conversas-inbox/index.html',
+          available: true
+        },
+        {
+          id: 'enviar-mensagem',
+          icon: '✉️',
           title: 'Como enviar mensagens',
           description: 'Envie mensagens por WhatsApp, SMS ou e-mail',
           url: null,
@@ -455,8 +463,23 @@
     return tutorials;
   }
 
+  function getSeenTutorials() {
+    try {
+      return JSON.parse(localStorage.getItem('ff-seen-tutorials') || '[]');
+    } catch { return []; }
+  }
+
+  function markTutorialSeen(id) {
+    const seen = getSeenTutorials();
+    if (!seen.includes(id)) {
+      seen.push(id);
+      localStorage.setItem('ff-seen-tutorials', JSON.stringify(seen));
+    }
+  }
+
   function getAvailableCount() {
-    return getAvailableTutorials().filter(t => t.available).length;
+    const seen = getSeenTutorials();
+    return getAvailableTutorials().filter(t => t.available && !seen.includes(t.id)).length;
   }
 
   function renderPanel() {
@@ -481,11 +504,13 @@
           ? '<span class="ff-tutorial-badge available">Disponível</span>'
           : '<span class="ff-tutorial-badge coming">Em breve</span>';
         
+        const seen = getSeenTutorials();
+        const seenMark = (t.available && seen.includes(t.id)) ? ' ✓' : '';
         html += `
-          <div class="ff-tutorial-item ${cls}" ${t.available ? `onclick="window.__ffWidget.openTutorial('${t.url}')"` : ''}>
+          <div class="ff-tutorial-item ${cls}" ${t.available ? `onclick="window.__ffWidget.openTutorial('${t.url}', '${t.id}')"` : ''}>
             <div class="ff-tutorial-icon">${t.icon}</div>
             <div class="ff-tutorial-info">
-              <h4>${t.title}</h4>
+              <h4>${t.title}${seenMark}</h4>
               <p>${t.description || ''}</p>
             </div>
             ${badge}
@@ -591,12 +616,25 @@
       }
     },
 
-    openTutorial(url) {
+    openTutorial(url, id) {
       const modal = document.getElementById('ff-tutorial-modal');
       const iframe = document.getElementById('ff-tutorial-iframe');
       iframe.src = url;
       modal.classList.add('open');
       
+      // Marcar como visto e atualizar badge
+      if (id) markTutorialSeen(id);
+      const btn = document.getElementById('ff-help-btn');
+      const existingBadge = btn.querySelector('.badge');
+      if (existingBadge) existingBadge.remove();
+      const newCount = getAvailableCount();
+      if (newCount > 0) {
+        const badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = newCount;
+        btn.appendChild(badge);
+      }
+
       // Close panel
       document.getElementById('ff-help-panel').classList.remove('open');
       document.getElementById('ff-help-btn').classList.remove('active');
