@@ -43,8 +43,8 @@
           icon: '🔍',
           title: 'Como usar filtros avançados',
           description: 'Encontre contatos específicos com filtros',
-          url: null,
-          available: false
+          url: '/tutorials/filtrar-contatos/index.html',
+          available: true
         },
         {
           id: 'smart-lists',
@@ -168,6 +168,36 @@
           description: 'Construa funis de vendas e landing pages',
           url: null,
           available: false
+        }
+      ]
+    },
+
+    // WhatsApp / Canais (páginas nativas do GHL)
+    whatsapp: {
+      match: ['/phone/', '/channels/', '/whatsapp', '/integrated-providers'],
+      tutorials: [
+        {
+          id: 'conectar-fullzapp',
+          icon: '📱',
+          title: 'Como conectar e configurar o Fullzapp',
+          description: 'Contrate, conecte e configure seu WhatsApp na plataforma',
+          url: '/tutorials/conectar-whatsapp-fullzapp/index.html',
+          available: true
+        }
+      ]
+    },
+
+    // Fullzapp / Integrações (custom menu links)
+    fullzapp: {
+      match: ['/custom-menu-link/'],
+      tutorials: [
+        {
+          id: 'conectar-fullzapp',
+          icon: '📱',
+          title: 'Como conectar e configurar o Fullzapp',
+          description: 'Contrate, conecte e configure seu WhatsApp na plataforma',
+          url: '/tutorials/conectar-whatsapp-fullzapp/index.html',
+          available: true
         }
       ]
     }
@@ -440,12 +470,25 @@
 
   function getCurrentSection() {
     const path = window.location.pathname;
+    const params = new URLSearchParams(window.location.search);
+    const ffParam = params.get('ff');
+    console.log('[FF-Widget] 🔍 URL path:', path, '| ff param:', ffParam);
+
+    // 1) Query param override: ?ff=sectionName
+    if (ffParam && TUTORIALS_CONFIG[ffParam] && ffParam !== 'global') {
+      console.log('[FF-Widget] ✅ Match via ?ff param:', ffParam);
+      return { key: ffParam, ...TUTORIALS_CONFIG[ffParam] };
+    }
+
+    // 2) Match por path
     for (const [key, section] of Object.entries(TUTORIALS_CONFIG)) {
       if (key === 'global') continue;
       if (section.match && section.match.some(m => path.includes(m))) {
+        console.log('[FF-Widget] ✅ Match:', key, '| pattern:', section.match.find(m => path.includes(m)));
         return { key, ...section };
       }
     }
+    console.log('[FF-Widget] ❌ Nenhum match. Path:', path, '| Sections:', Object.keys(TUTORIALS_CONFIG).filter(k => k !== 'global').join(', '));
     return null;
   }
 
@@ -538,7 +581,9 @@
       calendars: 'Calendários',
       opportunities: 'Leads',
       automation: 'Automações',
-      funnels: 'Sites & Funis'
+      funnels: 'Sites & Funis',
+      whatsapp: 'WhatsApp',
+      fullzapp: 'Fullzapp / Integrações'
     };
     return names[key] || key;
   }
@@ -653,7 +698,48 @@
     }
   });
 
+  // Também checa o path do parent frame (para custom-menu-link em iframes)
+  function getEffectivePath() {
+    let path = window.location.pathname;
+    try {
+      if (window !== window.parent && window.parent.location) {
+        path = window.parent.location.pathname;
+        console.log('[FF-Widget] 🔍 Usando path do parent frame:', path);
+      }
+    } catch(e) {
+      // cross-origin, ignora
+    }
+    return path;
+  }
+
+  // Override getCurrentSection para usar effective path (parent frame fallback)
+  const _origGetCurrentSection = getCurrentSection;
+  getCurrentSection = function() {
+    const result = _origGetCurrentSection();
+    if (result) return result;
+    
+    // Fallback: tenta com parent path (funciona se same-origin)
+    try {
+      if (window !== window.parent && window.parent.location) {
+        const parentPath = window.parent.location.pathname;
+        console.log('[FF-Widget] 🔍 Tentando parent path:', parentPath);
+        for (const [key, section] of Object.entries(TUTORIALS_CONFIG)) {
+          if (key === 'global') continue;
+          if (section.match && section.match.some(m => parentPath.includes(m))) {
+            console.log('[FF-Widget] ✅ Match via parent:', key);
+            return { key, ...section };
+          }
+        }
+        console.log('[FF-Widget] ❌ Sem match no parent path também');
+      }
+    } catch(e) {
+      console.log('[FF-Widget] ⚠️ Cross-origin - não consegue ler parent frame');
+    }
+    return null;
+  };
+
   // Init when DOM ready
+  console.log('[FF-Widget] 🚀 Script carregado em:', window.location.href);
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

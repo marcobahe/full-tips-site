@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como Conectar e Configurar o Fullzapp | Full Funnel</title>
+<style>
+  :root {
+    --primary: #7c3aed;
+    --primary-light: #a78bfa;
+    --hotspot: #ef4444;
+    --bg: #0f0f1a;
+    --card-bg: #1a1a2e;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border: #2d2d44;
+    --tooltip-bg: #ffffff;
+    --tooltip-text: #1e293b;
+    --radius: 12px;
+    --shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .header {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15,15,26,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .header-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 16px; color: var(--primary-light);
+  }
+  .header-brand svg { width: 24px; height: 24px; }
+  .header-title { font-size: 14px; color: var(--text-muted); }
+  .header-steps {
+    font-size: 13px; color: var(--text-muted);
+    background: var(--card-bg); padding: 6px 14px;
+    border-radius: 20px; border: 1px solid var(--border);
+  }
+  .container {
+    width: 100%; max-width: 1200px;
+    padding: 80px 24px 120px; position: relative;
+  }
+  .screenshot-wrapper {
+    position: relative; width: 100%;
+    border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow); border: 1px solid var(--border);
+    background: var(--card-bg);
+  }
+  .screenshot-wrapper img {
+    width: 100%; display: block;
+    border-radius: var(--radius);
+    transition: opacity 0.4s ease;
+  }
+  .screenshot-wrapper img.fade-out { opacity: 0; }
+  .screenshot-wrapper img.fade-in { opacity: 1; }
+
+  /* Frame retangular no ponto de clique */
+  .hotspot {
+    position: absolute;
+    border: 3px solid var(--hotspot);
+    border-radius: 6px;
+    background: rgba(239, 68, 68, 0.08);
+    cursor: pointer;
+    transition: all 0.4s ease; z-index: 10;
+  }
+  .hotspot::before {
+    content: ''; position: absolute; inset: -6px;
+    border-radius: 8px;
+    border: 2px solid rgba(239, 68, 68, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0; }
+  }
+
+  .tooltip {
+    position: absolute; z-index: 20;
+    background: var(--tooltip-bg); color: var(--tooltip-text);
+    padding: 16px 20px; border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    max-width: 340px; min-width: 240px;
+    transition: all 0.4s ease;
+  }
+  .tooltip-step {
+    display: inline-block;
+    background: var(--primary); color: white;
+    font-size: 11px; font-weight: 700;
+    padding: 3px 8px; border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .tooltip-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+  .tooltip-text { font-size: 13px; color: #64748b; line-height: 1.5; white-space: pre-line; }
+  .tooltip-tip {
+    margin-top: 10px; padding: 8px 10px;
+    background: #f0f9ff; border-left: 3px solid #3b82f6;
+    border-radius: 4px; font-size: 12px;
+    color: #1e40af; line-height: 1.4;
+  }
+
+  /* Linha tracejada SVG — viewBox percentual */
+  .connector-svg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 15;
+    overflow: visible;
+  }
+
+  .nav-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15,15,26,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border); z-index: 100;
+  }
+  .nav-btn {
+    padding: 10px 24px; border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card-bg); color: var(--text);
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-btn:hover { background: #252540; border-color: var(--primary); }
+  .nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .nav-btn:disabled:hover { background: var(--card-bg); border-color: var(--border); }
+  .nav-btn.primary { background: var(--primary); border-color: var(--primary); color: white; }
+  .nav-btn.primary:hover { background: #6d28d9; }
+  .progress { display: flex; align-items: center; gap: 6px; }
+  .progress-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--border); transition: all 0.3s; cursor: pointer;
+  }
+  .progress-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+  .progress-dot.completed { background: var(--primary-light); }
+  @media (max-width: 768px) {
+    .container { padding: 70px 12px 100px; }
+    .tooltip { max-width: 260px; min-width: 180px; padding: 12px 14px; }
+    .tooltip-title { font-size: 14px; }
+    .tooltip-text { font-size: 12px; }
+    .header-title { display: none; }
+    .nav-btn { padding: 8px 16px; font-size: 13px; }
+  }
+  .intro-overlay {
+    position: fixed; inset: 0;
+    background: rgba(15,15,26,0.95);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 200; transition: opacity 0.4s;
+  }
+  .intro-overlay.hidden { opacity: 0; pointer-events: none; }
+  .intro-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px;
+    text-align: center; max-width: 500px;
+    box-shadow: var(--shadow);
+  }
+  .intro-card h1 {
+    font-size: 24px; margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--primary-light), #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .intro-card p { color: var(--text-muted); font-size: 15px; margin-bottom: 8px; line-height: 1.5; }
+  .intro-card .steps-count { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+  .intro-start {
+    padding: 12px 32px; border-radius: 8px; border: none;
+    background: var(--primary); color: white;
+    font-size: 16px; font-weight: 700; cursor: pointer;
+    transition: background 0.2s;
+  }
+  .intro-start:hover { background: #6d28d9; }
+</style>
+</head>
+<body>
+
+<div class="intro-overlay" id="intro">
+  <div class="intro-card">
+    <h1>📱 Como Conectar e Configurar o Fullzapp</h1>
+    <p>Aprenda a contratar, conectar e configurar seu WhatsApp na plataforma via Fullzapp. Desde a escolha do plano até a configuração de alertas e transcrição de áudios.</p>
+    <p class="steps-count">📋 8 passos • ⏱️ ~4 min</p>
+    <button class="intro-start" onclick="startTutorial()">Começar Tutorial →</button>
+  </div>
+</div>
+
+<div class="header">
+  <a href="/" class="header-brand" style="text-decoration:none;color:inherit;">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    Full Funnel
+  </a>
+  <div class="header-title">Como Conectar e Configurar o Fullzapp</div>
+  <div class="header-steps" id="header-steps">Passo 1 de 8</div>
+</div>
+
+<div class="container">
+  <div class="screenshot-wrapper" id="screenshot-wrapper">
+    <img id="screenshot" src="" alt="Screenshot do passo">
+    <div class="hotspot" id="hotspot" onclick="nextStep()"></div>
+    <svg class="connector-svg" id="connector-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <line id="connector" stroke="#ef4444" stroke-width="0.3" stroke-dasharray="1.2,0.8" stroke-linecap="round"/>
+    </svg>
+    <div class="tooltip" id="tooltip">
+      <div class="tooltip-step" id="tooltip-step"></div>
+      <div class="tooltip-title" id="tooltip-title"></div>
+      <div class="tooltip-text" id="tooltip-text"></div>
+      <div class="tooltip-tip" id="tooltip-tip" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-bar">
+  <button class="nav-btn" id="btn-prev" onclick="prevStep()">← Anterior</button>
+  <div class="progress" id="progress"></div>
+  <button class="nav-btn primary" id="btn-next" onclick="nextStep()">Próximo →</button>
+</div>
+
+<script>
+const STEPS = [
+  {
+    image: "passo-landing-sidebar-aberto.png",
+    hotspot: { x: 1, y: 57, w: 9, h: 3 },
+    tooltip: { x: 50, y: 40 },
+    line: { x1: 10, y1: 58.5, x2: 50, y2: 47 },
+    title: "Contrate conexões do Fullzapp",
+    text: "No menu lateral, clique em 'Whatsapp | QR Code'. Esta é a página para contratar novas conexões do Fullzapp. Aqui você escolhe o plano: Fullzapp 1x (R$43/mês, 1 número) ou Fullzapp 5x (R$170/mês, 5 números com desconto).",
+    tip: "💡 Cada conexão permite conectar um número de WhatsApp à plataforma. O plano 5x sai R$34 por conexão!"
+  },
+  {
+    image: "passo-landing-sidebar-aberto.png",
+    hotspot: { x: 25, y: 91, w: 21, h: 4 },
+    tooltip: { x: 55, y: 25 },
+    line: { x1: 46, y1: 93, x2: 55, y2: 32 },
+    title: "Escolha seu plano e contrate",
+    text: "Clique em 'Quero conectar meu Whatsapp' no plano desejado. Após a contratação, um novo chip (conexão) ficará disponível para você conectar seu número.",
+    tip: "💡 Não precisa se preocupar com o número agora — você escolhe qual conectar depois."
+  },
+  {
+    image: "passo-qr-sidebar-aberto.png",
+    hotspot: { x: 1, y: 81, w: 9, h: 2.5 },
+    tooltip: { x: 50, y: 42 },
+    line: { x1: 10, y1: 82.2, x2: 50, y2: 49 },
+    title: "Acesse o painel de conexões",
+    text: "Após contratar, um novo item 'FullZapp' aparece no menu lateral. Clique nele. É aqui que você conecta e gerencia os seus números de WhatsApp. Esse menu só aparece depois da contratação — por isso, primeiro contrate no 'Whatsapp | QR Code' e depois acesse aqui.",
+    tip: "⚠️ Não confunda: 'Whatsapp | QR Code' = contratar, 'FullZapp' = conectar e gerenciar."
+  },
+  {
+    image: "passo-qr-sidebar-aberto.png",
+    hotspot: { x: 40, y: 35, w: 8, h: 5 },
+    tooltip: { x: 55, y: 42 },
+    line: { x1: 48, y1: 37.5, x2: 55, y2: 49 },
+    title: "Selecione o Chip para conectar",
+    text: "Cada número contratado aparece como um 'Chip'. Clique na aba do chip que deseja conectar. Se o status estiver verde com 'Autenticado', já está conectado. Se mostrar um QR Code sem a badge verde, precisa escanear.",
+    tip: "💡 Contratou o plano 5x? Você verá 5 abas (Chip 1 a Chip 5), uma para cada número."
+  },
+  {
+    image: "passo-qr-sidebar-aberto.png",
+    hotspot: { x: 44, y: 42, w: 24, h: 25 },
+    tooltip: { x: 12, y: 15 },
+    line: { x1: 44, y1: 54, x2: 42, y2: 22 },
+    title: "Escaneie o QR Code com seu celular",
+    text: "Para conectar, abra o WhatsApp no celular:\n\n• Android: Toque nos 3 pontinhos (⋮) → Dispositivos conectados → Conectar dispositivo\n• iPhone: Configurações → Dispositivos conectados → Conectar dispositivo\n\nAponte a câmera para o QR Code e aguarde.",
+    tip: "⚠️ O número NÃO pode estar no WhatsApp Web de outro computador. Desconecte primeiro."
+  },
+  {
+    image: "passo-qr-sidebar-aberto.png",
+    hotspot: { x: 44, y: 51, w: 24, h: 5 },
+    tooltip: { x: 12, y: 20 },
+    line: { x1: 44, y1: 53.5, x2: 42, y2: 27 },
+    title: "Conexão confirmada!",
+    text: "Quando aparecer a badge verde 'Autenticado' com seu número, a conexão foi feita com sucesso! 🎉 Todas as mensagens desse número agora aparecem na seção de Conversas da plataforma.",
+    tip: "💡 O celular precisa manter internet ativa. Sem internet no celular, o WhatsApp pode desconectar."
+  },
+  {
+    image: "passo-qr-sidebar-aberto.png",
+    hotspot: { x: 54, y: 68, w: 5, h: 5 },
+    tooltip: { x: 12, y: 40 },
+    line: { x1: 54, y1: 70.5, x2: 42, y2: 47 },
+    title: "Configure o alerta de desconexão",
+    text: "Clique no ícone amarelo do telefone para configurar alertas. Insira um número no formato +5521999999999 que receberá um aviso caso seu WhatsApp desconecte. Assim você fica sabendo na hora e pode reconectar rapidamente.",
+    tip: "💡 SEMPRE configure isso. Se desconectar e você não souber, suas automações param de funcionar."
+  },
+  {
+    image: "passo-qr-sidebar-aberto.png",
+    hotspot: { x: 43, y: 41, w: 5, h: 5 },
+    tooltip: { x: 12, y: 10 },
+    line: { x1: 43, y1: 43.5, x2: 42, y2: 17 },
+    title: "Recursos extras do Fullzapp",
+    text: "O Fullzapp oferece recursos adicionais nos ícones ao redor do QR Code:\n\n🟢 Ícone esquerdo: Identificação do remetente — mostra quem da equipe enviou cada mensagem\n🟢 Ícone direito: Monitoramento de grupos — receba alertas de entrada/saída de membros\n🔑 Ícone da chave: Transcrição de áudios — converte áudios em texto automaticamente via OpenAI",
+    tip: "💡 A transcrição de áudios custa centavos e economiza MUITO tempo!"
+  }
+];
+
+let currentStep = 0;
+
+function init() {
+  const progress = document.getElementById('progress');
+  STEPS.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'progress-dot';
+    dot.onclick = () => goToStep(i);
+    progress.appendChild(dot);
+  });
+}
+
+function startTutorial() {
+  document.getElementById('intro').classList.add('hidden');
+  goToStep(0);
+}
+
+function goToStep(index) {
+  if (index < 0 || index >= STEPS.length) return;
+  const step = STEPS[index];
+  const img = document.getElementById('screenshot');
+  const hotspot = document.getElementById('hotspot');
+  const tooltip = document.getElementById('tooltip');
+  const line = document.getElementById('connector');
+
+  img.classList.add('fade-out');
+  img.classList.remove('fade-in');
+
+  setTimeout(() => {
+    img.src = step.image;
+    img.onload = () => {
+      img.classList.remove('fade-out');
+      img.classList.add('fade-in');
+    };
+
+    // Frame retangular
+    hotspot.style.left = step.hotspot.x + '%';
+    hotspot.style.top = step.hotspot.y + '%';
+    hotspot.style.width = step.hotspot.w + '%';
+    hotspot.style.height = step.hotspot.h + '%';
+
+    // Tooltip
+    tooltip.style.left = step.tooltip.x + '%';
+    tooltip.style.top = step.tooltip.y + '%';
+
+    // Linha tracejada — coordenadas puramente percentuais via viewBox
+    line.setAttribute('x1', step.line.x1);
+    line.setAttribute('y1', step.line.y1);
+    line.setAttribute('x2', step.line.x2);
+    line.setAttribute('y2', step.line.y2);
+
+    // Conteúdo
+    document.getElementById('tooltip-step').textContent = `Passo ${index + 1} de ${STEPS.length}`;
+    document.getElementById('tooltip-title').textContent = step.title;
+    document.getElementById('tooltip-text').textContent = step.text;
+    const tipEl = document.getElementById('tooltip-tip');
+    if (step.tip) {
+      tipEl.textContent = step.tip;
+      tipEl.style.display = 'block';
+    } else {
+      tipEl.style.display = 'none';
+    }
+
+    // Header e progress
+    document.getElementById('header-steps').textContent = `Passo ${index + 1} de ${STEPS.length}`;
+    document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+      dot.className = 'progress-dot';
+      if (i < index) dot.classList.add('completed');
+      if (i === index) dot.classList.add('active');
+    });
+
+    // Navegação
+    document.getElementById('btn-prev').disabled = index === 0;
+    const btnNext = document.getElementById('btn-next');
+    if (index === STEPS.length - 1) {
+      btnNext.innerHTML = '✅ Concluir';
+      btnNext.onclick = () => { goToStep(0); document.getElementById('intro').classList.remove('hidden'); };
+    } else {
+      btnNext.innerHTML = 'Próximo →';
+      btnNext.onclick = nextStep;
+    }
+    currentStep = index;
+  }, 200);
+}
+
+function nextStep() { goToStep(currentStep + 1); }
+function prevStep() { goToStep(currentStep - 1); }
+
+document.addEventListener('keydown', (e) => {
+  if (document.getElementById('intro').classList.contains('hidden')) {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextStep(); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prevStep(); }
+  } else {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); startTutorial(); }
+  }
+});
+
+init();
+</script>
+</body>
+</html>
