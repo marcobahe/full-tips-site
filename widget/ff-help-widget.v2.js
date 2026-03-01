@@ -126,10 +126,10 @@
         {
           id: 'criar-pipeline',
           icon: '🔄',
-          title: 'Como criar um pipeline',
-          description: 'Configure pipelines de vendas',
-          url: null,
-          available: false
+          title: 'Como criar sua primeira Pipeline',
+          description: 'Configure pipelines de vendas no estilo Kanban',
+          url: '/tutorials/criando-pipeline/index.html',
+          available: true
         },
         {
           id: 'mover-leads',

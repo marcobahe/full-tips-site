@@ -126,10 +126,10 @@
         {
           id: 'criar-pipeline',
           icon: '🔄',
-          title: 'Como criar um pipeline',
-          description: 'Configure pipelines de vendas',
-          url: null,
-          available: false
+          title: 'Como criar sua primeira Pipeline',
+          description: 'Configure pipelines de vendas no estilo Kanban',
+          url: '/tutorials/criando-pipeline/index.html',
+          available: true
         },
         {
           id: 'mover-leads',
@@ -213,9 +213,11 @@
     }
 
     #ff-help-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
+      position: fixed !important;
+      bottom: 24px !important;
+      right: 24px !important;
+      left: auto !important;
+      top: auto !important;
       width: 56px;
       height: 56px;
       border-radius: 50%;
@@ -226,7 +228,7 @@
       font-weight: 700;
       cursor: pointer;
       box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       z-index: 99999;
       display: flex;
       align-items: center;
@@ -588,6 +590,64 @@
     return names[key] || key;
   }
 
+  function makeDraggable(el) {
+    let isDragging = false, startX, startY, startLeft, startTop, moved = false;
+    el.addEventListener('mousedown', onStart);
+    el.addEventListener('touchstart', onStart, { passive: false });
+
+    function onStart(e) {
+      isDragging = true; moved = false;
+      const touch = e.touches ? e.touches[0] : e;
+      const rect = el.getBoundingClientRect();
+      startX = touch.clientX; startY = touch.clientY;
+      startLeft = rect.left; startTop = rect.top;
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseup', onEnd);
+      document.addEventListener('touchmove', onMove, { passive: false });
+      document.addEventListener('touchend', onEnd);
+    }
+
+    function onMove(e) {
+      if (!isDragging) return;
+      const touch = e.touches ? e.touches[0] : e;
+      const dx = touch.clientX - startX, dy = touch.clientY - startY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+      if (!moved) return;
+      e.preventDefault();
+      const newLeft = Math.max(0, Math.min(window.innerWidth - 56, startLeft + dx));
+      const newTop = Math.max(0, Math.min(window.innerHeight - 56, startTop + dy));
+      el.style.left = newLeft + 'px';
+      el.style.top = newTop + 'px';
+      el.style.right = 'auto';
+      el.style.bottom = 'auto';
+      // Reposition panel near button
+      const panel = document.getElementById('ff-help-panel');
+      if (panel) {
+        const isRight = newLeft > window.innerWidth / 2;
+        const isBottom = newTop > window.innerHeight / 2;
+        panel.style.right = isRight ? (window.innerWidth - newLeft - 56) + 'px' : 'auto';
+        panel.style.left = isRight ? 'auto' : newLeft + 'px';
+        panel.style.bottom = isBottom ? (window.innerHeight - newTop + 12) + 'px' : 'auto';
+        panel.style.top = isBottom ? 'auto' : (newTop + 68) + 'px';
+        panel.style.transformOrigin = (isRight ? 'right' : 'left') + ' ' + (isBottom ? 'bottom' : 'top');
+      }
+    }
+
+    function onEnd() {
+      isDragging = false;
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onEnd);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('touchend', onEnd);
+      // If dragged, suppress click
+      if (moved) {
+        el.addEventListener('click', suppress, { once: true, capture: true });
+      }
+    }
+
+    function suppress(e) { e.stopPropagation(); e.preventDefault(); }
+  }
+
   function init() {
     // Inject styles
     const style = document.createElement('style');
@@ -617,6 +677,9 @@
     `;
 
     document.body.appendChild(widget);
+
+    // Draggable button
+    makeDraggable(document.getElementById('ff-help-btn'));
 
     // Re-render on navigation (SPA)
     let lastPath = window.location.pathname;
