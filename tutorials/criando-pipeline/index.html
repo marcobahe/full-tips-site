@@ -57,7 +57,7 @@
   }
   .screenshot-wrapper {
     position: relative; width: 100%;
-    border-radius: var(--radius); overflow: hidden;
+    border-radius: var(--radius); overflow: visible;
     box-shadow: var(--shadow); border: 1px solid var(--border);
     background: var(--card-bg);
   }
@@ -65,6 +65,7 @@
     width: 100%; display: block;
     border-radius: var(--radius);
     transition: opacity 0.4s ease;
+    clip-path: inset(0 round var(--radius));
   }
   .screenshot-wrapper img.fade-out { opacity: 0; }
   .screenshot-wrapper img.fade-in { opacity: 1; }
@@ -96,6 +97,7 @@
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     max-width: 340px; min-width: 240px;
     transition: all 0.4s ease;
+    overflow-wrap: break-word;
   }
   .tooltip-step {
     display: inline-block;
@@ -346,6 +348,36 @@ function goToStep(index) {
     line.setAttribute('y1', step.line.y1);
     line.setAttribute('x2', step.line.x2);
     line.setAttribute('y2', step.line.y2);
+
+    // Clamp tooltip para não sair da tela
+    requestAnimationFrame(() => {
+      const wrapper = document.getElementById('screenshot-wrapper');
+      const tt = document.getElementById('tooltip');
+      const wRect = wrapper.getBoundingClientRect();
+      const tRect = tt.getBoundingClientRect();
+      // Se tooltip sai por baixo do wrapper, mover pra cima
+      const bottomOverflow = tRect.bottom - wRect.bottom;
+      if (bottomOverflow > 0) {
+        const currentTop = parseFloat(tt.style.top);
+        const overflowPct = (bottomOverflow / wRect.height) * 100;
+        tt.style.top = Math.max(2, currentTop - overflowPct - 2) + '%';
+      }
+      // Se tooltip sai pela direita
+      const rightOverflow = tRect.right - wRect.right;
+      if (rightOverflow > 0) {
+        const currentLeft = parseFloat(tt.style.left);
+        const overflowPct = (rightOverflow / wRect.width) * 100;
+        tt.style.left = Math.max(2, currentLeft - overflowPct - 2) + '%';
+      }
+      // Se tooltip sai por cima
+      if (tRect.top < wRect.top) {
+        tt.style.top = '2%';
+      }
+      // Se tooltip sai pela esquerda
+      if (tRect.left < wRect.left) {
+        tt.style.left = '2%';
+      }
+    });
 
     // Conteúdo
     document.getElementById('tooltip-step').textContent = `Passo ${index + 1} de ${STEPS.length}`;
