@@ -95,8 +95,10 @@
     padding: 14px 16px; border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.3);
     max-width: 320px; min-width: 220px;
-    transition: left 0.3s ease, top 0.3s ease;
+    transition: left 0.15s ease, top 0.15s ease;
     overflow-wrap: break-word;
+    max-height: 90%;
+    overflow-y: auto;
   }
   .tooltip-step {
     display: inline-block;
@@ -299,6 +301,33 @@ const STEPS = [
 
 let currentStep = 0;
 
+function clampTooltip() {
+  const wrapper = document.getElementById('screenshot-wrapper');
+  const tt = document.getElementById('tooltip');
+  if (!wrapper || !tt) return;
+  const wR = wrapper.getBoundingClientRect();
+  const tR = tt.getBoundingClientRect();
+  if (wR.width === 0 || wR.height === 0) return;
+  const pad = 6;
+  // Calcular offset atual relativo ao wrapper
+  let leftPx = tR.left - wR.left;
+  let topPx = tR.top - wR.top;
+  // Clamp direita
+  if (leftPx + tR.width > wR.width - pad) {
+    leftPx = wR.width - tR.width - pad;
+  }
+  // Clamp baixo
+  if (topPx + tR.height > wR.height - pad) {
+    topPx = wR.height - tR.height - pad;
+  }
+  // Clamp esquerda e cima
+  if (leftPx < pad) leftPx = pad;
+  if (topPx < pad) topPx = pad;
+  // Converter de volta pra %
+  tt.style.left = ((leftPx / wR.width) * 100) + '%';
+  tt.style.top = ((topPx / wR.height) * 100) + '%';
+}
+
 function init() {
   const progress = document.getElementById('progress');
   STEPS.forEach((_, i) => {
@@ -348,37 +377,9 @@ function goToStep(index) {
     line.setAttribute('x2', step.line.x2);
     line.setAttribute('y2', step.line.y2);
 
-    // Clamp tooltip dentro do frame (roda após render completo)
-    setTimeout(() => {
-      const wrapper = document.getElementById('screenshot-wrapper');
-      const tt = document.getElementById('tooltip');
-      if (!wrapper || !tt) return;
-      const wRect = wrapper.getBoundingClientRect();
-      const tRect = tt.getBoundingClientRect();
-      const pad = 8; // margem interna em px
-      let newLeft = parseFloat(tt.style.left);
-      let newTop = parseFloat(tt.style.top);
-      // Direita
-      if (tRect.right > wRect.right - pad) {
-        const overflow = tRect.right - (wRect.right - pad);
-        newLeft -= (overflow / wRect.width) * 100;
-      }
-      // Baixo
-      if (tRect.bottom > wRect.bottom - pad) {
-        const overflow = tRect.bottom - (wRect.bottom - pad);
-        newTop -= (overflow / wRect.height) * 100;
-      }
-      // Esquerda
-      if (tRect.left < wRect.left + pad) {
-        newLeft = (pad / wRect.width) * 100;
-      }
-      // Cima
-      if (tRect.top < wRect.top + pad) {
-        newTop = (pad / wRect.height) * 100;
-      }
-      tt.style.left = Math.max(1, newLeft) + '%';
-      tt.style.top = Math.max(1, newTop) + '%';
-    }, 150);
+    // Clamp tooltip dentro do frame
+    setTimeout(() => clampTooltip(), 200);
+    setTimeout(() => clampTooltip(), 500);
 
     // Conteúdo
     document.getElementById('tooltip-step').textContent = `Passo ${index + 1} de ${STEPS.length}`;
