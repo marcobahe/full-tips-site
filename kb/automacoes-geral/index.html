@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agora você pode incluir o chat ao vivo como um canal nas ações de automação. Essa funcionalidade permite integrar o chat ao vivo nas suas automações, ...">
+    <title>Automações — Visão Geral — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="chat-ao-vivo-em-automacoes">Chat ao Vivo em Automações</h2>
+<p>Agora você pode incluir o chat ao vivo como um canal nas ações de automação. Essa funcionalidade permite integrar o chat ao vivo nas suas automações, melhorando a comunicação em tempo real dentro dos seus processos automatizados.</p>
+<h3 id="como-fazer">Como fazer</h3>
+<ol>
+<li>Ao adicionar um bot de IA de conversação em uma ação de automação, você pode selecionar "Chat ao Vivo" como uma opção.</li>
+</ol>
+<hr />
+<h2 id="automatize-acoes-apos-agendamento-no-full-funnel">Automatize Ações Após Agendamento no Full Funnel</h2>
+<p>Este guia explica como automatizar quatro ações sempre que um agendamento é realizado na nossa plataforma:</p>
+<ol>
+<li>Enviar confirmação de agendamento por e-mail/SMS</li>
+<li>Enviar lembretes de agendamento por e-mail/SMS antes do horário</li>
+<li>Enviar pesquisa de satisfação por e-mail/SMS após o agendamento</li>
+<li>Enviar solicitação de avaliação por e-mail/SMS se o agendamento foi bem-sucedido</li>
+</ol>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p>Para automatizar essas ações, siga os passos abaixo:</p>
+<ol>
+<li><strong>Crie ou edite um Workflow:</strong><ul>
+<li>Vá em <code>Automações</code> e clique em "Criar Workflow" ou edite um existente.</li>
+</ul>
+</li>
+<li><strong>Configure o gatilho:</strong><ul>
+<li>Defina o gatilho do Workflow para "Agendamento de Consulta" (Appointment Booking).</li>
+<li>Filtre por calendário, se necessário, para que a automação seja específica para um tipo de agendamento.</li>
+</ul>
+</li>
+<li><strong>Adicione as ações automatizadas:</strong><ul>
+<li><strong>Confirmação de Agendamento:</strong><ul>
+<li>Adicione uma ação de "Enviar E-mail" ou "Enviar SMS" para confirmar o agendamento.</li>
+<li>Personalize a mensagem com informações relevantes como data, hora e detalhes do agendamento.</li>
+</ul>
+</li>
+<li><strong>Lembretes de Agendamento:</strong><ul>
+<li>Adicione ações de "Enviar E-mail" ou "Enviar SMS" para lembrar o cliente do agendamento.</li>
+<li>Use a função de agendamento (schedule) para enviar lembretes em horários estratégicos antes do agendamento (ex: 24 horas antes, 1 hora antes).</li>
+</ul>
+</li>
+<li><strong>Pesquisa de Satisfação:</strong><ul>
+<li>Adicione uma ação de "Enviar E-mail" ou "Enviar SMS" para enviar uma pesquisa de satisfação após o agendamento.</li>
+<li>Crie um formulário de pesquisa simples com perguntas sobre a experiência do cliente.</li>
+</ul>
+</li>
+<li><strong>Solicitação de Avaliação:</strong><ul>
+<li>Adicione uma ação de "Enviar E-mail" ou "Enviar SMS" para solicitar uma avaliação se o agendamento foi bem-sucedido.</li>
+<li>Inclua um link direto para a plataforma de avaliação (ex: Google Meu Negócio).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Ative o Workflow:</strong><ul>
+<li>Certifique-se de ativar o Workflow para que as automações sejam executadas automaticamente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Ter um calendário configurado em <code>Calendários</code>.</li>
+<li>Ter templates de e-mail e SMS criados para cada ação.</li>
+<li>Ter uma conta de e-mail e número de telefone configurados em <code>Configurações</code> &gt; <code>Integrações</code>.</li>
+</ul>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: Posso personalizar o tempo de envio dos lembretes?</strong></p>
+<p>R: Sim, ao adicionar a ação de "Enviar E-mail" ou "Enviar SMS", você pode usar a função de agendamento (schedule) para definir o tempo exato de envio dos lembretes antes do agendamento.</p>
+<p><strong>P: Como posso usar os resultados da pesquisa de satisfação?</strong></p>
+<p>R: Você pode integrar os resultados da pesquisa com outras ferramentas de CRM ou análise de dados para identificar áreas de melhoria e otimizar a experiência do cliente.</p>
+<hr />
+<h2 id="lembretes-de-agendamento-e-integracao-com-zoom">Lembretes de Agendamento e Integração com Zoom</h2>
+<p>Ao configurar campanhas de lembretes de agendamento com integração Zoom, adicione um passo de espera para processar o valor da localização.</p>
+<h3 id="como-configurar-lembretes-de-agendamento-com-zoom">Como configurar lembretes de agendamento com Zoom</h3>
+<ol>
+<li>Vá em Automações e crie uma nova automação.</li>
+<li>Adicione um novo gatilho de automação:<ul>
+<li>Clique em <strong>Adicionar Novo Gatilho de Automação</strong>.</li>
+<li>Clique em <strong>Selecionar</strong>.</li>
+<li>Selecione <strong>Agendamento</strong>.</li>
+<li>Clique em <strong>Adicionar filtros</strong>.</li>
+<li>Clique em <strong>Selecionar</strong>.</li>
+<li>Selecione <strong>Status do Agendamento é</strong>.</li>
+<li>Clique em <strong>Selecionar</strong>.</li>
+<li>Selecione <strong>Confirmado</strong>.</li>
+<li>Clique em <strong>Salvar Gatilho</strong>.</li>
+</ul>
+</li>
+<li>Adicione um passo de espera:<ul>
+<li>Clique em <strong>+</strong>.</li>
+<li>Role para baixo e clique em <strong>Esperar</strong>.</li>
+<li>Defina o tempo de espera para <strong>1 minuto</strong>.</li>
+<li>Clique em <strong>Salvar Ação</strong>.</li>
+</ul>
+</li>
+<li>Continue a construir o resto da automação de lembrete de agendamento.</li>
+<li>Envie um e-mail/SMS de confirmação:<ul>
+<li>Clique em <strong>+</strong> após o passo de espera.</li>
+<li>Escolha enviar <strong>Email/SMS</strong> para enviar a confirmação de agendamento para o lead.</li>
+<li>Use campos personalizados para personalizar a mensagem.</li>
+<li>Clique em <strong>Salvar Ação</strong>.</li>
+</ul>
+</li>
+<li>Adicione outro passo de espera:<ul>
+<li>Clique em <strong>+</strong> para adicionar outro passo.</li>
+<li>Role para baixo e clique em <strong>Esperar</strong>.</li>
+<li>Clique em <strong>Atraso de Tempo</strong>.</li>
+<li>Clique em <strong>Hora do Evento / Agendamento</strong>.</li>
+</ul>
+</li>
+<li>Configure o tempo para o lembrete:<ul>
+<li>Se você quer enviar um lembrete 4 dias antes, digite <strong>4</strong>.</li>
+<li>Mude de <strong>minutos</strong> para <strong>dias</strong>.</li>
+<li>Selecione <strong>Pular todas as ações de comunicação de saída, até a próxima espera ou ação de Data de Início do Evento</strong>.</li>
+</ul>
+</li>
+<li>Envie o lembrete por e-mail/SMS:<ul>
+<li>Clique em <strong>+</strong> após o passo de espera.</li>
+<li>Escolha enviar <strong>Email/SMS</strong> para enviar os lembretes de agendamento para o lead.</li>
+</ul>
+</li>
+<li>Continue adicionando passos de espera para enviar mais mensagens de lembrete de agendamento.</li>
+</ol>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Integração com Zoom configurada.</li>
+<li>Automação criada em Automações.</li>
+</ul>
+<h3 id="perguntas-frequentes_1">Perguntas Frequentes</h3>
+<p><strong>P: Por que preciso adicionar um passo de espera de 1 minuto?</strong>
+R: Este passo de espera é necessário para que a plataforma processe o valor da localização quando você estiver usando a integração com o Zoom.</p>
+<p><strong>P: Onde encontro a lista de campos personalizados que posso usar para a automação de agendamento?</strong>
+R: Ao configurar o e-mail/SMS, você pode acessar a lista de campos personalizados disponíveis para personalizar suas mensagens.</p>
+<hr />
+<h2 id="configurar-um-bot-de-agendamento-de-consultas-com-ia-em-automacoes">Configurar um Bot de Agendamento de Consultas com IA em Automações</h2>
+<p>Este guia detalha como configurar um bot de agendamento de consultas com IA dentro de uma automação.</p>
+<h3 id="como-fazer_2">Como fazer</h3>
+<ol>
+<li><strong>Criar Automação:</strong></li>
+<li>Vá para Automações e crie uma nova automação.</li>
+<li><strong>Adicionar um gatilho:</strong><ul>
+<li>Adicione um gatilho com a opção "Cliente Respondeu" (ou qualquer outro gatilho desejado).</li>
+</ul>
+</li>
+<li><strong>Selecione o Bot de Agendamento com IA nas opções da automação:</strong><ul>
+<li>Crie uma ação para o bot de agendamento com o calendário desejado.</li>
+<li>Defina a "Duração total de processamento do bot". Este é o tempo limite para o bot caso não haja respostas do contato.</li>
+</ul>
+</li>
+<li><strong>A conversa com a IA terminará de três maneiras:</strong><ol>
+<li>O bot agenda a consulta com sucesso.</li>
+<li>Tempo limite do bot: A consulta não foi agendada porque o lead não respondeu às mensagens do bot.</li>
+<li>A consulta não pôde ser agendada por outros motivos: nenhuma vaga adequada, o bot não conseguiu entender a pergunta ou outros problemas técnicos.</li>
+</ol>
+</li>
+<li><strong>Criar uma condição se o bot agendou uma consulta:</strong><ul>
+<li>Crie uma condição para verificar se o bot agendou a consulta.</li>
+</ul>
+</li>
+<li><strong>Criar uma mensagem ou ação para a condição de consulta agendada:</strong><ul>
+<li>Configure uma mensagem ou ação a ser executada quando a consulta for agendada com sucesso.</li>
+</ul>
+</li>
+<li><strong>Condição secundária se a consulta não for agendada devido ao tempo limite do bot:</strong><ul>
+<li>Aqui, queremos saber se a consulta não foi agendada devido ao tempo limite do bot ou por algum outro motivo.</li>
+<li>Motivos comuns podem ser a falta de horários disponíveis ou a falha do bot em entender a conversa.</li>
+</ul>
+</li>
+<li><strong>Terceira Condição - Consulta não agendada por qualquer outro motivo:</strong><ul>
+<li>Configure as ações apropriadas para falhas do bot por qualquer outro motivo.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>Um calendário configurado na plataforma.</li>
+<li>Uma automação existente ou a criação de uma nova.</li>
+</ul>
+<h3 id="perguntas-frequentes_2">Perguntas Frequentes</h3>
+<p><strong>P: O que acontece se o bot não conseguir agendar a consulta?</strong>
+R: A automação seguirá para as condições secundárias ou terciárias, onde você pode configurar ações específicas para lidar com a falha no agendamento, como enviar uma mensagem de acompanhamento ou notificar um agente.</p>
+<p><strong>P: Posso personalizar a duração do tempo limite do bot?</strong>
+R: Sim, você pode definir a "Duração total de processamento do bot" para ajustar o tempo limite de acordo com suas necessidades.</p>
+<hr />
+<h2 id="webhooks-de-entrada">Webhooks de Entrada</h2>
+<p>Webhooks de entrada permitem a integração perfeita do CRM, permitindo que sistemas externos enviem dados automaticamente usando vários métodos de requisição HTTP, como GET, POST e PUT.</p>
+<h3 id="como-usar-webhooks-de-entrada">Como usar Webhooks de Entrada</h3>
+<ol>
+<li><strong>Obtenha a URL do webhook:</strong> Recupere a URL do webhook e use-a em sua aplicação ou sistema.</li>
+<li><strong>Envie os dados:</strong> Envie os dados para a URL do webhook usando o método de requisição HTTP apropriado (POST, GET ou PUT).</li>
+<li><strong>Teste o gatilho:</strong> Clique no botão "Testar Gatilho".</li>
+<li><strong>Escolha os dados recebidos:</strong> Escolha os dados recebidos de sua aplicação ou sistema usando o método de requisição HTTP suportado (POST, GET ou PUT) e salve-os como dados de amostra para referência futura.</li>
+<li><strong>Carregue mais dados (se necessário):</strong> Clique em "Carregar Mais" para visualizar dados recentes adicionais.</li>
+<li><strong>Salve o gatilho:</strong> Depois de selecionar os dados desejados, salve o gatilho.</li>
+<li>Nesta etapa, você pode salvar a referência de dados para variáveis personalizadas, que podem ser tratadas de forma semelhante a outros campos personalizados de contato ou variáveis personalizadas de localização.</li>
+<li><strong>Envie uma requisição HTTP suportada:</strong> Envie uma requisição HTTP suportada (POST, GET ou PUT) para a URL do webhook copiada e copie o ID na resposta.</li>
+<li><strong>Copie o ID exclusivo:</strong> Copie o ID exclusivo obtido da requisição HTTP suportada (POST, GET ou PUT) e use-o para procurar a referência de mapeamento relevante dentro do seu gatilho de webhook.</li>
+<li>A requisição mais recente estará sempre no topo da lista.</li>
+<li><strong>Selecione a referência correta:</strong> Selecione a referência correta e verifique o corpo.</li>
+<li><strong>Crie/Atualize o contato:</strong> Você será direcionado para a ação "Criar/Atualizar Contato" após salvar o gatilho.</li>
+<li><strong>Mapeie os campos:</strong> Selecione os campos necessários e mapeie os dados recebidos do gatilho.</li>
+<li>Para criar um novo contato ou mapear dados para um existente, você deve fornecer um campo de e-mail ou telefone.</li>
+<li>Se os dados do seu gatilho não contiverem e-mail ou telefone, você pode remover esta ação do fluxo de trabalho e o fluxo de trabalho continuará a ser executado sem contato.</li>
+</ol>
+<p>Concluindo as etapas acima, você pode usar os dados recebidos dentro do fluxo de trabalho como valores personalizados em e-mail, SMS, If/Else, etc.</p>
+<h4 id="exemplo-de-uso-em-acoes-de-comunicacao">Exemplo de uso em ações de comunicação:</h4>
+<p>[Imagem]</p>
+<h4 id="exemplo-de-uso-em-acoes-ifelse">Exemplo de uso em ações If/Else:</h4>
+<p>[Imagem]</p>
+<h3 id="casos-de-uso">Casos de Uso</h3>
+<ul>
+<li><strong>Integração de Pedidos de E-commerce:</strong><ul>
+<li>Receba dados da sua plataforma de e-commerce quando um cliente faz um pedido.</li>
+<li>Exemplo: Sua plataforma de e-commerce envia uma requisição HTTP POST para a URL do webhook com detalhes do pedido, como nome do cliente, e-mail, telefone e valor do pedido.</li>
+<li>Seu sistema cria ou atualiza as informações de contato do cliente e adiciona os detalhes do pedido ao registro dele.</li>
+</ul>
+</li>
+<li><strong>Integração de Sistema de Tickets de Suporte ao Cliente:</strong><ul>
+<li>Envie detalhes do ticket para o sistema quando um cliente cria um ticket de suporte.</li>
+<li>Exemplo: Seu sistema de tickets de suporte envia uma requisição HTTP POST para a URL do webhook com os detalhes do ticket, incluindo e-mail do cliente, título do ticket e descrição.</li>
+<li>O sistema associa o ticket ao registro do cliente correspondente, permitindo que sua equipe de suporte acesse as informações do ticket diretamente do sistema.</li>
+</ul>
+</li>
+<li><strong>Integração de Registro de Eventos:</strong><ul>
+<li>Envie informações de registro de participantes para o sistema quando alguém se inscreve em um evento.</li>
+<li>Exemplo: Sua plataforma de registro de eventos envia uma requisição HTTP POST para a URL do webhook com informações do participante, como nome, e-mail, telefone e nome do evento.</li>
+<li>O sistema cria ou atualiza as informações de contato do participante e adiciona os detalhes de registro do evento ao registro dele, permitindo que sua equipe de eventos gerencie e se comunique com os participantes de forma eficaz.</li>
+</ul>
+</li>
+<li><strong>Captura de Leads de Formulários Web:</strong><ul>
+<li>Capture leads de formulários web em seu site ou páginas de destino e envie os dados para o sistema.</li>
+<li>Exemplo: Quando um visitante envia um formulário em seu site, seu formulário web envia uma requisição HTTP POST para a URL do webhook com as informações do lead, como nome, e-mail e telefone.</li>
+<li>O sistema cria um novo lead ou atualiza um contato existente, permitindo que sua equipe de vendas acompanhe o lead imediatamente.</li>
+</ul>
+</li>
+</ul>
+<h3 id="requisitos_3">Requisitos</h3>
+<ul>
+<li>Sempre envie a requisição usando um método suportado (POST, GET ou PUT) ao interagir com o webhook.</li>
+<li>Certifique-se de que os dados sejam enviados como um objeto JSON, o único formato de dados suportado.</li>
+<li>Para compilar corretamente, as chaves devem ser uma única string sem separações de espaço; considere usar CamelCase ou snake_case em vez de separar a chave n.</li>
+</ul>
+<h3 id="perguntas-frequentes_3">Perguntas Frequentes</h3>
+<p><strong>P: O fluxo de trabalho pode ser executado sem contato?</strong>
+R: Sim, o fluxo de trabalho pode ser executado sem contato, sem qualquer dependência de dados de contato. Você pode enviar qualquer dado de payload via Webhooks de Entrada e usá-lo no fluxo de trabalho.</p>
+<p><strong>P: Quais ações podem ser executadas sem contato?</strong>
+R: Você pode prosseguir sem contato e usar ações que não dependem de informações de contato. Webhook Personalizado, Planilha Google, Slack, ChatGPT e todas as Ferramentas Internas podem ser executadas sem contato.</p>
+<p><strong>P: Como posso recuperar dados de contato no fluxo de trabalho?</strong>
+R: Se necessário, você pode usar as ações Criar/Atualizar ou Encontrar Contato para recuperar os dados de contato para o fluxo de trabalho.</p>
+<p><strong>P: Posso dar um exemplo de fluxo de trabalho sem contato?</strong>
+R: Sim, você pode enviar dados de pedido via webhook de entrada e adicionar as informações do pedido à planilha Google, usar If/Else para categorizar com base no valor do pedido e enviar uma notificação Slack. Você também pode recuperar o contato com o ID do Contato usando a ação Encontrar contato.</p>
+<hr />
+<h2 id="acao-webhook-personalizado">Ação Webhook Personalizado</h2>
+<p>A Ação Webhook Personalizado permite a troca de dados em tempo real entre nossa plataforma e serviços de terceiros. Permite solicitações personalizadas com vários métodos HTTP, autorização, cabeçalhos e parâmetros de consulta.</p>
+<h3 id="como-configurar-o-webhook-personalizado">Como configurar o Webhook Personalizado</h3>
+<ol>
+<li><strong>URL:</strong> Insira o URL para o qual você deseja enviar os dados. Não é necessário codificação ou operação do servidor.</li>
+<li><strong>Método:</strong> Selecione o método HTTP desejado (POST, GET, DELETE, PUT, etc.).</li>
+<li><strong>Autorização:</strong> Escolha o método de autorização apropriado para acessar o webhook.</li>
+<li><strong>Cabeçalhos e Parâmetros de Consulta:</strong> Adicione cabeçalhos para informações adicionais sobre a solicitação (credenciais de autenticação, tipo de conteúdo, controle de cache). Use parâmetros de consulta para passar parâmetros ao endpoint do webhook para filtrar ou modificar os dados de resposta.</li>
+<li><strong>Configurar os dados a serem enviados:</strong> Mapeie valores personalizados na estrutura desejada. O editor de texto fornece sugestões de preenchimento automático para todos os valores personalizados, incluindo variáveis de webhook de entrada.</li>
+</ol>
+<h3 id="beneficios">Benefícios</h3>
+<ul>
+<li><strong>Integração precisa:</strong> Permite a comunicação entre nossa plataforma e serviços de terceiros, substituindo a entrada manual de dados, sujeita a erros. O preenchimento automático sugere o mapeamento de dados.</li>
+<li><strong>Flexibilidade:</strong> Suporta vários métodos HTTP e de autorização, cabeçalhos e parâmetros de consulta, permitindo criar solicitações personalizadas.</li>
+<li><strong>Atualizações em tempo real:</strong> Facilita notificações e atualizações em tempo real, melhorando a capacidade de resposta e a tomada de decisões.</li>
+<li><strong>Escalabilidade:</strong> Adaptável a vários setores e não requer alterações conforme você expande as operações.</li>
+</ul>
+<h3 id="solucao-de-problemas">Solução de problemas</h3>
+<p>A execução bem-sucedida da Ação Webhook Personalizado depende da resposta bem-sucedida da API referenciada. Se forem retornados erros, eles serão refletidos na execução do fluxo de trabalho do contato e farão com que a ação falhe (e seja ignorada) ou tente novamente com backoffs exponenciais.</p>
+<p>Certifique-se de que o servidor receptor possa lidar com o número de execuções que você está almejando, ou poderá acabar com erros devido aos limites que estão sendo atingidos. A Ação Webhook Personalizado será acionada assim que o contato atingir a etapa, portanto, certifique-se de adicionar contatos ao fluxo de trabalho tendo em mente os limites do servidor receptor.</p>
+<h3 id="perguntas-frequentes_4">Perguntas Frequentes</h3>
+<p><strong>P: O que é a Ação Webhook Personalizado?</strong></p>
+<p>R: É um recurso que permite a comunicação em tempo real entre nossa plataforma e serviços de terceiros. Você pode configurar e enviar solicitações de dados personalizadas para URLs especificados usando diferentes métodos HTTP e de autorização.</p>
+<p><strong>P: Para quem este recurso é útil?</strong></p>
+<p>R: É útil para empresas e indivíduos que precisam integrar seus sistemas de CRM com serviços de terceiros para troca de dados, automação e funcionalidade aprimorada. É particularmente útil para profissionais de marketing, desenvolvedores e profissionais de TI que desejam otimizar fluxos de trabalho, melhorar a consistência de dados e gerenciar processos de forma mais eficiente em várias plataformas.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

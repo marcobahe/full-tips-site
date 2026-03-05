@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Para integrar o Stripe à sua subconta no Full Funnel e começar a receber pagamentos, siga estas etapas:">
+    <title>Pagamentos — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="pagamentos">Pagamentos</h1>
+<h2 id="como-conectar-o-stripe-a-sua-subconta">Como Conectar o Stripe à Sua Subconta</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Para integrar o Stripe à sua subconta no Full Funnel e começar a receber pagamentos, siga estas etapas:</p>
+<p><strong>Etapa 1: Acessar a integração do Stripe</strong>
+Existem três maneiras de acessar a configuração do Stripe na sua subconta:</p>
+<ul>
+<li>
+<p><strong>Opção 1: Pelo Guia de Configuração (Launchpad)</strong></p>
+<ol>
+<li>Na sua subconta, clique em <strong>Launchpad</strong>.</li>
+<li>No Guia de Configuração, selecione <strong>E-commerce</strong>.</li>
+<li>Clique na opção <strong>"Começar a receber pagamentos com o Stripe"</strong>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Opção 2: Pelo menu Integrações</strong></p>
+<ol>
+<li>Na sua subconta, vá até <strong>Configurações</strong>.</li>
+<li>Clique em <strong>Integrações</strong>.</li>
+<li>Localize o Stripe na lista e clique no botão <strong>Continuar</strong>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Opção 3: Pela área de Pagamentos</strong></p>
+<ol>
+<li>Na sua subconta, clique em <strong>Pagamentos</strong>.</li>
+<li>Acesse a aba <strong>Integrações</strong>.</li>
+<li>Ao lado do Stripe, clique no botão <strong>Conectar</strong>.</li>
+</ol>
+</li>
+</ul>
+<p><strong>Etapa 2: Autorizar a conexão</strong>
+1.  Você será redirecionado para a página de autorização do Stripe.
+2.  Siga as instruções na tela para fazer login na sua conta Stripe e autorizar a conexão com o Full Funnel.</p>
+<p><strong>Etapa 3: Verificar a ativação</strong>
+1.  Após a autorização, você será redirecionado de volta para o Full Funnel.
+2.  Verifique se o status do Stripe na página de <strong>Integrações</strong> ou <strong>Pagamentos</strong> está marcado como "Conectado" ou "Ativo".</p>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Uma conta ativa no <strong>Stripe</strong>. O Stripe está disponível em diversos países. Consulte a <a href="https://stripe.com/in/global">lista de países suportados pelo Stripe</a> para confirmar a disponibilidade na sua região.</li>
+<li>Uma subconta ativa no Full Funnel.</li>
+<li>Permissões de administrador na subconta para configurar integrações.</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>O Stripe está disponível no meu país?</strong>
+Consulte a lista oficial de países suportados pelo Stripe no link fornecido na seção de Requisitos. Quando o Stripe for suportado no seu país, você poderá vender para clientes em qualquer lugar do mundo através da plataforma.</p>
+<p><strong>Preciso de uma conta Stripe separada para cada subconta?</strong>
+Não é obrigatório. Você pode conectar a mesma conta Stripe a várias subcontas dentro do Full Funnel, se desejar centralizar os recebimentos.</p>
+<p><strong>A conexão não está funcionando. O que fazer?</strong>
+Verifique se você está usando credenciais corretas do Stripe e se a sua conta Stripe está ativa e em boa situação. Certifique-se também de ter completado todas as etapas de verificação exigidas pelo Stripe para a sua conta.</p>
+<hr />
+<h2 id="como-criar-faturas-no-full-funnel">Como criar faturas no Full Funnel</h2>
+<p>A criação de faturas é uma parte essencial para o gerenciamento financeiro do seu negócio. Ela permite que você organize suas receitas, acompanhe pagamentos e formalize cobranças com seus clientes. No Full Funnel, você pode criar, personalizar e enviar faturas de forma simples e direta.</p>
+<p>Neste artigo, vamos abordar:
+*   Como criar uma nova fatura.
+*   Como editar as informações da fatura.
+*   Como adicionar impostos.
+*   Como aplicar um desconto.
+*   Como enviar a fatura.
+*   Como verificar o status das suas faturas.</p>
+<p>As faturas também podem ser encontradas na aba <strong>Transações</strong>.</p>
+<h3 id="como-fazer_1">Como fazer</h3>
+<h4 id="criar-uma-nova-fatura">Criar uma nova fatura</h4>
+<ol>
+<li>Acesse a seção <strong>Pagamentos</strong> no menu principal.</li>
+<li>Clique na aba <strong>Faturas</strong>.</li>
+<li>Clique no botão <strong>"Nova"</strong> para iniciar a criação.<ul>
+<li><strong>Dica:</strong> Você pode adicionar Termos de Serviço ou Notas Globais clicando no ícone de engrenagem (⚙️) ao lado do botão "+ Nova".</li>
+</ul>
+</li>
+</ol>
+<h4 id="editar-as-informacoes-da-fatura">Editar as informações da fatura</h4>
+<ol>
+<li><strong>Informações do Remetente:</strong> Clique sobre o texto das informações ("De") para editá-lo diretamente.</li>
+<li><strong>Logotipo:</strong> Clique na imagem do logotipo para abrir a biblioteca de mídia. Lá você pode escolher uma imagem existente ou fazer um novo upload.</li>
+<li><strong>Cliente e Datas:</strong> Preencha ou selecione o cliente e edite o número da fatura, a data de emissão e a data de vencimento.</li>
+<li><strong>Adicionar Itens:</strong> Clique em <strong>"Adicionar item"</strong> para incluir produtos ou serviços que você já cadastrou na aba <strong>Produtos</strong>.</li>
+<li><strong>Editar Itens:</strong> Após adicionar um produto, você pode ajustar seu preço unitário e a quantidade.</li>
+</ol>
+<h4 id="adicionar-impostos-a-fatura">Adicionar impostos à fatura</h4>
+<ol>
+<li>Clique em <strong>"Configurações de Imposto…"</strong>.</li>
+<li>Clique em <strong>"Adicionar Imposto"</strong>.</li>
+<li>Preencha os campos:<ul>
+<li>Nome do Imposto.</li>
+<li>Taxa em porcentagem (%).</li>
+<li>Descrição ou Número de Identificação Fiscal (opcional).</li>
+</ul>
+</li>
+</ol>
+<h4 id="adicionar-um-desconto-a-fatura">Adicionar um desconto à fatura</h4>
+<p>Você pode aplicar um desconto à fatura clicando no ícone <strong>"adicionar desconto"</strong> (geralmente representado por um símbolo de porcentagem ou um tag).</p>
+<h4 id="enviar-uma-fatura">Enviar uma fatura</h4>
+<ol>
+<li>Após criar a fatura, localize o botão verde no canto superior direito da tela de edição.</li>
+<li>Clique nele para abrir as opções de envio. Você pode enviar a fatura por <strong>E-mail</strong> e/ou <strong>SMS</strong>.</li>
+<li>Use a opção <strong>"Avançado"</strong> para alternar entre o <strong>Modo de Teste</strong> e o <strong>Modo ao Vivo</strong> antes do envio.</li>
+</ol>
+<h4 id="verificar-o-status-das-suas-faturas">Verificar o status das suas faturas</h4>
+<ol>
+<li>Na aba <strong>Faturas</strong>, você verá uma lista de todas as faturas com seus respectivos status (ex: Rascunho, Enviada, Paga, Vencida).</li>
+<li>Use os filtros disponíveis para organizar a visualização por status e/ou período de datas.</li>
+</ol>
+<h4 id="localizar-faturas-na-aba-transacoes">Localizar faturas na aba Transações</h4>
+<p>Você também pode encontrar e gerenciar faturas através da aba <strong>Transações</strong> (<strong>Pagamentos &gt; Transações</strong>). Lá é possível visualizar transações bem-sucedidas ou falhas relacionadas às faturas e acessá-las diretamente.</p>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Para que os clientes possam pagar as faturas online de forma automática, é necessário ter configurada uma integração com uma plataforma de pagamento (como Stripe) através da seção <strong>Integrações</strong>.</li>
+<li>Para usar faturas apenas para registro de pagamentos manuais (sem pagamento online), consulte o guia específico sobre o assunto. A limitação deste método é que os pagamentos precisarão ser registrados manualmente no sistema.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>Onde posso configurar termos de serviço que aparecem em todas as faturas?</strong>
+Clique no ícone de engrenagem (⚙️) localizado ao lado do botão <strong>"+ Nova"</strong> na aba <strong>Faturas</strong> para adicionar Termos ou Notas Globais.</p>
+<p><strong>Posso enviar uma fatura para teste antes de enviar ao cliente?</strong>
+Sim. Ao clicar para enviar a fatura, use a opção <strong>"Avançado"</strong> e alterne para o <strong>"Modo de Teste"</strong>. Isso permite verificar a aparência e os detalhes sem que o cliente a receba.</p>
+<p><strong>Como faço para saber se uma fatura já foi paga?</strong>
+O status da fatura será atualizado automaticamente no sistema quando o pagamento for confirmado pela plataforma. Você pode verificar o status na lista de faturas ou na aba <strong>Transações</strong>.</p>
+<p><strong>Posso personalizar o logotipo que aparece na fatura?</strong>
+Sim. Basta clicar na área do logotipo durante a edição da fatura para abrir a biblioteca de mídia e selecionar ou fazer upload da imagem desejada.</p>
+<hr />
+<h2 id="faturas-recorrentes-no-full-funnel-configuracao-frequencia-e-status">Faturas Recorrentes no Full Funnel: Configuração, Frequência e Status</h2>
+<p>Gerenciar cobranças repetitivas manualmente pode ser demorado e propenso a erros. As faturas recorrentes simplificam isso, gerando e enviando faturas aos clientes automaticamente em um cronograma definido. Neste artigo, você aprenderá o que são faturas recorrentes, como configurá-las, como gerenciar sua frequência e status e como acompanhar os pagamentos com facilidade.</p>
+<h3 id="como-fazer_2">Como fazer</h3>
+<p><strong>1. Criar uma Nova Fatura Recorrente</strong>
+*   Acesse a seção <strong>Pagamentos</strong> no menu lateral e clique em <strong>Faturas &amp; Orçamentos</strong>.
+*   Clique no botão <strong>Novo</strong> no canto superior direito e selecione <strong>Nova Fatura Recorrente</strong>.</p>
+<p><strong>2. Preencher os Detalhes da Fatura</strong>
+*   Insira as informações da sua empresa e selecione o cliente que receberá a fatura.
+*   Adicione produtos ou serviços do seu catálogo, defina preços, impostos e quantidades.</p>
+<p><strong>3. Configurar a Frequência da Fatura</strong>
+*   Use o menu suspenso <strong>Com que frequência?</strong> para definir a periodicidade (diária, semanal, mensal, anual ou intervalos personalizados).
+*   Escolha a <strong>Data de Início</strong> para o primeiro envio e defina a <strong>Condição de Término</strong> (uma data específica ou após um certo número de ocorrências).</p>
+<p><strong>4. Definir Opções Adicionais (Opcional)</strong>
+*   <strong>Termos e Condições:</strong> Adicione políticas padrão ou notas importantes.
+*   <strong>Cobrar Multa por Atraso:</strong> Inclua uma taxa automática para pagamentos atrasados.
+*   <strong>Cobrar Taxas de Processamento:</strong> Repasse as taxas da operadora de pagamento ao cliente (se habilitado nas suas configurações).
+*   <strong>Incluir Gorjeta:</strong> Permita que o cliente adicione uma gorjeta ao valor da fatura.
+*   <strong>Adicionar Anexo:</strong> Anexe documentos de suporte, contratos ou detalhes adicionais.</p>
+<p><strong>5. Enviar com Antecedência (Opcional)</strong>
+*   Configure para que a fatura seja enviada ao cliente alguns dias antes da data de vencimento real.</p>
+<p><strong>6. Gerenciar Modelos de Fatura Recorrente</strong>
+*   Na lista de <strong>Modelos Recorrentes</strong>, clique no menu <strong>Mais Opções (⋮)</strong> ao lado de um modelo para:
+    *   <strong>Ver Histórico:</strong> Visualizar todas as faturas geradas por aquele modelo.
+    *   <strong>Visualizar:</strong> Abrir o modelo para revisar seus detalhes.
+    *   <strong>Encerrar:</strong> Parar faturas futuras, mantendo as já enviadas.
+    *   <strong>Excluir:</strong> Remover o modelo (possível apenas se nenhuma fatura foi enviada).
+    *   <strong>Clonar:</strong> Duplicar o modelo para reutilização com configurações similares.
+    *   <strong>Converter em Modelo:</strong> Salvar a fatura como um modelo reutilizável para automações.</p>
+<p><strong>7. Visualizar Faturas Enviadas e Status de Pagamento</strong>
+*   Na página <strong>Modelos Recorrentes</strong>, clique em <strong>Detalhes</strong> para abrir um painel lateral mostrando todas as faturas geradas por aquele modelo, com seus respectivos status.</p>
+<p><strong>8. Baixar PDF de Faturas Recorrentes</strong>
+*   Vá para <strong>Pagamentos → Faturas</strong>.
+*   Localize a fatura recorrente ativa.
+*   Clique no menu de três pontos <strong>(⋮)</strong>.
+*   Clique em <strong>Copiar Link</strong>.
+*   Abra o link em uma nova guia do navegador.
+*   Selecione <strong>Clique Aqui</strong> e o PDF começará a ser baixado.</p>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>Acesso à plataforma Full Funnel com permissões para a área de <strong>Pagamentos</strong>.</li>
+<li>Um cliente cadastrado na sua base de <strong>Contatos</strong>.</li>
+<li>Produtos ou serviços configurados no seu catálogo (opcional, mas recomendado).</li>
+</ul>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>P: Posso colocar alguém em cópia (CC) nas faturas recorrentes?</strong>
+R: Atualmente, o Full Funnel não oferece uma opção nativa para adicionar automaticamente destinatários em cópia (CC) nas faturas recorrentes dentro do fluxo de configuração. Você pode especificar o destinatário principal (o cliente), mas não há um campo ou configuração na interface para CC em cada ocorrência da fatura recorrente.</p>
+<p><strong>P: Posso pausar ou modificar uma fatura recorrente depois que ela foi configurada?</strong>
+R: Sim, você pode pausar ou editar uma fatura recorrente a qualquer momento. Basta navegar até a seção <strong>Faturas Recorrentes</strong>, selecionar a fatura específica e atualizar o cronograma ou os detalhes conforme necessário.</p>
+<p><strong>P: Os clientes recebem lembretes automáticos para faturas recorrentes não pagas?</strong>
+R: Por padrão, o Full Funnel não envia lembretes automáticos para faturas recorrentes não pagas. No entanto, você pode configurar <strong>Automações</strong> usando gatilhos para enviar lembretes de pagamentos em atraso.</p>
+<p><strong>P: Posso adicionar notas ou termos personalizados às faturas recorrentes?</strong>
+R: Sim, você pode incluir notas ou termos personalizados nas faturas recorrentes. Isso é útil para comunicar detalhes importantes, como políticas de pagamento ou mensagens personalizadas aos seus clientes.</p>
+<p><strong>P: Cancelei (Void) minha Fatura Recorrente, mas por que o sistema ainda está enviando faturas para o cliente todo mês?</strong>
+R: Quando você cancela (Void) uma fatura, está apenas cancelando a cobrança daquele mês específico. O <strong>Cronograma Recorrente</strong> subjacente do sistema permanece ativo e continuará a gerar e enviar uma nova fatura a cada mês subsequente. Para parar permanentemente a série automatizada, você deve encerrar todo o cronograma:
+1.  Navegue até <strong>Pagamentos → Faturas &amp; Orçamentos</strong>.
+2.  Selecione a aba <strong>Recorrente</strong> (à direita da tela).
+3.  Encontre o cronograma ativo do cliente e clique nos três pontos (...).
+4.  Selecione <strong>Encerrar</strong>.</p>
+<p><strong>P: Por que taxas de instalação e pagamentos recorrentes aparecem como itens de linha separados, e a taxa de instalação será cobrada novamente?</strong>
+R: As taxas de instalação e os pagamentos recorrentes aparecem como itens de linha separados porque servem a propósitos diferentes dentro do mesmo produto. A taxa de instalação é um valor único, cobrado antecipadamente apenas uma vez, quando o produto é adquirido pela primeira vez. A assinatura (pagamento recorrente) segue seu próprio ciclo de cobrança (mensal, anual, etc.) e começa após a lógica do pagamento inicial ser satisfeita. Pagar a taxa de instalação não a dispara novamente, nem impede o início da assinatura — ambos funcionam juntos como parte do mesmo produto, apenas com comportamentos de cobrança diferentes.</p>
+<p><strong>P: Se eu adicionar um desconto a uma fatura recorrente, ele ficará lá para sempre?</strong>
+R: Se você adicionar um "Desconto" ao <strong>Rascunho de Fatura</strong> específico, ele afetará apenas aquele pagamento único. Se você adicionar um desconto ao <strong>Modelo Recorrente</strong>, ele se aplicará a todos os pagamentos futuros. Para uma redução única, edite sempre o rascunho específico.</p>
+<hr />
+<h2 id="o-que-e-listado-na-pagina-de-assinaturas">O que é listado na página de Assinaturas?</h2>
+<p>A página de <strong>Assinaturas</strong> dentro de <strong>Pagamentos</strong> é o centro de controle para gerenciar todas as assinaturas recorrentes criadas na sua conta do Full Funnel. Ela consolida informações de diferentes fontes para facilitar o acompanhamento.</p>
+<h3 id="como-acessar">Como acessar</h3>
+<ol>
+<li>No menu lateral esquerdo da sua conta do Full Funnel, clique em <strong>Pagamentos</strong>.</li>
+<li>Em seguida, clique na aba <strong>Assinaturas</strong>.</li>
+</ol>
+<p><strong>Importante:</strong> As assinaturas listadas podem ter sido criadas por várias fontes, incluindo formulários de pedido e criação manual. A funcionalidade para cancelar assinaturas ou iniciar reembolsos diretamente nesta página será adicionada em breve.</p>
+<h3 id="o-que-e-listado-na-pagina-de-assinaturas_1">O que é listado na página de Assinaturas?</h3>
+<p>A lista principal exibe as seguintes informações para cada assinatura:
+*   <strong>Provedor de Pagamento</strong> e <strong>ID da Assinatura</strong>
+*   <strong>Detalhes do Cliente</strong> (Nome, e-mail)
+*   <strong>Fonte de Criação</strong> (ex.: formulário de pedido, criação manual)
+*   <strong>Data de Criação</strong>
+*   <strong>Valor da Assinatura</strong>
+*   <strong>Status da Assinatura</strong></p>
+<h3 id="o-que-e-listado-nos-detalhes-de-uma-assinatura">O que é listado nos detalhes de uma assinatura?</h3>
+<p>Ao clicar em uma assinatura específica, você verá mais informações:
+*   Detalhes do provedor de pagamento e da fonte de criação.
+*   <strong>Transações subsequentes</strong> (para assinaturas criadas no Stripe).
+*   <strong>Metadados</strong> (opcional): Informações adicionais capturadas durante o checkout, como nome da empresa.</p>
+<h3 id="o-que-o-status-da-assinatura-representa">O que o status da assinatura representa?</h3>
+<p>O status é uma consolidação dos status dos provedores Stripe e PayPal. Veja o mapeamento:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Status no Full Funnel</th>
+<th style="text-align: left;">Status no Stripe</th>
+<th style="text-align: left;">Status no PayPal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Trial</strong></td>
+<td style="text-align: left;">trialing</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Active</strong></td>
+<td style="text-align: left;">active</td>
+<td style="text-align: left;">active</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Canceled</strong></td>
+<td style="text-align: left;">canceled</td>
+<td style="text-align: left;">canceled</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Suspended</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">suspended</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Failed</strong></td>
+<td style="text-align: left;">incomplete_expired</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Incomplete</strong></td>
+<td style="text-align: left;">incomplete, past_due</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Unpaid</strong></td>
+<td style="text-align: left;">unpaid</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Expired</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">expired</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pending</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">approval pending, approved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="faq_3">FAQ</h3>
+<p><strong>Os status das assinaturas permanecem sincronizados com Stripe/PayPal?</strong>
+*   <strong>Stripe:</strong> <strong>Sim.</strong> O status e os pagamentos recebidos permanecem sincronizados com o seu painel do Stripe. Se você cancelar uma assinatura no Stripe, ela será refletida como "Cancelada" na lista do Full Funnel.
+*   <strong>PayPal:</strong> <strong>Não.</strong> O status da assinatura <strong>não</strong> permanece sincronizado. Além disso, os detalhes da assinatura atualmente não capturam os próximos pagamentos agendados. A entrada da assinatura é criada para que você possa rastrear as criadas via PayPal.</p>
+<p><strong>A página listará assinaturas que não foram criadas devido a falha de pagamento no formulário de pedido?</strong>
+<strong>Não.</strong> Se o primeiro pagamento para iniciar a assinatura falhar durante o envio do formulário de pedido, ela <strong>não</strong> será registrada nesta página. No entanto, o contato será criado e você poderá rastreá-lo na aba <strong>Contatos</strong>.</p>
+<p><strong>O que NÃO está contido na página de Assinaturas?</strong>
+*   Modelos de recorrência criados na seção de <strong>Faturas</strong>.
+*   Assinaturas criadas dentro da seção <strong>Área de Membros</strong>.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

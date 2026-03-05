@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O trigger "Oportunidade Alterada" automatiza ações quando um registro de oportunidade é atualizado. Diferente do trigger "Status da Oportunidade Alter...">
+    <title>Automações — Gatilhos de Oportunidade — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="o-que-e-o-trigger-oportunidade-alterada-em-automacoes">O que é o Trigger "Oportunidade Alterada" em Automações?</h2>
+<p>O trigger "Oportunidade Alterada" automatiza ações quando um registro de oportunidade é atualizado. Diferente do trigger "Status da Oportunidade Alterado", que rastreia apenas atualizações de status, este trigger responde a modificações como valor do lead, etapa do funil, atribuição ou campos personalizados.</p>
+<h3 id="beneficios">Benefícios</h3>
+<ul>
+<li><strong>Rastreamento Abrangente:</strong> Automatize ações com base em qualquer alteração em uma oportunidade, não apenas atualizações de status.</li>
+<li><strong>Notificações em Tempo Real:</strong> Notifique membros da equipe imediatamente quando uma oportunidade é atualizada.</li>
+<li><strong>Precisão Aprimorada do CRM:</strong> Garanta a manutenção automatizada de registros e a consistência dos dados.</li>
+<li><strong>Melhor Gestão do Funil de Vendas:</strong> Acione acompanhamentos ou atribuições de tarefas quando as oportunidades são modificadas.</li>
+<li><strong>Automação Personalizável:</strong> Aplique filtros de automação para adaptar a automação a alterações específicas de oportunidades.</li>
+<li><strong>Operadores de Filtro Flexíveis:</strong> Use operadores como "Foi Alterado", "Foi Alterado Para" e "Igual a" para controlar precisamente quando os fluxos de trabalho são acionados.</li>
+</ul>
+<h3 id="como-configurar-o-trigger-oportunidade-alterada">Como configurar o Trigger "Oportunidade Alterada"</h3>
+<ol>
+<li>Acesse o construtor de Automações:</li>
+<li>Faça login na nossa plataforma, vá para <strong>Automações</strong> &gt; <strong>Automações</strong>.</li>
+<li>Crie uma nova automação ou abra uma existente.</li>
+<li>Adicione o trigger "Oportunidade Alterada":</li>
+<li>Clique em <strong>+ Adicionar Novo Trigger</strong>.</li>
+<li>Pesquise por "Oportunidade Alterada" na lista de triggers disponíveis e selecione-o.</li>
+<li>Nomeie o Trigger:</li>
+<li>Dê ao seu trigger um nome claro e descritivo que reflita seu propósito.</li>
+<li>Aplicando Filtros:</li>
+<li>Os filtros ajudam a ajustar seu fluxo de trabalho para que ele seja acionado apenas quando mudanças específicas acontecerem em uma oportunidade.</li>
+</ol>
+<h4 id="filtro-atribuido-a">Filtro "Atribuído A"</h4>
+<p>O filtro "Atribuído A" aciona o fluxo de trabalho quando uma oportunidade é reatribuída a um membro diferente da equipe.
+- <strong>Operadores disponíveis:</strong>
+   - <strong>Foi Alterado:</strong> Aciona quando o usuário atribuído muda para qualquer outro usuário.
+   - <strong>Foi Alterado Para:</strong> Aciona somente quando a oportunidade é atribuída a um usuário específico selecionado.
+   - <strong>Igual a:</strong> Aciona quando qualquer alteração ocorre em oportunidades atualmente atribuídas a um usuário específico.</p>
+<h4 id="filtro-de-tag-antigo-tem-tag">Filtro de Tag (antigo "Tem Tag")</h4>
+<p>Use filtros de Tag para controlar quando "Oportunidade Alterada" deve ser acionado com base nas tags de oportunidade.
+- O filtro de Tag permite acionar um fluxo de trabalho com base nas tags atribuídas a uma oportunidade.</p>
+<h4 id="filtro-no-funil">Filtro "No Funil"</h4>
+<p>O filtro "No Funil" aciona o fluxo de trabalho quando uma oportunidade passa por uma mudança dentro de um funil específico.
+- <strong>Operadores disponíveis:</strong>
+   - <strong>Foi Alterado:</strong> Aciona quando a oportunidade se move para qualquer funil diferente.
+   - <strong>Foi Alterado Para:</strong> Aciona somente quando a oportunidade se move para um funil específico selecionado.
+   - <strong>Igual a:</strong> Aciona quando qualquer alteração ocorre em oportunidades dentro de um funil específico.</p>
+<h4 id="filtro-valor-do-lead">Filtro "Valor do Lead"</h4>
+<p>O filtro "Valor do Lead" aciona um fluxo de trabalho quando o valor monetário de uma oportunidade aumenta ou diminui.</p>
+<h4 id="filtro-motivo-da-perda">Filtro "Motivo da Perda"</h4>
+<p>O filtro "Motivo da Perda" permite automatizar fluxos de trabalho quando uma oportunidade é marcada como Perdida e um motivo é atribuído.
+- <strong>Operadores disponíveis:</strong>
+   - <strong>Foi Alterado:</strong> Aciona o fluxo de trabalho sempre que o motivo da perda é atualizado, independentemente do valor anterior.
+   - <strong>Foi Alterado Para:</strong> Aciona o fluxo de trabalho somente quando o motivo da perda é atualizado para um valor específico.
+   - <strong>Igual a:</strong> Aciona quando qualquer alteração ocorre em oportunidades que têm um motivo de perda específico atribuído.</p>
+<h4 id="filtro-de-status">Filtro de Status</h4>
+<p>O filtro "Status" permite que os fluxos de trabalho sejam acionados com base no status atual de uma oportunidade.
+- <strong>Operadores disponíveis:</strong>
+   - <strong>É:</strong> Aciona o fluxo de trabalho quando uma oportunidade corresponde ao status selecionado.
+   - <strong>Não é:</strong> Aciona o fluxo de trabalho quando uma oportunidade não corresponde ao status selecionado.
+   - <strong>Foi Alterado:</strong> Aciona quando o status muda para qualquer outro status.
+   - <strong>Foi Alterado Para:</strong> Aciona quando o status muda para um status específico.</p>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: Qual a diferença entre o trigger "Oportunidade Alterada" e "Status da Oportunidade Alterado"?</strong>
+R: O trigger "Oportunidade Alterada" responde a qualquer modificação na oportunidade (valor, etapa, atribuição, etc.), enquanto "Status da Oportunidade Alterado" rastreia apenas mudanças de status.</p>
+<hr />
+<h2 id="gatilho-oportunidade-criada">Gatilho: Oportunidade Criada</h2>
+<p>Este gatilho inicia uma automação quando uma nova oportunidade é criada no funil de vendas.</p>
+<h3 id="como-configurar">Como configurar</h3>
+<ol>
+<li>Dentro do editor de Automações, adicione um novo gatilho.</li>
+<li>Selecione "Oportunidade Criada" na lista de gatilhos disponíveis.</li>
+<li>Configure os filtros (opcional):<ul>
+<li><strong>Valores Personalizados:</strong> Adicione filtros baseados em valores personalizados da oportunidade.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Ter um funil de vendas configurado em <strong>Oportunidades</strong>.</li>
+<li>Campos personalizados devem estar previamente criados, se for usá-los nos filtros.</li>
+</ul>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

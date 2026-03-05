@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Para configurar mensagens personalizadas de solicitação de avaliação, siga estes passos:">
+    <title>Email Geral — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="email-geral">Email Geral</h1>
+<h2 id="personalizar-mensagens-de-solicitacao-de-avaliacao-smse-mail">Personalizar Mensagens de Solicitação de Avaliação (SMS/E-mail)</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Para configurar mensagens personalizadas de solicitação de avaliação, siga estes passos:</p>
+<p><strong>Passo 1: Configurar o Link de Avaliação</strong>
+1.  No menu lateral esquerdo, clique em <strong>Reputação</strong>.
+2.  Vá para a aba <strong>Configurações</strong> no topo.
+3.  Na seção <strong>Link de Avaliação</strong>, você tem duas opções:
+    *   <strong>Balanceamento de Avaliações:</strong> Ative a opção para distribuir os clientes entre as plataformas de avaliação conectadas (como Google).
+    *   <strong>Link Personalizado:</strong> Selecione esta opção e cole um URL específico para enviar todos os clientes para uma única página.</p>
+<p><strong>Passo 2: Ativar Solicitações por SMS</strong>
+1.  Acesse <strong>Reputação → Configurações → Solicitações por SMS</strong>.
+2.  Ative a chave no canto superior direito.
+3.  Configure os controles:
+    *   <strong>Quando enviar SMS após o check-in?</strong> Escolha o atraso para o primeiro envio.
+    *   <strong>Até ser clicado, repetir a cada:</strong> Defina o intervalo para as tentativas de reenvio.
+    *   <strong>Máximo de tentativas:</strong> Escolha quantas mensagens de follow-up enviar.
+4.  Clique em <strong>Criar Novo</strong> para criar um modelo de SMS ou use o ícone de lápis para editar um existente.</p>
+<p><strong>Passo 3: Criar ou Editar um Modelo de SMS</strong>
+1.  Ao clicar em <strong>Criar Novo</strong>, escolha <strong>Criar Novo do Zero</strong> ou <strong>Selecionar dos Modelos Pré-criados</strong>.
+2.  Dê um <strong>Nome ao Modelo</strong>.
+3.  (Opcional) Ative <strong>Solicitar com Imagem</strong> para adicionar uma imagem.
+4.  Escreva sua mensagem. <strong>Inclua o token</strong> <code>{{reputation.review_link}}</code> para o link de avaliação.
+5.  Clique em <strong>Salvar</strong>.</p>
+<p><strong>Passo 4: Ativar Solicitações por E-mail</strong>
+1.  Acesse <strong>Reputação → Configurações → Solicitações por E-mail</strong>.
+2.  Ative a chave no canto superior direito.
+3.  Configure os controles de tempo e tentativas, semelhante ao SMS.</p>
+<p><strong>Passo 5: Criar ou Importar um Modelo de E-mail</strong>
+1.  Clique em <strong>Criar Novo</strong> e escolha <strong>Criar novo Modelo</strong> ou <strong>Importar da Biblioteca de Modelos</strong>.
+2.  No editor de e-mail, use a barra lateral esquerda para arrastar elementos (texto, imagens, botões) para o layout.
+3.  <strong>Arraste o elemento "Link de Avaliação"</strong> para o seu e-mail. Este botão usará automaticamente o URL configurado no Passo 1.
+4.  Clique em <strong>Salvar</strong> no canto superior direito.</p>
+<p><strong>Passo 6: Definir a Sequência de Envio (Modelos "Ao Vivo" e de "Nova Tentativa")</strong>
+*   <strong>Para E-mail:</strong> Clique em <strong>Definir Modelos de E-mail</strong>. Selecione o modelo <strong>Ao Vivo</strong> (envio inicial) e atribua modelos para cada slot de <strong>Nova Tentativa</strong>. Clique em <strong>Salvar</strong>.
+*   <strong>Para SMS:</strong> Clique em <strong>Definir Modelos de SMS</strong> e faça a mesma seleção para a sequência de SMS.</p>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Acesso ao menu <strong>Reputação</strong> e à aba <strong>Configurações</strong>.</li>
+<li>Para usar <strong>Balanceamento de Avaliações</strong> e direcionar para o Google, é necessário ter um <strong>Google Meu Negócio</strong> conectado nas <strong>Integrações</strong>.</li>
+<li>Para enviar solicitações, você precisa ter modelos de SMS e/ou E-mail criados e atribuídos na sequência.</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>P: O que acontece depois que um cliente clica no link de avaliação?</strong>
+R: O sistema para de enviar novas tentativas (follow-ups) por aquele canal específico (SMS ou E-mail) para aquele contato.</p>
+<p><strong>P: Qual a diferença entre Balanceamento de Avaliações e Link Personalizado?</strong>
+R: O <strong>Balanceamento</strong> distribui os clientes entre diferentes sites de avaliação conectados. O <strong>Link Personalizado</strong> envia todos os clientes para uma única URL de sua escolha.</p>
+<p><strong>P: Qual token devo usar no SMS para o link de avaliação?</strong>
+R: Use sempre <code>{{reputation.review_link}}</code>. Ele será automaticamente preenchido com o link que você configurou em <strong>Reputação → Configurações → Link de Avaliação</strong>.</p>
+<p><strong>P: Posso automatizar o envio de solicitações?</strong>
+R: Sim. Use a ação <strong>Solicitar Avaliação</strong> em uma <strong>Automação</strong> (Workflow) para acionar o envio automaticamente, por exemplo, após uma mudança no status de um agendamento.</p>
+<p><strong>P: Adicionar uma imagem a um SMS muda o custo?</strong>
+R: Pode mudar. Uma mensagem com imagem pode ser enviada como MMS, que pode ter tarifas diferentes das SMS. Consulte as taxas do seu provedor de mensagens.</p>
+<p><strong>P: Preciso ter o Google Meu Negócio conectado?</strong>
+R: Apenas se quiser usar o <strong>Balanceamento de Avaliações</strong> para direcionar clientes ao Google. Se preferir usar outro site ou sua própria página, configure um <strong>Link Personalizado</strong>.</p>
+<hr />
+<h2 id="uma-introducao-a-entregabilidade-de-e-mail">Uma Introdução à Entregabilidade de E-mail</h2>
+<h3 id="o-que-e-entregabilidade-e-por-que-e-importante">O que é entregabilidade e por que é importante?</h3>
+<p>Entregabilidade é a medida de quantos dos seus e-mails chegam à caixa de entrada dos seus assinantes, em vez de irem para a pasta de spam. Depois de tanto trabalho no seu marketing por e-mail, você quer ter certeza de que suas mensagens estão realmente sendo vistas! É por isso que a entregabilidade é crucial.</p>
+<h3 id="como-a-entregabilidade-e-determinada">Como a entregabilidade é determinada?</h3>
+<p>Muitos fatores influenciam a colocação na caixa de entrada. Em geral, os provedores de e-mail (como Gmail, Outlook, etc.) tentam determinar três coisas:
+1.  A mensagem é segura?
+2.  A mensagem é desejada pela maioria dos assinantes?
+3.  A mensagem é desejada por este assinante específico?</p>
+<p>Se a resposta para todas as três perguntas for "sim", a mensagem pertence à caixa de entrada. Se alguma resposta for "não", a mensagem vai para o spam. Para tomar essa decisão, os provedores geralmente analisam a <strong>reputação do remetente</strong> que calcularam para você.</p>
+<h3 id="reputacao-do-remetente">Reputação do Remetente</h3>
+<p>Provedores de e-mail criam uma pontuação de reputação para o seu domínio de envio (ex: @suaempresa.com). Pense nisso como uma pontuação de crédito, mas infelizmente não há uma fonte única que mostre exatamente qual é sua pontuação e por quê. Os provedores mantêm essa pontuação e os algoritmos usados para determiná-la em sigilo. No entanto, o fator mais importante é a forma como os assinantes interagem (ou não) com suas mensagens.</p>
+<h3 id="engajamento-do-assinante">Engajamento do Assinante</h3>
+<p>A melhor maneira dos provedores determinarem onde seu e-mail pertence é vendo como seus assinantes interagem com ele. Existem ações que seus assinantes podem tomar que <strong>aumentam</strong> sua reputação e ações que a <strong>diminuem</strong>.</p>
+<h4 id="recomendacoes-para-promover-um-engajamento-positivo">Recomendações para promover um engajamento positivo:</h4>
+<p><strong>1. Saúde da Lista</strong>
+*   <strong>Permissão Direta:</strong> Só importe assinantes que lhe deram permissão direta para receber e-mails de marketing. Qualidade é muito mais importante que quantidade.
+*   <strong>Formulários Seguros:</strong> Proteja seus formulários com <strong>confirmação dupla (duplo opt-in)</strong> e/ou <strong>ReCaptcha</strong>. Formulários não seguros podem ser abusados por bots, o que prejudica sua entregabilidade.
+*   <strong>Limpeza Regular:</strong> Não deixe assinantes inativos se acumularem. Limpe sua lista regularmente para que assinantes não engajados não se tornem a maioria, o que derrubaria sua reputação.</p>
+<p><strong>2. Consistência</strong>
+Mudanças bruscas no padrão de envio são vistas como arriscadas. Mantenha consistência em:
+*   <strong>Domínio de Envio:</strong> Envie de um domínio que os assinantes reconheçam. Evite enviar de um domínio novo ou que não envia e-mails há muito tempo (mais de 6 meses).
+*   <strong>Volume:</strong> Envie para um número consistente de assinantes por semana. Evite picos bruscos (ex: de 5.000 para 20.000 da noite para o dia). Se precisar adicionar muitos novos assinantes, comece enviando em pequenos lotes.
+*   <strong>Frequência:</strong> Envie pelo menos <strong>uma vez por mês</strong> para manter sua reputação estabelecida. Não envie com frequência excessiva para não causar irritação. Pergunte aos assinantes com que frequência desejam ouvir de você e permita que eles ajustem suas preferências.</p>
+<p><strong>3. Conteúdo</strong>
+Se sua reputação não estiver bem estabelecida, o conteúdo pode influenciar a entregabilidade.
+*   <strong>Evite Encurtadores de Link:</strong> São muito usados por spammers e podem levantar suspeitas. Seja transparente e use links diretos.
+*   <strong>Evite Linguagem Promocional Exagerada:</strong> Mesmo vendendo, escreva de forma humana e conversacional. Evite palavras e frases típicas de spam que soam urgentes ou sensacionalistas.
+*   <strong>Proporção Imagem/Texto:</strong> Não há um número mágico, mas garanta que haveria texto suficiente para comunicar sua mensagem se as imagens não carregarem.
+*   <strong>Evite Truques:</strong> Subject lines como "Re: Seu Pedido #2095642" podem dar um pico rápido em aberturas, mas fazem você perder a confiança do assinante, aumentando as chances de marcação como spam.
+*   <strong>Incentive Engajamento Autêntico:</strong> Peça para os assinantes responderem de forma genuína (ex: "Responda com sua música favorita no momento"). Isso ajuda a construir relacionamento e reputação.</p>
+<h3 id="resumo">Resumo</h3>
+<p>Uma boa entregabilidade vem de colocar os assinantes em primeiro lugar: construir uma lista limpa e engajada, enviar com consistência e criar conteúdo que os assinantes valorizam. Isso ajuda os provedores a confiarem em você e entregarem seus e-mails nas caixas de entrada.</p>
+<h3 id="faq-perguntas-frequentes">FAQ (Perguntas Frequentes)</h3>
+<p><strong>Quais ferramentas posso usar para monitorar minha entregabilidade?</strong>
+Ferramentas como Mailgun, SendGrid e Litmus podem ajudar. Elas fornecem insights sobre taxas de bounce, aberturas e reputação do remetente, permitindo otimizar suas campanhas.</p>
+<p><strong>Como posso me recuperar de uma lista negra (blacklist)?</strong>
+Identifique a causa (ex: reclamações de spam, más práticas de envio), corrija os problemas, garanta conformidade com as melhores práticas e siga o processo específico de remoção da lista negra em questão. Reconstruir uma reputação positiva leva tempo.</p>
+<p><strong>Qual o papel do engajamento na entregabilidade?</strong>
+Métricas de engajamento (taxas de abertura e clique) influenciam muito a entregabilidade. Um engajamento alto sinaliza para os provedores que seu conteúdo é valioso, melhorando sua reputação. Um engajamento baixo pode fazer seus e-mails serem filtrados para o spam.</p>
+<hr />
+<h2 id="erro-ao-enviar-e-mail-de-teste-na-etapa-de-e-mail-da-campanha">Erro ao Enviar E-mail de Teste na Etapa de E-mail da Campanha</h2>
+<h3 id="como-resolver">Como Resolver</h3>
+<p>Se você encontrar a mensagem de erro "An error occurred, please try again" ao tentar enviar um e-mail de teste em uma campanha, ou se a ação de gatilho "Enviar E-mail" não estiver sendo acionada, siga estas etapas de verificação:</p>
+<ol>
+<li>
+<p><strong>Verifique o Conteúdo do E-mail/SMS:</strong></p>
+<ul>
+<li>Revise o texto do seu e-mail ou SMS.</li>
+<li>Certifique-se de que não faltam chaves de fechamento <code>}</code>.</li>
+<li>Verifique se não está usando excessivamente três chaves <code>{{{</code> de forma incorreta. O uso de variáveis personalizadas geralmente segue o formato <code>{{NomedoCampo}}</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Valide os Valores Personalizados (Merge Tags):</strong></p>
+<ul>
+<li>Confirme se todos os campos personalizados inseridos no e-mail (como <code>{{Nome}}</code>, <code>{{Link}}</code>) estão escritos corretamente e existem para o contato.</li>
+<li><strong>Atenção especial aos links:</strong> Garanta que os links personalizados usem valores válidos. Consulte a lista oficial de valores personalizados suportados na sua conta do Full Funnel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Confira os Endereços de E-mail:</strong></p>
+<ul>
+<li>Verifique se o endereço de e-mail do destinatário (incluindo o de teste) está escrito corretamente.</li>
+<li>Procure por erros comuns, como usar uma vírgula no lugar do ponto (ex.: <code>test@gmail,com</code>). O correto é <code>test@gmail.com</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Formato do Campo "De" (Remetente):</strong></p>
+<ul>
+<li>O campo "De" deve estar no formato de um endereço de e-mail válido.</li>
+<li><strong>Não use apenas um nome.</strong> Por exemplo, em vez de "ABC Company", o campo deve conter um e-mail como <code>info@abccompany.com</code>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Acesso de edição à campanha ou automação onde o e-mail está configurado.</li>
+<li>Conhecimento básico da sintaxe de variáveis personalizadas (Merge Tags) do Full Funnel.</li>
+<li>Um endereço de e-mail de teste válido para enviar a simulação.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>P: O que causa o erro de chaves faltantes ou em excesso?</strong>
+R: Isso geralmente acontece quando uma variável personalizada (ex.: <code>{{Nome}</code>) não é fechada corretamente com duas chaves, ou quando a sintaxe para funções mais avançadas é usada de forma errada.</p>
+<p><strong>P: Como encontro a lista de valores personalizados válidos para links?</strong>
+R: Dentro do editor de e-mail do Full Funnel, normalmente há um botão ou menu para inserir "Campos Personalizados". Lá você encontrará a lista oficial. Não use links criados manualmente com <code>{{{</code> sem seguir a documentação específica.</p>
+<p><strong>P: Meu e-mail de teste foi enviado, mas o e-mail automático da campanha não dispara para os contatos. É o mesmo problema?</strong>
+R: Sim, as mesmas verificações se aplicam. Se a ação "Enviar E-mail" em uma automação não está sendo acionada, os itens mais comuns a checar são o formato do e-mail do remetente e a validade das variáveis personalizadas no corpo da mensagem.</p>
+<hr />
+<h2 id="quais-estatisticas-de-entregabilidade-de-e-mail-devo-observar">Quais Estatísticas de Entregabilidade de E-mail Devo Observar?</h2>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p>Para monitorar a saúde do seu envio de e-mails no Full Funnel, você deve analisar regularmente as seguintes métricas principais. Aqui está um guia passo a passo:</p>
+<ol>
+<li>
+<p><strong>Acesse os Relatórios de E-mail:</strong></p>
+<ul>
+<li>No menu lateral esquerdo da plataforma, clique em <strong>Relatórios</strong>.</li>
+<li>Navegue até a seção de relatórios de <strong>E-mail</strong> ou <strong>Campanhas</strong>.</li>
+<li>Selecione a campanha ou o domínio específico que deseja analisar.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analise as Métricas-Chave:</strong></p>
+<ul>
+<li><strong>Taxa de Entregue:</strong> Verifique a porcentagem de e-mails que chegaram ao servidor do destinatário.<ul>
+<li><strong>✅ Bom:</strong> 98% ou mais.</li>
+<li><strong>⚠️ Atenção:</strong> Entre 97% e 98%.</li>
+<li><strong>❌ Crítico:</strong> Abaixo de 97%. Isso indica que mais de 3% dos e-mails não foram entregues, um sinal de alerta.</li>
+</ul>
+</li>
+<li><strong>Taxa de Abertura:</strong> Verifique quantos e-mails entregues foram abertos.<ul>
+<li><strong>✅ Bom:</strong> Almeje taxas nos anos 40, 50 ou 60%, dependendo do seu setor e público.</li>
+<li><strong>⚠️ Média:</strong> A média do setor varia entre 16% e 26%.</li>
+<li><strong>❌ Crítico:</strong> Abaixo de 15%.</li>
+</ul>
+</li>
+<li><strong>Taxa de Cliques:</strong> Verifique quantos destinatários clicaram em links dentro do e-mail.<ul>
+<li><strong>✅ Bom:</strong> Almeje acima de 10%.</li>
+<li><strong>⚠️ Média:</strong> A média do setor é de 7% a 9%.</li>
+<li><strong>❌ Crítico:</strong> Abaixo de 5%.</li>
+</ul>
+</li>
+<li><strong>Taxa de Resposta:</strong> Para campanhas que buscam uma resposta, verifique essa métrica.<ul>
+<li><strong>✅ Bom:</strong> Almeje 30% ou mais.</li>
+<li><strong>⚠️ Média:</strong> A média do setor é de 15% a 25%.</li>
+<li><strong>❌ Crítico:</strong> Abaixo de 10%.</li>
+</ul>
+</li>
+<li><strong>Taxa de Reclamações (Spam):</strong> Monitore quantos destinatários marcaram seu e-mail como spam.<ul>
+<li><strong>✅ Bom:</strong> O mais próximo possível de 0,00%.</li>
+<li><strong>⚠️ Atenção:</strong> Acima de 0,04% pode começar a afetar sua reputação.</li>
+<li><strong>❌ Crítico:</strong> Taxas altas podem levar a bloqueios.</li>
+</ul>
+</li>
+<li><strong>Taxa de Bounce (Falha):</strong> Monitore e-mails que não puderam ser entregues.<ul>
+<li><strong>✅ Bom:</strong> Bem abaixo de 1%.</li>
+<li><strong>⚠️ Atenção:</strong> Acima de 2% a 2,5% é preocupante.</li>
+<li><strong>❌ Crítico:</strong> Taxas altas prejudicam sua reputação.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitore Regularmente e Ajuste:</strong></p>
+<ul>
+<li>Verifique essas estatísticas semanalmente.</li>
+<li>Compare o desempenho no nível do domínio e no nível de campanhas individuais.</li>
+<li>Se identificar problemas (como taxa de entregue baixa ou reclamações altas), revise suas práticas: verifique a higiene da sua lista, o conteúdo do e-mail e a segmentação do público.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>Acesso à sua conta do Full Funnel.</li>
+<li>Campanhas de e-mail já enviadas para gerar dados.</li>
+<li>Permissões para visualizar relatórios na plataforma.</li>
+</ul>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>O que significa "Entregue" exatamente?</strong>
+"Entregue" significa que o e-mail chegou ao servidor de e-mail do destinatário. Não é uma garantia de que ele entrou na Caixa de Entrada principal; pode ter sido para Spam ou Promoções.</p>
+<p><strong>Por que minha taxa de abertura pode estar baixa?</strong>
+Fatores que o destinatário vê antes de abrir influenciam: Nome do Remetente, Endereço de E-mail, Reconhecimento da Marca, Linha de Assunto e Prévia do Texto. Trabalhe para gerar confiança e clareza nesses elementos.</p>
+<p><strong>Uma taxa de reclamação (spam) de 0,05% é aceitável?</strong>
+Embora alguns provedores permitam até 0,05%, é melhor manter essa taxa o mais baixa possível, idealmente abaixo de 0,03%. Taxas próximas a 0,04% já podem começar a prejudicar a reputação do seu domínio.</p>
+<p><strong>Como posso melhorar minhas taxas de clique e resposta?</strong>
+*   <strong>Para Cliques:</strong> Tenha uma Chamada para Ação (CTA) clara, única e de valor. Diga exatamente o que o destinatário ganha ao clicar.
+*   <strong>Para Respostas:</strong> Faça perguntas simples (ex: sim/não) ou ofereça algo valioso em troca da resposta. Mantenha o foco do e-mail no pedido de resposta, evitando links concorrentes.</p>
+<p><strong>Com que frequência devo verificar essas estatísticas?</strong>
+Recomenda-se uma verificação semanal. Isso permite que você identifique tendências, corrija problemas rapidamente e otimize continuamente o desempenho das suas campanhas.</p>
+<p><strong>O objetivo é atingir os números "Bons" de qualquer jeito?</strong>
+Não exatamente. Os números fornecidos são diretrizes. O objetivo principal é <strong>melhorar</strong> em relação ao seu ponto de partida. Faça um pequeno ajuste de cada vez (ex: testar uma nova linha de assunto), avalie o impacto e continue iterando para melhorar seus resultados de forma sustentável.</p>
+<hr />
+<h2 id="blocos-rss-no-construtor-de-e-mails">Blocos RSS no Construtor de E-mails</h2>
+<h3 id="como-fazer_2">Como fazer</h3>
+<p><strong>Visão Geral</strong>
+Os elementos RSS no Construtor de E-mails do Full Funnel permitem que você envie automaticamente e-mails com conteúdo inserido dinamicamente sempre que um novo item de um feed RSS (Real Simple Syndication) for publicado.</p>
+<p><strong>Usando o Bloco de Cabeçalho RSS</strong>
+Este bloco preenche dinamicamente as tags <code>&lt;channel&gt;</code> do seu feed RSS. Ele suporta as seguintes tags de canal:</p>
+<table>
+<thead>
+<tr>
+<th>Tag RSS</th>
+<th>Valor Personalizado no Full Funnel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;title&gt;</code></td>
+<td><code>{{rss_feed.title}}</code></td>
+</tr>
+<tr>
+<td><code>&lt;description&gt;</code></td>
+<td><code>{{rss_feed.description}}</code></td>
+</tr>
+<tr>
+<td><code>&lt;link&gt;</code></td>
+<td><code>{{rss_feed.url}}</code></td>
+</tr>
+<tr>
+<td><code>&lt;lastBuildDate&gt;</code></td>
+<td><code>{{rss_feed.date}}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ao adicionar o bloco, você verá duas opções no seletor "Opções de Edição RSS":
+*   <strong>Básico</strong>: Insere um texto não editável no editor.
+*   <strong>Personalizado</strong>: Insere um texto editável no editor que você pode modificar.</p>
+<p><strong>Usando o Bloco de Itens RSS</strong>
+Este bloco insere os itens individuais do seu feed. Ele aceita os seguintes valores personalizados:</p>
+<table>
+<thead>
+<tr>
+<th>Tag RSS / Informação</th>
+<th>Valor Personalizado</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;title&gt;</code></td>
+<td><code>{{rss_item.title}}</code></td>
+<td>O título do item (ex.: post do blog).</td>
+</tr>
+<tr>
+<td><code>&lt;description&gt;</code></td>
+<td><code>{{rss_item.content}}</code></td>
+<td>Um resumo do item em HTML. Usa <code>&lt;description&gt;</code> ou <code>&lt;content:encoded&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;link&gt;</code></td>
+<td><code>{{rss_item.url}}</code></td>
+<td>O link para o item online.</td>
+</tr>
+<tr>
+<td><code>&lt;content:encoded&gt;</code></td>
+<td><code>{{rss_item.content_full}}</code></td>
+<td>O conteúdo completo do item em HTML. Usa <code>&lt;content:encoded&gt;</code> ou <code>&lt;description&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>pubDate</code></td>
+<td><code>{{rss_item.date}}</code></td>
+<td>Data de publicação no formato <code>MMM DD, AAAA hh:mm A</code>.</td>
+</tr>
+<tr>
+<td><code>&lt;dc:creator&gt;</code></td>
+<td><code>{{rss_item.author}}</code></td>
+<td>O autor do item.</td>
+</tr>
+<tr>
+<td><code>&lt;media:content&gt;</code></td>
+<td><code>{{rss_item.imageUrl}}</code></td>
+<td>A URL da imagem. Para renderizá-la, use <code>{{rss_img}}</code>.</td>
+</tr>
+<tr>
+<td>Abertura do item</td>
+<td><code>{{#rss_items rss_items}}</code></td>
+<td>Abre a formatação para os itens. Não exibe conteúdo.</td>
+</tr>
+<tr>
+<td>Fechamento do item</td>
+<td><code>{{/rss_items}}</code></td>
+<td>Fecha a formatação para os itens. Não exibe conteúdo.</td>
+</tr>
+</tbody>
+</table>
+<p>Assim como no cabeçalho, o bloco de itens oferece opções <strong>Básica</strong> (texto pré-formatado não editável) e <strong>Personalizada</strong> (texto editável).</p>
+<p><strong>Feed RSS Baseado em HTML</strong>
+Os valores retornados por variáveis como <code>{{rss_item.title}}</code> são escapados em HTML (ex.: <code>&amp;</code> vira <code>&amp;amp;</code>). Se seu feed contém HTML e você quer que ele seja renderizado, use <strong>três chaves</strong> <code>{{{</code> em vez de duas. Exemplo: <code>{{{rss_item.content}}}</code>.</p>
+<p><strong>Agendando um E-mail com RSS</strong>
+1.  No Construtor de E-mails, vá para a aba <strong>"Enviar ou Agendar"</strong>.
+2.  Selecione a opção <strong>"Campanha de E-mail RSS"</strong>.
+3.  Dê um nome à campanha no campo <strong>"Nome da Campanha"</strong>.
+4.  Cole a URL do seu feed RSS no campo <strong>"URL do Feed RSS"</strong>.
+5.  Em <strong>"Quando devemos enviar"</strong>, defina a frequência (Diariamente, Semanalmente, Mensalmente) e o horário.
+6.  Em <strong>"Enviar em"</strong>, escolha os dias da semana (para frequência semanal).
+7.  Defina os destinatários e revise as informações no painel lateral.
+8.  Confirme o agendamento.</p>
+<p><strong>Testando E-mails RSS</strong>
+Ao usar a função <strong>"Enviar E-mail de Teste"</strong> em um modelo com elementos RSS, um novo campo <strong>"URL do Feed RSS"</strong> aparecerá. Você <strong>deve</strong> fornecer uma URL de feed de teste aqui, caso contrário, todas as variáveis RSS serão substituídas por texto vazio.</p>
+<p><strong>Visualizando e Editando Campanhas RSS</strong>
+As campanhas RSS agendadas aparecem na aba <strong>"Agendados"</strong>, com o tipo listado como <strong>"RSS"</strong>. Lá você pode:
+*   <strong>Editar</strong>: Clica no ícone de lápis. Uma confirmação perguntará se você deseja cancelar o agendamento atual e criar um novo. Ao confirmar, o agendamento atual é cancelado e o Construtor de E-mails abre com as opções de RSS pré-preenchidas.
+*   <strong>Pausar/Retomar</strong>: Use as ações de pausa e retomada.
+*   <strong>Excluir</strong>: Remove permanentemente o agendamento.</p>
+<h3 id="requisitos_3">Requisitos</h3>
+<ul>
+<li>Um feed RSS válido e acessível publicamente.</li>
+<li>Um modelo de e-mail criado no Construtor de E-mails do Full Funnel.</li>
+<li>Uma lista de contatos ou segmento para enviar os e-mails.</li>
+</ul>
+<h3 id="faq_3">FAQ</h3>
+<p><strong>Os e-mails RSS podem ser agendados como uma campanha normal (enviar agora, gotejamento)?</strong>
+Não. Se você tentar agendar um modelo com elementos RSS usando as opções normais (enviar agora, agendar para depois, modo gotejamento), todas as variáveis personalizadas baseadas em tags RSS serão substituídas por texto vazio. Você <strong>deve</strong> usar a opção específica <strong>"Campanha de E-mail RSS"</strong> na aba "Enviar ou Agendar".</p>
+<p><strong>Onde vejo minhas campanhas RSS agendadas?</strong>
+Na aba <strong>"Agendados"</strong> da sua conta. O tipo da campanha será listado como <strong>"RSS"</strong>, diferente das campanhas normais.</p>
+<p><strong>Como faço para que o HTML do meu feed RSS seja renderizado no e-mail?</strong>
+Use três chaves <code>{{{</code> em vez de duas ao chamar a variável no construtor. Por exemplo: <code>{{{rss_item.content}}}</code>.</p>
+<p><strong>Posso usar as variáveis RSS no assunto do e-mail?</strong>
+Sim. Você pode usar as quatro variáveis do cabeçalho (<code>{{rss_feed.title}}</code>, <code>{{rss_feed.description}}</code>, etc.) no campo de assunto do e-mail.</p>
+<hr />
+<h2 id="importando-contatos-duplicados-com-mesmo-e-mail-e-telefone">Importando Contatos Duplicados com Mesmo E-mail e Telefone</h2>
+<h3 id="como-fazer_3">Como fazer</h3>
+<p>O sistema do Full Funnel possui uma lógica específica para evitar a criação de contatos duplicados durante uma importação via CSV. Ao importar um arquivo, o sistema verifica os registros existentes com base no endereço de e-mail e no número de telefone. Se um novo registro a ser importado tiver um e-mail ou telefone que já exista na sua base de contatos, as informações desse novo registro serão <strong>mescladas</strong> ao contato existente, em vez de criar um duplicado.</p>
+<p>Este processo de mesclagem é automático e garante que suas listas de contatos permaneçam organizadas e sem entradas redundantes.</p>
+<h3 id="requisitos_4">Requisitos</h3>
+<ul>
+<li><strong>Acesso de Administrador:</strong> É necessário ter permissões de administrador na sua conta do Full Funnel para realizar importações.</li>
+<li><strong>Arquivo CSV Válido:</strong> O arquivo a ser importado deve estar no formato CSV (Valores Separados por Vírgula) e estruturado corretamente, com colunas de cabeçalho claras.</li>
+<li><strong>Contatos Existentes:</strong> A lógica de mesclagem só se aplica se já houver um ou mais contatos na sua base com o mesmo e-mail ou telefone presente no arquivo de importação.</li>
+</ul>
+<h3 id="faq_4">FAQ</h3>
+<p><strong>O que acontece com os dados do novo registro durante a mesclagem?</strong>
+Os dados do novo registro importado sobrescrevem as informações do contato existente nos campos correspondentes. Campos vazios no novo registro não apagarão dados existentes. Campos com informações novas (que o contato antigo não possuía) serão adicionados ao perfil.</p>
+<p><strong>É possível forçar a criação de um contato duplicado?</strong>
+Não, a lógica de prevenção de duplicatas com base em e-mail e telefone é automática e não pode ser desativada para importações padrão. A recomendação é revisar e limpar seu arquivo CSV antes da importação.</p>
+<p><strong>Como importar contatos sem que eles sejam mesclados?</strong>
+Para que um registro seja criado como um novo contato, ele <strong>não pode</strong> compartilhar o mesmo endereço de e-mail <strong>ou</strong> o mesmo número de telefone com nenhum contato já existente na sua base. Certifique-se de que os dados de e-mail e telefone no seu CSV sejam únicos.</p>
+<hr />
+<h2 id="elemento-de-video-no-construtor-de-e-mails-do-full-funnel">Elemento de Vídeo no Construtor de E-mails do Full Funnel</h2>
+<h3 id="o-que-e-o-elemento-de-video">O que é o Elemento de Vídeo?</h3>
+<p>O Elemento de Vídeo no Construtor de E-mails do Full Funnel permite adicionar uma prévia de vídeo clicável aos seus e-mails. Como a reprodução direta de vídeo não é suportada pela maioria dos clientes de e-mail, este elemento cria uma miniatura com um botão de "play". Quando o contato clica na imagem, ele é direcionado para a URL do vídeo (no YouTube, Vimeo, etc.).</p>
+<p><strong>Importante:</strong> Por limitações técnicas dos provedores de e-mail, não é possível incorporar vídeos que reproduzam diretamente dentro do e-mail. Este bloco cria um link visual para o seu vídeo.</p>
+<h3 id="como-fazer_4">Como fazer</h3>
+<p>Para localizar e usar o Elemento de Vídeo:</p>
+<ol>
+<li>Acesse sua subconta do Full Funnel.</li>
+<li>No menu lateral, vá até <strong>Marketing</strong> &gt; <strong>E-mails</strong>.</li>
+<li>Clique em <strong>+ Criar Campanha</strong>, escolha a opção <strong>Em Branco</strong> e depois <strong>Editor de Design</strong>.<ul>
+<li>Alternativamente, você pode abrir um <strong>Modelo de E-mail</strong> existente para edição.</li>
+</ul>
+</li>
+<li>No painel esquerdo, localize o <strong>Elemento de Vídeo</strong> na seção <strong>Elementos</strong>.</li>
+<li>Arraste e solte o elemento de Vídeo no layout do seu e-mail.</li>
+</ol>
+<h3 id="configuracoes-do-editor-de-video">Configurações do Editor de Vídeo</h3>
+<p>Ao clicar no elemento de vídeo adicionado, as seguintes configurações estarão disponíveis no painel direito:</p>
+<ul>
+<li><strong>Tipo de Vídeo:</strong> Selecione a origem do seu vídeo. As opções são: YouTube, Vimeo, Wistia e HTML5.<ul>
+<li>O sistema tentará buscar a miniatura padrão do vídeo com base na URL fornecida.</li>
+<li>O estilo do botão de "play" pode mudar conforme o provedor (ex.: fundo vermelho para YouTube).</li>
+</ul>
+</li>
+<li><strong>URL do Vídeo:</strong> Insira aqui o link completo do seu vídeo (ex.: <code>https://youtu.be/seuID</code>).<ul>
+<li>Se o tipo de vídeo selecionado não corresponder à URL, um aviso será exibido.</li>
+</ul>
+</li>
+<li><strong>URL da Miniatura do Vídeo:</strong><ul>
+<li>Este campo é preenchido automaticamente com a miniatura buscada da URL do vídeo.</li>
+<li>Você pode usar uma miniatura personalizada:<ul>
+<li>Clique em <strong>Substituir</strong> para fazer upload de uma nova imagem.</li>
+<li>Clique em <strong>Remover</strong> para apagar a miniatura atual.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Largura &amp; Altura:</strong> Defina as dimensões do elemento de vídeo no e-mail.<ul>
+<li>Se deixado em branco, o vídeo ocupará a largura total do container.</li>
+<li><strong>Nota:</strong> Ao definir dimensões personalizadas, o elemento será alinhado à esquerda. Para centralizá-lo, use a configuração de <strong>Preenchimento (Padding)</strong> ou coloque o vídeo dentro de um layout de colunas.</li>
+</ul>
+</li>
+<li><strong>Preenchimento (Padding):</strong> Adicione espaçamento interno ao redor do elemento de vídeo para melhor posicionamento no layout.</li>
+</ul>
+<h3 id="requisitos_5">Requisitos</h3>
+<ul>
+<li>O Elemento de Vídeo está disponível apenas dentro do <strong>Editor de Design</strong> do Construtor de E-mails e nos <strong>Modelos de E-mail</strong>.</li>
+<li>É necessário ter a URL pública de um vídeo hospedado em uma das plataformas suportadas (YouTube, Vimeo, Wistia) ou um link direto para um arquivo de vídeo (HTML5).</li>
+</ul>
+<h3 id="faq_5">FAQ</h3>
+<p><strong>P: O vídeo vai tocar automaticamente dentro do e-mail?</strong>
+R: Não. Os clientes de e-mail não suportam reprodução de vídeo incorporada. O elemento cria uma imagem de prévia clicável que leva o contato para a página onde o vídeo está hospedado.</p>
+<p><strong>P: Posso usar uma miniatura personalizada?</strong>
+R: Sim. Após adicionar a URL do vídeo, você pode clicar em "Substituir" no campo <strong>URL da Miniatura do Vídeo</strong> para fazer upload da sua própria imagem.</p>
+<p><strong>P: Como centralizar o vídeo no e-mail?</strong>
+R: Se o vídeo com dimensões personalizadas estiver alinhado à esquerda, você pode:
+1.  Ajustar o <strong>Preenchimento (Padding)</strong> para movê-lo.
+2.  Arrastar o elemento de vídeo para dentro de um bloco de <strong>Colunas</strong> (2 ou 3 colunas) no editor, que oferece mais opções de alinhamento.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

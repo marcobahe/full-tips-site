@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siga este passo a passo detalhado para configurar seu domínio do Siteground no Mailgun e integrá-lo ao Full Funnel.">
+    <title>Sites Blogs — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="sites-blogs">Sites Blogs</h1>
+<h2 id="configuracao-do-mailgun-dominio-no-siteground">Configuração do Mailgun - Domínio no Siteground</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Siga este passo a passo detalhado para configurar seu domínio do Siteground no Mailgun e integrá-lo ao Full Funnel.</p>
+<p><strong>1. Criar Conta e Adicionar Domínio no Mailgun:</strong>
+*   Acesse <code>Mailgun.com</code> e crie uma conta.
+*   Verifique seu endereço de e-mail através da caixa de entrada.
+*   Faça login no Mailgun, vá em <strong>Sending &gt; Add New Domain</strong>.
+*   Escolha entre configurar o domínio principal (ex: <code>empresa.com</code>) ou um subdomínio (ex: <code>mg.empresa.com</code>).
+    *   <strong>Domínio Principal:</strong> Não deve estar em uso com Gsuite ou outro provedor de e-mail.
+    *   <strong>Subdomínio:</strong> Pode ser qualquer coisa, como <code>mg.empresa.com</code>, <code>respostas.empresa.com</code>.
+*   <strong>Importante:</strong> Selecione a região <strong>US</strong> (não EU) ao configurar.
+*   Clique em <strong>Add Domain</strong>. Mantenha a tela com os registros DNS abertos para o próximo passo.</p>
+<p><strong>2. Adicionar Registros DNS no Siteground:</strong>
+Acesse o <strong>Site Tools</strong> da sua hospedagem Siteground e siga para <strong>Domain &gt; DNS Zone Editor</strong>. Você precisará adicionar 5 registros.</p>
+<ul>
+<li>
+<p><strong>Para adicionar o 1º Registro TXT:</strong></p>
+<ol>
+<li>Na seção <em>Create New Record</em>, clique na aba <strong>TXT</strong>.</li>
+<li><strong>Name (Host):</strong> Varia conforme seu domínio. <strong>NÃO INCLUA O DOMÍNIO RAÍZ.</strong><ul>
+<li>Para subdomínio <code>mg.empresa.com</code>: digite <code>mg</code>.</li>
+<li>Para domínio principal <code>empresa.com</code>: deixe em branco ou use <code>@</code>.</li>
+</ul>
+</li>
+<li><strong>Value (Conteúdo):</strong> Cole este valor: <code>v=spf1 include:mailgun.org ~all</code></li>
+<li>Clique em <strong>Create</strong>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Para adicionar o 2º Registro TXT:</strong></p>
+<ol>
+<li>Clique em <strong>+ Add Record</strong> novamente e selecione a aba <strong>TXT</strong>.</li>
+<li><strong>Name (Host):</strong> Copie APENAS a parte do hostname fornecida pelo Mailgun, sem o domínio raiz.<ul>
+<li>Exemplo do Mailgun: Se for <code>mx._domainkey.helpdesk.empresa.com</code>, copie <code>mx._domainkey.helpdesk</code>.</li>
+</ul>
+</li>
+<li><strong>Value (Conteúdo):</strong> Copie e cole o valor exclusivo do segundo registro TXT fornecido pelo Mailgun.</li>
+<li>Clique em <strong>Create</strong>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Para adicionar o 1º Registro MX:</strong></p>
+<ol>
+<li>Clique na aba <strong>MX</strong> e selecione <strong>Add your own MX records</strong>.</li>
+<li><strong>Name (Host):</strong> Use o mesmo hostname do primeiro registro TXT (<code>mg</code>, <code>@</code> ou em branco).</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code></li>
+<li><strong>Destination (Destino):</strong> Cole: <code>mx.a.mailgun.org</code></li>
+<li>Clique em <strong>Create</strong>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Para adicionar o 2º Registro MX:</strong></p>
+<ol>
+<li>Adicione outro registro MX.</li>
+<li><strong>Name (Host):</strong> Repita o mesmo hostname.</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code></li>
+<li><strong>Destination (Destino):</strong> Cole: <code>mx.b.mailgun.org</code></li>
+<li>Clique em <strong>Create</strong>.</li>
+</ol>
+</li>
+<li>
+<p><strong>Para adicionar o Registro CNAME:</strong></p>
+<ol>
+<li>Clique na aba <strong>CNAME</strong>.</li>
+<li><strong>Name (Host):</strong> Copie APENAS a parte do hostname fornecida pelo Mailgun para o CNAME.<ul>
+<li>Exemplo do Mailgun: Se for <code>email.mg.empresa.com</code>, copie <code>email.mg</code>.</li>
+</ul>
+</li>
+<li><strong>Resolves to (Aponta para):</strong> Cole: <code>mailgun.org</code></li>
+<li>Clique em <strong>Create</strong>.</li>
+</ol>
+</li>
+</ul>
+<p><strong>3. Verificar e Finalizar:</strong>
+*   Volte à tela do Mailgun e clique em <strong>Verify DNS Settings</strong>.
+*   Se alguns registros não aparecerem com a marcação verde, clique novamente para verificar após alguns minutos.
+*   Após a verificação bem-sucedida, copie a <strong>API Key</strong> do Mailgun (em <strong>Sending &gt; Domains &gt; [Seu Domínio] &gt; API Key</strong>).
+*   Adicione essa chave API nas <strong>Configurações</strong> do Full Funnel, na seção de <strong>Integrações</strong> de e-mail.</p>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Uma conta ativa no Mailgun.</li>
+<li>Acesso administrativo ao painel de controle do domínio no Siteground (Site Tools).</li>
+<li>Se usar Gsuite no domínio principal, é <strong>obrigatório</strong> configurar um subdomínio para o Mailgun.</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>Posso usar o mesmo domínio principal para o Mailgun e para meu e-mail corporativo (Gsuite/Outlook)?</strong>
+Não é recomendado. Para evitar conflitos, configure um subdomínio (ex: <code>envios.empresa.com</code>) para o Mailgun se seu e-mail principal já usa o domínio raiz.</p>
+<p><strong>Quanto tempo leva para os registros DNS serem verificados?</strong>
+Geralmente leva alguns minutos, mas pode demorar até 48 horas para propagar totalmente. Clique no botão de verificação no Mailgun periodicamente.</p>
+<p><strong>O que fazer se a verificação DNS falhar?</strong>
+Verifique se você copiou os valores exatos fornecidos pelo Mailgun, especialmente nos registros TXT e CNAME. Confirme se o "Name (Host)" está correto, sem incluir o domínio raiz (<code>.empresa.com</code>). Aguarde mais tempo para propagação.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

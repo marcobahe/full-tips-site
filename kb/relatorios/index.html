@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este artigo fornece uma visão detalhada da funcionalidade de Análise de Mensagens dentro do Sistema Telefônico do Full Funnel, ajudando os usuários a ...">
+    <title>Relatorios — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="relatorios">Relatorios</h1>
+<h2 id="visao-geral-da-analise-de-mensagens-do-sistema-telefonico">Visão Geral da Análise de Mensagens do Sistema Telefônico</h2>
+<p>Este artigo fornece uma visão detalhada da funcionalidade de Análise de Mensagens dentro do Sistema Telefônico do Full Funnel, ajudando os usuários a rastrear, analisar e melhorar o desempenho de SMS/MMS em suas subcontas.</p>
+<h3 id="o-que-e-a-analise-de-mensagens">O que é a Análise de Mensagens?</h3>
+<p>A Análise de Mensagens é uma ferramenta de relatórios integrada ao Sistema Telefônico que oferece visibilidade sobre sua atividade de mensagens de saída. Ela ajuda os usuários a entender o desempenho de entrega e identificar tendências, fornecendo acesso a métricas-chave, status detalhados das mensagens e capacidades de filtragem.</p>
+<h3 id="principais-beneficios-da-analise-de-mensagens">Principais Benefícios da Análise de Mensagens</h3>
+<ul>
+<li><strong>Monitoramento de Desempenho:</strong> Acompanhe taxas de mensagens enviadas, entregues, não entregues e com erro em tempo real.</li>
+<li><strong>Filtragem Direcionada:</strong> Analise dados por campanha, automação, data e tipo de envio em massa.</li>
+<li><strong>Relatórios Acionáveis:</strong> Revise detalhes no nível da mensagem e acesse as conversas para obter contexto.</li>
+<li><strong>Insights de Entregabilidade:</strong> Identifique problemas e tome ações corretivas com base nos padrões de entrega.</li>
+</ul>
+<h3 id="como-fazer-onde-encontrar-a-opcao-de-analise-de-mensagens">Como fazer: Onde encontrar a opção de Análise de Mensagens?</h3>
+<ol>
+<li>Acesse as <strong>Configurações</strong> da subconta.</li>
+<li>Selecione <strong>Números de Telefone</strong> em Serviços de Negócios.</li>
+<li>Clique na aba <strong>Análise de Mensagens</strong>.</li>
+</ol>
+<h3 id="metricas-na-analise-de-mensagens-explicadas">Métricas na Análise de Mensagens Explicadas</h3>
+<p>Estas métricas ajudam a avaliar o desempenho do engajamento, detectar problemas de entregabilidade e identificar preocupações de conformidade.</p>
+<ul>
+<li><strong>Enviadas:</strong> Total de mensagens enviadas ao provedor de telefonia, excluindo as que falharam dentro do CRM.</li>
+<li><strong>Entregues:</strong> Número total de mensagens entregues com sucesso aos destinatários.</li>
+<li><strong>Falhas:</strong> Mensagens que não chegaram ao destinatário devido a erros no número, bloqueios do provedor ou da operadora.</li>
+<li><strong>Erro [30007]:</strong> Indica que as operadoras de telefonia sinalizaram a mensagem como spam, phishing ou conteúdo fraudulento.</li>
+<li><strong>Recebidas:</strong> Número de mensagens de entrada recebidas com sucesso pelo seu sistema.</li>
+<li><strong>Cancelaram Inscrição:</strong> Número total de destinatários que cancelaram a inscrição ou optaram por não receber mais mensagens.</li>
+</ul>
+<h3 id="opcoes-avancadas-de-filtragem">Opções Avançadas de Filtragem</h3>
+<p>Personalize sua visualização de análise aplicando filtros dinâmicos que permitem segmentar o desempenho das mensagens por diferentes parâmetros.</p>
+<p><strong>Filtro de Data</strong>
+Permite comparar resultados em períodos de tempo personalizados para descobrir tendências, picos ou quedas no desempenho. Os usuários podem filtrar intervalos de data com base em:
+*   Data atual.
+*   Últimos 7 dias.
+*   Mês atual.
+*   Ano atual.
+*   Intervalo de datas personalizado de sua escolha.</p>
+<p><strong>Filtros de Mensagens</strong>
+Os filtros de mensagens ajudam a segmentar os dados com base em fontes específicas, como campanhas, automações e solicitações em massa.
+*   <strong>Campanha:</strong> Filtre mensagens pelo nome da campanha atribuída.
+*   <strong>Automação:</strong> Analise o sucesso das mensagens dentro de automações específicas.
+*   <strong>Solicitação em Massa:</strong> Veja os resultados de envios de mensagens em massa.</p>
+<h3 id="relatorios-detalhados-de-mensagens">Relatórios Detalhados de Mensagens</h3>
+<p>Oferece aos usuários relatórios detalhados de mensagens para cada status, com a capacidade de navegar diretamente para a página da conversa para obter o contexto completo.
+*   Explore listas de mensagens enviadas, entregues e não entregues.
+*   Clique em cada entrada para acessar a visualização completa da conversa.
+*   Rastreie caminhos e resultados das mensagens em contexto.</p>
+<p><strong>Para acessar relatórios detalhados para qualquer uma das métricas:</strong>
+1.  Clique em qualquer <strong>caixa de Métrica</strong>.
+2.  Uma janela pop-up aparecerá com o relatório detalhado de cada conversa.
+3.  Você também pode clicar no <strong>Botão de Ação</strong> abaixo de cada nome de contato para abrir a página da conversa para o contato específico.</p>
+<h3 id="faq-perguntas-frequentes">FAQ (Perguntas Frequentes)</h3>
+<p><strong>P: Posso baixar ou exportar meus dados de análise?</strong>
+R: Atualmente, a exportação não está disponível na interface de Análise de Mensagens. Você pode tirar capturas de tela ou consultar os registros detalhados na aba de Conversas.</p>
+<p><strong>P: Por que não vejo nenhuma mensagem listada em uma campanha ou automação?</strong>
+R: Certifique-se de que as mensagens estão devidamente marcadas com IDs de campanha ou automação durante a criação. Também confirme se o intervalo de datas selecionado inclui a atividade esperada.</p>
+<p><strong>P: Com que frequência os dados são atualizados na Análise de Mensagens?</strong>
+R: O painel de análise é atualizado em tempo quase real, mas podem ocorrer atrasos dependendo do volume de mensagens e do feedback da operadora.</p>
+<p><strong>P: O que devo fazer se minha taxa de entrega cair repentinamente?</strong>
+R: Verifique se houve alterações recentes no conteúdo, revise os códigos de Erro e valide se suas práticas de envio estão em conformidade com a Política de Mensagens do Full Funnel.</p>
+<p><strong>P: Posso filtrar por número de telefone ou contato?</strong>
+R: Não atualmente. Os filtros da Análise de Mensagens funcionam apenas no nível de campanha, automação, solicitação em massa e data.</p>
+<p><strong>P: Qual é a diferença entre os status 'Falha' e 'Erro'?</strong>
+R: 'Falha' refere-se a tentativas de entrega que não chegaram aos destinatários (ex.: números inválidos), enquanto 'Erro' normalmente reflete rejeições específicas da operadora ou problemas no sistema.</p>
+<p><strong>P: Por que o rastreamento de Cancelamento de Inscrição é importante?</strong>
+R: Ajuda a identificar destinatários que cancelaram a inscrição, permitindo que você ajuste as estratégias de mensagens e garanta a conformidade.</p>
+<hr />
+<h2 id="relatorio-de-chamadas">Relatório de Chamadas</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Para acessar o Relatório de Chamadas no Full Funnel, siga estes passos:
+1.  No menu lateral esquerdo, clique em <strong>Relatórios</strong>.
+2.  No menu superior que aparece, selecione <strong>Relatório de Chamadas</strong>.</p>
+<p>Este relatório oferece uma visão detalhada de todas as interações telefônicas. Você pode:
+*   <strong>Filtrar os dados:</strong> Visualize informações para todos os números do seu perfil ou para um número específico.
+*   <strong>Analisar por seção:</strong> A aba é dividida em <strong>Chamadas Recebidas</strong> e <strong>Chamadas Efetuadas</strong>.
+*   <strong>Exportar dados:</strong> Personalize as colunas e exporte a tabela histórica para um arquivo CSV para análise aprofundada.
+*   <strong>Acessar gravações:</strong> Para chamadas de URA (IVR), use o menu suspenso na tabela para selecionar e ouvir entre diferentes gravações disponíveis.</p>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Este recurso está disponível no plano <strong>Agency Pro</strong> do Full Funnel.</li>
+<li>Para relatórios altamente personalizados, é recomendável utilizar os <strong>Dashboards Personalizados</strong>, onde você pode criar e modificar widgets com métricas específicas.</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>O que o Relatório de Chamadas mostra?</strong>
+O relatório fornece insights sobre todas as chamadas, incluindo:
+*   <strong>Visão Geral:</strong> Divisão do status das chamadas (perdida, ocupada, atendida) em um gráfico.
+*   <strong>Primeiras Chamadas:</strong> Status e duração média/total das primeiras chamadas recebidas de um contato.
+*   <strong>Principais Fontes:</strong> Origem das chamadas (ex.: busca orgânica do Google), com totais, negócios fechados e duração.
+*   <strong>Tabela Histórica:</strong> Registro detalhado de todas as chamadas, filtrável por tipo.
+*   <strong>Chamadas Efetuadas:</strong> Distribuição de status e desempenho dos principais agentes (quantidade de chamadas e leads únicos contatados).</p>
+<p><strong>Como posso criar relatórios mais customizados?</strong>
+Para análises mais específicas, utilize a funcionalidade de <strong>Dashboards Personalizados</strong>. Lá você pode criar widgets sob medida para monitorar as métricas que são mais importantes para o seu negócio. Consulte o documento de ajuda "Widgets Personalizados" para mais informações.</p>
+<hr />
+<h2 id="entendendo-a-velocidade-de-vendas-no-relatorio-de-agentes">Entendendo a Velocidade de Vendas no Relatório de Agentes</h2>
+<h3 id="o-que-e-velocidade-de-vendas">O que é Velocidade de Vendas?</h3>
+<p>A Velocidade de Vendas é uma métrica que mede a rapidez com que as <strong>Oportunidades</strong> no seu pipeline se tornam <strong>Ganhas</strong> e geram receita. Em termos simples, ela mostra quanto valor em vendas sua equipe ou negócio gera por mês, com base na velocidade do seu ciclo de vendas.</p>
+<h3 id="como-e-calculada">Como é Calculada?</h3>
+<p>A fórmula principal no Full Funnel é:</p>
+<p><strong>Velocidade de Vendas = Valor Total de Vendas / Ciclo Médio de Vendas (em meses)</strong></p>
+<p>Onde:
+*   <strong>Valor Total de Vendas:</strong> Soma do valor de todas as oportunidades marcadas como "Ganhas" dentro do período selecionado.
+*   <strong>Ciclo Médio de Vendas:</strong> Duração média que uma oportunidade leva para ser fechada, normalizada para meses. É calculado assim:
+    1.  <strong>Duração Total de Vendas:</strong> Soma da duração de vendas de <em>todas</em> as oportunidades ganhas.
+    2.  <strong>Duração Individual da Oportunidade:</strong> Diferença (em dias) entre a data de criação da oportunidade e a data em que ela foi marcada como "Ganha".
+    3.  <strong>Ciclo Médio de Vendas (em dias):</strong> <code>Duração Total de Vendas / Número de Oportunidades Ganhas</code>.
+    4.  <strong>Ciclo Médio de Vendas (em meses):</strong> O sistema converte o ciclo médio em dias para uma base mensal para o cálculo final.</p>
+<p><strong>Em outras palavras: Velocidade de Vendas = Valor de Vendas Mensal.</strong></p>
+<h3 id="exemplo-pratico">Exemplo Prático</h3>
+<p>Suponha que um agente fechou 3 oportunidades em uma semana:</p>
+<ul>
+<li><strong>Oportunidade #1:</strong> Criada em 1º de Dez, Ganha em 20 de Dez (20 dias). Valor: $30</li>
+<li><strong>Oportunidade #2:</strong> Criada em 15 de Dez, Ganha em 21 de Dez (5 dias). Valor: $50</li>
+<li><strong>Oportunidade #3:</strong> Criada em 21 de Dez, Ganha em 22 de Dez (2 dias). Valor: $70</li>
+</ul>
+<p><strong>Cálculo:</strong>
+1.  <strong>Valor Total de Vendas:</strong> $30 + $50 + $70 = <strong>$150</strong>
+2.  <strong>Duração Total de Vendas:</strong> 20 dias + 5 dias + 2 dias = <strong>27 dias</strong>
+3.  <strong>Ciclo Médio de Vendas (em dias):</strong> 27 dias / 3 oportunidades = <strong>9 dias</strong>
+4.  <strong>Valor de Vendas Diário Médio:</strong> $150 / 9 dias = <strong>$16,67 por dia</strong>
+5.  <strong>Velocidade de Vendas (Projeção Mensal):</strong> ($150 / 9 dias) * 30 dias = <strong>$500/mês</strong></p>
+<p><strong>Portanto, a Velocidade de Vendas para este agente, nesse período, é de $500 por mês.</strong></p>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Para que o cálculo funcione, as oportunidades devem ser criadas e marcadas como <strong>"Ganha"</strong> dentro do sistema.</li>
+<li>O valor da oportunidade deve estar preenchido.</li>
+<li>A métrica é mais precisa quando analisada em períodos com um número significativo de oportunidades fechadas.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>Onde posso ver a Velocidade de Vendas no Full Funnel?</strong>
+Você pode encontrar essa métrica nos <strong>Relatórios</strong> do sistema, especificamente nas seções de relatório de Agente ou no dashboard de desempenho de vendas.</p>
+<p><strong>Por que a Velocidade de Vendas é importante?</strong>
+Ela ajuda a identificar a eficiência do seu processo de vendas. Uma velocidade maior indica que você está fechando negócios de bom valor mais rapidamente. Ajuda no forecasting e no planejamento de metas.</p>
+<p><strong>A Velocidade de Vendas considera oportunidades perdidas?</strong>
+Não. O cálculo considera apenas as oportunidades que foram <strong>Ganhas</strong>.</p>
+<p><strong>Posso filtrar a Velocidade de Vendas por período, agente ou pipeline?</strong>
+Sim, os relatórios no Full Funnel geralmente permitem aplicar filtros para analisar a métrica para períodos específicos, agentes individuais ou pipelines de vendas distintos.</p>
+<hr />
+<h2 id="relatorio-de-usuarioagente">Relatório de Usuário/Agente</h2>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p>Para acessar o relatório de desempenho dos agentes, siga os passos abaixo:
+1.  No menu lateral esquerdo da plataforma, clique em <strong>Relatórios</strong>.
+2.  No menu superior que se abre, selecione a opção <strong>Relatório de Agentes</strong>.</p>
+<p>Este relatório fornece uma visão abrangente com as seguintes seções:
+*   <strong>Visão Geral:</strong> Um panorama do desempenho de toda a equipe.
+*   <strong>Visão de Oportunidades:</strong> Exibe estatísticas de conversão, SMS, e-mail, métricas de chamadas e eficiência.
+*   <strong>Ranking:</strong> Mostra os agentes com mais oportunidades criadas e mais oportunidades ganhas.
+*   <strong>Comparação de Períodos:</strong> Permite comparar métricas entre diferentes intervalos de datas.</p>
+<p>Para relatórios mais personalizados e detalhados, você pode criar painéis customizados. Neles, é possível adicionar e modificar widgets para exibir as métricas específicas que você precisa. Mais informações estão disponíveis no documento de ajuda sobre <strong>Widgets Personalizados</strong>.</p>
+<h3 id="requisitos_2">Requisitos</h3>
+<p>O recurso de <strong>Relatório de Agentes</strong> está disponível no plano <strong>Pro da Agência</strong>.</p>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>Onde encontro relatórios mais detalhados e personalizados?</strong>
+Para análises mais específicas, utilize a funcionalidade de <strong>Painéis Personalizados</strong>. Lá você pode criar widgets que tragam dados exatos de diferentes áreas da plataforma, permitindo um acompanhamento sob medida para o seu negócio. Consulte o guia sobre <strong>Widgets Personalizados</strong> para instruções.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

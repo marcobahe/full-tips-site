@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gatilhos iniciam ações em suas Automações baseadas em eventos específicos. Eles são organizados em categorias para ajudar você a encontrar o que preci...">
+    <title>Automações — Gatilhos — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="gatilhos-de-automacao">Gatilhos de Automação</h2>
+<p>Gatilhos iniciam ações em suas Automações baseadas em eventos específicos. Eles são organizados em categorias para ajudar você a encontrar o que precisa rapidamente.</p>
+<h3 id="como-funcionam-gatilhos-e-acoes">Como funcionam Gatilhos e Ações</h3>
+<p>Gatilhos são eventos que iniciam Automações, levando à execução de várias ações. Eles seguem uma ordem cronológica, conforme especificado em sua Automação.</p>
+<ul>
+<li><strong>Gatilho de Automação:</strong> Inicia uma Automação com base em eventos específicos.</li>
+<li><strong>Ação de Automação:</strong> Segue o gatilho e executa tarefas conforme as instruções.</li>
+</ul>
+<p>Para encontrar os gatilhos, vá em Automações, selecione "Adicionar novo gatilho". O menu de gatilhos será exibido.</p>
+<h3 id="lista-completa-de-gatilhos-de-automacao">Lista Completa de Gatilhos de Automação</h3>
+<h4 id="contato">Contato</h4>
+<ul>
+<li><strong>Lembrete de Aniversário:</strong> Dispara no ou próximo ao aniversário do contato, usando o deslocamento definido.</li>
+<li><strong>Contato Alterado:</strong> Dispara quando os campos de contato especificados mudam para os valores definidos.</li>
+<li><strong>Contato Criado:</strong> Dispara quando um novo registro de contato é adicionado ao CRM.</li>
+<li><strong>Contato Não Perturbe (DND):</strong> Dispara quando a preferência Não Perturbe de um contato é ativada ou desativada.</li>
+<li><strong>Tag de Contato:</strong> Dispara quando uma tag selecionada é adicionada ou removida de um contato.</li>
+<li><strong>Lembrete de Data Personalizada:</strong> Dispara antes/na/depois de um campo de data personalizada escolhido no contato.</li>
+<li><strong>Nota Adicionada:</strong> Dispara quando uma nova nota é adicionada ao contato.</li>
+<li><strong>Nota Alterada:</strong> Dispara quando uma nota de contato existente é editada.</li>
+<li><strong>Tarefa Adicionada:</strong> Dispara quando uma tarefa é criada para o contato.</li>
+<li><strong>Lembrete de Tarefa:</strong> Dispara quando o horário do lembrete da tarefa é atingido.</li>
+<li><strong>Tarefa Concluída:</strong> Dispara quando uma tarefa para o contato é marcada como concluída.</li>
+<li><strong>Pontuação de Engajamento do Contato:</strong> Dispara quando a pontuação de engajamento atende à sua regra.</li>
+</ul>
+<h4 id="eventos">Eventos</h4>
+<ul>
+<li><strong>Webhook de Entrada:</strong> Dispara quando os dados são recebidos no URL do webhook da Automação.</li>
+<li><strong>Agendador:</strong> Dispara em um horário agendado, sem necessidade de um contato.</li>
+<li><strong>Detalhes da Chamada:</strong> Dispara quando um registro de chamada corresponde aos detalhes ou resultados selecionados.</li>
+<li><strong>Eventos de Email:</strong> Dispara em email entregue, aberto, clicado, rejeitado, spam ou cancelamento de inscrição.</li>
+<li><strong>Cliente Respondeu:</strong> Dispara quando o contato responde em qualquer canal conectado.</li>
+<li><strong>Gatilho de IA de Conversa:</strong> Dispara quando um evento de IA de Conversa configurado ocorre.</li>
+<li><strong>Gatilho Personalizado:</strong> Dispara a partir de um evento personalizado definido para casos de uso não padronizados.</li>
+<li><strong>Formulário Enviado:</strong> Dispara quando um formulário selecionado da nossa plataforma é enviado.</li>
+<li><strong>Pesquisa Enviada:</strong> Dispara quando uma pesquisa selecionada é enviada.</li>
+<li><strong>Link de Gatilho Clicado:</strong> Dispara quando o contato clica em um link de gatilho definido.</li>
+<li><strong>Formulário de Lead do Facebook Enviado:</strong> Dispara quando um envio de formulário de anúncio de lead do Facebook é recebido.</li>
+<li><strong>Formulário do TikTok Enviado:</strong> Dispara quando um formulário de lead do TikTok é enviado.</li>
+<li><strong>Rastreamento de Vídeo:</strong> Dispara quando um visualizador atinge uma porcentagem escolhida de um vídeo.</li>
+<li><strong>Validação de Número:</strong> Dispara com base no resultado da validação do número de telefone.</li>
+<li><strong>Erro de Mensagem – SMS:</strong> Dispara quando um SMS de saída retorna um erro específico.</li>
+<li><strong>Formulário de Lead do LinkedIn Enviado:</strong> Dispara quando um envio de formulário de geração de leads do LinkedIn é recebido.</li>
+<li><strong>Visualização de Página de Funil/Website:</strong> Dispara quando o contato visualiza uma página/URL ou UTM especificado.</li>
+<li><strong>Quiz Enviado:</strong> Dispara quando um quiz selecionado é enviado.</li>
+<li><strong>Nova Avaliação Recebida:</strong> Dispara quando uma nova avaliação chega em Reputação.</li>
+<li><strong>Prospecto Gerado:</strong> Dispara quando um novo registro de prospecto é criado.</li>
+<li><strong>Clique para Anúncios do WhatsApp:</strong> Dispara quando uma thread de entrada do WhatsApp começa a partir de um anúncio Clique para WhatsApp.</li>
+<li><strong>Evento de Rastreamento Externo:</strong> Dispara quando um evento de rastreamento nomeado do lado do cliente/servidor é capturado.</li>
+</ul>
+<h4 id="agendamentos">Agendamentos</h4>
+<ul>
+<li><strong>Status do Agendamento:</strong> Dispara em mudanças de status, como agendado, reagendado, cancelado ou não comparecido.</li>
+<li><strong>Cliente Agendou Agendamento:</strong> Dispara quando um cliente agenda um agendamento.</li>
+<li><strong>Reserva de Serviço:</strong> Dispara quando uma reserva é feita usando Serviços (v2).</li>
+<li><strong>Reserva de Aluguel:</strong> Dispara quando uma reserva de aluguel é agendada.</li>
+</ul>
+<h4 id="oportunidades">Oportunidades</h4>
+<ul>
+<li><strong>Status da Oportunidade Alterado:</strong> Dispara quando o status de uma oportunidade muda (por exemplo, Aberto → Ganho/Perdido).</li>
+<li><strong>Oportunidade Criada:</strong> Dispara quando uma nova oportunidade é criada.</li>
+<li><strong>Oportunidade Alterada:</strong> Dispara quando os campos de oportunidade selecionados mudam.</li>
+<li><strong>Etapa do Pipeline Alterada:</strong> Dispara quando uma oportunidade se move para uma etapa diferente do pipeline.</li>
+<li><strong>Oportunidades Estagnadas:</strong> Dispara quando as oportunidades atendem à sua regra de inatividade/estagnação.</li>
+</ul>
+<h4 id="afiliado">Afiliado</h4>
+<ul>
+<li><strong>Afiliado Criado:</strong> Dispara quando uma nova conta de afiliado é criada.</li>
+<li><strong>Novas Vendas de Afiliado:</strong> Dispara quando uma venda é atribuída a um afiliado.</li>
+<li><strong>Afiliado Inscrito na Campanha:</strong> Dispara quando um afiliado é adicionado a uma campanha.</li>
+<li><strong>Lead Criado:</strong> Dispara quando um novo lead atribuído ao afiliado é criado.</li>
+</ul>
+<h4 id="cursos">Cursos</h4>
+<ul>
+<li><strong>Categoria Iniciada:</strong> Dispara quando um aluno inicia uma categoria de curso selecionada.</li>
+<li><strong>Categoria Concluída:</strong> Dispara quando um aluno conclui uma categoria de curso selecionada.</li>
+<li><strong>Lição Iniciada:</strong> Dispara quando um aluno inicia uma lição.</li>
+<li><strong>Lição Concluída:</strong> Dispara quando um aluno conclui uma lição.</li>
+<li><strong>Novo Cadastro:</strong> Dispara quando um usuário se inscreve em um curso/oferta.</li>
+<li><strong>Acesso à Oferta Concedido:</strong> Dispara quando o acesso a uma oferta é concedido.</li>
+<li><strong>Acesso à Oferta Removido:</strong> Dispara quando o acesso a uma oferta é removido.</li>
+<li><strong>Acesso ao Produto Concedido:</strong> Dispara quando o acesso a um produto é concedido.</li>
+<li><strong>Acesso ao Produto Removido:</strong> Dispara quando o acesso a um produto é removido.</li>
+<li><strong>Produto Iniciado:</strong> Dispara quando um aluno inicia um produto/curso.</li>
+<li><strong>Produto Concluído:</strong> Dispara quando um aluno conclui um produto/curso.</li>
+<li><strong>Login do Usuário:</strong> Dispara quando um aluno faz login no portal de aprendizado.</li>
+</ul>
+<h4 id="pagamentos">Pagamentos</h4>
+<ul>
+<li><strong>Fatura:</strong> Dispara em eventos do ciclo de vida da fatura, como criado, enviado, devido ou pago.</li>
+<li><strong>Pagamento Recebido:</strong> Dispara quando um pagamento é capturado com sucesso.</li>
+<li><strong>Envio de Formulário de Pedido:</strong> Dispara quando um formulário de checkout/pedido é enviado.</li>
+<li><strong>Pedido Enviado:</strong> Dispara quando um pedido é enviado com sucesso no checkout.</li>
+<li><strong>Documentos e Contratos:</strong> Dispara em eventos de status do documento, como enviado, assinado ou recusado.</li>
+<li><strong>Orçamentos:</strong> Dispara em eventos de orçamento, como enviado, aceito ou recusado.</li>
+<li><strong>Assinatura:</strong> Dispara na criação, atualização, pausa, retomada ou cancelamento da assinatura.</li>
+<li><strong>Reembolso:</strong> Dispara quando um reembolso é emitido.</li>
+<li><strong>Código de Cupom Aplicado:</strong> Dispara quando um código de cupom é aplicado a uma compra.</li>
+<li><strong>Limite de Resgate do Cupom Atingido:</strong> Dispara quando um cupom atinge seu limite de resgate.</li>
+<li><strong>Código de Cupom Expirado:</strong> Dispara quando um código de cupom expira.</li>
+<li><strong>Código de Cupom Resgatado:</strong> Dispara quando um código de cupom é resgatado.</li>
+</ul>
+<h4 id="lojas-de-ecommerce">Lojas de Ecommerce</h4>
+<ul>
+<li><strong>Carrinho Abandonado:</strong> Dispara quando um carrinho é abandonado.</li>
+<li><strong>Pedido Realizado:</strong> Dispara quando um pedido é feito.</li>
+<li><strong>Pedido Cumprido:</strong> Dispara quando um pedido é cumprido.</li>
+<li><strong>Avaliação de Produto Enviada:</strong> Dispara quando uma avaliação de produto é enviada.</li>
+<li><strong>Checkout Abandonado:</strong> Dispara quando uma sessão de checkout é abandonada.</li>
+</ul>
+<h4 id="ivr">IVR</h4>
+<ul>
+<li><strong>Gatilho de Início de IVR:</strong> Dispara quando um chamador atinge uma entrada ou opção de IVR configurada.</li>
+</ul>
+<h4 id="eventos-do-facebookinstagram">Eventos do Facebook/Instagram</h4>
+<ul>
+<li><strong>Facebook – Comentário(s) em uma Publicação:</strong> Dispara quando comentários são adicionados à publicação do Facebook selecionada.</li>
+<li><strong>Instagram – Comentário(s) em uma Publicação:</strong> Dispara quando comentários são adicionados à publicação do Instagram selecionada.</li>
+</ul>
+<h4 id="comunidades">Comunidades</h4>
+<ul>
+<li><strong>Acesso ao Grupo Concedido:</strong> Dispara quando um membro recebe acesso a um grupo.</li>
+<li><strong>Acesso ao Grupo Revogado:</strong> Dispara quando o acesso de um membro ao grupo é revogado.</li>
+<li><strong>Acesso ao Canal Privado Concedido:</strong> Dispara quando o acesso a um canal privado é concedido.</li>
+<li><strong>Acesso ao Canal Privado Revogado:</strong> Dispara quando o acesso a um canal privado é revogado.</li>
+<li><strong>Nível de Classificação do Líder do Grupo da Comunidade Alterado:</strong> Dispara quando o nível de classificação do líder de um membro é alterado.</li>
+</ul>
+<h4 id="certificados">Certificados</h4>
+<ul>
+<li><strong>Certificados Emitidos:</strong> Dispara quando um certificado de curso é gerado.</li>
+</ul>
+<h4 id="comunicacao">Comunicação</h4>
+<ul>
+<li><strong>TikTok – Comentário(s) em um Vídeo:</strong> Dispara quando comentários são adicionados a um vídeo do TikTok selecionado.</li>
+<li><strong>Transcrição Gerada:</strong> Dispara quando uma transcrição de chamada ou conversa é criada.</li>
+</ul>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

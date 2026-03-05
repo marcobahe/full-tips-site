@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calendários de Distribuição Circular distribuem agendamentos uniformemente entre membros da equipe, otimizando a disponibilidade e equilibrando a carg...">
+    <title>Calendário Round Robin — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="calendarios-de-distribuicao-circular-round-robin">Calendários de Distribuição Circular (Round Robin)</h2>
+<p>Calendários de Distribuição Circular distribuem agendamentos uniformemente entre membros da equipe, otimizando a disponibilidade e equilibrando a carga de trabalho. Este guia explica como configurar esses calendários, ajustar as configurações de distribuição e personalizar as atribuições de membros da equipe.</p>
+<h3 id="como-funcionam-os-calendarios-de-distribuicao-circular">Como funcionam os Calendários de Distribuição Circular?</h3>
+<p>Um Calendário de Distribuição Circular distribui automaticamente os agendamentos entre os membros da equipe designados, garantindo uma distribuição justa da carga de trabalho e otimizando a disponibilidade.
+*   Pelo menos um membro da equipe deve ser atribuído a um Calendário de Distribuição Circular durante a configuração.
+*   Quando um cliente solicita um agendamento, o sistema verifica a disponibilidade do primeiro membro da equipe atribuído.
+*   Se o primeiro membro da equipe não estiver disponível, ele passa automaticamente para o próximo membro da equipe.
+*   Isso continua até que um membro da equipe disponível seja encontrado.
+*   Se nenhum membro da equipe estiver disponível no horário selecionado, o sistema impede que os clientes reservem um horário vazio, garantindo que eles vejam apenas opções de agendamento válidas.</p>
+<p><strong>Benefício:</strong> Os clientes só agendam horários quando um membro da equipe está realmente disponível, eliminando conflitos de agendamento e reduzindo a intervenção manual.</p>
+<h4 id="como-a-capacidade-de-horarios-e-calculada">Como a capacidade de horários é calculada</h4>
+<p>Se o seu calendário de distribuição circular permitir vários agendamentos por horário, a disponibilidade é determinada pelos limites de capacidade do horário. Cada agendamento confirmado reduz a capacidade do horário em 1. Se um agendamento sobrepor vários horários, o sistema reduz a disponibilidade em 1 em cada horário afetado. Um horário é bloqueado apenas quando seu limite de capacidade definido é totalmente atingido. Agendamentos sobrepostos não bloqueiam mais totalmente todos os horários afetados prematuramente.</p>
+<h3 id="por-que-usar-calendarios-de-distribuicao-circular">Por que usar Calendários de Distribuição Circular?</h3>
+<p>Calendários de Distribuição Circular oferecem várias vantagens, especialmente para equipes que compartilham agendamentos ou lidam com interações com clientes coletivamente.
+*   <strong>Agendamento Eficiente:</strong> Automatiza as atribuições de agendamentos, economizando tempo e reduzindo o esforço manual.
+*   <strong>Carga de Trabalho Equilibrada:</strong> Distribui os agendamentos uniformemente, evitando que um membro da equipe fique sobrecarregado.
+*   <strong>Tempos de Resposta Mais Rápidos:</strong> Garante que o próximo membro da equipe disponível seja atribuído, melhorando a experiência do cliente.
+*   <strong>Flexibilidade para Clientes:</strong> Os clientes podem escolher qualquer horário disponível, aumentando a conveniência do agendamento.
+*   <strong>Ideal para Equipes em Crescimento:</strong> Ajuda as empresas em crescimento a gerenciar altos volumes de agendamentos sem gargalos.</p>
+<h3 id="criando-o-calendario-de-distribuicao-circular">Criando o Calendário de Distribuição Circular</h3>
+<p>Criar um Calendário de Distribuição Circular garante que os agendamentos sejam automaticamente distribuídos entre os membros da equipe disponíveis. Esta etapa envolve selecionar o tipo de calendário, configurar a lógica de distribuição de agendamentos e atribuir pelo menos um membro da equipe.</p>
+<ol>
+<li>Vá em <strong>Configurações → Calendários</strong> e clique em <strong>Criar Calendário</strong>.</li>
+<li>Selecione <strong>Distribuição Circular</strong> como o tipo de calendário.</li>
+<li><strong>Nome do Calendário e Descrição:</strong><ul>
+<li>Atribua um nome ao calendário.</li>
+<li>Adicione uma descrição para esclarecer o propósito do calendário.</li>
+</ul>
+</li>
+<li><strong>Selecionar Membros da Equipe:</strong> Escolha um ou mais membros da equipe que receberão agendamentos por meio do sistema de agendamento de Distribuição Circular.</li>
+<li><strong>URL Personalizada:</strong><ul>
+<li>Um slug de URL exclusivo é criado automaticamente com base no nome do seu calendário.</li>
+<li>Se necessário, você pode editá-lo manualmente.</li>
+<li>O sistema verificará a disponibilidade da URL. Se a URL já estiver em uso, você verá uma mensagem e poderá modificá-la até encontrar uma disponível.</li>
+</ul>
+</li>
+<li><strong>Duração da Reunião e Disponibilidade de Agendamento:</strong><ul>
+<li>Personalize as durações das reuniões em minutos e horas.</li>
+<li>Configure datas e exceções específicas.</li>
+<li>Para obter etapas detalhadas sobre como personalizar a disponibilidade, consulte <a href="https://help.fullfunnel.com/pt-BR/articles/8614761-disponibilidade-do-calendario-horario-de-trabalho-semanal-e-horarios-especificos-por-data">este artigo</a>.</li>
+</ul>
+</li>
+<li><strong>Aceitar Pagamentos:</strong><ul>
+<li>Ative pagamentos diretamente através do seu calendário.</li>
+<li>Adicione uma descrição personalizada na seção Informações de Pagamento.</li>
+<li>Para obter etapas detalhadas sobre como personalizar a disponibilidade, consulte <a href="https://help.fullfunnel.com/pt-BR/articles/8261456-coletando-pagamentos-nos-calendarios">este artigo</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Salvar o Calendário:</strong> Depois que todas as configurações forem personalizadas, clique em <strong>Salvar</strong> para criar seu Calendário de Distribuição Circular.</p>
+<ul>
+<li>Você pode visualizar o calendário ou editar as configurações em <strong>Calendário → (três pontos) → Editar</strong>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="recursos-adicionais">Recursos Adicionais</h3>
+<ul>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261455-logica-de-distribuicao-de-agendamentos-de-calendarios-round-robin">Lógica de Distribuição de Agendamentos de Calendários de Distribuição Circular</a>: Saiba como os agendamentos de Distribuição Circular são agendados com base na disponibilidade ou distribuição igualitária.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261457-atribuicao-de-membros-da-equipe-em-calendarios-round-robin">Atribuição de Membros da Equipe em Calendários de Distribuição Circular</a>: Configure como os membros da equipe são atribuídos aos agendamentos e preferências de reagendamento.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261458-como-configurar-a-selecao-de-funcionarios-em-calendarios-round-robin">Como Configurar a Seleção de Funcionários em Calendários de Distribuição Circular</a>: Permita que os convidados escolham seu membro de equipe preferido ao reservar.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261460-configurando-calendarios-vinculados-e-de-conflito">Configurando Calendários Vinculados e de Conflito</a>: Evite reservas duplicadas sincronizando com calendários externos como Google ou Outlook.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8614761-disponibilidade-do-calendario-horario-de-trabalho-semanal-e-horarios-especificos-por-data">Ajustando as Configurações de Disponibilidade para Calendários Individuais</a>: Defina horários de trabalho, tempos de buffer e durações de horários de agendamento.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261456-coletando-pagamentos-nos-calendarios">Coletando Pagamentos em Calendários</a>: Ative pagamentos para agendamentos, escolha gateways de pagamento e adicione detalhes de preços.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261462-ferramenta-de-solucao-de-problemas-para-calendario">Ferramenta de Solução de Problemas para Calendário</a>: Identifique e corrija problemas que impedem reservas ou causam conflitos de agendamento.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261463-desativando-grupos-de-calendario">Desativando Grupos de Calendário</a>: Desative ou remova grupos de calendário, mantendo os registros.</li>
+<li><a href="https://help.fullfunnel.com/pt-BR/articles/8261464-incorporando-calendarios-usando-codigo-html">Incorporando Calendários usando Código HTML</a>: Compartilhe e incorpore seu calendário em sites ou páginas de destino para facilitar o acesso à reserva.</li>
+</ul>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: O que acontece se nenhum membro da equipe estiver disponível?</strong>
+R: O convidado será solicitado a selecionar outra data/hora.</p>
+<p><strong>P: Posso atribuir manualmente agendamentos a membros da equipe em vez de usar a Distribuição Circular?</strong>
+R: Sim, você pode substituir as atribuições automáticas nas configurações do agendamento.</p>
+<p><strong>P: Posso priorizar membros específicos da equipe para determinados clientes?</strong>
+R: Não, a Distribuição Circular atualmente suporta apenas configurações baseadas em disponibilidade ou distribuição igualitária.</p>
+<p><strong>P: Posso cobrar dos clientes quando eles agendam um horário?</strong>
+R: Sim, você pode ativar <strong>Aceitar Pagamentos</strong> para exigir o pagamento quando os clientes reservam um serviço.</p>
+<hr />
+<h2 id="selecao-de-funcionarios-em-agendamentos-round-robin">Seleção de Funcionários em Agendamentos Round Robin</h2>
+<p>Este artigo explica como a funcionalidade de seleção de funcionários aumenta a flexibilidade de agendamento, permitindo que os clientes agendem com um membro específico da equipe, aproveitando a distribuição de agendamentos Round Robin.</p>
+<h3 id="entendendo-a-logica-de-selecao-de-funcionarios-round-robin">Entendendo a Lógica de Seleção de Funcionários Round Robin</h3>
+<p>A funcionalidade de Seleção de Funcionários em Calendários Round Robin permite que os clientes escolham um funcionário preferido ao agendar um compromisso. O sistema Round Robin distribui os compromissos de forma justa entre os membros da equipe disponíveis. Quando a funcionalidade de Seleção de Funcionários está habilitada:</p>
+<ul>
+<li>Os clientes podem selecionar um funcionário específico.</li>
+<li>Se nenhuma seleção for feita, o sistema atribuirá um funcionário disponível com base na lógica Round Robin.</li>
+<li>A funcionalidade funciona apenas com o Widget Neo, garantindo uma experiência moderna e amigável.</li>
+</ul>
+<h3 id="principais-beneficios-da-selecao-de-funcionarios">Principais Benefícios da Seleção de Funcionários</h3>
+<ul>
+<li>Melhora a experiência do cliente, permitindo que os usuários agendem com seu funcionário preferido.</li>
+<li>Aumenta a eficiência, garantindo uma distribuição justa dos compromissos.</li>
+<li>Reduz conflitos de agendamento, integrando-se perfeitamente com as configurações do calendário.</li>
+<li>Funciona com o widget Neo para uma experiência de agendamento otimizada.</li>
+</ul>
+<h3 id="como-habilitar-a-selecao-de-funcionarios">Como Habilitar a Seleção de Funcionários</h3>
+<p>A funcionalidade de Seleção de Funcionários garante que os clientes tenham a opção de agendar compromissos com seus membros de equipe preferidos, mantendo a eficiência do agendamento Round Robin. Isso ajuda as empresas a personalizar seu processo de agendamento, melhorando a satisfação do cliente e a distribuição da carga de trabalho entre os funcionários. Siga estas etapas para configurar a funcionalidade de seleção de funcionários em seu calendário Round Robin:</p>
+<ol>
+<li>Vá para <strong>Configurações → Calendários</strong> e localize o calendário onde deseja habilitar a seleção de funcionários.</li>
+<li>Clique no menu de três pontos ao lado do calendário que deseja modificar.</li>
+<li>Selecione <strong>Editar</strong> no menu suspenso.</li>
+<li>Na seção <strong>Customizações</strong>, localize a opção <strong>Seleção de Funcionários</strong>.</li>
+<li>Ative <strong>Permitir seleção de funcionários durante o agendamento</strong>.</li>
+</ol>
+<p>IMPORTANTE: A opção para habilitar a seleção de funcionários só pode ser ativada ou usada quando o estilo do widget de calendário estiver definido como NEO.</p>
+<h3 id="gerenciando-a-disponibilidade-de-funcionarios-para-selecao-round-robin">Gerenciando a Disponibilidade de Funcionários para Seleção Round Robin</h3>
+<p>Para garantir que a funcionalidade de Seleção de Funcionários funcione de forma eficaz, cada funcionário deve ter sua disponibilidade atualizada:</p>
+<ol>
+<li>Vá para <strong>Configurações → Meu Time</strong>.</li>
+<li>Selecione o funcionário cuja disponibilidade você deseja atualizar.</li>
+<li>Na aba <strong>Ações</strong>, clique no ícone de lápis (Editar).</li>
+<li>Ajuste suas <strong>Horas de Trabalho</strong> e <strong>Fuso Horário</strong> e salve as alterações.</li>
+</ol>
+<p>Para cancelamento e reagendamento de quaisquer compromissos existentes, você pode consultar a Política de Cancelamento e Reagendamento (Widget de Agendamento).</p>
+<h3 id="testando-o-fluxo-de-agendamento-como-cliente">Testando o Fluxo de Agendamento como Cliente</h3>
+<p>Entender como os clientes interagem com seu sistema de agendamento é essencial para otimizar sua experiência. Ao visualizar o processo de agendamento de compromissos da perspectiva do cliente, você pode garantir que a seleção de funcionários esteja funcionando corretamente e solucionar quaisquer problemas potenciais antes que eles surjam.</p>
+<ol>
+<li>Clique no menu de três pontos ao lado do calendário.</li>
+<li>Clique em <strong>Compartilhar</strong> no menu suspenso.</li>
+<li>Copie o <strong>Link de Agendamento</strong> ou o <strong>Link Permanente</strong>.</li>
+<li>Abra o link copiado em um navegador. A página de agendamento exibirá uma opção para escolher um dos funcionários disponíveis.</li>
+</ol>
+<h3 id="perguntas-frequentes_1">Perguntas Frequentes</h3>
+<p><strong>P: A seleção de funcionários pode ser usada com o widget de calendário Clássico?</strong>
+R: Não, a seleção de funcionários está disponível apenas com o widget Neo.</p>
+<p><strong>P: O que acontece se nenhum funcionário for selecionado pelo cliente?</strong>
+R: A lógica Round Robin atribuirá automaticamente um funcionário disponível.</p>
+<p><strong>P: Posso habilitar esta funcionalidade para vários calendários?</strong>
+R: Sim, siga os mesmos passos para cada calendário onde deseja habilitar a seleção de funcionários.</p>
+<p><strong>P: Essa configuração afeta como os compromissos são atribuídos?</strong>
+R: Sim, ela substitui a atribuição Round Robin padrão quando um cliente seleciona um funcionário específico.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

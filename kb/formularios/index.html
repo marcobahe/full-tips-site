@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Lógica Condicional v2 permite criar formulários e pesquisas mais inteligentes e dinâmicos. Com ela, você pode mostrar ou ocultar campos, redireciona...">
+    <title>Formularios — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="formularios">Formularios</h1>
+<h2 id="logica-condicional-em-formularios-e-pesquisas">Lógica Condicional em Formulários e Pesquisas</h2>
+<p>A Lógica Condicional v2 permite criar formulários e pesquisas mais inteligentes e dinâmicos. Com ela, você pode mostrar ou ocultar campos, redirecionar usuários, exibir mensagens, desqualificar leads ou pular para slides diferentes — tudo com base nas respostas fornecidas.</p>
+<h3 id="como-fazer">Como fazer</h3>
+<p><strong>1. Abrir a Lógica Condicional</strong>
+No construtor de formulários ou pesquisas, clique em <strong>Lógica Condicional</strong> na barra superior. Em pesquisas, você também pode abri-la pelo alerta na barra lateral de um slide.</p>
+<p><strong>2. Adicionar uma Nova Condição</strong>
+Clique em <strong>Adicionar Nova Condição</strong>. Escolha uma ação:
+*   <strong>Redirecionar:</strong> Envia o usuário para uma página web após o envio.
+*   <strong>Exibir Mensagem:</strong> Mostra uma mensagem personalizada.
+*   <strong>Desqualificar Lead:</strong> Rejeita automaticamente envios não qualificados.
+*   <strong>Mostrar/Ocultar Campos:</strong> Controla dinamicamente quais campos aparecem ou são ocultados.</p>
+<p><strong>3. Construir a Regra</strong>
+Siga o fluxo guiado de 3 etapas:
+*   <strong>Selecionar Campo:</strong> Escolha o campo ou slide que servirá de base para a regra.
+*   <strong>Selecionar Estado do Campo:</strong> Escolha a condição (ex.: "é igual a", "está vazio").
+*   <strong>Fornecer um Valor:</strong> Insira o valor correspondente (texto, número ou data).
+Você pode adicionar condições extras usando conectores <strong>E</strong> ou <strong>OU</strong>.</p>
+<p><strong>4. Escolher o Resultado da Ação</strong>
+Dependendo do tipo de ação selecionada:
+*   <strong>Redirecionar:</strong> Adicione uma URL válida.
+*   <strong>Exibir Mensagem:</strong> Digite o texto da mensagem.
+*   <strong>Mostrar/Ocultar Campos:</strong> Selecione quais campos mostrar ou ocultar.
+*   <strong>Desqualificar Lead:</strong> O envio do formulário será interrompido se a regra for atendida.
+*   <strong>Pular Para (somente pesquisas):</strong> Escolha o slide ou pergunta de destino.</p>
+<p><strong>5. Salvar</strong>
+O botão <strong>Salvar</strong> ficará ativo apenas após todos os campos obrigatórios serem preenchidos corretamente. O sistema verifica valores ausentes e previne loops automaticamente.</p>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>As regras são executadas <strong>de cima para baixo</strong> na lista.</li>
+<li>Para ações de envio (Redirecionar, Mensagem, Desqualificar), apenas a <strong>primeira</strong> regra correspondente é executada.</li>
+<li>Para a ação <strong>Mostrar/Ocultar</strong>, regras posteriores sobrescrevem as anteriores.</li>
+<li>A Lógica Condicional v2 suporta uma ampla variedade de campos, incluindo:<ul>
+<li><strong>Informações Pessoais:</strong> Nome, E-mail, Telefone.</li>
+<li><strong>Campos de Formulário:</strong> Texto, Número, Data, Dropdown, Checkbox, Termos &amp; Condições, Upload de Arquivo, Assinatura.</li>
+<li><strong>Elementos de Conteúdo &amp; Pagamento:</strong> Texto, HTML, Imagem, Pagamento.</li>
+<li><strong>Observação:</strong> Campos de Calendário ainda não são suportados.</li>
+</ul>
+</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>1. Posso misturar E e OU na mesma regra?</strong>
+Não. Cada regra deve usar apenas um tipo de conector — ou <strong>E</strong> ou <strong>OU</strong>.</p>
+<p><strong>2. Posso ter várias regras no mesmo formulário?</strong>
+Sim. Cada regra funciona de forma independente.</p>
+<p><strong>3. O que acontece se mais de uma condição for atendida?</strong>
+Para ações de envio (Redirecionar, Mensagem, Desqualificar), a <strong>primeira</strong> regra correspondente na lista é executada. Para a ação <strong>Mostrar/Ocultar</strong>, regras posteriores sobrescrevem as anteriores.</p>
+<p><strong>4. Posso criar loops na lógica "Pular Para"?</strong>
+Não. O construtor previne a criação de loops (ex.: Slide A → Slide B → Slide A) e mostrará uma mensagem de erro se for detectado.</p>
+<hr />
+<h2 id="onde-as-respostas-dos-formularios-aparecem">Onde as Respostas dos Formulários Aparecem?</h2>
+<p>Os formulários são usados para capturar informações de contatos que os preenchem e enviam. Para visualizar essas informações, siga o passo a passo abaixo.</p>
+<h3 id="como-fazer_1">Como fazer</h3>
+<ol>
+<li>No menu principal da plataforma, clique em <strong>Sites</strong>.</li>
+<li>No submenu que aparece, selecione <strong>Formulários</strong>.</li>
+<li>Você será direcionado para a lista de seus formulários. Clique na aba <strong>Submissões</strong>, localizada na parte superior da tela.</li>
+<li>Nesta página, você pode:<ul>
+<li><strong>Filtrar ou buscar</strong> por submissões específicas usando as opções disponíveis.</li>
+<li><strong>Clicar em qualquer submissão</strong> listada para visualizar todos os detalhes e informações fornecidas pelo contato naquele envio específico.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Observação Importante:</strong> Se você utilizar campos personalizados em seus formulários, os dados preenchidos nesses campos também serão exibidos no perfil completo do contato. Para acessar:
+1.  Vá para <strong>Contatos</strong> no menu principal.
+2.  Localize e clique no contato desejado.
+3.  Na página de detalhes do contato, as informações dos formulários, incluindo as dos campos personalizados, estarão visíveis.</p>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>É necessário ter pelo menos um formulário criado e publicado.</li>
+<li>O formulário deve ter recebido pelo menos uma submissão para que dados apareçam na lista.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>P: Posso ver as respostas de um formulário específico?</strong>
+R: Sim. Na aba <strong>Submissões</strong>, use o filtro "Formulário" para selecionar e visualizar apenas as respostas do formulário desejado.</p>
+<p><strong>P: As respostas dos formulários atualizam automaticamente as informações do contato?</strong>
+R: Sim. As informações fornecidas no formulário são salvas no perfil daquele contato. Se o contato atualizar um dado (como telefone ou e-mail) via formulário, seu perfil será atualizado.</p>
+<p><strong>P: Onde vejo o valor de um campo personalizado específico de um formulário no perfil do contato?</strong>
+R: Na página de detalhes do contato, role para baixo até a seção de campos personalizados. Os dados preenchidos em formulários aparecerão lá, identificados pelo nome do campo que você criou.</p>
+<hr />
+<h2 id="como-personalizar-botoes-fundo-e-barra-de-progresso-em-pesquisas">Como Personalizar Botões, Fundo e Barra de Progresso em Pesquisas</h2>
+<h3 id="como-fazer_2">Como fazer</h3>
+<p>Para personalizar a aparência da sua pesquisa, siga estes passos:</p>
+<ol>
+<li>
+<p><strong>Acesse o Construtor de Pesquisas:</strong></p>
+<ul>
+<li>Faça login na sua conta do Full Funnel e selecione a subconta desejada.</li>
+<li>No menu lateral, vá até <strong>Sites</strong> &gt; <strong>Pesquisas</strong>.</li>
+<li>Clique em <strong>"Construtor"</strong> no topo da página.</li>
+</ul>
+</li>
+<li>
+<p><strong>Crie ou Edite uma Pesquisa:</strong></p>
+<ul>
+<li>No canto superior direito, clique em <strong>"Adicionar Pesquisa"</strong>.</li>
+<li>Você pode começar do zero ou escolher um modelo.</li>
+<li>Para editar uma pesquisa existente, clique sobre o nome dela na lista.</li>
+</ul>
+</li>
+<li>
+<p><strong>Personalize o Rodapé e a Barra de Progresso:</strong></p>
+<ul>
+<li>No construtor, localize o menu de configurações no lado direito da tela.</li>
+<li>Role até a seção <strong>"Rodapé"</strong>.</li>
+<li>Ative a opção <strong>"Novo Rodapé"</strong> para acessar todas as personalizações.</li>
+</ul>
+</li>
+<li>
+<p><strong>Ajustes Específicos:</strong></p>
+<ul>
+<li><strong>Ocultar Barra de Progresso:</strong> Na seção do rodapé, desative a opção <strong>"Mostrar rastreamento de progresso"</strong>.</li>
+<li><strong>Personalizar Botão "Próximo":</strong> Na mesma seção, procure por <strong>"Personalização de Botão"</strong>. Aqui você pode alterar:<ul>
+<li><strong>Cor do Botão:</strong> Escolha uma cor que combine com sua marca.</li>
+<li><strong>Altura, Fonte e Peso:</strong> Ajuste o tamanho e o estilo do texto do botão.</li>
+<li><strong>Tipo do Botão:</strong> Escolha entre exibir apenas texto (ex: "Próximo"), apenas setas, ou ambos.</li>
+</ul>
+</li>
+<li><strong>Alterar Imagem de Fundo:</strong> No menu lateral direito, procure pela opção <strong>"Imagem de Fundo"</strong>. Você pode fazer upload de uma imagem ou escolher uma cor sólida para o plano de fundo da sua pesquisa.</li>
+</ul>
+</li>
+<li>
+<p><strong>Visualize as Alterações:</strong></p>
+<ul>
+<li>Sempre use o botão <strong>"Visualizar"</strong> para testar como a pesquisa ficará para os respondentes.</li>
+<li>Confirme se a barra de progresso está oculta (se desejado) e se os botões e o fundo estão conforme o planejado.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>Acesso a uma subconta do Full Funnel.</li>
+<li>Uma pesquisa já criada ou a intenção de criar uma nova.</li>
+<li>As imagens para o fundo devem estar em um formato comum (JPG, PNG) e ter tamanho adequado para não distorcer.</li>
+</ul>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>Como crio perguntas personalizadas para a pesquisa?</strong>
+Você pode adicionar campos personalizados clicando no ícone <strong>"+"</strong> dentro do construtor da pergunta. Isso permite criar campos sob medida, e as respostas fornecidas pelos contatos serão exibidas na página de detalhes do contato.</p>
+<hr />
+<h2 id="painel-da-plataforma-eliza-agent">Painel da Plataforma Eliza Agent</h2>
+<h3 id="como-fazer_3">Como fazer</h3>
+<p>O painel da plataforma Eliza Agent fornece uma visão geral centralizada das operações de suporte. Para utilizá-lo efetivamente, siga estes passos:</p>
+<ol>
+<li>
+<p><strong>Acessar o Painel:</strong></p>
+<ul>
+<li>Após fazer login na plataforma Full Funnel, navegue até a área da <strong>Plataforma Eliza Agent</strong>. A tela inicial que você vê é o Painel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analisar a Visão Geral:</strong></p>
+<ul>
+<li>No centro do painel, você verá uma lista de todas as <strong>Localizações</strong> (ou empresas/franquias) conectadas.</li>
+<li>Para cada localização, o painel mostra:<ul>
+<li><strong>Prioridade:</strong> Indicador visual (como um ponto colorido) que sinaliza a urgência de atendimento.</li>
+<li><strong>Conversas com Agentes:</strong> Número de conversas atualmente atribuídas e em andamento com os agentes daquela localização.</li>
+<li><strong>Conversas Não Atribuídas:</strong> Número de conversas que chegaram, mas ainda não foram assumidas por nenhum agente.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Gerenciar Agentes (Visão de Administrador):</strong></p>
+<ul>
+<li>No lado direito do painel, usuários com permissão de administrador podem visualizar a lista de todos os <strong>Agentes</strong>.</li>
+<li>Esta seção mostra:<ul>
+<li>O nome do agente.</li>
+<li><strong>Status Online:</strong> Um indicador (geralmente verde para online, cinza para offline) mostrando se o agente está disponível.</li>
+<li><strong>Carga de Trabalho:</strong> O número de conversas abertas que cada agente está atendendo no momento.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Atender Conversas Não Atribuídas:</strong></p>
+<ul>
+<li>As conversas listadas como "Não Atribuídas" requerem atenção imediata, pois não estão na caixa de entrada de nenhum agente.</li>
+<li>Para atribuir uma dessas conversas:<ul>
+<li>Localize o card da localização com conversas não atribuídas.</li>
+<li>Clique no botão <strong>"Ir"</strong> (ou similar) ao lado do número de conversas não atribuídas.</li>
+</ul>
+</li>
+<li>Uma janela será aberta para que você selecione um agente disponível para assumir a conversa.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transferir Conversas entre Agentes:</strong></p>
+<ul>
+<li>Para redistribuir conversas de um agente para outro, ou de um agente para o pool não atribuído:<ul>
+<li>Clique no botão <strong>"Ir"</strong> no card de um agente específico ou na seção de não atribuídas.</li>
+<li>Na janela que se abre:<ul>
+<li>Em <strong>"De"</strong>, selecione a origem (um agente específico ou "Não Atribuídas").</li>
+<li>Em <strong>"Para"</strong>, selecione o agente de destino.</li>
+<li>Defina a quantidade de conversas que deseja transferir.</li>
+</ul>
+</li>
+<li>Clique em <strong>"Atribuir"</strong> para concluir a transferência e mudar a propriedade das conversas.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_3">Requisitos</h3>
+<ul>
+<li>Acesso à plataforma Full Funnel com uma conta de usuário.</li>
+<li>Para visualizar e gerenciar a lista de agentes, é necessário ter permissões de <strong>Administrador</strong> na conta.</li>
+<li>Para atribuir ou transferir conversas, o usuário (admin ou agente) deve ter permissões para a localização em questão.</li>
+</ul>
+<h3 id="faq_3">FAQ</h3>
+<p><strong>P: Por que as conversas não atribuídas são importantes?</strong>
+R: Conversas não atribuídas não estão na caixa de entrada de nenhum agente, portanto, correm o risco de não serem respondidas. Elas devem ser atribuídas a um agente disponível o mais rápido possível para garantir um bom atendimento ao cliente.</p>
+<p><strong>P: Qual a diferença entre a visão de Admin e de Agente no painel?</strong>
+R: A principal diferença é que apenas administradores podem ver a lista completa de todos os agentes, seus status e carga de trabalho no lado direito do painel. Agentes comuns geralmente têm uma visão focada em suas próprias métricas e conversas.</p>
+<p><strong>P: Posso transferir conversas de volta para "Não Atribuídas"?</strong>
+R: Sim, no processo de transferência, você pode selecionar um agente no campo <strong>"De"</strong> e escolher a opção "Não Atribuídas" no campo <strong>"Para"</strong>. Isso devolverá as conversas selecionadas ao pool não atribuído para redistribuição.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="1.  Acesse Automações → Criar Automação.">
+    <title>Whatsapp Geral — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="whatsapp-geral">Whatsapp Geral</h1>
+<h2 id="integracao-do-whatsapp-com-automacoes">Integração do WhatsApp com Automações</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<h4 id="criar-uma-automacao-com-resposta-automatizada-do-whatsapp">Criar uma Automação com Resposta Automatizada do WhatsApp</h4>
+<ol>
+<li>Acesse <strong>Automações</strong> → <strong>Criar Automação</strong>.</li>
+<li>Selecione <strong>"Começar do Zero"</strong>.</li>
+<li>Clique em <strong>"Adicionar Novo Gatilho"</strong> e procure por <strong>"Cliente Respondeu"</strong>.</li>
+<li>Adicione um filtro: <strong>Canal da Resposta</strong> → Selecione <strong>WhatsApp</strong>.</li>
+<li>Clique no botão <strong>"+"</strong> para adicionar uma ação.</li>
+<li>Escolha <strong>WhatsApp</strong> como o tipo de ação.</li>
+<li><strong>(Opcional)</strong> Para fluxos ou modelos com botões, ative os ramos inteligentes:<ul>
+<li><strong>Fluxo Concluído</strong>: Aciona quando o cliente finaliza um fluxo interativo.</li>
+<li><strong>Não Entregue</strong>: Aciona se a mensagem falhar.</li>
+<li><strong>Tempo Esgotado</strong>: Aciona se o cliente não responder a tempo.</li>
+</ul>
+</li>
+<li>Clique em <strong>Salvar Ação</strong> → <strong>Publicar</strong> → <strong>Salvar</strong>.</li>
+</ol>
+<h4 id="selecionar-o-numero-de-telefone-remetente">Selecionar o Número de Telefone Remetente</h4>
+<ol>
+<li>Na sua automação, clique no <strong>"+"</strong> para adicionar uma ação.</li>
+<li>Na seção de ação, procure e selecione <strong>"WhatsApp"</strong>.</li>
+<li>No menu suspenso, escolha o número de telefone que deseja usar para enviar as mensagens.<ul>
+<li><strong>Nota</strong>: Apenas números com status <strong>"Conectado"</strong> na aba <strong>Números de Telefone</strong> aparecerão na lista.</li>
+</ul>
+</li>
+</ol>
+<h4 id="configurar-a-espera-por-uma-resposta-do-contato">Configurar a Espera por uma Resposta do Contato</h4>
+<ol>
+<li>Crie uma automação com o gatilho <strong>"Contato Criado"</strong>.</li>
+<li>Adicione uma ação do tipo <strong>WhatsApp</strong> e selecione um modelo aprovado para enviar.</li>
+<li>Clique no <strong>"+"</strong> e adicione a ação <strong>"Esperar"</strong>.</li>
+<li>Configure: <strong>ESPERAR POR</strong> → <strong>Resposta do Contato</strong> → <strong>RESPONDER PARA</strong> → <strong>WhatsApp</strong>. Salve.</li>
+<li>Adicione outra ação <strong>WhatsApp</strong>. Agora você pode selecionar <strong>"Nenhum - Texto Manual"</strong> para enviar uma mensagem de forma gratuita dentro da janela de conversa aberta.</li>
+</ol>
+<h4 id="configurar-nao-perturbe-dnd-para-whatsapp">Configurar Não Perturbe (DND) para WhatsApp</h4>
+<ol>
+<li>Crie uma automação com o gatilho <strong>"Cliente Respondeu"</strong>.</li>
+<li>Adicione filtros: <strong>Canal da Resposta</strong> → <strong>WhatsApp</strong> e <strong>Contém a frase</strong> → <code>STOP</code>. Salve o gatilho.</li>
+<li>Clique no <strong>"+"</strong> e procure por <strong>DND</strong>. Selecione a ação <strong>"Ativar/Desativar DND"</strong>.</li>
+<li>Escolha <strong>"Ativar DND para canais específicos"</strong>, selecione <strong>WhatsApp</strong> e salve a ação.<ul>
+<li><em>Alternativa</em>: Você pode selecionar <strong>"Ativar DND para todos os canais"</strong>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Um número de telefone deve estar <strong>conectado</strong> e com status ativo na plataforma para aparecer como opção de remetente.</li>
+<li>Para enviar mensagens fora da janela de 24h, é necessário usar um <strong>modelo de WhatsApp aprovado</strong>.</li>
+<li>Para usar a opção <strong>"Nenhum - Texto Manual"</strong>, uma conversa precisa estar aberta dentro da janela gratuita (24h padrão ou 72h para Conversas de Ponto de Entrada Gratuito).</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>A configuração de Não Perturbe (DND) afeta outros canais de comunicação ou apenas o WhatsApp?</strong>
+Você pode configurar o DND para aplicar a <strong>todos os canais</strong> ou <strong>apenas ao WhatsApp</strong>. Isso permite controlar se o bloqueio é geral ou específico.</p>
+<p><strong>Qual a diferença entre "Nenhum - Texto Manual" e selecionar um modelo ao enviar mensagens?</strong>
+*   <strong>"Nenhum - Texto Manual"</strong>: Permite escrever uma mensagem livre, sem custo adicional, mas <strong>apenas dentro da janela de conversa aberta</strong> (24h ou 72h).
+*   <strong>Modelo Aprovado</strong>: Usado para enviar mensagens padronizadas e pré-aprovadas. É a <strong>única forma de iniciar uma conversa fora da janela de 24h</strong>, podendo ter custos associados.</p>
+<p><strong>Posso criar automações que combinam WhatsApp com outros canais como SMS ou E-mail?</strong>
+Sim. As automações do Full Funnel são flexíveis e permitem combinar ações do WhatsApp com outros canais em uma única sequência.</p>
+<p><strong>O que é uma 'Conversa de Ponto de Entrada Gratuito'?</strong>
+É uma conversa iniciada quando um cliente clica em um anúncio "Clique para WhatsApp" ou botão de Call-to-Action do Facebook. A janela para respostas gratuitas é estendida para <strong>72 horas</strong>, ao invés das 24 horas padrão.</p>
+<p><strong>O que acontece se um cliente responder algo diferente do configurado no passo 'Esperar por Resposta do WhatsApp'?</strong>
+A automação continuará aguardando indefinidamente por uma resposta que corresponda à condição configurada. Para lidar com outras respostas, é necessário criar ramificações (branches) alternativas na automação.</p>
+<p><strong>Por que meu número de telefone não aparece na lista de seleção?</strong>
+Apenas números com status <strong>"Conectado"</strong> na aba <strong>Números de Telefone</strong> das <strong>Configurações</strong> aparecem na lista. Verifique se o número está corretamente vinculado e ativo.</p>
+<p><strong>Posso usar vários números para mensagens do WhatsApp?</strong>
+Sim, se você tiver múltiplos números conectados, poderá escolher qual usar em cada ação da automação através do menu suspenso.</p>
+<hr />
+<h2 id="acao-em-massa-do-whatsapp">Ação em Massa do WhatsApp</h2>
+<p>A Ação em Massa do WhatsApp permite que você envie mensagens de modelo aprovadas do WhatsApp para vários contatos de uma só vez, acompanhando a entrega, taxas de leitura, erros e contatos ignorados. Com atualizações recentes, os modelos podem ser visualizados na hora do envio, exibindo categoria e idioma, e permitem a substituição de mídia com um clique — facilitando a revisão e o gerenciamento de campanhas em massa.</p>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p><strong>Passo 1: Selecionar Contatos</strong>
+1.  Acesse <strong>Contatos</strong>.
+2.  Use filtros ou Listas Inteligentes para encontrar os contatos que deseja contatar.
+3.  Selecione os contatos individualmente ou clique em <strong>Selecionar todos os registros</strong> para incluir todos os contatos da lista.</p>
+<p><strong>Passo 2: Iniciar uma Ação em Massa do WhatsApp</strong>
+1.  Com os contatos selecionados, clique no ícone do <strong>WhatsApp</strong> na barra de ferramentas de Ações em Massa.
+2.  Escolha <strong>Enviar WhatsApp</strong> para iniciar uma campanha em massa.</p>
+<p><strong>Passo 3: Selecionar e Visualizar um Modelo do WhatsApp</strong>
+1.  Escolha um modelo do WhatsApp na lista.
+2.  Uma prévia do modelo será exibida imediatamente, mostrando:
+    *   O conteúdo da mensagem.
+    *   A categoria do modelo (ex.: Marketing ou Utilitário).
+    *   O idioma do modelo.
+3.  Digite um <strong>Nome da Ação</strong> para referência futura.
+4.  Escolha como a campanha será enviada:
+    *   Enviar imediatamente.
+    *   Agendar para depois.
+    *   Enviar em modo de gotejamento (drip).</p>
+<p><strong>Passo 4: Substituir Mídia em um Modelo (Opcional)</strong>
+1.  Se o modelo selecionado contiver mídia, clique em <strong>Substituir mídia</strong> na prévia.
+2.  Selecione um arquivo do seu dispositivo.
+3.  A mídia será atualizada instantaneamente na prévia. Esta alteração vale apenas para esta campanha e não modifica o modelo aprovado original.</p>
+<p><strong>Passo 5: Lançar a Campanha</strong>
+1.  Revise os detalhes da campanha.
+2.  Confirme a ação. A campanha em massa começará a ser processada.</p>
+<p><strong>Passo 6: Monitorar o Progresso da Campanha</strong>
+1.  Acesse <strong>Contatos → Ações em Massa</strong>.
+2.  Localize a campanha do WhatsApp.
+3.  Clique em <strong>Ver Detalhes</strong> ou <strong>Mostrar Estatísticas</strong> para monitorar o progresso.</p>
+<p><strong>Passo 7: Ver Estatísticas Detalhadas da Campanha</strong>
+Clique nas estatísticas da campanha para abrir uma visão detalhada com abas para:
+*   Total
+*   Pendente
+*   Enviado
+*   Entregue
+*   Lido
+*   Erro
+*   Ignorado</p>
+<p>Você também pode exportar as estatísticas da campanha para relatórios.</p>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Apenas <strong>modelos do WhatsApp aprovados</strong> pela Meta estão disponíveis para uso em Ações em Massa.</li>
+<li>Os limites de mensagens da Meta e as políticas do WhatsApp se aplicam.</li>
+<li>É necessário ter uma integração do WhatsApp Business ativa na sua conta do Full Funnel.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>P: O que acontece se meu limite de mensagens da Meta for excedido durante uma ação em massa?</strong>
+R: As mensagens para contatos além do limite falharão e aparecerão na categoria <strong>Erro</strong> nas estatísticas da campanha.</p>
+<p><strong>P: Qual é o limite de taxa para envio de mensagens em massa do WhatsApp?</strong>
+R: As mensagens são enviadas a uma taxa de até <strong>1.000 mensagens por hora</strong>, sujeita aos limites da Meta.</p>
+<p><strong>P: O que é o Limite de Mensagens da Meta?</strong>
+R: São limites que controlam quantas novas conversas iniciadas pelo negócio você pode começar em um período móvel de 24 horas.</p>
+<p><strong>P: O que acontece se minha cota de limite for totalmente usada?</strong>
+R: Você não poderá iniciar conversas de negócio adicionais até que a cota seja redefinida (geralmente após 24 horas).</p>
+<p><strong>P: Como posso verificar meus limites atuais de mensagens?</strong>
+R: Acesse o <strong>WhatsApp Manager → Painel de Visão Geral → Insights</strong> na sua conta Meta Business.</p>
+<p><strong>P: O que é classificação de qualidade e como ela afeta meu limite?</strong>
+R: A classificação de qualidade reflete o feedback dos clientes em um período de sete dias. Classificações baixas podem reduzir seus limites de mensagem.</p>
+<p><strong>P: Como manter uma classificação de qualidade alta?</strong>
+R: Siga as políticas do WhatsApp Business, envie mensagens apenas para usuários que optaram por receber, personalize as mensagens e evite frequência excessiva de envio.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

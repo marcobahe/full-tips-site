@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A página de Ações em Massa é um painel centralizado que lista operações em massa iniciadas a partir de Contatos (por exemplo, importações, atualizaçõe...">
+    <title>Contatos — Ações em Massa — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="acoes-em-massa">Ações em Massa</h2>
+<p>A página de Ações em Massa é um painel centralizado que lista operações em massa iniciadas a partir de Contatos (por exemplo, importações, atualizações de tags, mensagens em massa e exclusões). Fornece status em tempo real, métricas de resultado e acesso a logs detalhados para que as equipes possam verificar os resultados e corrigir problemas rapidamente.</p>
+<h3 id="como-usar">Como usar</h3>
+<ol>
+<li>Vá para Contatos → Ações em Massa na sua subconta.</li>
+<li>Aplique Filtros (Status, Tipo de Ação, Usuário, Data) para restringir os trabalhos de que precisa.</li>
+<li>Clique em Mostrar Estatísticas em um trabalho para revisar os totais e detalhes de erros; use Download para exportar o log de erros.</li>
+<li>Para trabalhos de Excluir Contatos dentro do período permitido, use Restaurar (quando disponível) para recriar contatos excluídos.</li>
+<li>Para envios enfileirados elegíveis (por exemplo, SMS), use o menu de três pontos para Pausar, Editar ou Cancelar.</li>
+</ol>
+<h3 id="beneficios">Benefícios</h3>
+<ul>
+<li><strong>Interface Unificada:</strong> Uma interface consistente com tabelas mais limpas, espaçamento legível e controles previsíveis.</li>
+<li><strong>Solução de problemas mais rápida:</strong> Abra Mostrar Estatísticas para comparar sucessos x erros e baixe os logs de erros para correções.</li>
+<li><strong>Segurança operacional:</strong> Para trabalhos de exclusão suportados, coloque na fila um Restaurar dentro da janela permitida para recuperar contatos excluídos.</li>
+<li><strong>Responsabilidade da equipe:</strong> Filtre por Status, Tipo de Ação, Usuário e Data para ver quem fez o quê e quando.</li>
+<li><strong>Rastreabilidade:</strong> Mantenha uma trilha auditável exportando logs de erros detalhados da visualização de Estatísticas.</li>
+</ul>
+<h3 id="visualizando-a-tabela-de-acoes-em-massa">Visualizando a Tabela de Ações em Massa</h3>
+<p>Cada trabalho aparece como uma linha com um Status claro (por exemplo, Em Andamento, Concluído ou Cancelado).
+- Os selos de status são codificados por cores, e as dicas de ferramentas flutuantes podem revelar nomes ou contagens de ações mais longas.
+- Use o menu de três pontos da linha para controles disponíveis (por exemplo, pausar/cancelar para envios em massa; restaurar quando aplicável).</p>
+<h3 id="usando-filtros-para-encontrar-acoes-em-massa-rapidamente">Usando Filtros para Encontrar Ações em Massa Rapidamente</h3>
+<p>Os filtros ajudam você a identificar os trabalhos exatos de que precisa, o que é especialmente útil para auditorias ou quando vários membros da equipe executam ações diariamente.
+- <strong>Status:</strong> Restringir a trabalhos que estão Em Processamento, Concluído, Pausado, Enfileirado ou Cancelado.
+- <strong>Tipo de Ação:</strong> Concentre-se em operações específicas como Importar, Excluir Contatos, Adicionar Tag, Remover Tag, SMS em Massa ou E-mail em Massa.
+- <strong>Usuário:</strong> Veja os trabalhos iniciados por um membro específico da equipe.
+- <strong>Intervalo de datas:</strong> Use datas personalizadas.</p>
+<h3 id="visualizando-estatisticas-de-trabalho-e-baixando-logs-de-erro">Visualizando Estatísticas de Trabalho e Baixando Logs de Erro</h3>
+<p>As estatísticas fornecem uma leitura rápida do que aconteceu durante um trabalho em massa, e os logs para download facilitam a correção de problemas e a nova execução de forma limpa.
+1. Clique em Mostrar Estatísticas em qualquer linha para abrir uma gaveta de detalhes com métricas de alto nível (totais, contagens de sucesso/erro e resultados de entrega relevantes para trabalhos de mensagens).
+2. Use a opção Download na visualização de Estatísticas para exportar um log de erros para solução de problemas. O log normalmente inclui identificadores para registros com falha e um motivo sobre o qual você pode agir.</p>
+<h3 id="restaurando-contatos-excluidos-de-um-trabalho-de-exclusao-em-massa">Restaurando Contatos Excluídos (de um Trabalho de Exclusão em Massa)</h3>
+<p>Restaurar foi projetado para recuperar contatos excluídos acidentalmente, não para desfazer outros tipos de ações em massa.
+1. Quando um trabalho em massa de Excluir Contatos for elegível, você verá uma opção Restaurar. Selecioná-la abre uma caixa de diálogo de confirmação que explica o que será restabelecido.
+    - <strong>Prazo:</strong> Os contatos excluídos normalmente podem ser restaurados dentro de cerca de 60 dias após a exclusão. Após esse período, a recuperação não está disponível.
+2. Enviar a confirmação coloca na fila um novo trabalho de restauração, que aparecerá na tabela Ações em Massa e será executado até a conclusão.</p>
+<h3 id="gerenciando-trabalhos-em-execucao-pausarcancelar-para-acoes-elegiveis">Gerenciando Trabalhos em Execução (Pausar/Cancelar para Ações Elegíveis)</h3>
+<p>Alguns envios em massa, como campanhas de SMS, podem ser pausados ou cancelados depois de terem sido enfileirados, dando-lhe controle quando os planos mudam.
+1. Abra o menu de três pontos para um trabalho elegível em execução para ver Pausar, Editar ou Cancelar.
+    - Pausar interrompe temporariamente o processamento; Cancelar interrompe o processamento restante e Editar permite que o usuário altere a hora de agendamento dessa ação em massa. Os itens já processados permanecem como estão.
+2. Depois de ajustar, atualize a tabela Ações em Massa e abra Mostrar Estatísticas para verificar o que foi concluído antes da alteração.</p>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: Quais ações aparecem na página Ações em Massa?</strong>
+R: A maioria das operações em massa iniciadas em Contatos, como Importações, Excluir Contatos, SMS/E-mail em Massa, Adicionar/Remover Tags, são listadas com seu status e um link para Mostrar Estatísticas.</p>
+<p><strong>P: Quanto tempo tenho para restaurar contatos excluídos?</strong>
+R: Aproximadamente 60 dias a partir da data da exclusão. Depois disso, os contatos são removidos permanentemente.</p>
+<p><strong>P: Posso cancelar um trabalho depois que ele é iniciado?</strong>
+R: Para tipos de trabalho elegíveis (como SMS em massa enfileirado), use o menu de três pontos da linha para Pausar, Editar ou Cancelar. Os itens já processados antes do cancelamento permanecem concluídos.</p>
+<p><strong>P: Onde faço o download dos resultados detalhados?</strong>
+R: Abra Mostrar Estatísticas para o trabalho e use Download para exportar o log de erros com os motivos de falha por registro.</p>
+<p><strong>P: A página Ações em Massa tem escopo por subconta?</strong>
+R: Sim. Navegue até a subconta que deseja gerenciar e, em seguida, abra Contatos → Ações em Massa.</p>
+<hr />
+<h2 id="recuperacao-rapida-de-contatos-apagados">Recuperação Rápida de Contatos Apagados</h2>
+<p>Recupere rapidamente leads apagados acidentalmente com a página atualizada de Contatos → Restaurar da nossa plataforma. A interface renovada, checkboxes de múltipla seleção, colunas de contato claras e um modal de confirmação tornam a restauração de um ou centenas de contatos mais rápida e segura.</p>
+<h3 id="o-que-e-a-pagina-restaurar-contatos">O que é a página Restaurar Contatos?</h3>
+<p>A página Restaurar Contatos é sua rede de segurança para recuperar contatos removidos do seu CRM. Ela centraliza registros apagados recentemente (dentro do período de retenção de dados) para que você possa trazê-los de volta sem reimportações ou soluções complexas. Esta página é especialmente útil após exclusões acidentais ou ao reverter pequenas limpezas.</p>
+<p>A atualização de Outubro de 2025 da nossa plataforma oferece uma experiência de Restauração mais rápida e clara. Você verá um layout limpo e moderno; checkboxes rápidos para selecionar e recuperar vários contatos de uma só vez; colunas de lista proeminentes para Nome, Email, Telefone e Apagado Em; e uma caixa de diálogo de confirmação simplificada que mostra claramente quantos registros você está prestes a trazer de volta. Juntas, essas melhorias reduzem cliques, evitam erros e fazem com que as restaurações únicas e em massa pareçam seguras e previsíveis.</p>
+<h3 id="beneficios-principais-da-pagina-restaurar-contatos">Benefícios Principais da Página Restaurar Contatos</h3>
+<p>Entender os ganhos práticos ajuda você a escolher o caminho de recuperação mais rápido e seguro, seja restaurando um registro ou muitos.</p>
+<ul>
+<li><strong>Eficiência em massa:</strong> Selecione vários registros de uma só vez usando novos checkboxes para restaurar lotes em menos etapas.</li>
+<li><strong>Contexto imediato:</strong> Revise as colunas principais (Nome, Email, Telefone, Apagado Em) antes de se comprometer com a restauração.</li>
+<li><strong>Rede de segurança:</strong> Um modal de confirmação resume exatamente quantos contatos você está prestes a recuperar.</li>
+<li><strong>Economia de tempo:</strong> Restaure diretamente da nossa plataforma em vez de reimportar CSVs.</li>
+<li><strong>Consistência:</strong> Os contatos restaurados reaparecem em todo o seu CRM para que as equipes possam continuar trabalhando sem interrupção.</li>
+</ul>
+<h3 id="informacoes-importantes-ao-restaurar-contatos">Informações Importantes ao Restaurar Contatos</h3>
+<ul>
+<li><strong>Restrições em Contas HIPAA:</strong> Em contas compatíveis com HIPAA, os contatos apagados não podem ser restaurados devido a regulamentos rigorosos de segurança de dados.</li>
+<li><strong>Limite de Tempo:</strong> Um contato pode ser restaurado em até 60 dias. Após esse período, os dados são apagados permanentemente.</li>
+<li><strong>A Restauração Inclui:</strong> Quando restaurados, os contatos são reintegrados com seus dados associados, como:<ul>
+<li>Oportunidades</li>
+<li>Notas e tarefas</li>
+<li>Conversas</li>
+<li>Agendamentos</li>
+<li>Participação em automações e campanhas</li>
+</ul>
+</li>
+</ul>
+<h3 id="modal-de-confirmacao">Modal de Confirmação</h3>
+<p>Uma etapa de confirmação clara reduz erros ao resumir o escopo de sua ação.</p>
+<ul>
+<li>O modal exibe o número total de contatos selecionados para serem restaurados.</li>
+<li>Um clique para confirmar; a restauração começa imediatamente.</li>
+<li>Se algum contato estiver além da janela de retenção ou for inelegível, você será notificado antes da conclusão.</li>
+</ul>
+<h3 id="restaurando-contatos-unicosmultiplos">Restaurando Contatos Únicos/Múltiplos</h3>
+<p>Se você apagou um ou mais contatos manualmente, nossa plataforma facilita trazê-los de volta da aba Restaurar. Este método é ideal para recuperar contatos individuais ou pequenos lotes sem precisar reverter uma ação em massa inteira.</p>
+<ol>
+<li>Acesse a aba Restaurar na seção Contatos<ul>
+<li>Vá para Contatos → Restaurar.</li>
+</ul>
+</li>
+<li>Encontre e Selecione os Contatos para Restaurar<ul>
+<li>Localize os contatos que você deseja restaurar e selecione os contatos clicando no checkbox ao lado do nome deles. Você pode selecionar contatos individuais ou todos os contatos na lista ao restaurar.</li>
+</ul>
+</li>
+<li>Restaure o Contato<ul>
+<li>Clique no botão Restaurar ao lado do nome do contato e confirme a ação.</li>
+</ul>
+</li>
+</ol>
+<h3 id="revertendo-uma-exclusao-em-massa">Revertendo uma Exclusão em Massa</h3>
+<p>Se você apagou acidentalmente vários contatos usando o recurso de exclusão em massa, você pode facilmente reverter a ação e restaurar os contatos apagados junto com seus dados associados.</p>
+<ol>
+<li>Navegue até a página Ações em Massa<ul>
+<li>Vá para Contatos e clique em Ações em Massa no menu de navegação. A página Ações em Massa mostra um histórico de todas as operações em massa realizadas em sua conta, incluindo exclusões em massa.</li>
+</ul>
+</li>
+<li>Encontre a Operação de Exclusão em Massa<ul>
+<li>Role pela lista de ações em massa para localizar a operação de exclusão em massa específica que você deseja reverter e clique nos três pontos &gt; Restaurar.</li>
+</ul>
+</li>
+<li>Clique na Opção Restaurar para restaurar a exclusão em massa<ul>
+<li>Selecione Restaurar novamente na janela pop-up.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Observação:</strong> O processo de restauração começará imediatamente. Você pode monitorar seu progresso na página Ações em Massa, onde o status mudará para indicar o progresso da restauração (por exemplo, "Em Andamento" ou "Concluído"). Após a conclusão do processo, navegue de volta para a seção Contatos e Verifique os Contatos Restaurados.</p>
+<h3 id="perguntas-frequentes_1">Perguntas Frequentes</h3>
+<p><strong>P: Quanto tempo após a exclusão posso restaurar um contato?</strong></p>
+<p>R: Até 60 dias. Depois disso, o contato é removido permanentemente e não pode ser recuperado.</p>
+<p><strong>P: Posso restaurar contatos apagados por outra pessoa?</strong></p>
+<p>R: Sim, desde que esteja dentro do período de 60 dias e você tenha acesso de Administrador.</p>
+<p><strong>P: O que acontece com os dados associados?</strong></p>
+<p>R: Os contatos restaurados recuperam seus dados associados, como conversas e oportunidades, a menos que apagados separadamente.</p>
+<p><strong>P: O que exatamente é restaurado?</strong></p>
+<p>R: Todos os dados associados (conversas, tarefas, etc.), a menos que tenham sido apagados independentemente.</p>
+<p><strong>P: "Selecionar tudo" inclui contatos em todas as páginas de resultados?</strong></p>
+<p>R: Inclui todos os contatos na visualização de lista atual. Se você tiver várias páginas, aumente as linhas por página ou repita sua seleção nas páginas subsequentes antes de restaurar.</p>
+<p><strong>P: Quanto tempo leva o processo de restauração para ações em massa?</strong></p>
+<p>R: O tempo levado depende do número de contatos sendo restaurados. Para grandes ações em massa, pode levar vários minutos para ser concluído.</p>
+<p><strong>P: Posso restaurar contatos em uma conta compatível com HIPAA?</strong></p>
+<p>R: Não, contas compatíveis com HIPAA não permitem restaurar contatos apagados por motivos de segurança de dados.</p>
+<p><strong>P: Por que não consigo restaurar um contato?</strong></p>
+<p>R: Uma das seguintes opções é possível: O contato pode ter sido apagado há mais de dois meses e não é mais recuperável OU contas compatíveis com HIPAA não permitem a restauração de contatos.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

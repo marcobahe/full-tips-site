@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Automatize respostas a comentários nas suas redes sociais. Use gatilhos de novos comentários em Automações para responder publicamente, enviar mensage...">
+    <title>Automação de Comentários em Redes — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="automacao-de-comentarios-no-facebook-e-instagram">Automação de Comentários no Facebook e Instagram</h2>
+<p>Automatize respostas a comentários nas suas redes sociais. Use gatilhos de novos comentários em Automações para responder publicamente, enviar mensagens ou usar IA para respostas dinâmicas.</p>
+<h3 id="o-que-e-a-automacao-de-facebook-e-instagram">O que é a Automação de Facebook e Instagram?</h3>
+<p>O Facebook e Instagram têm bilhões de usuários ativos, mas poucas ferramentas para gerenciar contatos e conversas em escala. Integre o Full Funnel para gerenciar suas conversas dentro do CRM e usar o poder da IA.</p>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Contas do Facebook e/ou Instagram integradas na sua conta Full Funnel em Configurações → Integrações → Facebook &amp; Instagram.</li>
+<li>Instagram conectado à sua página de negócios do Facebook.</li>
+</ul>
+<h3 id="componentes">Componentes</h3>
+<ul>
+<li><strong>Gatilhos:</strong></li>
+<li>Comentário(s) no Facebook: Inicia a Automação com um novo comentário em um post do Facebook.</li>
+<li>Comentário(s) no Instagram: Inicia a Automação com um novo comentário em um post do Instagram.</li>
+<li>Cliente Respondeu: Selecione um canal de resposta como Facebook Messenger ou Instagram DM.</li>
+<li><strong>Ações:</strong></li>
+<li>Responder no Comentário: Responde a um comentário com outro comentário.</li>
+<li>Messenger Interativo do Facebook: Envia uma mensagem direta (DM) no Facebook Messenger.</li>
+<li>Messenger Interativo do Instagram: Envia uma mensagem direta (DM) no Instagram Messenger.</li>
+<li>ChatGPT por OpenAI: Envia um prompt para o ChatGPT e usa a resposta na Automação.</li>
+<li><strong>Modelos:</strong></li>
+<li>Automação de Comentários no Instagram: Exemplo de Automação completa no Instagram ("comente para receber o arquivo").</li>
+<li>Comentários do Facebook + IA na Automação: Exemplo de resposta de comentário personalizada com IA e envio de DM se o comentário for positivo.</li>
+<li>Automação de Comentários no Facebook: Exemplo de Automação completa no Facebook ("comente para receber o arquivo").</li>
+</ul>
+<h3 id="como-usar-os-gatilhos">Como usar os Gatilhos</h3>
+<ol>
+<li>Em Automações, clique em "Adicionar Gatilho".</li>
+<li>Escolha um dos gatilhos na categoria "Eventos Facebook/Instagram":</li>
+<li>Facebook - Usuário comenta em uma publicação</li>
+<li>Instagram - Usuário comenta em uma publicação</li>
+<li>Na barra lateral, selecione a Página.</li>
+<li>Selecione o Tipo de Publicação:</li>
+<li>Publicada: Posts na sua página (texto, foto, vídeo, live). Use o link "Ver no Facebook" para ir ao post.</li>
+<li>Personalizada: Encontre o post pela URL ou ID. Selecione "Personalizada", adicione o filtro "Post é" e cole a URL do post.</li>
+<li>Defina o que procurar no comentário:</li>
+<li>Frase Exata: Requer correspondência exata.</li>
+<li>Contém Frase: A frase deve estar presente no comentário.
+   Exemplos:<ul>
+<li>Frase Exata - Preço</li>
+<li>Mensagem recebida - Preço → Passa</li>
+<li>Mensagem recebida - Compartilhe o Preço → Falha</li>
+<li>Contém Frase - Comprei de você</li>
+<li>Mensagem recebida - Comprei de você → Passa</li>
+<li>Mensagem recebida - Comprei de você ontem → Passa</li>
+<li>Mensagem recebida - Comprei um de você → Falha</li>
+</ul>
+</li>
+<li>Ative o rastreamento de comentários de primeiro nível para acionar a Automação apenas no primeiro nível de comentários.</li>
+</ol>
+<h3 id="quando-o-contato-e-salvo">Quando o contato é salvo?</h3>
+<p>O contato é salvo quando o gatilho é acionado, armazenando Nome e Sobrenome.</p>
+<h3 id="como-usar-as-acoes">Como usar as Ações</h3>
+<p>As ações estão na categoria "Comunicações".</p>
+<h4 id="messenger-interativo-do-facebook-e-instagram">Messenger Interativo do Facebook e Instagram</h4>
+<ol>
+<li>Selecione a ação desejada.</li>
+<li>Escolha o "Tipo de Resposta":</li>
+<li>Responder a DM: Envia uma mensagem direta com base em uma DM recebida.</li>
+<li>Responder ao comentário via DM: Envia uma mensagem direta com base em um comentário. A primeira ação deve ser "Responder ao comentário via DM", e as seguintes "Responder a DM".</li>
+<li>Configure a mensagem:</li>
+<li>Use um modelo existente ou crie uma nova mensagem.</li>
+<li>Anexe arquivos:</li>
+<li>Clique em "Adicionar anexo" e selecione um arquivo ou insira a URL.</li>
+<li>Adicione botões (até 3):</li>
+<li>Ótima forma de interagir e permitir ações com base na seleção do botão.</li>
+<li>Tipos de botões:<ul>
+<li>Abrir website: Adicione uma URL.</li>
+<li>Ligar para número: Insira um número de telefone.</li>
+<li>Executar Ações: Adicione ações para continuar o fluxo.</li>
+</ul>
+</li>
+<li>Configure o botão:</li>
+<li>Nome do Botão.</li>
+<li>Tipo de botão.</li>
+<li>Telefone ou URL (para botões de ligação ou website).</li>
+<li>Tempo de Espera Padrão:</li>
+<li>Tempo de espera obrigatório (1 minuto por padrão).</li>
+<li>Branch Padrão:</li>
+<li>Para contatos que não respondem ou selecionam o botão "Ligar".</li>
+</ol>
+<h4 id="responder-no-comentario">Responder no Comentário</h4>
+<ol>
+<li>Use esta ação para comentar no comentário do cliente.</li>
+<li>Adicione várias respostas e o sistema escolherá uma aleatoriamente.</li>
+<li>Ative a opção para curtir o comentário automaticamente.</li>
+</ol>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: Como garantir que a automação responda apenas a comentários relevantes?</strong>
+R: Use os filtros "Frase Exata" ou "Contém Frase" para definir critérios específicos nos gatilhos.</p>
+<p><strong>P: Posso usar emojis nas respostas automáticas?</strong>
+R: Sim, você pode incluir emojis nas mensagens e comentários configurados nas ações de resposta.</p>
+<hr />
+<h2 id="facebook-instagram-em-automacoes">Facebook &amp; Instagram em Automações</h2>
+<p>Este artigo responde a perguntas frequentes sobre o uso de ações e gatilhos do Facebook e Instagram em Automações na nossa plataforma.</p>
+<h3 id="perguntas-frequentes_1">Perguntas Frequentes</h3>
+<p><strong>P: Não consigo selecionar as ações e gatilhos do Facebook e Instagram na Automação. O que fazer?</strong>
+R: Verifique se você integrou sua conta do Facebook. Para integrar, vá em Configurações → Integrações.</p>
+<p><strong>P: Por que todas as opções de filtro desaparecem quando excluo "Página é" no gatilho?</strong>
+R: "Página é" é o filtro primário para a ação "Mensagem Interativa". Excluí-lo remove todos os filtros dependentes.</p>
+<p><strong>P: Quantos botões posso adicionar na ação "Mensagem Interativa"?</strong>
+R: Você pode adicionar até 3 botões para fornecer diferentes opções para os usuários dentro da mensagem interativa.</p>
+<p><strong>P: Posso adicionar ações após o botão "Ligar"?</strong>
+R: Não. O botão "Ligar" funciona como a ação final, e os usuários que clicarem nele serão direcionados para o "Ramo Padrão".</p>
+<p><strong>P: Quando posso usar a opção "Responder à DM"?</strong>
+R: Use "Responder à DM" em dois cenários:
+   *   Iniciando uma conversa: Responda de forma privada aos usuários que enviam uma mensagem direta (DM).
+   *   Continuando uma conversa: Envie mensagens de acompanhamento após uma "Resposta ao comentário via DM" inicial.</p>
+<p><strong>P: "Responder à DM" sempre funciona?</strong>
+R: O sistema verifica se existe uma conversa nos últimos 24 horas antes de enviar uma "Resposta à DM". Se não existir uma conversa recente, a entrega da mensagem falhará.</p>
+<p><strong>P: Quanto tempo tenho para responder a um comentário?</strong>
+R: Aplica-se um período de 7 dias para respostas a comentários. Você deve enviar a resposta via DM dentro de 7 dias, ou a entrega falhará.</p>
+<p><strong>P: Posso continuar a conversa se o usuário não respondeu à minha DM que foi uma resposta ao comentário?</strong>
+R: Se o usuário não respondeu, ele irá para o "Ramo Padrão" e, como não há resposta, você não pode usar outra ação "Mensagem Interativa" para continuar a conversa. Se o usuário respondeu, você pode usar a ação para continuar a conversa.</p>
+<p><strong>P: Quero enviar uma "Resposta à DM" para o comentário de um usuário, mas não está funcionando. O que fazer?</strong>
+R: Para enviar uma resposta ao comentário via DM, certifique-se de que o "Tipo de Resposta" esteja selecionado como "Resposta ao comentário via DM" para a primeira ação e como "Responder à DM" para todas as ações subsequentes.</p>
+<p><strong>P: Qual é o tempo de espera padrão adicionado na ação "Mensagem Interativa"?</strong>
+R: Por padrão, um tempo de espera de 1 minuto é adicionado, e é editável. Se nenhum botão for selecionado, o contato irá para o ramo "Tempo Limite Padrão".</p>
+<p><strong>P: Este gatilho funciona também para anúncios?</strong>
+R: Sim, selecione "Personalizado" em "Tipo de Postagem" e cole o URL da postagem no campo "Postagem é", e isso funcionará.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

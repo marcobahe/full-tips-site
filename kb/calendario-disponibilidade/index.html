@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este artigo explica as configurações de agendamento de horários no calendário da nossa plataforma, com exemplos práticos para otimizar sua eficiência.">
+    <title>Calendário — Disponibilidade — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="configuracoes-de-agendamento-no-calendario">Configurações de Agendamento no Calendário</h2>
+<p>Este artigo explica as configurações de agendamento de horários no calendário da nossa plataforma, com exemplos práticos para otimizar sua eficiência.</p>
+<h3 id="como-configurar-o-agendamento-no-calendario">Como configurar o agendamento no calendário</h3>
+<ol>
+<li>Acesse a área de configurações do seu calendário.</li>
+</ol>
+<h3 id="configuracoes-do-calendario">Configurações do Calendário</h3>
+<ul>
+<li><strong>Duração do Slot:</strong> Tempo de duração de cada agendamento.</li>
+<li><strong>Intervalo do Slot:</strong> Frequência em que os agendamentos podem ser marcados. Exemplo: com intervalo de 60 minutos, agendamentos podem ser marcados a cada hora.</li>
+<li><strong>Buffer:</strong> Tempo reservado antes ou depois de um agendamento, evitando agendamentos consecutivos. Permite tempo para preparação, pausas ou deslocamento entre compromissos.</li>
+<li><strong>Agendamentos por Slot:</strong> Número de agendamentos que podem ser marcados simultaneamente em um único slot. Útil para sessões em grupo ou webinars.</li>
+<li><strong>Agendamentos por Dia:</strong> Número máximo de agendamentos permitidos por dia, controlando a carga de trabalho.</li>
+<li><strong>Aviso Mínimo de Agendamento:</strong> Impede agendamentos de última hora. Exemplo: definir 24 horas exige que agendamentos sejam feitos com pelo menos um dia de antecedência.</li>
+<li><strong>Período:</strong> Define até quando um agendamento pode ser feito. Exemplo: definir 4 semanas permite que um cliente agende até 4 semanas a partir da data atual.</li>
+<li><strong>Horário de Atendimento:</strong> Horário em que os agendamentos podem ser marcados.</li>
+<li><strong>Cor do Evento:</strong> Ajuda a diferenciar visualmente os tipos de agendamentos no calendário.</li>
+</ul>
+<p><strong>Exemplos:</strong></p>
+<ul>
+<li>Disponibilidade do calendário das 9h às 11h, com duração do slot de 30 minutos e intervalo do slot de 30 minutos: horários disponíveis serão 9:00, 9:30, 10:00, 10:30 e 11:00.</li>
+<li>Disponibilidade do calendário das 9h às 11h, com duração do slot de 30 minutos e intervalo do slot de 15 minutos: horários disponíveis serão 9:00, 9:15, 9:30, 9:45, 10:00, 10:15, 10:30, 10:45 e 11:00.</li>
+<li>Um buffer de slot adiciona tempo após cada agendamento, impedindo outra reserva até que o tempo de buffer expire. Exemplo: um agendamento é reservado das 10:00 às 10:30 e você tem um buffer de slot de 15 minutos; então o próximo slot disponível será às 10:45.</li>
+</ul>
+<h3 id="casos-de-uso-praticos">Casos de Uso Práticos</h3>
+<ul>
+<li><strong>Duração do Slot:</strong> Um coach de vida pode criar diferentes tipos de serviços com durações variadas (60 minutos para sessões aprofundadas, 30 minutos para acompanhamento e 15 minutos para check-ins).</li>
+<li><strong>Intervalo do Slot:</strong> Um médico pode definir um intervalo menor em dias de maior fluxo de pacientes ou um intervalo maior para ter mais tempo entre os pacientes para tarefas administrativas.</li>
+<li><strong>Buffer:</strong> Um consultor pode adicionar um buffer para evitar atrasos e garantir que os clientes não se sintam apressados. Um preparador físico pode usar o buffer para limpar equipamentos entre as sessões.</li>
+<li><strong>Agendamentos por Slot:</strong> Um professor de yoga pode permitir várias reservas por slot para aulas em grupo, definindo o número máximo de alunos por turma.</li>
+<li><strong>Agendamentos por Dia:</strong> Um profissional de saúde mental pode limitar o número de agendamentos para garantir atenção total a cada cliente e evitar o esgotamento.</li>
+<li><strong>Aviso Mínimo de Agendamento:</strong> Um restaurante que oferece jantares privados pode exigir um aviso mínimo de uma semana para preparar os ingredientes.</li>
+<li><strong>Período:</strong> Um organizador de casamentos pode permitir agendamentos com até dois anos de antecedência, enquanto um profissional de impostos pode limitar o período às semanas que antecedem o prazo de declaração.</li>
+</ul>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: Posso definir diferentes tempos de buffer para diferentes tipos de agendamentos no meu calendário?</strong>
+R: Não. O buffer é aplicado a todos os agendamentos no calendário. Para tempos de buffer diferentes, crie calendários separados para cada tipo de agendamento.</p>
+<p><strong>P: Posso substituir o intervalo do slot para dias ou horários específicos no meu calendário?</strong>
+R: Não. O intervalo do slot é consistente em todos os horários e dias. Para intervalos únicos, crie um calendário separado para esse período.</p>
+<p><strong>P: Como a configuração 'Agendamentos por Slot' interage com a configuração 'Intervalo do Slot' no meu calendário?</strong>
+R: 'Agendamentos por Slot' define quantos agendamentos podem ser feitos para cada slot, enquanto 'Intervalo do Slot' define a frequência desses slots. Se 'Agendamentos por Slot' for 2 e 'Intervalo do Slot' for 30 minutos, dois agendamentos podem ser feitos a cada 30 minutos.</p>
+<p><strong>P: A configuração 'Agendamentos por Dia' pode limitar agendamentos em vários calendários?</strong>
+R: Não. 'Agendamentos por Dia' é específico para cada calendário. Para limitar agendamentos em vários calendários, gerencie manualmente o número total de agendamentos em todos os seus calendários.</p>
+<p><strong>P: O que acontece se eu alterar o 'Aviso Mínimo de Agendamento' enquanto houver agendamentos pendentes no meu calendário?</strong>
+R: As alterações não afetarão os agendamentos existentes, mas serão aplicadas aos novos. Por exemplo, se você alterar o aviso de 24 horas para 48 horas, os agendamentos já marcados nas próximas 48 horas permanecerão, mas os novos agendamentos exigirão pelo menos 48 horas de aviso.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

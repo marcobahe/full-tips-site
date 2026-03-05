@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este artigo descreve o sistema de feedback para artigos na base de conhecimento do bot de suporte.">
+    <title>Contatos Duplicados — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="avaliacao-de-artigos-da-base-de-conhecimento">Avaliação de Artigos da Base de Conhecimento</h2>
+<p>Este artigo descreve o sistema de feedback para artigos na base de conhecimento do bot de suporte.</p>
+<h3 id="como-avaliar-um-artigo">Como avaliar um artigo</h3>
+<ol>
+<li>Ao final de cada artigo, você verá a pergunta: "Este artigo foi útil?"</li>
+<li>Clique em "Sim" se o artigo foi útil.</li>
+<li>Clique em "Não" se o artigo não foi útil.</li>
+<li>Seu feedback será enviado e a equipe de suporte usará as informações para melhorar os artigos.</li>
+</ol>
+<h3 id="mensagens-de-feedback">Mensagens de Feedback</h3>
+<ul>
+<li><strong>Se você clicar em "Sim":</strong><ul>
+<li>A mensagem "Que ótimo!" será exibida.</li>
+<li>A mensagem "Obrigado pelo seu feedback" será exibida.</li>
+</ul>
+</li>
+<li><strong>Se você clicar em "Não":</strong><ul>
+<li>A mensagem "Desculpe, não pudemos ajudar" será exibida.</li>
+<li>A mensagem "Obrigado pelo seu feedback" será exibida.</li>
+</ul>
+</li>
+<li><strong>Em ambos os casos:</strong><ul>
+<li>A mensagem "Feedback enviado" será exibida.</li>
+<li>A mensagem "Agradecemos seu esforço e tentaremos corrigir o artigo" será exibida.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="preferencias-de-deduplicacao-de-contatos">Preferências de Deduplicação de Contatos</h2>
+<p>As preferências de "Permitir Contato Duplicado" controlam como os contatos duplicados são gerenciados na nossa plataforma. Este artigo explica como configurar essas preferências para atender às suas necessidades específicas!</p>
+<h3 id="visao-geral-das-preferencias-de-duplicacao-de-contatos">Visão Geral das Preferências de Duplicação de Contatos</h3>
+<p>A configuração "Permitir Contato Duplicado" define as regras para criação e correspondência de contatos. Desative os duplicados para usar o campo primário (e o campo secundário opcional) escolhido para anexar novos envios a um contato existente; caso contrário, um novo contato será criado. Ative os duplicados para permitir novos registros, mesmo que um e-mail/telefone já exista, e mescle-os posteriormente, se necessário.</p>
+<p>Essa configuração é particularmente relevante para contatos enviados por meio de Zapier ou Formulários. No entanto, ela não se aplica a uploads de contatos CSV, onde os duplicados são identificados e gerenciados automaticamente com base em números de telefone ou endereços de e-mail.</p>
+<h3 id="detalhes-importantes">Detalhes Importantes</h3>
+<ul>
+<li>Aplica-se a Zapier, Formulários, Facebook e Instagram</li>
+<li>A configuração "Permitir Contato Duplicado" controla como novos envios de Formulários, Zapier, Facebook e Instagram Messenger criam ou mesclam contatos.</li>
+<li>Quando ativada, novos registros são permitidos, mesmo que um e-mail ou telefone já exista.</li>
+<li>Quando desativada, detalhes de e-mail ou telefone correspondentes atualizam um contato existente em vez de criar um novo.</li>
+</ul>
+<h3 id="nao-se-aplica-a-importacoes-csv">Não se Aplica a Importações CSV</h3>
+<ul>
+<li>Para importações CSV, nossa plataforma mescla automaticamente os contatos com base em números de telefone ou endereços de e-mail, independentemente da configuração</li>
+<li>Contatos duplicados não podem ser criados por meio de uploads CSV.</li>
+</ul>
+<h3 id="comportamento-padrao-para-importacoes">Comportamento Padrão para Importações</h3>
+<ul>
+<li>Ao importar contatos via CSV, o sistema verifica registros existentes usando o campo primário especificado (e-mail ou telefone)</li>
+<li>Contatos com informações correspondentes são mesclados automaticamente, garantindo um banco de dados limpo e organizado</li>
+</ul>
+<p>Quando a configuração "Permitir Contato Duplicado" está ativada, contatos duplicados são permitidos. Isso pode ser útil em fluxos de trabalho onde o mesmo indivíduo precisa existir como registros separados (por exemplo, diferentes departamentos).</p>
+<p>Quando desativada, contatos duplicados são impedidos, garantindo um único registro por telefone ou e-mail e as atualizações são feitas em registros existentes em vez de criar novos.</p>
+<h3 id="preferencias-de-deduplicacao-de-contatos-configuracoes">Preferências de Deduplicação de Contatos (Configurações)</h3>
+<p>Existem três configurações que podem ser alteradas nas Preferências de Duplicação de Contatos:</p>
+<ol>
+<li><strong>Permitir Contato Duplicado:</strong><ul>
+<li>Esta configuração permite que você controle como sua subconta trata contatos duplicados.</li>
+<li>Se você quiser "Permitir Contatos Duplicados", você alternaria esta configuração para a posição LIGADO.</li>
+<li>Se você NÃO quiser contatos duplicados, você alternaria esta configuração para a posição DESLIGADO.</li>
+</ul>
+</li>
+<li><strong>Encontrar Contatos Existentes Baseado Em:</strong><ul>
+<li>Este filtro permite que você especifique como a nossa plataforma identifica e corresponde contatos existentes em seu banco de dados.</li>
+<li>Escolha o campo primário usado para procurar um contato existente antes da criação.</li>
+<li>As opções disponíveis são E-mail (Padrão) ou Telefone.</li>
+<li>Escolha o campo que você coleta de forma mais consistente na entrada.</li>
+</ul>
+</li>
+<li><strong>Segunda Preferência para Busca (Opcional):</strong><ul>
+<li>Use este campo como um critério secundário para detecção de duplicados.</li>
+<li>Deixe em branco se você quiser corresponder em apenas um campo.</li>
+<li>Exemplo: Se "E-mail" for selecionado como o campo primário e "Telefone" como o secundário, o sistema primeiro corresponderá por e-mail e, se nenhuma correspondência for encontrada, verificará por número de telefone.</li>
+</ul>
+</li>
+</ol>
+<h3 id="comportamento-em-todas-as-fontes-de-contato">Comportamento em Todas as Fontes de Contato</h3>
+<ol>
+<li><strong>Formulários e Zapier:</strong><ul>
+<li>Ativado: Permite duplicados, criando registros separados para contatos com o mesmo e-mail ou telefone</li>
+<li>Desativado: Atualiza o contato existente com as novas informações em vez de criar um duplicado</li>
+</ul>
+</li>
+<li><strong>Importações CSV:</strong><ul>
+<li>Registros duplicados são mesclados automaticamente com base no número de telefone ou e-mail</li>
+<li>Contatos duplicados não podem ser criados durante importações CSV e sempre respeitam esta configuração.</li>
+</ul>
+</li>
+<li><strong>Conversas do Facebook e Instagram:</strong><ul>
+<li>Desativado: Se alguém aparecer primeiro como um contato do Facebook ou Instagram Messenger e, posteriormente, compartilhar um e-mail ou número de telefone que corresponda a um contato existente, nossa plataforma mesclará automaticamente o contato do Messenger nesse registro existente. Conversas e detalhes são mantidos em um único perfil de contato unificado.</li>
+<li>Ativado: Contatos do Facebook e Instagram Messenger podem criar registros separados, mesmo que seu e-mail ou telefone corresponda a um contato existente. A mesclagem automática para essas conversas não é executada, então os duplicados podem permanecer até que você os mescle manualmente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="como-configurar-as-preferencias-de-deduplicacao-de-contatos">Como Configurar as Preferências de Deduplicação de Contatos</h3>
+<p>Esta configuração está localizada em Configurações → Perfil da Empresa → Preferências de Duplicação de Contatos e oferece opções de personalização adicionais, como definir critérios primários e secundários para detecção de duplicados.</p>
+<ol>
+<li><strong>Navegue até as Configurações do Perfil da Empresa</strong><ul>
+<li>No painel, clique em Configurações no canto inferior esquerdo</li>
+<li>Isso abrirá as Configurações do Perfil da Empresa (também exibido como a opção superior na barra de navegação secundária do lado esquerdo)</li>
+</ul>
+</li>
+<li><strong>Painel de Preferências de Duplicação de Contatos</strong><ul>
+<li>Role para baixo até ver o painel de Preferências de Duplicação de Contatos no lado direito da tela</li>
+<li>Este painel é onde todas as configurações serão feitas.</li>
+<li>Todas as alterações nas configurações neste painel são aplicadas automaticamente, não há necessidade de clicar em um botão Salvar/Atualizar Informações</li>
+</ul>
+</li>
+</ol>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: Duplicados podem ser criados durante importações CSV?</strong>
+R: Não, contatos duplicados não podem ser criados durante importações CSV. O sistema mescla automaticamente os contatos com base no e-mail ou telefone.</p>
+<p><strong>P: O que acontece se eu ativar "Permitir Contato Duplicado"?</strong>
+R: Contatos com o mesmo número de telefone ou e-mail podem ser criados via Formulários ou Zapier. Contatos duplicados não podem ser criados via uploads CSV.</p>
+<p><strong>P: Posso mesclar contatos duplicados após ativar esta configuração?</strong>
+R: Sim, contatos duplicados podem ser mesclados manualmente usando o recurso Mesclar Contatos.</p>
+<p><strong>P: Como posso impedir duplicados de integrações?</strong>
+R: Desative a configuração "Permitir Contato Duplicado" nas configurações da sua conta para garantir que as integrações atualizem os registros existentes em vez de criar novos.</p>
+<hr />
+<h2 id="avaliacao-de-artigos-da-base-de-conhecimento_1">Avaliação de Artigos da Base de Conhecimento</h2>
+<p>Este artigo descreve o sistema de feedback para artigos na base de conhecimento.</p>
+<h3 id="como-usar">Como usar</h3>
+<ol>
+<li>Ao final de cada artigo, você verá a pergunta: "Este artigo foi útil?"</li>
+<li>Clique em "Sim" se o artigo te ajudou.</li>
+<li>Você verá a mensagem: "Que bom! Obrigado pelo seu feedback."</li>
+<li>Clique em "Não" se o artigo não te ajudou.</li>
+<li>Você verá a mensagem: "Desculpe! Não conseguimos ajudar. Obrigado pelo seu feedback. Agradecemos seu esforço e tentaremos corrigir o artigo."</li>
+</ol>
+<hr />
+<h2 id="unindo-contatos-duplicados">Unindo Contatos Duplicados</h2>
+<p>Este artigo explica como unir registros de contatos duplicados na sua conta Full Funnel, ajudando você a limpar seu CRM, melhorar a precisão da comunicação e manter uma lista de contatos organizada.</p>
+<h3 id="o-que-e-unir-contatos-duplicados">O que é Unir Contatos Duplicados?</h3>
+<p>Unir contatos duplicados no Full Funnel permite consolidar múltiplos registros da mesma pessoa ou empresa em um único contato unificado. Isso ajuda a reduzir a confusão, eliminar comunicações redundantes e garantir um banco de dados de contatos limpo.</p>
+<p>Duplicatas podem ocorrer por entrada manual, importações de CSV, envios de formulários ou integrações de terceiros. O Full Funnel identifica duplicatas com base em campos correspondentes, como nomes, e-mails ou números de telefone.</p>
+<h3 id="beneficios-de-unir-contatos-duplicados">Benefícios de Unir Contatos Duplicados</h3>
+<ul>
+<li>Garante a higiene dos dados do CRM e evita abordagens duplicadas.</li>
+<li>Combina notas, tarefas, conversas e automações em um único registro.</li>
+<li>Melhora a precisão da campanha e os relatórios.</li>
+<li>Reduz a confusão durante o suporte e o acompanhamento de vendas.</li>
+<li>Otimiza a automação e o roteamento de contatos.</li>
+</ul>
+<h3 id="como-unir-contatos-duplicados">Como Unir Contatos Duplicados</h3>
+<ol>
+<li><strong>Encontre Contatos Duplicados:</strong><ul>
+<li>Vá para <strong>Contatos</strong> na sua conta Full Funnel.</li>
+<li>Use a barra de <strong>Pesquisa Rápida</strong> para encontrar contatos duplicados inserindo um identificador comum, como nome ou e-mail.</li>
+<li>Você também pode pesquisar manualmente na lista de contatos.</li>
+<li>Selecione os contatos duplicados que deseja unir (máximo de 10 por vez).</li>
+</ul>
+</li>
+<li><strong>Inicie o Processo de União:</strong><ul>
+<li>Após selecionar os contatos, clique no botão <strong>Unir Contatos</strong>.</li>
+</ul>
+</li>
+<li><strong>Escolha o Registro Principal:</strong><ul>
+<li>Revise os detalhes dos contatos selecionados.</li>
+<li>Selecione o <strong>Contato Principal</strong>.</li>
+<li>Você também pode selecionar o <strong>Email/Telefone Principal</strong> para o contato principal a partir de qualquer um dos contatos selecionados.</li>
+<li>
+<p>Clique no botão <strong>Unir Contatos</strong>.</p>
+<p><strong>Importante:</strong> Ao unir, o Contato Principal mantém todos os dados-chave. As informações do Contato Filho são permanentemente perdidas; revise cuidadosamente antes de confirmar.
+4.  <strong>Confirme a União:</strong>
+    *   Marque a caixa <strong>Eu entendo que esta ação não pode ser revertida</strong>.
+    *   Clique no botão <strong>Unir Contatos</strong>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="preferencias-de-remocao-de-duplicatas-de-contatos">Preferências de Remoção de Duplicatas de Contatos</h3>
+<p>Evitar contatos duplicados na origem pode economizar tempo e evitar confusão mais tarde. As Configurações de Remoção de Duplicatas de Contatos dão a você controle sobre como o sistema lida com novas entradas de contatos, permitindo que você evite duplicatas antes que elas aconteçam.</p>
+<ol>
+<li>Vá para <strong>Configurações &gt; Perfil da Empresa &gt; Preferências de Contato</strong>.</li>
+<li>Ative ou desative <strong>Permitir Contatos Duplicados</strong>.</li>
+<li>Escolha os campos de remoção de duplicatas primário e secundário (<strong>Email</strong> ou <strong>Telefone</strong>).</li>
+</ol>
+<h3 id="perguntas-frequentes_1">Perguntas Frequentes</h3>
+<p><strong>P: Posso unir contatos usando o aplicativo móvel?</strong></p>
+<p>R: Atualmente, a capacidade de unir contatos não está disponível no aplicativo móvel. Enquanto isso, você pode unir contatos usando a versão desktop do Full Funnel.</p>
+<p><strong>P: O que acontece com os dados dos campos durante uma união?</strong></p>
+<p>R: O registro principal selecionado mantém seus detalhes, enquanto campos exclusivos de outros registros são adicionados a ele.</p>
+<p><strong>P: Por que não vejo o botão "Unir Contatos"?</strong></p>
+<p>R: O botão "Unir Contatos" só aparece quando você seleciona 2 ou mais contatos válidos (até um máximo de 10). Se os contatos que você está tentando unir estiverem faltando campos-chave (como nome, e-mail ou número de telefone), o sistema pode não permitir a união. Além disso, certifique-se de que:</p>
+<ol>
+<li>Você tem permissões de administrador para gerenciar contatos.</li>
+<li>Você está selecionando contatos da mesma conta.</li>
+<li>Ambos os contatos estão visíveis na sua visualização da lista de contatos (verifique os filtros).</li>
+</ol>
+<p><strong>P: Posso unir contatos em massa?</strong></p>
+<p>R: Não, você pode unir até 10 contatos por vez.</p>
+<p><strong>P: O que causa contatos duplicados no Full Funnel?</strong></p>
+<p>R: Duplicatas podem vir de entrada manual, importação de CSV, formulários ou ferramentas de terceiros.</p>
+<p><strong>P: Os valores ou campos personalizados do contato serão afetados?</strong></p>
+<p>R: Campos personalizados do contato secundário só serão adicionados se o campo correspondente estiver em branco no principal. Nenhuma sobrescrita ocorrerá.</p>
+<p><strong>P: Como sei qual contato escolher como principal?</strong></p>
+<p>R: Escolha o registro com as informações mais precisas e atualizadas. O contato principal mantém conversas, última atividade, arquivos e outros dados.</p>
+<p><strong>P: O Full Funnel pode encontrar automaticamente todos os contatos duplicados para mim?</strong></p>
+<p>R: Não. Embora você possa pesquisar manualmente por nome, telefone ou e-mail, o Full Funnel não oferece atualmente uma verificação completa do banco de dados em busca de duplicatas.</p>
+<p><strong>P: Como evito duplicatas de envios de formulários ou calendários?</strong></p>
+<p>R: Certifique-se de que "Permitir Contatos Duplicados" esteja desativado nas suas configurações de remoção de duplicatas.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Para configurar um endereço de e-mail profissional para envio de mensagens no Full Funnel, siga estas etapas:">
+    <title>Email Configuracao — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="email-configuracao">Email Configuracao</h1>
+<h2 id="por-que-nao-posso-usar-meu-e-mail-gratuito-como-smtp">Por que não posso usar meu e-mail gratuito como SMTP?</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Para configurar um endereço de e-mail profissional para envio de mensagens no Full Funnel, siga estas etapas:</p>
+<ol>
+<li><strong>Adquira um domínio próprio</strong> (exemplo: suanempresa.com)</li>
+<li><strong>Configure um endereço de e-mail com seu domínio</strong> através de uma destas opções:</li>
+<li>No mesmo local onde comprou seu domínio (ex: Registro.br, Namecheap)</li>
+<li>Na sua hospedagem de site (ex: HostGator, Locaweb)</li>
+<li>Usando Google Workspace (antigo G Suite) a partir de R$30/mês</li>
+<li><strong>Configure o SMTP no Full Funnel</strong> usando suas credenciais do novo e-mail corporativo</li>
+<li><strong>Configure o encaminhamento</strong> (opcional) para receber os e-mails em sua caixa pessoal</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Domínio próprio registrado (ex: suanempresa.com)</li>
+<li>Serviço de e-mail corporativo (pago) associado ao domínio</li>
+<li>Credenciais de SMTP fornecidas pelo seu provedor de e-mail</li>
+<li>Configurações de DNS corretas para autenticação de e-mail</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>Posso usar Gmail gratuito para enviar e-mails de marketing?</strong>
+Não recomendamos. Provedores gratuitos como Gmail, Hotmail e Yahoo bloqueiam envios em massa para proteger sua reputação de domínio. Seu e-mail pode ser bloqueado ou ir para spam.</p>
+<p><strong>Por que preciso de um domínio próprio?</strong>
+A reputação do remetente é vinculada ao domínio. Quando você usa @gmail.com, está usando a reputação do Google. Com seu próprio domínio, você constrói sua própria reputação, melhorando a entrega de e-mails.</p>
+<p><strong>É caro ter um e-mail com domínio próprio?</strong>
+Existem opções acessíveis. Muitos registradores de domínio oferecem e-mail incluso, e o Google Workspace começa em aproximadamente R$30 por usuário/mês.</p>
+<p><strong>Posso usar meu domínio próprio mas continuar usando o Gmail?</strong>
+Sim! Com Google Workspace, você usa a interface do Gmail com seu endereço personalizado (ex: voce@suanempresa.com).</p>
+<p><strong>E se eu já tiver domínio e hospedagem?</strong>
+Verifique com sua hospedagem como criar contas de e-mail. Geralmente há opções no painel de controle (cPanel) ou você pode contactar o suporte.</p>
+<hr />
+<h2 id="como-calcular-o-custo-por-e-mail-no-seu-provedor-smtp">Como Calcular o Custo por E-mail no Seu Provedor SMTP</h2>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p>Para descobrir o custo por e-mail do seu plano, siga estes passos:</p>
+<ol>
+<li>Acesse a conta do seu provedor SMTP (como Mailgun, SendGrid, etc.).</li>
+<li>Navegue até a seção <strong>Plano</strong> ou <strong>Faturamento</strong>.</li>
+<li>Localize a descrição do seu plano atual, que deve informar a quantidade de e-mails incluída por mês.</li>
+<li>Pegue o custo mensal do seu plano e divida pelo número de e-mails incluídos.</li>
+<li>O resultado será o custo individual aproximado de cada e-mail.</li>
+</ol>
+<p><strong>Exemplo Prático:</strong>
+Se o seu plano no Mailgun custa R$ 35,00 por mês e inclui o envio de 50.000 e-mails, o cálculo é:
+<code>35 / 50000 = 0,0007</code>
+Portanto, o custo por e-mail é de aproximadamente <strong>R$ 0,0007</strong>.</p>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Uma conta ativa em um provedor SMTP.</li>
+<li>Acesso às informações do seu plano e faturamento dentro da plataforma do provedor.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>Qual provedor de e-mail devo usar no Full Funnel?</strong>
+A escolha depende se você prefere uma configuração simplificada ou já utiliza uma ferramenta SMTP:
+*   <strong>E-mail Full Funnel (Recomendado):</strong> Ideal para quem deseja uma configuração "pronta para uso", sem a necessidade de configurar o Mailgun. O envio e recebimento de e-mails funcionam diretamente dentro da plataforma.
+*   <strong>Mailgun:</strong> Escolha comum para envio em massa, especialmente para agências que gerenciam múltiplos domínios ou localizações.
+*   <strong>Outros Provedores SMTP:</strong> São compatíveis, mas a plataforma recomenda o uso do <strong>E-mail Full Funnel</strong> ou <strong>Mailgun</strong> para um rastreamento mais preciso de estatísticas (como aberturas e cliques).</p>
+<p><strong>Preciso do Mailgun se já tenho o E-mail Full Funnel ativado?</strong>
+<strong>Não.</strong> O E-mail Full Funnel foi projetado para eliminar a necessidade de contratação de um provedor de e-mail de terceiros, como o Mailgun. Se ele já está ativado em sua conta, você não precisa de outro serviço.</p>
+<p><strong>O que fazer se não tenho o E-mail Full Funnel ativado?</strong>
+Se o E-mail Full Funnel não estiver habilitado em sua conta, você precisará conectar um provedor de e-mail externo para enviar comunicações, como o Mailgun (comumente usado para envio em massa) ou outro provedor SMTP compatível.</p>
+<hr />
+<h2 id="como-resolver-quando-o-e-mail-de-solicitacao-de-avaliacao-nao-esta-sendo-enviado">Como Resolver Quando o E-mail de Solicitação de Avaliação Não Está Sendo Enviado</h2>
+<h3 id="como-fazer_2">Como fazer</h3>
+<p>Siga este passo a passo para diagnosticar e corrigir o problema:</p>
+<ol>
+<li>
+<p><strong>Verifique a Integração SMTP Configurada:</strong></p>
+<ul>
+<li>Acesse a <strong>subconta</strong> da localização desejada.</li>
+<li>Vá até <strong>Configurações</strong> &gt; <strong>Integrações</strong>.</li>
+<li>Localize a seção de configurações de e-mail ou SMTP.</li>
+<li>Confirme qual provedor SMTP está conectado (por exemplo, Gmail, Outlook, Mailgun, SendGrid).</li>
+</ul>
+</li>
+<li>
+<p><strong>Valide o Remetente (Sender) do E-mail:</strong></p>
+<ul>
+<li>Se a integração SMTP estiver usando um endereço genérico como <code>info@suaempresa.com</code>, você precisará fazer login na caixa de entrada desse e-mail específico (<code>info@suaempresa.com</code>) para enviar a solicitação de avaliação. Muitos provedores exigem autenticação do remetente real.</li>
+</ul>
+</li>
+<li>
+<p><strong>Revise o Conteúdo do E-mail:</strong></p>
+<ul>
+<li>Navegue até <strong>Reputação</strong> &gt; <strong>Solicitações de Avaliação</strong>.</li>
+<li>Edite o modelo de e-mail que está sendo usado.</li>
+<li>Verifique se todos os <strong>Valores Personalizados</strong> (como <code>{{first_name}}</code>, <code>{{business_name}}</code>) estão corretamente escritos e se os dados do contato que receberá o e-mail possuem essas informações preenchidas. Valores em branco podem causar falhas.</li>
+</ul>
+</li>
+<li>
+<p><strong>Considere Atrasos do Provedor:</strong></p>
+<ul>
+<li>Se você utiliza um serviço como <strong>Mailgun</strong>, <strong>SendGrid</strong> ou similar, pode haver um atraso no envio devido a filas de processamento ou políticas de taxa de envio (rate limiting) do próprio provedor. Espere alguns minutos e verifique os logs de entrega dentro da plataforma do seu provedor de e-mail.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verifique os Logs e Status:</strong></p>
+<ul>
+<li>Dentro do Full Funnel, você pode verificar o status do envio na seção de <strong>Conversas</strong> ou no histórico do <strong>Contato</strong> específico, para ver se há alguma mensagem de erro registrada.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>Acesso de administrador ou proprietário à <strong>subconta</strong> da localização.</li>
+<li>Credenciais de login para o endereço de e-mail configurado como <strong>remetente (SMTP)</strong>.</li>
+<li>Os contatos que receberão a solicitação devem ter um endereço de e-mail válido cadastrado.</li>
+</ul>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>P: O e-mail foi enviado pelo sistema, mas não chegou na caixa de entrada do cliente. O que fazer?</strong>
+R: Primeiro, peça ao cliente para verificar a pasta de <strong>Spam</strong> ou <strong>Lixo Eletrônico</strong>. Se não estiver lá, verifique os logs de entrega na integração do seu provedor SMTP (como Mailgun ou SendGrid) para ver se o e-mail foi rejeitado, marcado como bounce ou se há alguma mensagem de erro específica.</p>
+<p><strong>P: Posso usar o e-mail gratuito do Full Funnel para enviar solicitações de avaliação?</strong>
+R: O uso do servidor SMTP padrão da plataforma para grandes volumes de e-mails de marketing ou solicitações pode ter limitações e não é recomendado para garantir a entreabilidade. É altamente aconselhável configurar sua própria integração SMTP com um provedor dedicado.</p>
+<p><strong>P: Como sei se o problema é com um Valor Personalizado no modelo de e-mail?</strong>
+R: Faça um teste enviando uma solicitação de avaliação para um contato seu (de teste) usando um modelo de e-mail muito simples, apenas com texto, sem nenhum valor personalizado <code>{{ }}</code>. Se o e-mail simples for enviado, o problema provavelmente está na formatação ou nos dados de um dos campos personalizados do seu modelo original.</p>
+<hr />
+<h2 id="visao-geral-e-configuracao-de-dominios-de-envio-dedicados">Visão Geral e Configuração de Domínios de Envio Dedicados</h2>
+<p>O marketing por email é uma ótima maneira de alcançar clientes e aumentar as vendas. No entanto, sem os cuidados certos, suas mensagens podem enfrentar problemas. Um domínio de envio dedicado dá a você controle total sobre a identidade do remetente, ajudando a evitar filtros de spam e melhorando a reputação do seu email.</p>
+<p><strong>IMPORTANTE:</strong> Os domínios de envio dedicados são aplicáveis apenas aos usuários do sistema de Email do Full Funnel. Se você está usando um domínio novo que nunca foi usado para email, certifique-se de realizar o aquecimento do domínio antes de enviar para uma lista grande. A falha em fazer isso resultará em baixa capacidade de entrega (deliverability).</p>
+<p><strong>IMPORTANTE:</strong> Se deseja configurar outros Provedores SMTP, consulte o artigo sobre Configuração de Provedores SMTP.</p>
+<h3 id="o-que-e-um-dominio-de-envio-dedicado">O que é um Domínio de Envio Dedicado?</h3>
+<p>Um domínio de envio dedicado permite que você envie emails que pareçam vir diretamente da sua marca, ajudando a manter uma melhor reputação junto aos serviços de email. Qualquer subconta ou agência pode criar um domínio de envio dedicado de forma rápida e fácil.</p>
+<p>Por padrão, todos os emails enviados da nossa plataforma mostrarão o nome dos nossos servidores nos cabeçalhos do email, como "enviado em nome de" ou "enviado via". Um domínio dedicado remove essa referência.</p>
+<h3 id="como-configurar-dominios-de-envio-dedicados">Como Configurar Domínios de Envio Dedicados</h3>
+<p>Você pode criar vários domínios de envio na sua conta e usar domínios diferentes para diferentes ações, como emails 1 para 1, emails de automações, campanhas de marketing e emails de Pagamentos e Faturas.</p>
+<p><strong>Requisitos:</strong>
+*   Acesso administrativo às <strong>Configurações</strong> da sua conta.
+*   Acesso ao painel de controle do seu provedor de hospedagem de domínio (como GoDaddy, Cloudflare, etc.) para gerenciar registros DNS.
+*   Um domínio raiz (ex: <code>minhaempresa.com</code>) do qual você possa criar subdomínios.</p>
+<p><strong>Passo a Passo:</strong></p>
+<ol>
+<li>
+<p><strong>Navegue até os Serviços de Email</strong></p>
+<ul>
+<li>Acesse <strong>Configurações</strong> &gt; <strong>Serviços de Email</strong>.</li>
+<li>Clique no botão <strong>"Domínio e IP Dedicado"</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adicione as Informações do Domínio</strong></p>
+<ul>
+<li>Clique no botão <strong>"Adicionar Domínio"</strong>.</li>
+<li>Insira o <strong>subdomínio</strong> que deseja usar (ex: <code>emails.minhaempresa.com</code>).</li>
+<li><strong>O que é um Subdomínio?</strong> É uma variação do seu domínio raiz. Você pode criar vários, como <code>news.minhaempresa.com</code> ou <code>no-reply.minhaempresa.com</code>, para usar em diferentes tipos de comunicação.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verifique os Registros DNS</strong></p>
+<ul>
+<li>Após adicionar o subdomínio, você precisará verificar os registros DNS.</li>
+<li>Você terá a opção de permitir que o Full Funnel configure os registros automaticamente ou adicioná-los manualmente no seu provedor de hospedagem.</li>
+<li><strong>LEMBRE-SE:</strong> O processo de propagação do DNS pode levar até 24 horas.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Configuração Manual de DNS:</strong>
+Se a configuração automática falhar, você precisará adicionar manualmente os registros TXT (SPF, DKIM) e CNAME fornecidos pela plataforma no painel do seu provedor de domínio.</p>
+<h3 id="dominios-dedicados-para-emails-de-calendario-subcontas">Domínios Dedicados para Emails de Calendário (Subcontas)</h3>
+<p>Você pode atribuir domínios de envio dedicados especificamente para emails do Calendário, protegendo a capacidade de entrega das comunicações de agendamento.</p>
+<ol>
+<li>Vá para <strong>Configurações</strong> → <strong>Serviço de Email</strong> → <strong>Serviço SMTP</strong>.</li>
+<li>Selecione <strong>Domínio e IP Dedicado</strong>.</li>
+<li>Na seção <strong>Configuração de Domínio</strong>, na categoria <strong>Calendário</strong>, use o menu suspenso para adicionar seus domínios (até 5).</li>
+<li>Se usar múltiplos domínios, defina a distribuição baseada em porcentagem entre eles.<ul>
+<li><strong>Nota:</strong> Apenas domínios criados pela subconta estarão disponíveis para seleção.</li>
+</ul>
+</li>
+</ol>
+<h3 id="configurar-o-google-postmaster-tools-para-seu-dominio-dedicado">Configurar o Google Postmaster Tools para Seu Domínio Dedicado</h3>
+<p>O Google Postmaster Tools (GPT) ajuda a monitorar a capacidade de entrega específica para Gmail.</p>
+<ol>
+<li>Faça login no <a href="https://postmaster.google.com/">Google Postmaster Tools</a> com uma conta Google.</li>
+<li>Adicione seu domínio (ex: <code>mail.suamarca.com</code>).</li>
+<li>Escolha "Verificar" e copie o valor do registro TXT fornecido pelo Google.</li>
+<li>No painel do seu provedor de DNS, adicione esse registro TXT exatamente como mostrado.</li>
+<li>Retorne ao GPT para completar a verificação.</li>
+<li>Envie emails do Full Funnel usando seu domínio dedicado verificado.</li>
+<li>Após volume suficiente, monitore os dashboards de Reputação de Domínio, Taxa de Spam, Autenticação e Erros de Entrega.</li>
+</ol>
+<h3 id="refatoracao-de-email-em-dominio-compartilhado">Refatoração de Email em Domínio Compartilhado</h3>
+<p>Ao usar um domínio compartilhado (do Full Funnel ou da Agência), o sistema refatora automaticamente seus endereços de email para funcionar com a infraestrutura compartilhada, o que pode afetar a identidade visual.</p>
+<ul>
+<li><strong>Como funciona:</strong> Seu endereço de remetente é reformatado.<ul>
+<li>Exemplo: <code>suporte@suaempresa.com</code> se torna <code>suporte+suaempresa.com@mg.dominio.compartilhado.com</code>.</li>
+</ul>
+</li>
+<li><strong>Para evitar a refatoração e manter sua identidade:</strong> Configure um domínio de envio dedicado seguindo as instruções deste artigo.</li>
+</ul>
+<h3 id="solucao-de-problemas">Solução de Problemas</h3>
+<ul>
+<li><strong>Erro: 'O domínio já está apontando para um servidor de email!'</strong>
+    Isso significa que existem registros DNS (MX ou SPF) antigos no domínio. Você deve removê-los no seu provedor de hospedagem antes de conectar o domínio ao Full Funnel. Use ferramentas como o <a href="https://mxtoolbox.com/SuperTool.aspx">MXToolbox</a> para verificar os registros existentes.</li>
+<li><strong>Registros DNS não verificados:</strong> Tente forçar a verificação manualmente. Se persistir, contate seu provedor de hospedagem.</li>
+<li><strong>Certificado SSL não gerado:</strong> O certificado é gerado automaticamente após a verificação. Se não aparecer, tente re-verificar o domínio. Caso contrário, contate seu provedor de hospedagem.</li>
+<li><strong>Domínio com registro DNS curinga (wildcard):</strong> Um registro como <code>*.seudominio.com</code> pode causar erros. Para resolver, remova temporariamente o registro curinga, configure o subdomínio e depois o adicione novamente, ou adicione manualmente os registros DNS para o subdomínio específico.</li>
+</ul>
+<h3 id="faq-perguntas-frequentes">FAQ (Perguntas Frequentes)</h3>
+<p><strong>P: Como escolho um nome de domínio de envio?</strong>
+R: Use um subdomínio único que não seja usado para nenhum outro propósito (ex: <code>mg.suamarca.com</code>).</p>
+<p><strong>P: Como configuro um Endereço IP Dedicado?</strong>
+R: É um processo totalmente diferente. Consulte o artigo específico sobre Configuração de IP Dedicado.</p>
+<p><strong>P: Meus destinatários verão o endereço de email refatorado?</strong>
+R: Sim, se você usar um domínio compartilhado. Eles verão o endereço modificado (ex: <code>suporte+empresa@mg.dominio.com</code>).</p>
+<p><strong>P: Como evito que meus emails sejam refatorados?</strong>
+R: Configurando um domínio de envio dedicado. Seus emails serão enviados exatamente com o endereço configurado.</p>
+<p><strong>P: A refatoração afeta meu endereço de resposta (reply-to)?</strong>
+R: Não. A refatoração afeta apenas o endereço de envio (From). O endereço de resposta permanece como configurado.</p>
+<hr />
+<h2 id="certificados-ssl-para-dominios-de-email-dedicados">Certificados SSL para Domínios de Email Dedicados</h2>
+<h3 id="como-fazer_3">Como fazer</h3>
+<p>Para configurar ou verificar o certificado SSL do seu domínio de email dedicado, siga estes passos:</p>
+<ol>
+<li>Acesse <strong>Configurações</strong> &gt; <strong>Serviços de Email</strong>.</li>
+<li>No lado direito da tela, clique no botão <strong>Domínio e IP Dedicado</strong>.</li>
+<li>Na tela de gerenciamento de domínios, localize seu domínio e clique no botão <strong>Verificar Agora</strong>.</li>
+<li>Você será redirecionado para a página de DNS do seu provedor de domínio. Certifique-se de que todos os registros DNS estejam configurados corretamente.</li>
+<li>Após confirmar os registros DNS, clique no botão <strong>Verificar domínio</strong> na página do Full Funnel. Isso emitirá ou reemitirá o certificado SSL.</li>
+</ol>
+<h3 id="requisitos_3">Requisitos</h3>
+<ul>
+<li>É necessário ter um <strong>domínio dedicado</strong> adicionado e verificado no sistema de email do Full Funnel.</li>
+<li>Você deve ter acesso ao painel de controle do seu <strong>provedor de DNS</strong> (como GoDaddy, Cloudflare, Hostgator, etc.) para verificar os registros.</li>
+<li>O certificado SSL é emitido <strong>automaticamente</strong> após a verificação bem-sucedida do domínio.</li>
+</ul>
+<h3 id="faq_3">FAQ</h3>
+<p><strong>P: Por que preciso de um certificado SSL para meu domínio de email?</strong>
+R: O certificado SSL criptografa os links de rastreamento e cliques nos seus emails. Sem ele, os links podem quebrar e os destinatários verão erros de segurança, o que prejudica a reputação do remetente e o engajamento.</p>
+<p><strong>P: O que significa o status "SSL Pendente" ou "SSL Desconhecido"?</strong>
+R: "SSL Pendente" significa que a geração do certificado está em andamento. "SSL Desconhecido" indica que o certificado não foi gerado. Em ambos os casos, você deve <strong>reverificar o domínio</strong> seguindo os passos acima.</p>
+<p><strong>P: Meus destinatários estão vendo o erro "Este site não pode fornecer uma conexão segura". O que fazer?</strong>
+R: Este erro ocorre quando o certificado SSL não está válido. Acesse as configurações do domínio e <strong>reverifique o domínio</strong> para reemitir o certificado SSL e resolver o problema.</p>
+<p><strong>P: Como vejo o status do meu certificado SSL?</strong>
+R: O status é exibido na tela de <strong>Domínio e IP Dedicado</strong> (Configurações &gt; Serviços de Email). Os status possíveis são: <strong>SSL Emitido</strong> (concluído), <strong>SSL Pendente</strong> (em processamento) ou <strong>SSL Desconhecido</strong> (não gerado).</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

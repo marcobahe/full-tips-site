@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Os links de acionamento são um método eficaz para redirecionar um usuário para uma página específica após o clique em uma mensagem de SMS, E-mail, GMB...">
+    <title>Trigger Links — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="trigger-links">Trigger Links</h1>
+<h2 id="visao-geral-dos-links-de-acionamento">Visão Geral dos Links de Acionamento</h2>
+<p>Os links de acionamento são um método eficaz para redirecionar um usuário para uma página específica após o clique em uma mensagem de SMS, E-mail, GMB ou DM do Facebook/Instagram/WhatsApp. Quando um contato clica no link, o sistema registra a ação na linha do tempo de atividades do contato e aciona uma ação predefinida dentro de uma automação.</p>
+<h3 id="como-funcionam">Como Funcionam</h3>
+<p>Dentro do construtor de automações, existem ações e gatilhos que podem ser disparados pelo clique em um link de acionamento.</p>
+<p><strong>Atenção:</strong> Os links de acionamento são suportados <strong>APENAS</strong> em SMS, E-mail, GMB e Mensagens Diretas do Facebook/Instagram/WhatsApp.</p>
+<h3 id="casos-de-uso-dos-links-de-acionamento">Casos de Uso dos Links de Acionamento</h3>
+<ul>
+<li><strong>Atualizações Dinâmicas de URL em Campanhas de E-mail:</strong> Reutilize templates de e-mail para promoções mensais ou trimestrais. Configure um link de acionamento com um valor personalizado que aponta para a URL da promoção atual. O link se atualiza dinamicamente sem necessidade de editar manualmente o template.</li>
+<li><strong>Automação Baseada em Cliques:</strong> Crie automações que reajam ao clique em um link. Por exemplo, um clique em um lembrete de consulta pode acionar o envio automático de uma pesquisa de satisfação ou solicitação de avaliação.</li>
+<li><strong>Links de Cancelamento de Inscrição por Canal:</strong> Implemente links de cancelamento de inscrição específicos para SMS, E-mail, Google Meu Negócio, Facebook e Instagram. O clique cancela a inscrição do contato naquele canal específico, garantindo conformidade com regulamentações.</li>
+<li><strong>Personalização da Marca (Branding):</strong> Personalize a aparência dos seus links de acionamento para exibir o domínio da sua agência, oferecendo uma experiência mais profissional.</li>
+<li><strong>Rastreamento de Engajamento:</strong> Monitore o engajamento dos contatos. Cada clique é registrado na linha do tempo de atividades do contato, fornecendo insights valiosos sobre o comportamento e a eficácia da campanha.</li>
+<li><strong>Recursos Educacionais:</strong> Inclua links em campanhas de e-mail para tutoriais, vídeos ou artigos. O clique pode rastrear o interesse em tópicos específicos e acionar follow-ups automatizados.</li>
+<li><strong>Registro para Eventos:</strong> Use links em convites por e-mail para RSVP ou atualizações de evento. O clique pode automatizar a confirmação de presença, envio de detalhes ou coleta de informações.</li>
+<li><strong>Recomendações de Produtos Personalizadas:</strong> Direcione os contatos para recomendações de produtos personalizadas com base em suas preferências. Isso pode iniciar processos para adaptar comunicações e ofertas futuras.</li>
+</ul>
+<h3 id="links-de-acionamento-em-automacoes">Links de Acionamento em Automações</h3>
+<p>Para configurar uma automação que aguarda um clique em um link de acionamento antes de prosseguir, consulte o guia: <strong>Como usar a etapa de Espera na Automação para um clique em Link de Acionamento</strong>.</p>
+<h3 id="guias-de-implementacao">Guias de Implementação</h3>
+<ol>
+<li>
+<p><strong>Como usar Valores Personalizados e links de acionamento para alterar sua URL dinamicamente.</strong></p>
+<ul>
+<li>Ideal para reutilizar workflows em promoções recorrentes. Atualize o valor personalizado com a nova URL de oferta e o sistema atualizará o link de acionamento dinamicamente.</li>
+<li><strong>Atenção:</strong><ul>
+<li>Isso não afeta retroativamente links de campanhas anteriores.</li>
+<li>Ao configurar sua automação, adicione o <strong>"link de acionamento"</strong> (e não o "Valor Personalizado" cru) no corpo da mensagem de SMS ou E-mail. Somente o link de acionamento propriamente dito disparará a ação ao ser clicado.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Como usar a etapa de Espera na Automação para um clique em Link de Acionamento.</strong></p>
+<ul>
+<li>Este vídeo cobre o uso da ação "Esperar" para acionar a próxima etapa com base no clique. Um exemplo prático é a automação "Receita - Confirmação de Consulta + Lembrete + Pesquisa + Solicitação de Avaliação", disponível na biblioteca de automações.</li>
+</ul>
+</li>
+<li>
+<p><strong>Como configurar links de cancelamento de inscrição por canal de comunicação (SMS, E-mail, GMB, Mensagens Diretas do FB/IG).</strong></p>
+<ul>
+<li><strong>Atenção:</strong> As operadoras de SMS possuem palavras-chave pré-definidas para cancelamento (como 'STOP', 'UNSUBSCRIBE', 'CANCEL'). Quando um contato usa essas palavras, ele é automaticamente cancelado. Para reativar a inscrição, o contato precisa responder "Start".</li>
+</ul>
+</li>
+</ol>
+<h3 id="faq">FAQ</h3>
+<p><strong>Como personalizo meus links de acionamento com a marca da minha agência?</strong>
+Para configurar seu domínio de API e exibir o domínio da sua agência nos links, acesse: <strong>Configurando meu Domínio de API da Agência</strong>. Atualmente, é possível adicionar um único domínio que será compartilhado por todas as localizações/subcontas.</p>
+<p><strong>Como encontro a linha do tempo de atividades de um contato?</strong>
+Vá para <strong>Contatos</strong> &gt; <strong>Lista Inteligente</strong> &gt; Busque pelo contato &gt; Clique na aba <strong>'Atividade'</strong>.</p>
+<p><strong>O que faz a opção 'Tempo Limite (Timeout)' na Ação de Espera?</strong>
+Quando ativada, a função de tempo limite fará a automação pular a etapa de Espera após o período de tempo que você definir no campo de entrada (que fica visível apenas quando a opção está ativada).</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

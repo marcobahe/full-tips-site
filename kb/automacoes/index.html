@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gerenciar oportunidades de forma eficiente é essencial para manter um funil de vendas organizado e eficaz. O gatilho Oportunidade Alterada no Full Fun...">
+    <title>Automacoes — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="automacoes">Automacoes</h1>
+<h2 id="gatilho-de-automacao-oportunidade-alterada">Gatilho de Automação - Oportunidade Alterada</h2>
+<p>Gerenciar oportunidades de forma eficiente é essencial para manter um funil de vendas organizado e eficaz. O gatilho <strong>Oportunidade Alterada</strong> no Full Funnel automatiza ações sempre que um registro de oportunidade é atualizado, garantindo uma resposta em tempo real às mudanças. Diferente do gatilho "Status da Oportunidade Alterado", que rastreia apenas mudanças de status, este gatilho oferece uma funcionalidade mais ampla, detectando modificações como ajustes no valor do lead, movimentação de estágio, reassinalamentos e atualizações em campos personalizados. Este guia mostrará seus benefícios, configuração e práticas recomendadas para ajudar você a otimizar a automação do seu CRM.</p>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Siga estas etapas para configurar o gatilho "Oportunidade Alterada" em uma automação:</p>
+<p><strong>Passo 1: Acessar o Construtor de Automações</strong>
+Faça login na sua conta Full Funnel. No menu lateral, vá até <strong>Automações</strong>. Clique em <strong>+ Nova Automação</strong> para criar uma nova ou abra uma automação existente para editar.</p>
+<p><strong>Passo 2: Adicionar o Gatilho "Oportunidade Alterada"</strong>
+Na tela do construtor de automações, clique em <strong>+ Adicionar Novo Gatilho</strong>. Na janela que se abre, pesquise por "Oportunidade Alterada" na lista de gatilhos disponíveis. Selecione-o para prosseguir com a configuração.</p>
+<p><strong>Passo 3: Nomear o Gatilho</strong>
+Dê um nome claro e descritivo ao seu gatilho, que reflita seu propósito (ex: "Notificar sobre mudança em oportunidade de alto valor"). Isso facilita a identificação ao gerenciar várias automações.</p>
+<p><strong>Passo 4: Aplicar Filtros (Opcional, mas Recomendado)</strong>
+Os filtros permitem refinar sua automação para que ela dispare apenas quando mudanças <em>específicas</em> acontecerem em uma oportunidade. Você pode adicionar múltiplos filtros. Os principais tipos são:</p>
+<ul>
+<li><strong>Atribuído a:</strong> Aciona a automação quando a oportunidade é reassinalada para um membro diferente da equipe.<ul>
+<li><em>Operadores:</em> <strong>Mudou</strong> (para qualquer usuário), <strong>Mudou Para</strong> (um usuário específico), <strong>É Igual a</strong> (mudanças em oportunidades já atribuídas a um usuário específico).</li>
+</ul>
+</li>
+<li><strong>Tag:</strong> Controla quando o gatilho deve disparar com base nas tags da oportunidade.</li>
+<li><strong>No Funil:</strong> Aciona a automação quando uma mudança ocorre dentro de um funil de vendas específico.<ul>
+<li><em>Operadores:</em> <strong>Mudou</strong> (para qualquer funil), <strong>Mudou Para</strong> (um funil específico), <strong>É Igual a</strong> (mudanças em oportunidades dentro de um funil específico).</li>
+</ul>
+</li>
+<li><strong>Valor do Lead:</strong> Dispara quando o valor monetário da oportunidade aumenta ou diminui.</li>
+<li><strong>Motivo da Perda:</strong> Automatiza ações quando uma oportunidade é marcada como "Perdida" e um motivo é atribuído.<ul>
+<li><em>Operadores:</em> <strong>Mudou</strong>, <strong>Mudou Para</strong>, <strong>É Igual a</strong>.</li>
+</ul>
+</li>
+<li><strong>Status:</strong> Aciona a automação com base no status atual da oportunidade (ex: Aberto, Ganho, Perdido).<ul>
+<li><em>Operadores:</em> <strong>É</strong>, <strong>Não É</strong>, <strong>Mudou</strong>, <strong>Mudou Para</strong>.</li>
+</ul>
+</li>
+<li><strong>Campos Personalizados da Oportunidade:</strong> Filtre por mudanças em campos personalizados do tipo:<ul>
+<li><em>Caixa de Seleção:</em> <strong>Adicionado</strong>, <strong>Removido</strong>, <strong>É Igual a</strong>.</li>
+<li><em>Seleção Única (Rádio):</em> <strong>Mudou</strong>, <strong>Mudou Para</strong>, <strong>É Igual a</strong>.</li>
+<li><em>Lista Suspensa (Simples ou Múltipla):</em> <strong>Mudou</strong>, <strong>Mudou Para</strong>, <strong>É Igual a</strong>.</li>
+<li><em>Data:</em> <strong>Mudou</strong>, <strong>Mudou Para</strong>, <strong>É Igual a</strong>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Passo 5: Configurar as Ações da Automação</strong>
+Após configurar o gatilho, defina as ações que devem ser executadas quando ele for acionado. Exemplos:
+*   <strong>Enviar uma Notificação por E-mail ou SMS</strong> para o vendedor responsável.
+*   <strong>Atribuir uma Tarefa</strong> de acompanhamento no CRM.
+*   <strong>Atualizar o Registro do Contato</strong> vinculado à oportunidade.
+*   <strong>Disparar Outra Automação</strong> para criar automações avançadas e encadeadas.</p>
+<p><strong>Passo 6: Salvar, Testar e Publicar</strong>
+Clique em <strong>Salvar Gatilho</strong>. Em seguida, <strong>Salve</strong> a automação. Para testar, atualize manualmente uma oportunidade que se encaixe nos seus filtros e verifique se as ações são executadas corretamente. Após a verificação, clique em <strong>Publicar</strong> para ativar a automação.</p>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Uma conta ativa no Full Funnel.</li>
+<li>Oportunidades criadas dentro da plataforma (no CRM).</li>
+<li>Permissões de administrador ou de usuário com acesso para criar e editar automações.</li>
+<li>Para usar filtros de campos personalizados, estes campos devem estar previamente configurados no modelo de oportunidade.</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>P: Qual a diferença entre "Oportunidade Alterada" e "Status da Oportunidade Alterado"?</strong>
+<strong>R:</strong> O gatilho "Oportunidade Alterada" rastreia QUALQUER mudança em um registro de oportunidade (valor, atribuição, funil, campos personalizados, etc.). O "Status da Oportunidade Alterado" dispara <strong>apenas</strong> quando o campo de <em>status</em> (ex: Aberto, Ganho, Perdido) é modificado.</p>
+<p><strong>P: Posso usar vários filtros em uma única automação?</strong>
+<strong>R:</strong> Sim! Você pode combinar múltiplos filtros para criar condições muito específicas. Por exemplo, acionar uma automação apenas para oportunidades de <strong>alto valor</strong> que foram <strong>reassinaladas</strong> para um <strong>vendedor sênior</strong>.</p>
+<p><strong>P: Como faço para testar se minha automação está funcionando?</strong>
+<strong>R:</strong> Após a configuração, faça uma alteração manual em uma oportunidade que atenda aos critérios dos seus filtros (ex: mude o valor ou reassinale). Em seguida, verifique no <strong>Log de Execução</strong> da automação se o gatilho foi acionado e as ações foram executadas.</p>
+<p><strong>P: Este gatilho funciona com campos personalizados de oportunidade?</strong>
+<strong>R:</strong> Sim! Você pode configurar o gatilho para ser acionado quando campos personalizados específicos (como caixa de seleção, lista suspensa ou data) forem atualizados em uma oportunidade, utilizando os filtros correspondentes.</p>
+<hr />
+<h2 id="gatilhos-de-automacao-oportunidade-criada">Gatilhos de Automação - Oportunidade Criada</h2>
+<h3 id="como-funciona">Como funciona</h3>
+<p>Este gatilho de automação é ativado automaticamente sempre que uma nova <strong>Oportunidade</strong> é criada no seu funil de vendas do Full Funnel. Quando isso acontece, a automação associada a este gatilho inicia imediatamente sua sequência de ações.</p>
+<h3 id="como-configurar">Como configurar</h3>
+<ol>
+<li>Acesse <strong>Automações</strong> no menu principal.</li>
+<li>Clique em <strong>"Criar Nova Automação"</strong>.</li>
+<li>Na etapa de configuração do gatilho, procure e selecione <strong>"Oportunidade Criada"</strong>.</li>
+<li>Após selecionar o gatilho, você pode adicionar <strong>Filtros</strong> para refinar quando a automação deve rodar (opcional).</li>
+<li>Em seguida, você pode mapear <strong>Valores Personalizados</strong> da oportunidade para variáveis dentro da automação (opcional).</li>
+<li>Clique em <strong>"Salvar Gatilho"</strong> e prossiga para construir o fluxo de ações da sua automação.</li>
+</ol>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>É necessário ter pelo menos um <strong>Funnel (Funil)</strong> configurado no sistema.</li>
+<li>Uma nova oportunidade deve ser criada manualmente, através de um formulário, de uma automação ou de qualquer outra integração para que o gatilho seja ativado.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>P: A automação roda para oportunidades já existentes?</strong>
+R: Não. Este gatilho é ativado apenas no momento exato da criação de uma <strong>nova</strong> oportunidade. Oportunidades já existentes no sistema não disparam a automação retroativamente.</p>
+<p><strong>P: Posso filtrar para qual funil ou tipo de oportunidade a automação se aplica?</strong>
+R: Sim. Ao configurar o gatilho, você pode usar a opção <strong>Filtros</strong> para restringir a execução com base em propriedades da oportunidade, como o funil de origem, o estágio inicial ou campos personalizados.</p>
+<p><strong>P: O que são "Valores Personalizados" na configuração do gatilho?</strong>
+R: São variáveis que permitem capturar informações específicas da oportunidade recém-criada (como nome, valor, detalhes do contato) e usá-las como dados dinâmicos nas ações subsequentes da sua automação (ex: em um email ou mensagem de texto).</p>
+<hr />
+<h2 id="acao-de-automacao-if-else-novos-recursos">Ação de Automação - If Else (Novos Recursos)</h2>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p>A ação <strong>If/Else</strong> permite criar automações avançadas que executam diferentes ações com base em condições específicas. Ela funciona com lógica condicional: <strong>SE</strong> um evento acontece no gatilho, <strong>ENTÃO</strong> execute uma ação X. <strong>SE</strong> outro evento acontece, <strong>ENTÃO</strong> execute uma ação Y, e assim por diante.</p>
+<p>Aqui estão os novos recursos disponíveis para organizar e otimizar suas ramificações (branches) If/Else:</p>
+<p><strong>1. Duplicar um Ramo</strong>
+Poupe tempo duplicando ramos existentes sem precisar reconstruí-los do zero.
+*   Na automação, localize o ramo que deseja copiar.
+*   Clique no menu de três pontos (<strong>...</strong>) desse ramo.
+*   Selecione a opção <strong>"Duplicar Ramo"</strong>.
+*   O ramo copiado aparecerá abaixo do original, com a indicação "(cópia)" no nome. Você pode renomeá-lo conforme necessário.</p>
+<p><strong>2. Reordenar Qualquer Ramo</strong>
+Organize visualmente o fluxo da sua automação arrastando os ramos.
+*   Clique no ícone <strong>"Reordenar Ramos"</strong> (geralmente representado por linhas ou setas).
+*   Arraste e solte os ramos na ordem desejada.
+*   <strong>Observação:</strong> O ramo <strong>"Nenhum"</strong> (que executa ações quando nenhuma condição é atendida) não pode ser reordenado, mas todos os outros ramos podem ser movidos livremente.</p>
+<p><strong>3. Renomear o Ramo "Nenhum"</strong>
+Para uma melhor organização, você agora pode dar um nome personalizado ao ramo padrão "Nenhum".
+*   Clique diretamente no nome do ramo <strong>"Nenhum"</strong>.
+*   Digite o novo nome desejado.
+*   <strong>Importante:</strong> É obrigatório inserir um nome para o ramo; o campo não pode ficar vazio.</p>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>Ter uma automação (<strong>Workflow</strong>) criada no Full Funnel.</li>
+<li>Ter a ação <strong>If/Else</strong> adicionada ao canvas da sua automação.</li>
+</ul>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>Posso ter mais de um ramo "Nenhum"?</strong>
+Não. A estrutura If/Else possui apenas um ramo para ações que devem ser executadas quando nenhuma das condições anteriores for atendida. No entanto, você pode renomeá-lo para algo mais descritivo do seu fluxo.</p>
+<p><strong>O que acontece se eu não definir um ramo "Nenhum"?</strong>
+A ação If/Else sempre terá o ramo "Nenhum" (ou o nome que você definir para ele). Ele é essencial para definir o que acontece no fluxo caso nenhuma condição configurada seja verdadeira.</p>
+<p><strong>Posso duplicar ou reordenar condições dentro de um mesmo ramo?</strong>
+Os novos recursos descritos aplicam-se à duplicação e reordenação de <strong>ramos</strong> inteiros (cada caminho "SE/ENTÃO"). Para gerenciar múltiplas condições <em>dentro</em> de um único ramo, você deve usar a interface padrão de adição e configuração de condições da ação If/Else.</p>
+<hr />
+<h2 id="introducao-as-automacoes">Introdução às Automações</h2>
+<p>As automações são o coração da eficiência no Full Funnel. Elas automatizam tarefas repetitivas, permitindo que você configure uma sequência de ações uma única vez e as execute automaticamente, economizando tempo e escalando suas operações.</p>
+<p>Em termos técnicos, uma automação é uma lista cronológica de tarefas acionada por um <strong>Gatilho</strong> que inicia automaticamente uma sequência de <strong>Ações</strong>.</p>
+<p><strong>Exemplo Prático:</strong> Um lead preenche um formulário. Com uma automação, você pode configurar para que isso dispare: uma notificação para você e sua equipe, um e-mail de confirmação para o lead e o início de uma sequência de e-mails de nutrição. Tudo isso acontece sem intervenção manual.</p>
+<p>Uma automação é composta por duas partes principais:
+1.  <strong>Gatilho:</strong> O evento que adiciona um novo contato à automação.
+2.  <strong>Ações:</strong> As tarefas executadas após o contato ser adicionado pela automação.</p>
+<h3 id="como-fazer_2">Como fazer</h3>
+<p>Siga estes três passos para criar sua primeira automação:</p>
+<h4 id="passo-1-escolha-um-gatilho">Passo 1: Escolha um Gatilho</h4>
+<p>Os gatilhos são os eventos que iniciam a automação ao adicionar um contato a ela.
+1.  No Construtor de Automações, clique em <strong>"Adicionar Gatilho"</strong>.
+2.  Um menu pop-up aparecerá com a lista completa de gatilhos disponíveis (ex.: "Formulário Enviado", "Compra Realizada", "Agendamento Confirmado").
+3.  Selecione o gatilho desejado. Você pode adicionar múltiplos gatilhos em uma única automação.</p>
+<h4 id="passo-2-adicione-filtros-ao-gatilho-opcional">Passo 2: Adicione Filtros ao Gatilho (Opcional)</h4>
+<p>Os filtros permitem refinar as condições para que o gatilho seja acionado, adicionando parâmetros específicos.
+1.  Após adicionar o gatilho, clique nele para editar.
+2.  Na seção de configurações, você encontrará a opção de adicionar filtros.
+3.  Configure os filtros conforme necessário. <strong>Exemplo:</strong> Para um gatilho de "Status de Chamada", você pode adicionar um filtro para acionar a automação <strong>apenas</strong> para "Chamadas Recebidas" em um número de telefone específico.</p>
+<h4 id="passo-3-adicione-acoes-a-automacao">Passo 3: Adicione Ações à Automação</h4>
+<p>As ações são as tarefas executadas depois que o contato entra na automação.
+1.  No Construtor, clique em <strong>"Adicionar Ação"</strong>.
+2.  Um menu pop-up listará todas as ações possíveis (ex.: "Enviar SMS", "Enviar E-mail", "Atualizar Campo do Contato").
+3.  Selecione a ação desejada e configure seus detalhes (conteúdo da mensagem, destinatário, etc.).</p>
+<h3 id="requisitos_3">Requisitos</h3>
+<ul>
+<li>Acesso a uma conta do Full Funnel.</li>
+<li>Permissões para acessar e editar o menu <strong>Automações</strong>.</li>
+<li>Um contato, formulário, página de pagamento ou outro elemento do sistema configurado para servir como gatilho para seus testes.</li>
+</ul>
+<h3 id="faq_3">FAQ</h3>
+<p><strong>O que são as "Receitas" de Automação?</strong>
+São modelos pré-construídos de automações para casos de uso comuns (ex.: Seguimento de Lead, Onboarding de Cliente). Para usá-las, ao criar uma nova automação, selecione a aba <strong>"Receitas"</strong>. É um excelente ponto de partida para iniciantes.</p>
+<p><strong>Posso criar caminhos diferentes dentro de uma mesma automação?</strong>
+Sim! Use a ação <strong>"Condição SE/SENÃO"</strong>. Ela permite dividir o fluxo com base em critérios específicos (ex.: "Se o contato é do estado X, envie a oferta A; SENÃO, envie a oferta B"). Você também pode usar a ação <strong>"Dividir"</strong> para direcionar contatos para caminhos diferentes de forma aleatória.</p>
+<p><strong>Posso conectar várias automações?</strong>
+Absolutamente. É uma prática comum e organizada criar automações separadas para cada etapa de um processo (ex.: um fluxo de vendas). Você pode configurar uma automação para acionar a próxima, atualizar o estágio de uma oportunidade no pipeline e remover o contato da automação anterior para evitar conflitos.</p>
+<p><strong>O que são Webhooks e como usá-los?</strong>
+Webhooks permitem que plataformas externas se comuniquem com o Full Funnel. Você pode usá-los tanto como Gatilho (para adicionar um contato a partir de um sistema externo) quanto como Ação (para enviar dados do Full Funnel para outro sistema). Eles exigem conhecimento técnico mais avançado. Consulte o artigo dedicado a Webhooks na Central de Ajuda para um guia detalhado.</p>
+<p><strong>Minha automação não está funcionando. O que verificar?</strong>
+Siga este checklist de solução de problemas:
+*   <strong>Teste com um Contato "Novo":</strong> Contatos usados repetidamente em testes podem causar comportamentos inesperados. Exclua o contato de teste e crie um novo.
+*   <strong>Evite o "Testar Automação" (Botão):</strong> A função de teste no construtor tem limitações. Sempre que possível, simule a ação do gatilho com um contato real em um ambiente de teste.
+*   <strong>Verifique seus Filtros:</strong> Filtros mal configurados no gatilho ou nas ações são uma causa comum de problemas. Revise-os.
+*   <strong>Confira a Configuração "Permitir Reentrada":</strong> Nas configurações da automação, se "Permitir Reentrada" estiver desativada, um contato que já passou por ela não poderá entrar novamente. Ative-a temporariamente para testes ou use um contato novo.</p>
+<hr />
+<h2 id="lista-de-gatilhos-de-automacao">Lista de Gatilhos de Automação</h2>
+<h3 id="como-fazer_3">Como fazer</h3>
+<p>Para configurar um gatilho em uma automação no Full Funnel, siga estes passos:
+1.  Acesse a seção <strong>Automações</strong> no menu principal.
+2.  Clique em "Criar Automação" ou selecione uma automação existente para editar.
+3.  Na tela do Construtor de Automações, clique no botão <strong>"Adicionar um Gatilho"</strong>.
+4.  Um menu com todas as categorias de gatilhos será exibido. Navegue pelas categorias ou use a barra de busca para encontrar o gatilho desejado.
+5.  Selecione o gatilho específico que iniciará o seu fluxo de trabalho.
+6.  Configure os parâmetros e condições detalhadas do gatilho conforme necessário (por exemplo, selecionar um campo específico para monitorar, definir uma data ou escolher um formulário).
+7.  Após configurar o gatilho, adicione as <strong>Ações</strong> que devem ser executadas quando o gatilho for acionado.
+8.  Salve e ative a sua automação.</p>
+<h3 id="requisitos_4">Requisitos</h3>
+<ul>
+<li>É necessário ter uma conta no Full Funnel.</li>
+<li>Você deve ter permissões para criar ou editar automações dentro da sua subconta.</li>
+<li>Para que um gatilho funcione, o evento correspondente precisa ocorrer dentro da plataforma ou através de uma integração conectada (por exemplo, um formulário ser enviado, um contato ser criado).</li>
+</ul>
+<h3 id="faq_4">FAQ</h3>
+<p><strong>O que é um Gatilho de Automação?</strong>
+Um gatilho é um evento específico que inicia a execução de uma automação. Ele é o ponto de partida que desencadeia todas as ações configuradas no fluxo de trabalho.</p>
+<p><strong>Qual a diferença entre um Gatilho e uma Ação?</strong>
+O <strong>Gatilho</strong> é o evento que inicia a automação (o "quando"). A <strong>Ação</strong> é a tarefa que a automação executa (o "o quê"), como enviar um e-mail, adicionar uma tag ou criar uma tarefa.</p>
+<p><strong>Posso ter mais de um gatilho em uma automação?</strong>
+Não. Cada automação é iniciada por um único gatilho principal. No entanto, você pode usar condições lógicas (filtros) dentro da automação para criar ramificações e comportamentos diferentes baseados em regras específicas.</p>
+<p><strong>Onde encontro todos os gatilhos disponíveis?</strong>
+Todos os gatilhos estão organizados por categoria dentro do menu que aparece ao clicar em <strong>"Adicionar um Gatilho"</strong> no Construtor de Automações. A lista completa está detalhada abaixo.</p>
+<hr />
+<h3 id="lista-completa-de-gatilhos-por-categoria">Lista Completa de Gatilhos por Categoria</h3>
+<p><strong>Contatos</strong>
+*   <strong>Lembrete de Aniversário do Contato:</strong> Aciona no dia ou próximo ao aniversário do contato, usando um deslocamento de dias configurável.
+*   <strong>Contato Alterado:</strong> Aciona quando campos específicos do contato são alterados para valores que você define.
+*   <strong>Contato Criado:</strong> Aciona quando um novo registro de contato é adicionado ao CRM.
+*   <strong>Contato em DND (Não Perturbe):</strong> Aciona quando a preferência "Não Perturbe" de um contato é ativada ou desativada.
+*   <strong>Tag do Contato:</strong> Aciona quando uma tag selecionada é adicionada ou removida de um contato.
+*   <strong>Lembrete de Data Personalizada:</strong> Aciona antes, no dia ou após uma data personalizada escolhida em um campo do contato.
+*   <strong>Nota Adicionada:</strong> Aciona quando uma nova nota é adicionada ao contato.
+*   <strong>Nota Alterada:</strong> Aciona quando uma nota existente no contato é editada.
+*   <strong>Tarefa Adicionada:</strong> Aciona quando uma tarefa é criada para o contato.
+*   <strong>Lembrete de Tarefa:</strong> Aciona quando o horário do lembrete de uma tarefa é alcançado.
+*   <strong>Tarefa Concluída:</strong> Aciona quando uma tarefa do contato é marcada como concluída.
+*   <strong>Pontuação de Engajamento do Contato:</strong> Aciona quando a pontuação de engajamento atende à regra definida por você.</p>
+<p><strong>Eventos</strong>
+*   <strong>Webhook de Entrada:</strong> Aciona quando dados são recebidos na URL do webhook da automação.
+*   <strong>Agendador:</strong> Aciona com base em um agendamento de tempo (diário, semanal, etc.) sem a necessidade de um contato específico.
+*   <strong>Detalhes da Chamada:</strong> Aciona quando um registro de chamada corresponde a detalhes ou resultados selecionados.
+*   <strong>Eventos de E-mail:</strong> Aciona em eventos de e-mail como entregue, aberto, clicado, devolvido (bounce), marcado como spam ou cancelamento de inscrição (unsubscribe).
+*   <strong>Cliente Respondeu:</strong> Aciona quando o contato responde em qualquer canal de conversa conectado (SMS, WhatsApp, etc.).
+*   <strong>Gatilho de IA de Conversas:</strong> Aciona quando um evento configurado da IA de Conversas ocorre.
+*   <strong>Gatilho Personalizado:</strong> Aciona a partir de um evento personalizado que você define para casos de uso não padrão.
+*   <strong>Formulário Enviado:</strong> Aciona quando um formulário do Full Funnel selecionado é enviado.
+*   <strong>Pesquisa Enviada:</strong> Aciona quando uma pesquisa selecionada é enviada.
+*   <strong>Link Gatilho Clicado:</strong> Aciona quando o contato clica em um link gatilho definido.
+*   <strong>Formulário de Lead do Facebook Enviado:</strong> Aciona quando uma submissão de formulário de Lead Ads do Facebook é recebida.
+*   <strong>Formulário do TikTok Enviado:</strong> Aciona quando um formulário de lead do TikTok é enviado.
+*   <strong>Rastreamento de Vídeo:</strong> Aciona quando um visualizador atinge uma porcentagem escolhida de um vídeo.
+*   <strong>Validação de Número:</strong> Aciona com base no resultado da validação de um número de telefone.
+*   <strong>Erro de Mensagem – SMS:</strong> Aciona quando um SMS de saída retorna um erro específico.
+*   <strong>Formulário de Lead do LinkedIn Enviado:</strong> Aciona quando uma submissão de formulário do LinkedIn Lead Gen é recebida.
+*   <strong>Visualização de Página de Funil/Site:</strong> Aciona quando o contato visualiza uma página/URL ou parâmetro UTM especificado.
+*   <strong>Questionário Enviado:</strong> Aciona quando um questionário selecionado é enviado.
+*   <strong>Nova Avaliação Recebida:</strong> Aciona quando uma nova avaliação chega no módulo de Reputação.
+*   <strong>Prospect Gerado:</strong> Aciona quando um novo registro de prospect é criado.
+*   <strong>Clique em Anúncios do WhatsApp:</strong> Aciona quando uma conversa no WhatsApp é iniciada a partir de um anúncio Clique-para-WhatsApp.
+*   <strong>Evento de Rastreamento Externo:</strong> Aciona quando um evento de rastreamento nomeado (client-side ou server-side) é capturado.</p>
+<p><strong>Compromissos (Agendamentos)</strong>
+*   <strong>Status do Compromisso:</strong> Aciona em mudanças de status como agendado, reagendado, cancelado ou não compareceu.
+*   <strong>Cliente Agendou Compromisso:</strong> Aciona quando um cliente agenda um compromisso.
+*   <strong>Reserva de Serviço:</strong> Aciona quando uma reserva é feita usando a funcionalidade de Serviços (v2).
+*   <strong>Reserva de Locação:</strong> Aciona quando uma reserva de locação é feita.</p>
+<p><strong>Oportunidades</strong>
+*   <strong>Status da Oportunidade Alterado:</strong> Aciona quando o status de uma oportunidade muda (ex.: Aberto → Ganho/Perdido).
+*   <strong>Oportunidade Criada:</strong> Aciona quando uma nova oportunidade é criada.
+*   <strong>Oportunidade Alterada:</strong> Aciona quando campos selecionados da oportunidade são alterados.
+*   <strong>Estágio do Funil Alterado:</strong> Aciona quando uma oportunidade muda para um estágio diferente do funil de vendas.
+*   <strong>Oportunidades Ociosas:</strong> Aciona quando oportunidades atendem à sua regra de inatividade.</p>
+<p><strong>Afiliados</strong>
+*   <strong>Afiliado Criado:</strong> Aciona quando uma nova conta de afiliado é criada.
+*   <strong>Novas Vendas de Afiliado:</strong> Aciona quando uma venda é atribuída a um afiliado.
+*   <strong>Afiliado Inscrito na Campanha:</strong> Aciona quando um afiliado é adicionado a uma campanha.
+*   <strong>Lead Criado (por Afiliado):</strong> Aciona quando um novo lead atribuído a um afiliado é criado.</p>
+<p><strong>Cursos</strong>
+*   <strong>Categoria Iniciada:</strong> Aciona quando um aluno inicia uma categoria de curso selecionada.
+*   <strong>Categoria Concluída:</strong> Aciona quando um aluno conclui uma categoria de curso selecionada.
+*   <strong>Lição Iniciada:</strong> Aciona quando um aluno inicia uma lição.
+*   <strong>Lição Concluída:</strong> Aciona quando um aluno conclui uma lição.
+*   <strong>Novo Cadastro:</strong> Aciona quando um usuário se inscreve em um curso/oferta.
+*   <strong>Acesso à Oferta Concedido:</strong> Aciona quando o acesso a uma oferta é concedido.
+*   <strong>Acesso à Oferta Removido:</strong> Aciona quando o acesso a uma oferta é removido.
+*   <strong>Acesso ao Produto Concedido:</strong> Aciona quando o acesso a um produto é concedido.
+*   <strong>Acesso ao Produto Removido:</strong> Aciona quando o acesso a um produto é removido.
+*   <strong>Produto Iniciado:</strong> Aciona quando um aluno inicia um produto/curso.
+*   <strong>Produto Concluído:</strong> Aciona quando um aluno conclui um produto/curso.
+*   <strong>Login do Usuário:</strong> Aciona quando um aluno faz login no portal de aprendizagem.</p>
+<p><strong>Pagamentos</strong>
+*   <strong>Fatura:</strong> Aciona em eventos do ciclo de vida da fatura, como criada, enviada, vencida ou paga.
+*   <strong>Pagamento Recebido:</strong> Aciona quando um pagamento é capturado com sucesso.
+*   <strong>Submissão de Formulário de Pedido:</strong> Aciona quando um formulário de checkout/pedido é enviado.
+*   <strong>Pedido Enviado:</strong> Aciona quando um pedido é submetido com sucesso no checkout.
+*   <strong>Documentos e Contratos:</strong> Aciona em eventos de status de documento, como enviado, assinado ou recusado.
+*   <strong>Orçamentos:</strong> Aciona em eventos de orçamento, como enviado, aceito ou recusado.
+*   <strong>Assinatura:</strong> Aciona em eventos de assinatura: criar, atualizar, pausar, retomar ou cancelar.
+*   <strong>Reembolso:</strong> Aciona quando um reembolso é emitido.
+*   <strong>Código de Cupom Aplicado:</strong> Aciona quando um código de cupom é aplicado a uma compra.
+*   <strong>Limite de Resgate do Cupom Atingido:</strong> Aciona quando um cupom atinge seu limite de resgate.
+*   <strong>Código de Cupom Expirado:</strong> Aciona quando um código de cupom expira.
+*   <strong>Código de Cupom Resgatado:</strong> Aciona quando um código de cupom é resgatado.</p>
+<p><strong>Lojas Ecommerce</strong>
+*   <strong>Carrinho Abandonado (Shopify - Descontinuando em Breve):</strong> Aciona quando um carrinho da integração legada do Shopify é abandonado.
+*   <strong>Pedido Shopify Realizado:</strong> Aciona quando um pedido do Shopify é realizado.
+*   <strong>Pedido Shopify Atendido (Descontinuando em Breve):</strong> Aciona quando um pedido da integração legada do Shopify é atendido.
+*   <strong>Pedido Atendido:</strong> Aciona quando um pedido da loja é atendido na sua conexão de loja atual.
+*   <strong>Avaliação de Produto Enviada:</strong> Aciona quando uma avaliação de produto é enviada.
+*   <strong>Checkout Abandonado:</strong> Aciona quando uma sessão de checkout é abandonada.</p>
+<p><strong>IVR (Atendimento de Voz Interativo)</strong>
+*   <strong>Gatilho de Início de IVR:</strong> Aciona quando uma chamada atinge uma entrada ou opção configurada no IVR.</p>
+<p><strong>Eventos do Facebook/Instagram</strong>
+*   <strong>Facebook – Comentário(s) em uma Publicação:</strong> Aciona quando comentários são adicionados à publicação do Facebook selecionada.
+*   <strong>Instagram – Comentário(s) em uma Publicação:</strong> Aciona quando comentários são adicionados à publicação do Instagram selecionada.</p>
+<p><strong>Comunidades</strong>
+*   <strong>Acesso ao Grupo Concedido:</strong> Aciona quando um membro recebe acesso a um grupo.
+*   <strong>Acesso ao Grupo Revogado:</strong> Aciona quando o acesso de um membro a um grupo é revogado.
+*   <strong>Acesso ao Canal Privado Concedido:</strong> Aciona quando o acesso a um canal privado é concedido.
+*   <strong>Acesso ao Canal Privado Revogado:</strong> Aciona quando o acesso a um canal privado é revogado.
+*   <strong>Nível no Ranking da Comunidade Alterado:</strong> Aciona quando o nível de um membro no ranking (leaderboard) da comunidade muda.</p>
+<p><strong>Certificados</strong>
+*   <strong>Certificados Emitidos:</strong> Aciona quando um certificado de curso é gerado.</p>
+<p><strong>Comunicação</strong>
+*   <strong>TikTok – Comentário(s) em um Vídeo:</strong> Aciona quando comentários são adicionados a um vídeo selecionado do TikTok.
+*   <strong>Transcrição Gerada:</strong> Aciona quando uma transcrição de chamada ou conversa é criada.</p>
+<p><strong>Google Ads</strong>
+*   <strong>Formulário de Lead do Google Enviado:</strong> Aciona quando uma submissão de formulário de lead do Google Ads é recebida.</p>
+<hr />
+<h2 id="introducao-as-automacoes_1">Introdução às Automações</h2>
+<p>Automações simplificam tarefas repetitivas configurando sequências de ações predefinidas que são acionadas por eventos específicos. Esta introdução explica o essencial da automação, incluindo seus componentes principais—gatilhos e ações—principais benefícios e aplicações no mundo real, fornecendo uma base sólida para explorar mais.</p>
+<h3 id="como-fazer_4">Como fazer</h3>
+<p>Para configurar uma automação, siga estes passos:
+1.  Acesse a área <strong>Automações</strong> no menu principal da plataforma.
+2.  Clique em <strong>"+ Criar Automação"</strong>.
+3.  Escolha como começar:
+    *   <strong>Usar uma Receita:</strong> Selecione um modelo pronto para usar que se adapte à sua necessidade (ex: Gerenciamento de Leads, Lembretes de Agendamento).
+    *   <strong>Usar um Modelo:</strong> Explore a biblioteca de modelos pré-fabricados.
+    *   <strong>Começar do zero:</strong> Crie sua automação personalizada adicionando gatilhos e ações manualmente.
+4.  <strong>Escolha um Gatilho:</strong> Defina o evento que iniciará a automação (ex: um contato preenche um formulário).
+5.  <strong>Adicione Ações:</strong> Especifique as tarefas a serem executadas após o gatilho (ex: enviar um e-mail, atualizar o perfil do contato).
+6.  <strong>Salve e Teste:</strong> Clique em <strong>"Salvar"</strong>. Use o botão <strong>"Testar Automação"</strong> para verificar o funcionamento antes de publicá-la.</p>
+<h3 id="requisitos_5">Requisitos</h3>
+<ul>
+<li>Acesso a uma conta do Full Funnel.</li>
+<li>Permissões para criar e editar automações na sua subconta.</li>
+<li>Ter os elementos da automação (como formulários, e-mails ou tags) configurados previamente na plataforma.</li>
+</ul>
+<h3 id="faq_5">FAQ</h3>
+<p><strong>P: Qual a diferença entre gatilhos e ações?</strong>
+R: Gatilhos são os eventos que iniciam a automação (ex: envio de um formulário). Ações são as tarefas executadas em resposta ao gatilho (ex: enviar um e-mail de boas-vindas).</p>
+<p><strong>P: As automações podem gerenciar processos complexos com várias etapas?</strong>
+R: Sim. É possível configurar automações com múltiplos gatilhos e uma sequência de ações para automatizar processos de negócio detalhados.</p>
+<p><strong>P: É necessário conhecimento técnico para criar automações?</strong>
+R: Não. A interface do Full Funnel é intuitiva, permitindo que qualquer pessoa configure automações usando uma lógica visual de "arrastar e soltar", sem necessidade de codificação.</p>
+<p><strong>P: Como adiciono um contato manualmente a uma automação?</strong>
+R: Abra o perfil do contato, clique na aba <strong>Automação &gt; Adicionar à Automação</strong>, escolha a automação desejada, defina a hora de início e clique em <strong>Adicionar</strong>.</p>
+<hr />
+<h2 id="automatizar-a-integracao-de-afiliados-nas-automacoes-do-full-funnel">Automatizar a Integração de Afiliados nas Automações do Full Funnel</h2>
+<p>Este artigo explica como automatizar a integração e comunicação com afiliados usando o gatilho de automação <strong>"Afiliado Inscrito em Campanha"</strong>. Ao capturar dados importantes do afiliado no momento em que ele se junta a uma campanha, você pode enviar mensagens personalizadas, adicionar tags aos contatos e notificar sua equipe—tudo sem trabalho manual. Esse gatilho ajuda a otimizar o engajamento dos afiliados, melhorar o desempenho e criar uma experiência de integração perfeita.</p>
+<h3 id="como-fazer_5">Como fazer</h3>
+<p>Para configurar um fluxo de integração automática para novos afiliados, siga estes passos:</p>
+<ol>
+<li>
+<p><strong>Acesse o Construtor de Automações</strong></p>
+<ul>
+<li>No menu lateral da sua conta do Full Funnel, vá em <strong>Automações</strong>.</li>
+<li>Na lista de automações, clique no botão azul <strong>"+ Criar Automação"</strong> no canto superior direito.</li>
+<li>Selecione <strong>"Começar do Zero"</strong> no menu suspenso para criar uma nova automação personalizada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adicione o Gatilho da Campanha de Afiliados</strong></p>
+<ul>
+<li>Dentro do construtor de automações, clique em <strong>"+ Adicionar Novo Gatilho"</strong>.</li>
+<li>Na lista de gatilhos, role até a seção <strong>"Afiliado"</strong> e selecione <strong>"Afiliado Inscrito em Campanha"</strong>.</li>
+<li>Este gatilho ativa a automação quando um afiliado é adicionado a uma campanha específica.</li>
+</ul>
+</li>
+<li>
+<p><strong>Nomeie o Gatilho</strong></p>
+<ul>
+<li>Dê um nome claro e relevante ao gatilho, como "Afiliado Entrou na Campanha X". Isso ajuda a manter sua automação organizada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adicione Filtros (Opcional)</strong></p>
+<ul>
+<li>Clique em <strong>"Adicionar filtros"</strong> para restringir quando este gatilho deve ser ativado.</li>
+<li>Os filtros permitem que você aplique condições específicas, como o <strong>nome da campanha</strong>, para que apenas as inscrições relevantes iniciem a automação.</li>
+<li>Use o menu suspenso para escolher um tipo de filtro, como <strong>"Campos Padrão"</strong> (ex.: campanha).</li>
+</ul>
+</li>
+<li>
+<p><strong>Salve as Configurações do Gatilho</strong></p>
+<ul>
+<li>Após selecionar a campanha e definir as condições do filtro, clique em <strong>"Salvar Gatilho"</strong> para ativar a configuração.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use os Valores Personalizados nas Ações</strong></p>
+<ul>
+<li>Após configurar o gatilho, você pode usar dados específicos do afiliado em suas ações. Esses valores dinâmicos estão disponíveis ao adicionar etapas como E-mail, SMS ou Notificação Interna.</li>
+<li><strong>Exemplos de uso:</strong><ul>
+<li><strong>Notificação Interna para a Equipe:</strong> Crie uma notificação para alertar sua equipe sobre o novo afiliado. Use valores como <code>{{affiliate.name}}</code>, <code>{{affiliate.email}}</code> e <code>{{campaign.name}}</code>.</li>
+<li><strong>SMS de Boas-Vindas:</strong> Envie um SMS personalizado com o nome do afiliado e inclua o <code>{{affiliate.magic_login_link}}</code> para acesso instantâneo ao portal.</li>
+<li><strong>E-mail de Integração:</strong> Envie um e-mail de boas-vindas com o <code>{{affiliate.referral_link}}</code>, detalhes da campanha e um link para os termos.</li>
+<li><strong>Segmentação com Tags:</strong> Aplique uma tag (ex.: "Afiliado-Campanha-Mala") usando uma etapa "Adicionar/Remover Tag" para organizar seus afiliados por campanha.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_6">Requisitos</h3>
+<p>Para que o gatilho <strong>"Afiliado Inscrito em Campanha"</strong> esteja disponível e funcione corretamente, é necessário:</p>
+<ul>
+<li>Que o <strong>Gerenciador de Afiliados</strong> esteja ativado na sua conta.</li>
+<li>Que pelo menos <strong>uma campanha de afiliados</strong> tenha sido criada na subconta.</li>
+<li>Para habilitar o Gerenciador de Afiliados, vá em <strong>Configurações &gt; Gerenciador de Afiliados</strong> e ative a opção. Em seguida, crie uma campanha na aba do Gerenciador de Afiliados.</li>
+</ul>
+<h3 id="faq_6">FAQ</h3>
+<p><strong>P: Por que o gatilho "Afiliado Inscrito em Campanha" não aparece nas minhas opções de automação?</strong>
+R: O gatilho só aparecerá se o Gerenciador de Afiliados estiver ativado e houver pelo menos uma campanha de afiliados criada. Verifique essas duas condições em <strong>Configurações &gt; Gerenciador de Afiliados</strong>.</p>
+<p><strong>P: Posso usar esse gatilho para integrar afiliados de forma diferente dependendo da campanha?</strong>
+R: Sim! Você pode aplicar filtros por campanha ao configurar o gatilho. Isso permite executar automações diferentes ou lógicas condicionais com base na campanha específica que o afiliado ingressou.</p>
+<p><strong>P: Por que meus valores personalizados do afiliado (como link de indicação) aparecem vazios no e-mail/SMS?</strong>
+R: Esses valores só serão preenchidos se a automação for acionada por um evento real de inscrição de um afiliado em uma campanha. Eles são dinâmicos e vinculados ao gatilho. Para testar, certifique-se de usar um registro de afiliado válido que foi adicionado a uma campanha. Os valores estarão disponíveis na seção <strong>"Afiliado Inscrito em Campanha"</strong> ao inserir variáveis.</p>
+<p><strong>P: O gatilho funciona se eu adicionar um afiliado manualmente?</strong>
+R: Sim, absolutamente. O gatilho é ativado tanto para inscrições automáticas (por formulários, funis) quanto para adições manuais pela sua equipe dentro do Gerenciador de Afiliados, desde que correspondam aos critérios do filtro (se configurado).</p>
+<hr />
+<h2 id="chat-ao-vivo-como-canal-em-acao-de-automacao">Chat ao Vivo como Canal em Ação de Automação</h2>
+<h3 id="como-fazer_6">Como fazer</h3>
+<p>Para utilizar o chat ao vivo como um canal dentro de uma ação de automação, siga estes passos:</p>
+<ol>
+<li>Acesse a seção <strong>Automações</strong> no menu principal.</li>
+<li>Crie uma nova automação ou edite uma existente.</li>
+<li>Adicione ou edite uma ação do tipo <strong>Funcionário de IA</strong> ou <strong>Conversa IA</strong>.</li>
+<li>No campo de configuração da ação, localize a opção para selecionar o <strong>Canal</strong>.</li>
+<li>Na lista de canais disponíveis, você encontrará a nova opção <strong>"Chat ao Vivo"</strong>.</li>
+<li>Selecione <strong>"Chat ao Vivo"</strong> para configurar a ação para utilizar esse canal.</li>
+<li>Continue configurando o resto dos parâmetros da ação (como a mensagem, atribuição, etc.) conforme necessário.</li>
+<li>Salve a ação e publique a automação.</li>
+</ol>
+<h3 id="requisitos_7">Requisitos</h3>
+<ul>
+<li>É necessário ter um <strong>Funcionário de IA</strong> configurado na sua conta.</li>
+<li>A automação deve ser do tipo que suporta ações de conversação (por exemplo, acionada por um formulário, evento de calendário, etc.).</li>
+</ul>
+<h3 id="faq_7">FAQ</h3>
+<p><strong>P: Esta ação inicia uma conversa de chat ao vivo com um contato?</strong>
+R: Sim. Ao usar o canal "Chat ao Vivo" em uma ação de automação, você está configurando que a mensagem definida será enviada como uma conversa de chat ao vivo para o contato, iniciando uma interação em tempo real através do widget no site.</p>
+<p><strong>P: Posso alternar uma ação entre "SMS" e "Chat ao Vivo"?</strong>
+R: Sim. Dentro da configuração da ação de Conversa IA, você pode escolher o canal apropriado para cada cenário, incluindo SMS, Chat ao Vivo ou outros canais disponíveis.</p>
+<p><strong>P: O contato precisa estar no site para receber a mensagem de chat ao vivo?</strong>
+R: A mensagem será enviada como parte do histórico do chat. Se o contato não estiver online no momento, ele verá a mensagem quando acessar o widget de chat posteriormente, permitindo uma conversa assíncrona.</p>
+<hr />
+<h2 id="filtros-avancados-e-listas-inteligentes-nas-automacoes">Filtros Avançados e Listas Inteligentes nas Automações</h2>
+<h3 id="como-fazer_7">Como fazer</h3>
+<p><strong>Usar Filtros Avançados (Uso Único)</strong></p>
+<ol>
+<li>
+<p><strong>Acessar as Automações:</strong></p>
+<ul>
+<li>No menu principal, vá até <strong>Automações</strong> e abra a seção <strong>Workflows</strong>. Você verá a lista de todas as automações da sua conta.</li>
+</ul>
+</li>
+<li>
+<p><strong>Abrir Filtros Avançados:</strong></p>
+<ul>
+<li>No canto superior direito da página de Workflows, clique no botão <strong>Filtros Avançados</strong>. Um painel será aberto no lado direito.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configurar seus Filtros:</strong></p>
+<ul>
+<li>No painel, você pode filtrar automações por:<ul>
+<li><strong>Gatilhos:</strong> Ex: "Formulário Enviado".</li>
+<li><strong>Ações:</strong> Ex: "Enviar SMS".</li>
+<li><strong>Tags:</strong> Automações com tags específicas.</li>
+<li><strong>Outros:</strong> Status (Publicado/Rascunho), data da última atualização, etc.</li>
+</ul>
+</li>
+<li>Para cada filtro, selecione o tipo, o operador (ex: "é igual a") e o valor.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adicionar Múltiplos Filtros:</strong></p>
+<ul>
+<li>Use <strong>+ Adicionar Condição</strong> para refinar a busca.</li>
+<li>Use <strong>E</strong> para exigir que todos os filtros sejam verdadeiros.</li>
+<li>Use <strong>OU</strong> para mostrar automações que atendam a pelo menos um filtro.</li>
+<li>Para remover um filtro, clique no ícone de lixeira.</li>
+</ul>
+</li>
+<li>
+<p><strong>Aplicar os Filtros:</strong></p>
+<ul>
+<li>Após configurar, clique em <strong>Aplicar</strong> para ver os resultados.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Criar e Usar uma Lista Inteligente (Para Uso Repetido)</strong></p>
+<ol>
+<li>
+<p><strong>Salvar uma Visualização Filtrada:</strong></p>
+<ul>
+<li>Após aplicar filtros, clique no botão <strong>Salvar</strong> que ficará ativo.</li>
+<li>Selecione <strong>Salvar como Nova Lista Inteligente</strong> e dê um nome a ela.</li>
+</ul>
+</li>
+<li>
+<p><strong>Criar uma Lista Inteligente do Zero:</strong></p>
+<ul>
+<li>No topo da página de Workflows, clique em <strong>+ Lista Inteligente</strong>.</li>
+<li>Configure os filtros desejados e clique em <strong>Salvar</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Acessar suas Listas Inteligentes:</strong></p>
+<ul>
+<li>As Listas Inteligentes salvas aparecem no topo da página, ao lado das categorias padrão. Clique em uma para aplicar instantaneamente os filtros salvos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Gerenciar Listas Inteligentes:</strong></p>
+<ul>
+<li>Para editar ou excluir, clique na Lista Inteligente desejada.</li>
+<li>No canto superior direito, clique em <strong>Personalizar Lista</strong>.</li>
+<li>Modifique os filtros ou exclua a lista. Não se esqueça de clicar em <strong>Salvar</strong> se fizer alterações.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_8">Requisitos</h3>
+<ul>
+<li>Acesso à plataforma Full Funnel.</li>
+<li>Permissões para visualizar e gerenciar a seção de <strong>Automações (Workflows)</strong>.</li>
+<li>Para criar e salvar Listas Inteligentes, você precisa ser um usuário com permissões adequadas (o salvamento é individual por usuário, com exceções para administradores).</li>
+</ul>
+<h3 id="faq_8">FAQ</h3>
+<p><strong>P. Qual a diferença entre um Filtro e uma Lista Inteligente?</strong>
+R. Um Filtro Avançado é uma busca temporária. Uma Lista Inteligente salva essa busca para acesso rápido e repetido no futuro.</p>
+<p><strong>P. Quantos filtros posso aplicar de uma vez?</strong>
+R. Não há um limite rígido. Você pode aplicar múltiplos filtros e combinar condições "E" e "OU".</p>
+<p><strong>P. Como edito ou excluo uma Lista Inteligente?</strong>
+R. Acesse a lista, clique em <strong>Personalizar Lista</strong> no canto superior direito e faça as alterações ou a exclusão.</p>
+<p><strong>P. Quem pode ver e gerenciar minhas Listas Inteligentes?</strong>
+R. Se um <strong>usuário comum</strong> cria uma lista, apenas ele e os administradores podem vê-la. Se um <strong>administrador</strong> cria uma lista, todos os administradores podem vê-la, mas usuários comuns não. Permissões mudam se o nível de acesso do usuário for alterado.</p>
+<p><strong>P. Os Filtros Avançados funcionam em todos os tipos de automação?</strong>
+R. Sim, eles funcionam com todas as automações, independentemente da complexidade.</p>
+<hr />
+<h2 id="acao-de-automacao-sesenao">Ação de Automação - Se/Senão</h2>
+<h3 id="como-fazer_8">Como fazer</h3>
+<p>A ação <strong>Se/Senão</strong> permite criar ramificações condicionais em suas automações. Você pode configurar condições baseadas em campos do contato, tags, datas, horas e muito mais para direcionar o fluxo.</p>
+<p><strong>Para configurar uma condição Se/Senão:</strong>
+1. Na tela do editor de automações, arraste a ação "Se/Senão" para o fluxo
+2. Clique na ação para abrir as configurações
+3. Selecione o campo que deseja avaliar (ex: Tags, Campo Personalizado, Data)
+4. Escolha o operador de comparação (ex: "Inclui", "É igual a", "É depois de")
+5. Defina o valor para comparação
+6. Adicione mais condições usando "E" ou "OU" se necessário
+7. Configure os caminhos "Sim" (condição verdadeira) e "Não" (condição falsa)</p>
+<p><strong>Condições "E" (AND):</strong>
+- Todas as condições devem ser verdadeiras
+- Exemplo: Se Tag NÃO inclui "consulta_agendada" E Tag NÃO inclui "consulta_confirmada"
+- Apenas passa pelo caminho "Sim" se AMBAS as condições forem atendidas</p>
+<p><strong>Condições "OU" (OR):</strong>
+- Pelo menos uma condição deve ser verdadeira
+- Crie condições separadas e selecione a opção "OU"
+- Passa pelo caminho "Sim" se UMA ou ambas as condições forem atendidas</p>
+<h3 id="requisitos_9">Requisitos</h3>
+<ul>
+<li>Ação disponível em todos os planos do Full Funnel</li>
+<li>Máximo de 10 ramificações diferentes por evento</li>
+<li>Campos personalizados devem estar previamente configurados</li>
+<li>Tags devem existir no sistema</li>
+</ul>
+<h3 id="faq_9">FAQ</h3>
+<p><strong>O que acontece se duas ramificações forem verdadeiras? O contato segue ambos os caminhos?</strong>
+Não. O sistema processa as condições em ordem, de cima para baixo, e direciona o contato pelo PRIMEIRO caminho verdadeiro encontrado.</p>
+<p><strong>Como funcionam os operadores de comparação de tempo?</strong>
+- <strong>"É"</strong>: Verifica se é exatamente igual (ex: Dia da semana É Segunda)
+- <strong>"Não é"</strong>: Verifica se é diferente (ex: Dia da semana NÃO É Sábado)
+- <strong>"É depois de"</strong>: Para horas, considera apenas a próxima hora completa (ex: 18:59 ainda está "dentro" das 18h)
+- <strong>"É em ou depois de"</strong>: Inclui o mesmo horário em diante (ex: 18:59 está "em" 18h)
+- <strong>"É antes de"</strong>: Verifica se é anterior
+- <strong>"É em ou antes de"</strong>: Inclui o mesmo horário para trás
+- <strong>"Não está vazio" / "Está vazio"</strong>: Verifica se o campo tem ou não valor</p>
+<p><strong>Posso usar "Inclui" com campos de múltipla seleção?</strong>
+Sim. Use "Inclui" para verificar se um valor está presente em campos como Tags, checkboxes ou dropdowns múltiplos.</p>
+<p><strong>Quantas condições posso adicionar?</strong>
+Não há um limite rígido, mas para melhor performance e clareza, recomenda-se manter as condições simples e objetivas.</p>
+<hr />
+<h2 id="como-usar-a-acao-premium-de-automacao-webhook-de-entrada">Como usar a Ação Premium de Automação Webhook de Entrada</h2>
+<p>A ação <strong>Webhook de Entrada</strong> permite que sistemas externos enviem dados automaticamente para o Full Funnel usando métodos de requisição HTTP como GET, POST e PUT. Essa transferência de dados em tempo real aprimora a funcionalidade da sua CRM e agiliza processos, facilitando a integração com outras plataformas.</p>
+<h3 id="requisitos_10">Requisitos</h3>
+<ul>
+<li><strong>Disponibilidade:</strong> Agências em qualquer plano ($97, $970, $297, $2970, $497, $4970) têm acesso aos Gatilhos e Ações Premium.</li>
+<li><strong>Execuções:</strong> Após habilitar os Gatilhos e Ações Premium nas configurações da Agência, todas as Subcontas (existentes e novas) recebem 100 execuções gratuitas.</li>
+<li><strong>Cobrança:</strong> Para evitar custos com execuções em Subcontas existentes, a cobrança deve ser ativada manualmente para cada uma delas na visualização da Agência.</li>
+<li><strong>Configurador SaaS:</strong> Se as ações premium estiverem habilitadas no Configurador SaaS, novas Subcontas geradas serão automaticamente inscritas nos Gatilhos e Ações Premium.</li>
+</ul>
+<h3 id="como-fazer_9">Como fazer</h3>
+<p>Siga estes passos para configurar e utilizar o gatilho de Webhook de Entrada:</p>
+<p><strong>Passo 1: Obter e Testar a URL do Webhook</strong>
+1.  Na sua automação, adicione o gatilho <strong>"Webhook de Entrada"</strong>.
+2.  Copie a URL do webhook fornecida.
+3.  Use essa URL na sua aplicação ou sistema externo para enviar dados.
+4.  Envie uma requisição de teste (POST, GET ou PUT) para a URL.
+5.  No Full Funnel, clique em <strong>"Testar Gatilho"</strong>.</p>
+<p><strong>Passo 2: Mapear os Dados Recebidos</strong>
+1.  Após o teste, você verá os dados recebidos. Selecione o conjunto de dados de exemplo que deseja usar para mapeamento.
+2.  (Opcional) Clique em <strong>"Carregar Mais"</strong> para ver dados recentes adicionais.
+3.  <strong>Mapeamento Avançado (Se necessário):</strong>
+    *   Envie uma requisição HTTP (POST, GET ou PUT) para a URL do webhook e copie o <strong>ID</strong> da resposta.
+    *   Cole esse ID no campo de busca dentro da configuração do gatilho para encontrar a referência de mapeamento específica.
+    *   Selecione a referência correta e verifique o corpo dos dados.
+4.  Salve os dados de referência. Eles funcionarão como variáveis personalizadas, semelhantes a campos de contato.
+5.  Clique em <strong>"Salvar Gatilho"</strong>.</p>
+<p><strong>Passo 3: Criar ou Atualizar um Contato (Opcional)</strong>
+1.  Após salvar o gatilho, você será direcionado para a ação <strong>"Criar/Atualizar Contato"</strong>.
+2.  Mapeie os campos recebidos do webhook (como nome, e-mail, telefone) para os campos correspondentes do contato.
+3.  <strong>Observação crucial:</strong> Para criar ou atualizar um contato, é necessário fornecer um <strong>e-mail</strong> ou <strong>número de telefone</strong> no payload dos dados. Se seus dados não tiverem essas informações, você pode remover esta ação e a automação será executada sem um contato associado.</p>
+<p><strong>Utilizando os Dados na Automação:</strong>
+Os dados recebidos pelo webhook podem ser usados em qualquer ação subsequente da automação.
+*   <strong>Em Ações de Comunicação:</strong> Use as variáveis personalizadas do webhook para personalizar o conteúdo de <strong>E-mails</strong> ou <strong>SMS</strong>.
+*   <strong>Em Ações Condicionais (If/Else):</strong> Use os valores do webhook para criar condições e ramificar a lógica da sua automação.</p>
+<p><strong>Execução sem Contato:</strong>
+A automação pode rodar sem dados de contato. Você pode enviar qualquer payload via Webhook de Entrada e utilizá-lo em ações que não dependam de um contato, como:
+*   Ações de <strong>Webhook Personalizado</strong>
+*   <strong>Planilhas do Google</strong>
+*   <strong>Slack</strong>
+*   <strong>ChatGPT</strong>
+*   <strong>Ferramentas Internas</strong></p>
+<p>Se for necessário, você pode usar as ações <strong>"Criar/Atualizar Contato"</strong> ou <strong>"Encontrar Contato"</strong> em um estágio posterior da automação para resgatar as informações de contato.</p>
+<h3 id="faq_10">FAQ</h3>
+<p><strong>1. A automação pode ser executada sem um contato?</strong>
+Sim. Você pode enviar qualquer dado via Webhook de Entrada e usar ações que não dependam de informações de contato. Se precisar de dados de contato posteriormente, use as ações "Criar/Atualizar" ou "Encontrar Contato".</p>
+<p><strong>2. Quais são os pontos importantes a considerar?</strong>
+*   <strong>Método HTTP:</strong> Sempre use POST, GET ou PUT.
+*   <strong>Formato de Dados:</strong> Envie os dados como um objeto <strong>JSON</strong>.
+*   <strong>Chaves JSON:</strong> Use <code>CamelCase</code> ou <code>snake_case</code>. Não use espaços nos nomes das chaves.
+*   <strong>Contato:</strong> Para criar/atualizar um contato, o payload <strong>deve</strong> conter um e-mail ou telefone.
+*   <strong>Arrays:</strong> Não são suportados como valores personalizados. Podem ser enviados, mas não podem ser usados dentro das ações.
+*   <strong>Mudança na Estrutura de Dados:</strong> Se a estrutura dos dados que você envia mudar, re-selecione a <strong>Referência de Mapeamento</strong> dentro da configuração do gatilho.
+*   <strong>URL Comprometida:</strong> Se a URL do seu webhook for vazada, <strong>exclua</strong> o gatilho atual e crie um novo. Uma URL diferente será gerada. Atualize suas integrações externas com a nova URL. Requisições para a URL antiga serão ignoradas.</p>
+<hr />
+<h2 id="acao-de-automacao-webhook-personalizado">Ação de Automação: Webhook Personalizado</h2>
+<h3 id="como-fazer_10">Como fazer</h3>
+<p>Para configurar e usar a ação de Webhook Personalizado em uma automação, siga estes passos:</p>
+<ol>
+<li>
+<p><strong>Acesse o Construtor de Automações:</strong></p>
+<ul>
+<li>Navegue até <strong>Automações</strong> no menu principal.</li>
+<li>Crie uma nova automação ou edite uma existente.</li>
+<li>Arraste e solte a ação <strong>"Webhook Personalizado"</strong> no seu fluxo de trabalho.</li>
+</ul>
+</li>
+<li>
+<p><strong>Preencha a URL (Passo 1):</strong></p>
+<ul>
+<li>No campo <strong>"URL"</strong>, insira o endereço completo do serviço externo para onde você deseja enviar os dados.</li>
+</ul>
+</li>
+<li>
+<p><strong>Selecione um Método HTTP (Passo 2):</strong></p>
+<ul>
+<li>No menu suspenso <strong>"Método"</strong>, escolha o verbo HTTP adequado para sua requisição (ex: POST, GET, PUT, DELETE).</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure a Autorização (Passo 3):</strong></p>
+<ul>
+<li>Se o serviço de destino exigir autenticação, selecione o <strong>"Método de Autorização"</strong> apropriado (ex: Bearer Token, Basic Auth) e preencha as credenciais necessárias nos campos que aparecerem.</li>
+</ul>
+</li>
+<li>
+<p><strong>Adicione Cabeçalhos e Parâmetros (Passo 4):</strong></p>
+<ul>
+<li><strong>Cabeçalhos (Headers):</strong> Clique em <strong>"Adicionar Cabeçalho"</strong> para incluir informações como <code>Content-Type: application/json</code>.</li>
+<li><strong>Parâmetros de Consulta (Query Parameters):</strong> Clique em <strong>"Adicionar Parâmetro"</strong> para enviar dados diretamente na URL.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure o Corpo da Requisição (Passo 5):</strong></p>
+<ul>
+<li>No campo <strong>"Corpo (Body)"</strong>, estruture os dados que serão enviados, normalmente em JSON.</li>
+<li>Use o recurso de autocompletar (digitando <code>{{</code>) para mapear dinamicamente informações do contato, como <code>{{contact.name}}</code> ou <code>{{contact.email}}</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Salve e Teste:</strong></p>
+<ul>
+<li>Clique em <strong>"Salvar"</strong> na ação.</li>
+<li>Ative a automação e teste com um contato para garantir que os dados são enviados corretamente para a URL configurada.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_11">Requisitos</h3>
+<ul>
+<li><strong>Plano da Agência:</strong> Esta é uma <strong>ação premium</strong>. Agências em qualquer plano podem habilitá-la nas <strong>Configurações</strong> da agência.</li>
+<li><strong>Execuções Gratuitas:</strong> Após a habilitação, contas subordinadas (Sub-Accounts) novas e existentes recebem <strong>100 execuções gratuitas</strong>.</li>
+<li><strong>Cobrança Adicional:</strong> Para evitar custos de execução em contas subordinadas existentes, a agência precisa habilitar manualmente a repassagem de cobrança para cada conta. Novas contas criadas via SaaS Configurador são inscritas automaticamente.</li>
+</ul>
+<h3 id="faq_11">FAQ</h3>
+<p><strong>O que é a Ação Webhook Personalizado?</strong>
+É uma ferramenta que permite a comunicação em tempo real entre o Full Funnel e serviços de terceiros. Você pode configurar requisições de dados personalizadas (com método HTTP, autorização, cabeçalhos e corpo) para qualquer URL, automatizando a troca de informações.</p>
+<p><strong>Para quem esta funcionalidade é útil?</strong>
+É essencial para empresas que precisam integrar seu CRM com outros softwares (como ERPs, ferramentas de marketing, sistemas internos). É muito útil para marketers, desenvolvedores e profissionais de TI que buscam automatizar fluxos de trabalho e manter a consistência dos dados entre plataformas.</p>
+<p><strong>O que fazer se o webhook falhar?</strong>
+O sucesso da ação depende da resposta da API de destino.
+*   <strong>Verifique os Logs:</strong> Falhas aparecerão na execução da automação do contato.
+*   <strong>Confira a Configuração:</strong> Valide a URL, o método de autorização e a estrutura do corpo (JSON).
+*   <strong>Considere os Limites do Servidor:</strong> Certifique-se de que o servidor que recebe os dados consegue lidar com o volume de execuções da sua automação. Exceder limites pode causar falhas.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

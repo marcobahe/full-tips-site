@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Se você está enfrentando problemas para integrar a Página de Negócios do Facebook de um cliente em Configurações > Integrações, siga estes passos de s...">
+    <title>Facebook Geral — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="facebook-geral">Facebook Geral</h1>
+<h2 id="solucao-de-problemas-do-facebook-problemas-de-integracao">Solução de Problemas do Facebook - Problemas de Integração</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Se você está enfrentando problemas para integrar a Página de Negócios do Facebook de um cliente em <strong>Configurações &gt; Integrações</strong>, siga estes passos de solução de problemas.</p>
+<p><strong>Problemas comuns:</strong>
+1.  A roda de carregamento continua girando após seguir o fluxo de integração do Facebook.
+2.  Ao clicar em "Conectar" no Facebook, você é redirecionado para uma página quebrada.
+3.  A seção de mapeamento de campos do formulário do Facebook não exibe os formulários da página que você está tentando integrar.</p>
+<p><strong>Passos para solucionar:</strong></p>
+<ol>
+<li>
+<p><strong>Limpe o cache do navegador:</strong></p>
+<ul>
+<li>Limpe o cache e os cookies do seu navegador.</li>
+<li>Faça logout da sua conta do Full Funnel.</li>
+<li>Feche completamente o navegador.</li>
+<li>Reabra o navegador, faça login novamente e tente a integração mais uma vez.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verifique o Domínio White Label (Etiqueta Branca):</strong></p>
+<ul>
+<li>Acesse a <strong>Visualização da Agência</strong>.</li>
+<li>Vá para <strong>Configurações &gt; Configurações da Agência</strong>.</li>
+<li>Localize o campo <strong>"Domínio White Label"</strong> e veja o que está preenchido.</li>
+<li><strong>Verificação crucial:</strong> Certifique-se de que o domínio que você colocou nesse campo foi devidamente configurado como White Label. Se não foi, a integração pode falhar.</li>
+<li><strong>Verifique a URL de acesso:</strong> Olhe o endereço na barra de URL do seu navegador. Se você estiver logado via <code>app.fullfunnel.com</code>, isso pode ser a causa do problema.</li>
+<li><strong>Acesse pelo seu domínio:</strong> Você deve fazer login usando o seu domínio White Label (por exemplo, <code>app.seudominio.com</code>). Faça login dessa forma e tente integrar o Facebook novamente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Acesso administrativo à <strong>Visualização da Agência</strong> no Full Funnel.</li>
+<li>Acesso administrativo à Página de Negócios do Facebook que deseja integrar.</li>
+<li>Um domínio próprio configurado corretamente como White Label na sua conta da agência (se aplicável).</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>E se os passos acima não resolverem o problema?</strong>
+Se a integração do Facebook continuar apresentando erros após seguir todos os passos de solução de problemas, entre em contato com o Suporte do Full Funnel para assistência especializada.</p>
+<hr />
+<h2 id="facebook-solucao-de-problemas-desconectar-suas-contas-sem-querer">Facebook: Solução de Problemas - Desconectar Suas Contas Sem Querer</h2>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p>Para evitar desconectar suas contas do Facebook sem querer, siga estas etapas:</p>
+<ol>
+<li>
+<p><strong>Acesse as Configurações da Página do Facebook:</strong></p>
+<ul>
+<li>Faça login na sua conta pessoal do Facebook.</li>
+<li>Vá até a Página que você conectou ao Full Funnel.</li>
+<li>Clique em <strong>"Configurações da Página"</strong> no menu lateral esquerdo.</li>
+</ul>
+</li>
+<li>
+<p><strong>Navegue até as Permissões da Página:</strong></p>
+<ul>
+<li>No menu de configurações à esquerda, clique em <strong>"Permissões da Página"</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Revise os Aplicativos Conectados:</strong></p>
+<ul>
+<li>Role para baixo até a seção <strong>"Aplicativos e sites"</strong>.</li>
+<li>Localize o aplicativo do Full Funnel na lista. O nome pode variar.</li>
+<li><strong>IMPORTANTE:</strong> Se você remover o aplicativo desta lista, a integração será desconectada no Full Funnel. Para fazer ajustes de permissão, use as opções <strong>"Editar"</strong> ou <strong>"Visualizar"</strong> em vez de <strong>"Remover"</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verifique as Configurações de Negócios do Facebook (se aplicável):</strong></p>
+<ul>
+<li>Se sua Página estiver vinculada a um <strong>Meta Business Suite (Facebook Business Manager)</strong>, acesse <a href="https://business.facebook.com">business.facebook.com</a>.</li>
+<li>Vá até <strong>"Configurações"</strong> &gt; <strong>"Contas"</strong> &gt; <strong>"Páginas"</strong>.</li>
+<li>Selecione sua Página e verifique os <strong>"Aplicativos"</strong> conectados a ela.</li>
+<li>A remoção do aplicativo do Full Funnel aqui também causará a desconexão.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Acesso de administrador à Página do Facebook que está integrada.</li>
+<li>(Opcional) Acesso de administrador ao Meta Business Suite, se a Página estiver gerenciada por ele.</li>
+</ul>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>P: Eu desconectei minha Página sem querer. Como reconecto?</strong>
+R: Você precisará refazer o processo de integração completo. No Full Funnel, vá para <strong>Integrações</strong> &gt; <strong>Facebook</strong>, e siga os passos para reconectar a Página e refazer a verificação do domínio, se necessário.</p>
+<p><strong>P: Perdi o acesso à Página do Facebook. O que acontece com a integração?</strong>
+R: Se você for removido como administrador da Página no Facebook, a integração no Full Funnel deixará de funcionar e precisará ser reconfigurada pelo novo administrador.</p>
+<p><strong>P: Posso editar as permissões que o Full Funnel tem na minha Página?</strong>
+R: Sim, você pode usar a opção <strong>"Editar"</strong> nas <strong>Permissões da Página</strong> do Facebook para ajustar quais dados o aplicativo pode acessar. Alterar permissões críticas pode afetar o funcionamento da integração.</p>
+<p><strong>P: A integração parou de funcionar, mas não desconectei nada. O que pode ser?</strong>
+R: O token de acesso do Facebook pode ter expirado. Nesse caso, você precisará renovar a conexão manualmente no Full Funnel. Consulte o artigo relacionado "Um Token do Facebook Expirou em Sua Conta" para obter instruções.</p>
+<hr />
+<h2 id="paginas-do-facebook-nao-aparecem-ou-nao-conectam">Páginas do Facebook Não Aparecem ou Não Conectam</h2>
+<h3 id="como-fazer_2">Como fazer</h3>
+<p>Se as páginas do Facebook não estão aparecendo ou você não consegue conectá-las ao Full Funnel, siga estas etapas para resolver o problema:</p>
+<ol>
+<li>
+<p><strong>Verifique as Permissões do Facebook:</strong></p>
+<ul>
+<li>Acesse o <strong>Facebook Business Manager</strong>.</li>
+<li>Vá até <strong>Configurações</strong> &gt; <strong>Pessoas</strong>.</li>
+<li>Selecione seu nome de usuário e verifique se a permissão "<strong>Administrador</strong>" está atribuída à <strong>Página do Facebook</strong> que você está tentando conectar. Permissões como "Analista" ou "Editor" podem não ser suficientes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Revise a Conexão da Conta do Facebook:</strong></p>
+<ul>
+<li>No painel do Full Funnel, vá para <strong>Integrações</strong>.</li>
+<li>Encontre e clique na integração do <strong>Facebook</strong>.</li>
+<li>Clique em <strong>"Desconectar"</strong> para remover a conexão atual do Facebook.</li>
+<li>Aguarde alguns minutos e reconecte sua conta do Facebook, garantindo que está fazendo login com o perfil que tem permissões de administrador na página desejada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verifique o Status da Página no Facebook:</strong></p>
+<ul>
+<li>Acesse diretamente a sua Página do Facebook.</li>
+<li>Confirme se a página está <strong>publicada e ativa</strong>. Páginas não publicadas ou em rascunho não serão listadas para conexão.</li>
+</ul>
+</li>
+<li>
+<p><strong>Use o Modo de Navegação Anônima/Privada:</strong></p>
+<ul>
+<li>Às vezes, cache ou cookies do navegador podem interferir.</li>
+<li>Abra uma janela anônima (Chrome) ou privada (Firefox/Safari).</li>
+<li>Faça login no Full Funnel e tente reconectar a integração do Facebook novamente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verifique Domínios Conectados (Para Anúncios):</strong></p>
+<ul>
+<li>Se o problema estiver relacionado a anúncios ou o Pixel do Facebook, certifique-se de que o domínio do seu site está verificado no <strong>Facebook Business Manager</strong> (Configurações &gt; <strong>Brand Safety</strong> &gt; <strong>Domínios</strong>).</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_2">Requisitos</h3>
+<p>Para conectar uma Página do Facebook com sucesso, você precisa ter:
+*   Uma conta pessoal do Facebook ativa.
+*   Acesso de <strong>Administrador</strong> à Página do Facebook que deseja conectar.
+*   A Página do Facebook deve estar <strong>publicada</strong> (não pode ser um rascunho não publicado).
+*   Permissões concedidas ao aplicativo Full Funnel no Facebook para gerenciar páginas, publicações e acessar leads de anúncios.</p>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>P: Eu sou administrador da página, mas ela ainda não aparece na lista. O que fazer?</strong>
+R: Tente desconectar e reconectar completamente a sua conta do Facebook nas <strong>Integrações</strong> do Full Funnel. Use um navegador diferente ou o modo anônimo para descartar problemas de cache.</p>
+<p><strong>P: Posso conectar uma Página do Facebook a mais de uma localização/Sub-conta?</strong>
+R: Sim, uma mesma Página do Facebook pode ser conectada a diferentes localizações dentro da sua conta principal do Full Funnel. O processo de conexão deve ser realizado dentro de cada localização específica.</p>
+<p><strong>P: Por que recebo um erro de "Token Expirado"?</strong>
+R: Os tokens de acesso do Facebook podem expirar por segurança. Se isso acontecer, você precisará renovar a conexão. Vá até <strong>Integrações</strong> &gt; <strong>Facebook</strong> e clique em "<strong>Reconectar</strong>" ou "<strong>Renovar Permissões</strong>".</p>
+<p><strong>P: A integração parou de funcionar de repente. É um problema comum?</strong>
+R: Sim, isso pode ocorrer se as permissões do Facebook forem revogadas ou alteradas, ou se o token de acesso expirar. Siga o passo 2 ("Revise a Conexão da Conta do Facebook") para restabelecer a conexão.</p>
+<hr />
+<h2 id="guia-passo-a-passo-para-integracao-com-facebook-no-full-funnel">Guia Passo a Passo para Integração com Facebook no Full Funnel</h2>
+<p>A integração com Facebook no Full Funnel permite sincronizar diretamente os dados de leads dos seus Facebook Lead Ads para a sua plataforma. Uma vez conectada, novos leads podem acionar automaticamente automações, preencher pipelines e iniciar campanhas de nutrição sem importações manuais.</p>
+<h3 id="como-fazer_3">Como fazer</h3>
+<p>Siga estes passos para conectar sua Página do Facebook a uma subconta:</p>
+<p><strong>Passo 1: Acesse as Configurações da Subconta</strong>
+Navegue até <strong>Configurações</strong> no canto inferior esquerdo da tela.</p>
+<p><strong>Passo 2: Abra a seção de Integrações</strong>
+Na barra de navegação esquerda, dentro de <strong>Configurações</strong>, role para baixo e clique em <strong>Integrações</strong>.</p>
+<p><strong>Passo 3: Conecte o Facebook</strong>
+Na tela de <strong>Integrações</strong>, encontre o card <strong>Facebook–Instagram</strong> (geralmente na seção superior direita) e clique em <strong>Conectar</strong>.</p>
+<p><strong>Passo 4: Faça Login e Conceda Permissões no Facebook</strong>
+Uma janela pop-up será aberta solicitando que você faça login na sua conta do Facebook. Certifique-se de:
+*   Fazer login na conta correta do Facebook.
+*   Aprovar <strong>todas</strong> as permissões solicitadas (especialmente acesso a leads e dados da página).
+*   Selecionar a Página do Facebook correta para sincronizar.</p>
+<p><strong>Passo 5: Escolha a Página e as Opções de Sincronia</strong>
+Após o login, selecione:
+*   A <strong>Página do Facebook</strong> que deseja integrar.
+*   A <strong>preferência de sincronia</strong>:
+    *   <strong>Todos os Leads</strong>: Importa leads históricos e todos os novos leads futuros.
+    *   <strong>Apenas Novos Leads</strong>: Sincroniza apenas leads enviados após a integração.</p>
+<p><strong>Passo 6: Finalize a Integração</strong>
+Clique em <strong>Conectar e Continuar</strong> para finalizar. Você verá uma mensagem de sucesso no canto superior direito.</p>
+<p><strong>Passo 7: Mapeie os Campos do Formulário</strong>
+Após a conexão, mapeie os campos do seu formulário do Facebook para os campos correspondentes na sua plataforma. Isso garante que dados como e-mail, telefone e nome sejam salvos no lugar correto.</p>
+<h3 id="requisitos_3">Requisitos</h3>
+<ul>
+<li>Você deve ter acesso de <strong>Administrador</strong> à <strong>Página do Facebook</strong> que deseja conectar.</li>
+<li>Você deve ter acesso de <strong>Administrador</strong> ao <strong>Facebook Business Manager</strong> ao qual a página está vinculada.</li>
+<li>É necessário ter uma conta do Facebook com permissões para gerenciar anúncios e páginas.</li>
+</ul>
+<h3 id="faq_3">FAQ</h3>
+<p><strong>P: Posso conectar mais de uma Página do Facebook?</strong>
+R: Sim. Você pode conectar várias páginas a uma subconta.</p>
+<p><strong>P: O que acontece se meu token de acesso expirar?</strong>
+R: Você verá um aviso solicitando a reconexão. Basta seguir o fluxo de reconexão fornecido pela plataforma.</p>
+<p><strong>P: Posso acionar uma automação quando um formulário do Facebook for enviado?</strong>
+R: Com certeza! Use o gatilho de automação <strong>"Facebook Lead Form Submitted"</strong> (Formulário de Lead do Facebook Enviado) para iniciar sequências automatizadas quando novos leads chegarem.</p>
+<p><strong>P: Como testo se a integração está funcionando?</strong>
+R: Você pode usar a <strong>Ferramenta de Teste de Lead Ads do Facebook</strong> ou enviar manualmente um formulário de teste para verificar se o lead aparece na sua plataforma.</p>
+<p><strong>P: Essa integração também funciona para leads do Instagram?</strong>
+R: Sim, desde que sua <strong>conta comercial do Instagram</strong> esteja conectada à sua Página do Facebook. A configuração é feita através da mesma conexão.</p>
+<hr />
+<h2 id="como-integrar-mensagens-do-facebook-com-o-full-funnel">Como Integrar Mensagens do Facebook com o Full Funnel</h2>
+<h3 id="como-fazer_4">Como fazer</h3>
+<p>Para conectar sua Página do Facebook ao Full Funnel e gerenciar mensagens diretas, siga estes passos:</p>
+<ol>
+<li>Acesse a seção <strong>Integrações</strong> no menu principal da sua plataforma Full Funnel.</li>
+<li>Localize e clique na opção <strong>"Facebook"</strong> na lista de integrações disponíveis.</li>
+<li>Clique no botão <strong>"Conectar"</strong>.</li>
+<li>Uma nova janela ou pop-up será aberta solicitando que você faça login na sua conta do Facebook, se ainda não estiver.</li>
+<li>Você será solicitado a conceder permissões ao Full Funnel. <strong>É crucial conceder todas as permissões solicitadas</strong> para que a integração funcione corretamente.</li>
+<li>Selecione a <strong>Página do Facebook</strong> que você deseja conectar à sua conta do Full Funnel.</li>
+<li>Após a seleção, a integração será concluída. Sua Página do Facebook agora aparecerá como "Conectada" na lista de integrações.</li>
+<li>Para gerenciar as conversas, vá até a seção <strong>Conversas</strong>. Lá você encontrará uma caixa de entrada unificada com as mensagens diretas do Facebook.</li>
+</ol>
+<h3 id="requisitos_4">Requisitos</h3>
+<ul>
+<li>Uma conta ativa no Full Funnel.</li>
+<li>Uma conta pessoal do Facebook com função de <strong>Administrador</strong> ou <strong>Editor</strong> na Página de negócios que deseja conectar.</li>
+<li>A Página do Facebook deve estar ativa e publicamente visível.</li>
+</ul>
+<h3 id="faq_4">FAQ</h3>
+<p><strong>P: Posso conectar mais de uma Página do Facebook?</strong>
+R: Sim, você pode conectar múltiplas Páginas do Facebook à sua conta do Full Funnel. Basta repetir o processo de conexão para cada página.</p>
+<p><strong>P: As mensagens antigas da minha Página serão importadas?</strong>
+R: Normalmente, a integração começa a capturar e exibir mensagens recebidas a partir do momento da conexão. Mensagens muito antigas podem não ser sincronizadas.</p>
+<p><strong>P: O que acontece se eu revogar as permissões no Facebook?</strong>
+R: A integração será interrompida. O Full Funnel não poderá mais enviar ou receber mensagens da sua Página, e você verá um status de "Desconectado" nas <strong>Configurações de Integração</strong>. Para retomar, será necessário reconectar e conceder as permissões novamente.</p>
+<p><strong>P: Posso responder às mensagens do Facebook pelo celular usando o Full Funnel?</strong>
+R: Sim, você pode gerenciar e responder a essas mensagens através do aplicativo móvel do Full Funnel, na seção de <strong>Conversas</strong>.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

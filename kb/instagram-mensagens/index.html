@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Para configurar e usar a ação de Mensagem Direta do Instagram em uma automação, siga estes passos:">
+    <title>Instagram Mensagens — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="instagram-mensagens">Instagram Mensagens</h1>
+<h2 id="acao-de-automacao-mensagem-direta-do-instagram">Ação de Automação - Mensagem Direta do Instagram</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Para configurar e usar a ação de Mensagem Direta do Instagram em uma automação, siga estes passos:</p>
+<ol>
+<li>
+<p><strong>Adicione a Ação à Automação:</strong></p>
+<ul>
+<li>No editor de automações, localize a ação <strong>"Instagram DM"</strong> na lista de ações disponíveis.</li>
+<li>Arraste e solte a ação no ponto desejado do seu fluxo de trabalho.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure os Detalhes da Ação:</strong></p>
+<ul>
+<li><strong>Nome da Ação:</strong> Dê um nome claro para identificar esta ação dentro da sua automação (ex: "Enviar Agradecimento via Instagram").</li>
+<li><strong>Modelo (Opcional):</strong> Se você criou modelos de mensagem previamente, pode selecionar um aqui para manter a consistência.</li>
+<li><strong>Mensagem:</strong> Escreva o conteúdo da mensagem que será enviada. Você pode personalizá-la usando <strong>Valores Personalizados</strong> (como <code>{{contact.first_name}}</code>).</li>
+<li><strong>Adicionar Anexo (Opcional):</strong> Clique em "Adicionar anexo" para incluir uma imagem ou documento diretamente do seu computador.</li>
+<li><strong>Adicionar arquivos por URL (Opcional):</strong> Use o botão <strong>"+ Adicionar"</strong> para anexar um arquivo usando um link da web.</li>
+</ul>
+</li>
+<li>
+<p><strong>Salve e Teste:</strong></p>
+<ul>
+<li>Após configurar, salve a automação.</li>
+<li>É altamente recomendável testar a ação para garantir que a mensagem seja enviada corretamente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<p>Para que esta ação funcione com sucesso, os seguintes requisitos <strong>devem</strong> ser atendidos:</p>
+<ul>
+<li><strong>Página do Instagram Conectada:</strong> Sua conta comercial do Instagram deve estar conectada e configurada dentro da plataforma Full Funnel.</li>
+<li><strong>Janela de 24 Horas:</strong> O contato que receberá a mensagem <strong>deve</strong> ter enviado uma mensagem para a sua página do Instagram conectada há <strong>não mais de 24 horas</strong> antes de atingir este evento na automação. Esta é uma política obrigatória do Instagram.</li>
+</ul>
+<h3 id="faq">FAQ</h3>
+<p><strong>P: Por que minha mensagem do Instagram não está sendo enviada?</strong>
+R: Verifique os dois requisitos principais: 1) Se a página do Instagram está corretamente conectada, e 2) Se o contato iniciou uma conversa com sua página nas últimas 24 horas. Fora dessa janela, o envio não é permitido pelas políticas do Instagram.</p>
+<p><strong>P: Posso enviar a primeira mensagem para um contato via esta ação?</strong>
+R: Não. De acordo com as regras do Instagram, você só pode enviar uma mensagem direta para um usuário se ele tiver iniciado a conversa primeiro. Esta ação é para <strong>respostas e acompanhamento</strong> dentro de uma conversa existente.</p>
+<p><strong>P: Posso usar imagens ou GIFs nas mensagens?</strong>
+R: Sim. Você pode usar a opção <strong>"Adicionar anexo"</strong> para incluir mídia nas suas mensagens diretas e tornar a comunicação mais envolvente.</p>
+<p><strong>P: As mensagens podem ser personalizadas?</strong>
+R: Sim, totalmente. Use o campo <strong>"Mensagem"</strong> e incorpore <strong>Valores Personalizados</strong> (como nome, e-mail, nome da empresa) para criar mensagens únicas para cada contato.</p>
+<hr />
+<h2 id="acao-de-automacao-mensagem-direta-do-instagram_1">Ação de Automação: Mensagem Direta do Instagram</h2>
+<h3 id="como-fazer_1">Como fazer</h3>
+<p>Esta ação permite enviar uma mensagem direta (DM) do Instagram a um contato a partir de uma automação.</p>
+<ol>
+<li>Na tela de edição da automação, adicione uma nova ação.</li>
+<li>Procure e selecione a ação <strong>"Mensagem Direta do Instagram"</strong>.</li>
+<li><strong>Componha sua mensagem:</strong> Você pode escrever um novo texto ou selecionar um modelo de mensagem pré-existente.</li>
+<li><strong>Anexar arquivos (opcional):</strong> Clique em <strong>"Adicionar anexo"</strong>. Você pode selecionar um arquivo do seu drive ou inserir uma URL para anexá-lo à mensagem.</li>
+<li>Salve a ação na sua automação.</li>
+</ol>
+<p><strong>Uso Recomendado com Gatilhos:</strong>
+*   Para responder a uma mensagem recebida, use esta ação em conjunto com o gatilho <strong>"Cliente Respondeu"</strong>, onde o canal de resposta seja <strong>"Mensagem Direta do Instagram"</strong>.
+*   Se estiver usando o gatilho <strong>"Comentário(s) no Post do Instagram"</strong>, o comportamento da ação será:
+    *   <strong>Resposta a Comentário via DM:</strong> Se houver um comentário recente do contato no seu post, a DM será enviada como uma resposta a esse comentário.
+    *   <strong>Mensagem Direta (DM):</strong> Se <em>não</em> houver um comentário recente, a DM será enviada diretamente, desde que o contato tenha enviado uma DM para sua empresa nas últimas 24 horas.</p>
+<p><strong>Recomendação:</strong> Para maior controle, considere usar a ação <strong>"Mensagem Interativa do Instagram"</strong>. Nela, você pode definir explicitamente o <strong>"Tipo de Resposta"</strong>:
+*   Escolha <strong>"Responder ao Comentário via DM"</strong> para respostas a comentários.
+*   Escolha <strong>"Responder à DM"</strong> para mensagens diretas.</p>
+<h3 id="requisitos_1">Requisitos</h3>
+<p>Para que uma Mensagem Direta do Instagram seja entregue com sucesso a um contato, <strong>é obrigatório</strong> que:
+*   O contato tenha enviado uma mensagem direta (DM) para a página do Instagram conectada à sua conta Full Funnel.
+*   Essa mensagem inicial do contato tenha sido enviada há <strong>no máximo 24 horas</strong> antes do contato atingir esta ação na automação.</p>
+<h3 id="faq_1">FAQ</h3>
+<p><strong>Posso enviar uma DM do Instagram para qualquer contato através desta ação?</strong>
+Não. Devido às regras da Meta (Instagram), você só pode enviar uma DM para um contato que iniciou uma conversa com sua empresa por DM nas últimas 24 horas. Antes de 31 de agosto de 2024, um bug permitia o envio em outros cenários, mas isso foi corrigido pela Meta.</p>
+<p><strong>Qual a diferença entre a ação "Mensagem Direta do Instagram" e a "Mensagem Interativa do Instagram"?</strong>
+A ação "Mensagem Interativa do Instagram" oferece opções mais específicas para o tipo de resposta (ex: "Responder ao Comentário via DM" ou "Responder à DM"), dando mais clareza e controle sobre como a mensagem será enviada. É a ação recomendada para novos fluxos.</p>
+<p><strong>O que acontece se eu tentar usar esta ação com um contato que não enviou uma DM nas últimas 24 horas?</strong>
+A mensagem não será entregue. A ação depende de uma conversa ativa (dentro da janela de 24 horas) iniciada pelo contato.</p>
+<hr />
+<h2 id="mensagens-diretas-do-instagram-dms">Mensagens Diretas do Instagram (DMs)</h2>
+<h3 id="como-fazer_2">Como fazer</h3>
+<p>Para gerenciar as conexões de mensagens do Instagram em diferentes aplicativos (como o Full Funnel), siga estes passos:</p>
+<ol>
+<li>Acesse o perfil do Instagram (de negócios ou criador) que deseja configurar.</li>
+<li>Toque no ícone de menu (☰) no canto superior direito.</li>
+<li>Selecione <strong>Configurações</strong>.</li>
+<li>Selecione <strong>Privacidade</strong>.</li>
+<li>Selecione <strong>Mensagens</strong>.</li>
+<li>Na seção <strong>Ferramentas Conectadas</strong>, você encontrará a opção "Permitir acesso às mensagens".</li>
+<li>Use o interruptor para <strong>ativar</strong> ou <strong>desativar</strong> o acesso.</li>
+</ol>
+<p><strong>O que cada configuração faz:</strong>
+*   <strong>Interruptor ATIVADO ("Permitir acesso às mensagens"):</strong> Qualquer pessoa com acesso aprovado ao seu Facebook Business Suite, Creator Studio ou outros aplicativos de terceiros conectados (como o Full Funnel) poderá visualizar e gerenciar suas Mensagens Diretas do Instagram.
+*   <strong>Interruptor DESATIVADO:</strong> Você só poderá visualizar e enviar Mensagens Diretas do Instagram diretamente no aplicativo do Instagram.</p>
+<p>Após configurar, você finalizou o ajuste das conexões de mensagens. É possível alterar essas configurações a qualquer momento.</p>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>A conta do Instagram deve ser um <strong>perfil de Negócios ou Criador</strong>.</li>
+<li>A conta do Instagram deve estar <strong>conectada a uma Página do Facebook</strong>.</li>
+<li>As configurações de conexão de mensagens só estão disponíveis para contas conectadas ao Facebook Business Suite, Pages Manager App, Business Manager, Creator Studio ou outros aplicativos de terceiros compatíveis.</li>
+</ul>
+<h3 id="faq_2">FAQ</h3>
+<p><strong>Onde mais posso gerenciar o acesso às mensagens do Instagram?</strong>
+Além das configurações do Instagram, você também pode gerenciar esse acesso no <strong>Facebook Business Suite</strong> e no <strong>Creator Studio</strong>.</p>
+<p><strong>O que acontece se eu desativar o acesso no Instagram?</strong>
+Se você desativar a opção "Permitir acesso às mensagens", o Full Funnel e outros aplicativos conectados perderão a capacidade de visualizar e responder às suas DMs do Instagram. A interação ficará restrita ao aplicativo nativo do Instagram.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

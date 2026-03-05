@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Para solucionar problemas com a integração de Anúncios de Leads do Facebook, siga estes passos detalhados:">
+    <title>Facebook Anuncios — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h1 id="facebook-anuncios">Facebook Anuncios</h1>
+<h2 id="depuracao-de-anuncios-de-leads-do-facebook">Depuração de Anúncios de Leads do Facebook</h2>
+<h3 id="como-fazer">Como fazer</h3>
+<p>Para solucionar problemas com a integração de Anúncios de Leads do Facebook, siga estes passos detalhados:</p>
+<ol>
+<li>
+<p><strong>Verifique a Conexão da Página do Facebook:</strong></p>
+<ul>
+<li>Acesse <strong>Integrações</strong> no menu lateral.</li>
+<li>Clique em <strong>Facebook</strong>.</li>
+<li>Confirme se a página do Facebook de onde os leads devem vir está conectada e aparece na lista. Se não estiver, clique em "Adicionar Página" para reconectar.</li>
+</ul>
+</li>
+<li>
+<p><strong>Valide o Token de Acesso:</strong></p>
+<ul>
+<li>Na mesma tela de integração do Facebook, verifique se o token de acesso não está expirado. Um token expirado exibirá uma mensagem de erro ou um status "Expirado".</li>
+<li>Se o token estiver expirado, será necessário desconectar e reconectar a página do Facebook para gerar um novo token.</li>
+</ul>
+</li>
+<li>
+<p><strong>Confirme a Configuração do Formulário de Leads:</strong></p>
+<ul>
+<li>No Gerenciador de Anúncios do Facebook, vá até o seu formulário de leads.</li>
+<li>Em "Configurações", na seção "Privacidade", certifique-se de que a URL da política de privacidade está preenchida corretamente. Este é um requisito obrigatório.</li>
+<li>Na seção "Conectar", verifique se o destino do lead está configurado corretamente para "Full Funnel". Deve aparecer como uma opção conectada.</li>
+</ul>
+</li>
+<li>
+<p><strong>Teste o Envio do Lead:</strong></p>
+<ul>
+<li>No Gerenciador de Anúncios do Facebook, use a ferramenta "Testar Lead" no seu formulário.</li>
+<li>Envie um lead de teste e verifique se ele aparece no funil de captura em <strong>Conversas</strong> &gt; <strong>Funil de Captura</strong> dentro do Full Funnel.</li>
+</ul>
+</li>
+<li>
+<p><strong>Revise as Automações (Workflows):</strong></p>
+<ul>
+<li>Acesse <strong>Automações</strong> no menu.</li>
+<li>Localize e revise qualquer automação que tenha sido configurada para ser acionada pelo evento "Novo Lead do Facebook".</li>
+<li>Confirme se os gatilhos e ações estão configurados corretamente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<p>Para que a integração de Anúncios de Leads funcione, é necessário:
+*   Uma conta de negócios do Facebook (Meta Business Manager) ativa.
+*   Uma Página do Facebook conectada e publicada.
+*   Um formulário de leads criado no Gerenciador de Anúncios do Facebook.
+*   Permissões de administrador ou de desenvolvedor na Página do Facebook para conectar a integração.
+*   A URL da política de privacidade preenchida nas configurações do formulário de leads no Facebook.</p>
+<h3 id="faq">FAQ</h3>
+<p><strong>P: Meus leads do Facebook não estão aparecendo no Full Funnel. O que fazer?</strong>
+R: Siga a sequência de verificação: 1) Confirme se a página está conectada em <strong>Integrações</strong> &gt; <strong>Facebook</strong>. 2) Teste o envio de um lead diretamente pelo Gerenciador de Anúncios do Facebook. 3) Verifique o funil de captura em <strong>Conversas</strong>.</p>
+<p><strong>P: Recebi a mensagem "Um token do Facebook expirou na sua conta". Como resolvo?</strong>
+R: Isso significa que a conexão com a página do Facebook precisa ser renovada. Acesse <strong>Integrações</strong> &gt; <strong>Facebook</strong>, localize a página em questão e clique para reconectá-la, seguindo as instruções na tela.</p>
+<p><strong>P: Posso conectar mais de uma página do Facebook à minha conta?</strong>
+R: Sim, você pode conectar múltiplas páginas do Facebook. Basta acessar <strong>Integrações</strong> &gt; <strong>Facebook</strong> e clicar repetidamente em "Adicionar Página" para conectar cada uma delas.</p>
+<p><strong>P: O formulário de leads no Facebook pede uma URL de política de privacidade. O que colocar?</strong>
+R: Você deve inserir a URL da página de política de privacidade do seu site ou negócio. Esta é uma exigência do Facebook. Se não tiver uma, será necessário criar essa página antes de publicar o formulário de leads.</p>
+<hr />
+<h2 id="integracao-de-facebook-lead-ads-e-guia-de-solucao-de-problemas">Integração de Facebook Lead Ads e Guia de Solução de Problemas</h2>
+<p>A integração de <strong>Facebook Lead Ads</strong> permite que você capture leads diretamente dos seus anúncios no Facebook e os sincronize automaticamente com o CRM do Full Funnel. Com ela, você pode capturar informações de contato de potenciais clientes interessados em seus produtos ou serviços e acompanhá-los rapidamente através do seu funil de vendas. Automatizar esse processo economiza tempo e melhora a eficiência dos seus esforços de marketing e vendas.</p>
+<p><strong>Neste artigo:</strong>
+*   O que é a integração de Facebook Lead Ads?
+*   Para quem essa integração é útil?
+*   Quais são os benefícios?
+*   Pré-requisitos para usar o Facebook Lead Ads
+*   Campos personalizados suportados
+*   Como integrar diretamente os Facebook Lead Ads a uma Subconta
+*   Solução de Problemas (FAQ)</p>
+<h3 id="o-que-e-a-integracao-de-facebook-lead-ads">O que é a integração de Facebook Lead Ads?</h3>
+<p>É a conexão entre seus anúncios de captura de leads no Facebook e o CRM do Full Funnel. Quando um usuário preenche um formulário em seu anúncio, os dados são enviados automaticamente para o seu funil, criando ou atualizando um contato, sem necessidade de copiar e colar manualmente.</p>
+<h3 id="para-quem-essa-integracao-e-util">Para quem essa integração é útil?</h3>
+<p>É ideal para qualquer negócio que use anúncios no Facebook para gerar leads e queira automatizar sua captura. É especialmente benéfica para pequenas empresas ou startups que não possuem uma grande equipe para gerenciar leads manualmente, e para empresas que já usam um CRM e desejam centralizar seus dados.</p>
+<h3 id="quais-sao-os-beneficios-desta-integracao">Quais são os benefícios desta integração?</h3>
+<ul>
+<li><strong>Captura Automatizada de Leads:</strong> Elimina a digitação manual de dados.</li>
+<li><strong>Melhoria na Qualidade dos Leads:</strong> Permite um melhor entendimento do público e esforços de marketing mais personalizados.</li>
+<li><strong>Gestão Aprimorada:</strong> Oferece uma visão completa de todas as interações com clientes e prospects em um único lugar.</li>
+<li><strong>Acompanhamento Eficiente:</strong> Permite seguir com os leads rapidamente, priorizando com base no seu comportamento.</li>
+<li><strong>Aumento nas Conversões:</strong> Potencializa o retorno sobre o investimento (ROI) dos anúncios no Facebook.</li>
+</ul>
+<h3 id="pre-requisitos-para-facebook-lead-ads">Pré-requisitos para Facebook Lead Ads</h3>
+<p>Para configurar a integração, você precisa atender aos seguintes requisitos:
+1.  <strong>Acesso:</strong> Ter acesso de administrador à Página do Facebook para a qual você está criando os anúncios de lead.
+2.  <strong>Propriedade:</strong> A mesma pessoa/usuário deve ser proprietária da Página e da Conta de Anúncios (isso é crucial para integrações em nível de negócio).
+3.  <strong>Permissões:</strong> Você deve ter permissões de <strong>Administrador</strong> ou <strong>Gerenciar</strong> tanto na Página quanto na Conta de Anúncios. O usuário que fará a integração precisa ser um <strong>Admin da Página do Facebook</strong> e ter <strong>Permissão de Acesso a Leads</strong> (um requisito do Facebook).
+4.  <strong>Conexão:</strong> Confirmar que sua Página está conectada à Conta de Anúncios correta nas configurações do Facebook Ads.
+5.  <strong>Business Manager:</strong> Se você usa o Facebook Business Manager, a pessoa que fará a integração deve ter a função de <strong>Admin</strong> ou <strong>Funcionário</strong> no Business Manager, além de ser Admin da Página.</p>
+<h3 id="campos-personalizados-suportados-ao-usar-facebook-lead-ads">Campos personalizados suportados ao usar Facebook Lead Ads</h3>
+<p>Ao mapear os campos do formulário de lead no Full Funnel, use apenas os tipos compatíveis listados abaixo:
+*   TEXTO
+*   TEXTO_LONGO
+*   NUMÉRICO
+*   TELEFONE
+*   MONETÁRIO
+*   OPÇÃO_ÚNICA
+*   DATA
+*   LISTA_SUSPENSA
+*   OPÇÕES_RÁDIO
+*   CHECKBOX</p>
+<h3 id="como-integrar-diretamente-os-facebook-lead-ads-a-uma-subconta">Como integrar diretamente os Facebook Lead Ads a uma Subconta</h3>
+<p><strong>Importante:</strong> Apenas o usuário que integrou a Página do Facebook poderá vê-la na lista de páginas disponíveis. Ele precisa ser o administrador dessa página.</p>
+<ol>
+<li>Acesse a <strong>Subconta</strong> desejada no Full Funnel.</li>
+<li>Vá até <strong>Configurações</strong> (ícone de engrenagem).</li>
+<li>No menu lateral, clique em <strong>Integrações</strong>.</li>
+<li>Localize e clique no bloco do <strong>Facebook</strong>.</li>
+<li>Clique no botão <strong>"Conectar"</strong>.</li>
+<li>Uma janela do Facebook será aberta. Faça login (se necessário) e conceda as permissões solicitadas.</li>
+<li>Selecione a <strong>Página do Facebook</strong> que você deseja conectar.</li>
+<li>Clique em <strong>"Conectar Página"</strong>.</li>
+<li>Após a conexão, o mapeamento dos campos do formulário de lead é feito em: <strong>Configurações &gt; Integrações &gt; Mapeamento de Campos do Formulário do Facebook</strong>.</li>
+</ol>
+<hr />
+<h3 id="faq-solucao-de-problemas">FAQ / Solução de Problemas</h3>
+<h4 id="por-que-meus-leads-do-facebook-nao-estao-chegando-na-minha-subconta">Por que meus leads do Facebook não estão chegando na minha Subconta?</h4>
+<p>Siga estas etapas para diagnosticar:
+1.  <strong>Confirme as Permissões:</strong> Verifique se você é um <strong>Administrador</strong> da Página do Facebook em questão.
+2.  <strong>Verifique o Formulário:</strong> No Gerenciador de Anúncios do Facebook, confirme se o formulário de lead selecionado no anúncio é exatamente o mesmo que aparece mapeado no Full Funnel (<strong>Configurações &gt; Integrações &gt; Mapeamento de Campos do Facebook</strong>). Deve haver uma marca de verificação azul ao lado do formulário correto.
+3.  <strong>Teste o Acesso do Full Funnel:</strong> Use a <a href="https://developers.facebook.com/tools/lead-ads-testing">Ferramenta de Teste de Lead Ads do Facebook</a> para simular um envio de lead. Verifique se o <strong>App ID 39018126477806</strong> (do Full Funnel) aparece na lista de CRMs com acesso. Se não aparecer, o acesso foi revogado.
+4.  <strong>Conceda Permissão de Acesso a Leads Manualmente (se necessário):</strong>
+    *   Acesse o <strong>Facebook Business Suite</strong> ou <strong>Configurações de Negócios</strong>.
+    *   Vá até <strong>Integrações &gt; Acesso a Leads</strong>.
+    *   Clique em <strong>"Atribuir CRMs"</strong>.
+    *   Na lista, marque a opção ao lado de <strong>"Full Funnel"</strong> (nome do integrador do Full Funnel) e clique em <strong>"Atribuir"</strong>.</p>
+<h4 id="como-integro-os-leads-do-facebook-usando-um-servico-de-terceiros-como-pabbly-connect-ou-zapier">Como integro os leads do Facebook usando um serviço de terceiros como Pabbly Connect ou Zapier?</h4>
+<p>Você pode utilizar essas ferramentas de automação como uma alternativa. Consulte a documentação do Zapier ou Pabbly Connect para configurar um "Zap" ou "Workflow" que capture os leads do Facebook e os envie para o Full Funnel via sua API.</p>
+<h4 id="um-token-do-facebook-expirou-na-minha-subconta-por-que-isso-acontece-e-como-corrigir">Um token do Facebook expirou na minha Subconta. Por que isso acontece e como corrigir?</h4>
+<p>Se você recebeu um e-mail sobre a expiração da conexão, ela foi interrompida. As causas comuns são:
+*   Alteração de senha do usuário conectado.
+*   Expiração natural do token após um tempo.
+*   O usuário desautorizou o aplicativo (Full Funnel) no Facebook.
+*   Alterações nas permissões da Página.</p>
+<p><strong>Para reconectar:</strong>
+1.  Na Subconta afetada, vá para <strong>Configurações &gt; Integrações</strong>.
+2.  Localize o bloco do Facebook e clique no botão <strong>"Conectado"</strong> para <strong>desconectar</strong> a integração antiga.
+3.  Clique em <strong>"Conectar"</strong> novamente e refaça o processo de autenticação, selecionando a Página desejada.</p>
+<h4 id="quais-sao-os-erros-comuns-e-como-resolve-los">Quais são os erros comuns e como resolvê-los?</h4>
+<ul>
+<li><strong>Problema de Qualidade da Página:</strong> Se o Facebook sinalizar um problema com a qualidade da sua página, você precisa abrir um ticket de suporte diretamente com o <strong>Suporte do Facebook</strong>. Acesse as configurações da sua página no Facebook para encontrar a opção de suporte.</li>
+<li><strong>Problema de Permissão:</strong> A maneira mais fácil de diagnosticar é tentar buscar a última mensagem do Facebook/Instagram ou o último lead diretamente pela API. Se houver falta de permissão, um erro será exibido.<ul>
+<li><strong>Solução:</strong> Revise todas as permissões listadas nos pré-requisitos. Use os links de teste mencionados acima para verificar o acesso.</li>
+</ul>
+</li>
+<li><strong>Leads Não Sincronizando:</strong> Além de verificar permissões, teste o envio de um lead usando informações de contato <strong>únicas</strong> (e-mail e telefone que ainda não existem no seu CRM) para descartar conflitos de duplicação.</li>
+</ul>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>

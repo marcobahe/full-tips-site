@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Este guia detalha como configurar o Mailgun com um domínio GoDaddy para envio de e-mails através da nossa plataforma.">
+    <title>Domínios — Full Funnel Central de Ajuda</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #111; margin-top: 0; font-size: 2em; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #333; margin-top: 2em; font-size: 1.5em; }
+        h3 { color: #444; margin-top: 1.5em; font-size: 1.25em; }
+        h4 { color: #555; margin-top: 1em; }
+        p { margin: 1em 0; }
+        ul, ol { padding-left: 1.5em; }
+        li { margin: 0.5em 0; }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre code { background: none; padding: 0; }
+        blockquote {
+            border-left: 4px solid #0066cc;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background: #f4f4f4; font-weight: 600; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        .breadcrumb a { color: #666; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        strong { color: #111; }
+        hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="/kb/">← Central de Ajuda</a>
+        </nav>
+        <h2 id="configuracao-do-mailgun-passo-a-passo-configuracao-de-dominio-godaddy">Configuração do Mailgun passo a passo - Configuração de domínio GoDaddy</h2>
+<p>Este guia detalha como configurar o Mailgun com um domínio GoDaddy para envio de e-mails através da nossa plataforma.</p>
+<h3 id="como-fazer">Como fazer</h3>
+<ol>
+<li><strong>Crie uma conta no Mailgun:</strong><ul>
+<li>Acesse o site do Mailgun.</li>
+<li>Verifique sua caixa de entrada e confirme o endereço de e-mail.</li>
+</ul>
+</li>
+<li><strong>Adicione um novo domínio no Mailgun:</strong><ul>
+<li>Faça login no Mailgun.</li>
+<li>Clique em <strong>Sending (Envio)</strong> &gt; <strong>Add New Domain (Adicionar Novo Domínio)</strong>.</li>
+</ul>
+</li>
+<li><strong>Escolha o tipo de domínio:</strong><ul>
+<li>Se você tem o domínio <code>suaempresa.com</code>, pode configurar o domínio principal ou um subdomínio com o Mailgun.<ul>
+<li><strong>Domínio principal:</strong> Não deve ser usado com Gsuite ou outro provedor de e-mail.</li>
+<li><strong>Subdomínio:</strong> Digite algo como <code>QUALQUERCOISA.suaempresa.com</code>. Exemplos:<ul>
+<li><code>mg.suaempresa.com</code></li>
+<li><code>resposta.suaempresa.com</code></li>
+<li><code>suporte.suaempresa.com</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Configure o domínio ou subdomínio sob <strong>US (Estados Unidos)</strong>, não EU (União Europeia).</li>
+<li>Clique em <strong>Add domain (Adicionar domínio)</strong>.</li>
+<li>Mantenha a tela seguinte aberta, pois você precisará adicionar registros DNS ao seu domínio.</li>
+</ul>
+</li>
+<li><strong>Acesse os registros DNS no GoDaddy:</strong><ul>
+<li>Faça login no portfólio de domínios do GoDaddy.</li>
+<li>Clique nos três pontos ao lado do seu domínio e selecione <strong>Edit DNS (Editar DNS)</strong>. Pode ser necessário rolar para baixo para ver essa opção.</li>
+</ul>
+</li>
+<li><strong>Adicione os registros DNS:</strong><ul>
+<li>Clique em <strong>Add (Adicionar)</strong> para adicionar um novo registro. Você precisará adicionar 5 registros no total.</li>
+</ul>
+</li>
+</ol>
+<h4 id="adicionar-o-1o-registro-txt">Adicionar o 1º registro TXT</h4>
+<ol>
+<li><strong>Tipo:</strong> Selecione <strong>TXT</strong> no menu de opções.</li>
+<li><strong>Host:</strong> NÃO INCLUA O DOMÍNIO RAIZ.<ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>mg</code></li>
+<li><code>resposta.suaempresa.com</code>, o nome do host será <code>resposta</code></li>
+<li>Se estiver configurando o domínio principal, como <code>suaempresa.com</code>, o nome do host será <code>@</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Valor TXT:</strong> O mesmo para todos.<ul>
+<li>Cole o seguinte registro: <code>v=spf1 include:mailgun.org ~all</code></li>
+</ul>
+</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-2o-registro-txt">Adicionar o 2º registro TXT</h4>
+<ol>
+<li>Clique em <strong>Add (Adicionar)</strong> para adicionar um novo registro.</li>
+<li><strong>Tipo:</strong> Selecione <strong>TXT</strong> no menu de opções.</li>
+<li><strong>Host:</strong> Copie tudo desde o início até a parte do subdomínio, SEM INCLUIR O DOMÍNIO RAIZ.<ul>
+<li>Exemplos:<ul>
+<li>Subdomínio: Copie <code>mx._domainkey.helpdesk</code></li>
+<li>Domínio principal: Copie <code>mailo._domainkey</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Valor TXT:</strong> Volte ao Mailgun e copie o 2º registro TXT.<ul>
+<li>Cole o valor TXT copiado.</li>
+</ul>
+</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-1o-registro-mx">Adicionar o 1º registro MX</h4>
+<ol>
+<li>Clique em <strong>Add (Adicionar)</strong> para adicionar um novo registro.<ul>
+<li>Se você usa Gsuite para receber e-mails no domínio principal, use um subdomínio para o Mailgun.</li>
+</ul>
+</li>
+<li><strong>Tipo:</strong> Selecione <strong>MX</strong> no menu de opções.</li>
+<li><strong>Host:</strong><ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>mg</code></li>
+<li><code>resposta.suaempresa.com</code>, o nome do host será <code>resposta</code></li>
+<li>Se estiver configurando o domínio principal, como <code>suaempresa.com</code>, o nome do host será <code>@</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Points to (Aponta para):</strong> O mesmo para todos.<ul>
+<li>Cole os seguintes dados: <code>mxa.mailgun.org</code></li>
+</ul>
+</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code> (o mesmo para todos).</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-2o-registro-mx">Adicionar o 2º registro MX</h4>
+<ol>
+<li>Clique em <strong>Add (Adicionar)</strong> para adicionar um novo registro.</li>
+<li><strong>Tipo:</strong> Selecione <strong>MX</strong> no menu de opções.</li>
+<li><strong>Host:</strong><ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>mg</code></li>
+<li><code>resposta.suaempresa.com</code>, o nome do host será <code>resposta</code></li>
+<li>Se estiver configurando o domínio principal, como <code>suaempresa.com</code>, o nome do host será <code>@</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Points to (Aponta para):</strong> O mesmo para todos.<ul>
+<li>Cole os seguintes dados: <code>mxb.mailgun.org</code></li>
+</ul>
+</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code> (o mesmo para todos).</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-registro-cname">Adicionar o registro CNAME</h4>
+<ol>
+<li>Clique em <strong>Add (Adicionar)</strong> para adicionar um novo registro.</li>
+<li><strong>Tipo:</strong> Selecione <strong>CNAME</strong> no menu de opções.</li>
+<li><strong>Host:</strong> Volte ao Mailgun para copiar o nome do host. Copie tudo desde o início até a parte do subdomínio, SEM copiar o domínio principal.<ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>email.mg</code></li>
+<li><code>resposta.suaempresa.com</code>, o nome do host será <code>email.resposta</code></li>
+<li>Se estiver configurando o domínio principal, como <code>suaempresa.com</code>, o nome do host será <code>email</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Points to (Aponta para):</strong> O mesmo para todos.<ul>
+<li>Cole os seguintes dados: <code>mailgun.org</code></li>
+</ul>
+</li>
+<li>
+<p>Clique em <strong>Save (Salvar)</strong>.</p>
+</li>
+<li>
+<p><strong>Verifique as configurações DNS no Mailgun:</strong></p>
+<ul>
+<li>Após adicionar os 5 registros, volte ao Mailgun e clique em <strong>Verify DNS Settings (Verificar Configurações DNS)</strong>.</li>
+<li>Clique no mesmo botão novamente se alguns registros ainda não mostrarem a marca de verificação verde.</li>
+</ul>
+</li>
+<li><strong>Obtenha a chave API do Mailgun:</strong><ul>
+<li>Após adicionar e verificar todos os registros DNS, obtenha a chave API do Mailgun.</li>
+</ul>
+</li>
+<li><strong>Adicione a chave API na nossa plataforma:</strong><ul>
+<li>Cole a chave API do Mailgun nas configurações de e-mail da nossa plataforma em Configurações &gt; Integrações.</li>
+</ul>
+</li>
+<li><strong>Envie um e-mail de teste:</strong><ul>
+<li>Envie um e-mail de teste para verificar se tudo funciona corretamente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="perguntas-frequentes">Perguntas Frequentes</h3>
+<p><strong>P: Posso usar o mesmo domínio para o Mailgun e para o Google Apps (ou outro servidor de e-mail)?</strong>
+R: Se você usa o Gsuite para receber e-mails no domínio principal, use um subdomínio para o Mailgun.</p>
+<hr />
+<h2 id="configuracao-do-mailgun-passo-a-passo-com-hostgator">Configuração do Mailgun passo a passo com HostGator</h2>
+<p>Este guia detalha como configurar o Mailgun com um domínio HostGator para envio de e-mails através da nossa plataforma.</p>
+<h3 id="como-fazer_1">Como fazer</h3>
+<ol>
+<li><strong>Crie uma conta no Mailgun:</strong><ul>
+<li>Acesse <a href="https://www.mailgun.com/">Mailgun.com</a>.</li>
+</ul>
+</li>
+<li><strong>Verifique seu endereço de e-mail:</strong><ul>
+<li>Verifique sua caixa de entrada e clique no link de verificação do Mailgun.</li>
+</ul>
+</li>
+<li><strong>Adicione um novo domínio no Mailgun:</strong><ul>
+<li>Faça login no Mailgun.</li>
+<li>Clique em <strong>Sending (Envio)</strong> &gt; <strong>Add New Domain (Adicionar Novo Domínio)</strong>.</li>
+</ul>
+</li>
+<li><strong>Escolha o tipo de domínio:</strong><ul>
+<li>Se você possui o domínio <code>suaempresa.com</code>, você pode configurar o domínio principal ou um subdomínio com o Mailgun.<ul>
+<li><strong>Domínio Principal:</strong><ul>
+<li>Se você adicionar o domínio principal, ele não deve ser usado com Gsuite ou qualquer outro provedor de e-mail.</li>
+</ul>
+</li>
+<li><strong>Subdomínio:</strong><ul>
+<li>Para configurar um subdomínio, digite algo como <code>QUALQUER_COISA.suaempresa.com</code>.</li>
+<li>Exemplos:<ul>
+<li><code>mg.suaempresa.com</code></li>
+<li><code>respostas.suaempresa.com</code></li>
+<li><code>suporte.suaempresa.com</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Selecione a região <strong>US (Estados Unidos)</strong>, não EU.</li>
+<li>Clique em <strong>Add Domain (Adicionar Domínio)</strong>.</li>
+<li>Mantenha esta página aberta, pois você precisará dela para o próximo passo.</li>
+</ul>
+</li>
+<li><strong>Adicione os registros DNS no HostGator:</strong><ul>
+<li>Faça login no cPanel do seu HostGator.</li>
+<li>Na seção <strong>Domains (Domínios)</strong>, clique em <strong>Zone Editor (Editor de Zona)</strong>.</li>
+<li>Localize seu domínio e clique em <strong>Manage (Gerenciar)</strong>.</li>
+<li>Clique em <strong>+Add Record (+Adicionar Registro)</strong> e selecione <strong>Add "TXT" Record (Adicionar Registro "TXT")</strong>.</li>
+</ul>
+</li>
+<li><strong>Adicione o primeiro registro TXT:</strong><ul>
+<li><strong>Name (Nome):</strong> Depende do seu domínio/subdomínio. NÃO inclua o domínio raiz.<ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome do host será <code>respostas</code>.</li>
+<li><code>suaempresa.com</code> (domínio principal), o nome do host será <code>@</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Record (Registro):</strong> O mesmo para todos.<ul>
+<li>Cole o seguinte: <code>v=spf1 include:mailgun.org ~all</code></li>
+</ul>
+</li>
+<li>Clique em <strong>Add Record (Adicionar Registro)</strong>.</li>
+</ul>
+</li>
+<li><strong>Adicione o segundo registro TXT:</strong><ul>
+<li>Clique em <strong>+Add Record (+Adicionar Registro)</strong> e selecione <strong>Add "TXT" Record (Adicionar Registro "TXT")</strong> novamente.</li>
+<li><strong>Name (Nome):</strong> Copie tudo desde o início até a parte do subdomínio. NÃO inclua o domínio raiz.<ul>
+<li>Exemplos:<ul>
+<li>Subdomínio: Copie <code>mx._domainkey.helpdesk</code> (apenas o que está em itálico).</li>
+<li>Domínio principal: Copie <code>mailo._domainkey</code> (apenas o que está em itálico).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Record (Registro):</strong><ul>
+<li>Volte para o Mailgun e copie o segundo registro TXT fornecido.</li>
+<li>Cole o registro TXT longo copiado aqui.</li>
+</ul>
+</li>
+<li>Clique em <strong>Add Record (Adicionar Registro)</strong>.</li>
+</ul>
+</li>
+<li><strong>Adicione o primeiro registro MX:</strong><ul>
+<li>Clique em <strong>+Add Record (+Adicionar Registro)</strong> e selecione <strong>Add "MX" Record (Adicionar Registro "MX")</strong>.<ul>
+<li>Se você usa Gsuite para receber e-mails no domínio principal, use um subdomínio para o Mailgun.</li>
+</ul>
+</li>
+<li><strong>Name (Nome):</strong> Depende do seu domínio/subdomínio.<ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome será <code>mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome será <code>respostas</code>.</li>
+<li><code>suaempresa.com</code> (domínio principal), o nome será <code>@</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code> (o mesmo para todos).</li>
+<li><strong>Destination (Destino):</strong> O mesmo para todos.<ul>
+<li>Cole o seguinte: <code>mxa.mailgun.org</code></li>
+</ul>
+</li>
+<li>Clique em <strong>Save Record (Salvar Registro)</strong>.</li>
+</ul>
+</li>
+<li><strong>Adicione o segundo registro MX:</strong><ul>
+<li>Clique em <strong>+Add Record (+Adicionar Registro)</strong> e selecione <strong>Add "MX" Record (Adicionar Registro "MX")</strong>.</li>
+<li>Desta vez, adicione outro registro para <code>mxb.mailgun.org</code>.</li>
+<li><strong>Name (Nome):</strong> Depende do seu domínio/subdomínio.<ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome será <code>mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome será <code>respostas</code>.</li>
+<li><code>suaempresa.com</code> (domínio principal), o nome será <code>@</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code> (o mesmo para todos).</li>
+<li><strong>Destination (Destino):</strong> O mesmo para todos.<ul>
+<li>Cole o seguinte: <code>mxb.mailgun.org</code></li>
+</ul>
+</li>
+<li>Clique em <strong>Save Record (Salvar Registro)</strong>.</li>
+</ul>
+</li>
+<li><strong>Adicione o registro CNAME:</strong><ul>
+<li>Clique em <strong>+Add Record (+Adicionar Registro)</strong> e selecione <strong>Add "CNAME" Record (Adicionar Registro "CNAME")</strong>.</li>
+<li><strong>Name (Nome):</strong> Copie do Mailgun. Copie tudo desde o início até a parte do subdomínio. NÃO copie o domínio principal.<ul>
+<li>Se você estiver configurando:<ul>
+<li><code>mg.suaempresa.com</code>, o nome será <code>email.mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome será <code>email.respostas</code>.</li>
+<li><code>suaempresa.com</code> (domínio principal), o nome será <code>email</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Record (Registro):</strong> O mesmo para todos.<ul>
+<li>Cole o seguinte: <code>mailgun.org</code></li>
+</ul>
+</li>
+<li>Clique em <strong>Save Record (Salvar Registro)</strong>.</li>
+</ul>
+</li>
+<li><strong>Verifique as configurações DNS no Mailgun:</strong><ul>
+<li>Volte para o Mailgun e clique em <strong>Verify DNS Settings (Verificar Configurações DNS)</strong>.</li>
+<li>Clique no mesmo botão novamente se alguns registros ainda não mostrarem a marca de verificação verde.</li>
+</ul>
+</li>
+<li><strong>Obtenha a chave API do Mailgun:</strong><ul>
+<li>Depois de adicionar todos os registros DNS e verificar, obtenha a chave API do Mailgun.</li>
+</ul>
+</li>
+<li><strong>Insira a chave API na nossa plataforma:</strong><ul>
+<li>Cole a chave API do Mailgun nas configurações de e-mail da nossa plataforma em <strong>Configurações</strong> &gt; <strong>Integrações</strong>.</li>
+</ul>
+</li>
+<li><strong>Envie um e-mail de teste:</strong><ul>
+<li>Envie um e-mail de teste para verificar se tudo funciona corretamente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos">Requisitos</h3>
+<ul>
+<li>Acesso à conta Mailgun.</li>
+<li>Acesso ao cPanel do seu domínio no HostGator.</li>
+</ul>
+<h3 id="perguntas-frequentes_1">Perguntas Frequentes</h3>
+<p><strong>P: Posso usar o mesmo domínio para o Mailgun e para o Gsuite (ou outro servidor de e-mail)?</strong>
+R: Se você usa o Gsuite para receber e-mails no domínio principal, use um subdomínio para o Mailgun.</p>
+<hr />
+<h2 id="configuracao-do-mailgun-passo-a-passo-com-dominio-namecheap">Configuração do Mailgun Passo a Passo com Domínio Namecheap</h2>
+<p>Este guia detalha como configurar o Mailgun com um domínio Namecheap para envio de e-mails através da nossa plataforma.</p>
+<h3 id="como-fazer_2">Como fazer</h3>
+<ol>
+<li><strong>Crie uma conta no Mailgun:</strong><ul>
+<li>Acesse Mailgun.com e siga o processo de inscrição.</li>
+</ul>
+</li>
+<li><strong>Verifique seu endereço de e-mail:</strong><ul>
+<li>Verifique a caixa de entrada do e-mail utilizado no cadastro e confirme o endereço.</li>
+</ul>
+</li>
+<li><strong>Adicione um novo domínio no Mailgun:</strong><ul>
+<li>Faça login no Mailgun.</li>
+<li>Clique em "Sending" (Envio) &gt; "Add New Domain" (Adicionar Novo Domínio).</li>
+</ul>
+</li>
+<li><strong>Escolha o tipo de domínio:</strong><ul>
+<li>Se o seu domínio for <code>suaempresa.com</code>, você pode configurar o domínio principal ou um subdomínio com o Mailgun.<ul>
+<li><strong>Domínio Principal:</strong><ul>
+<li>Se você adicionar o domínio principal, ele não deve ser usado com Gsuite ou qualquer outro provedor de e-mail.</li>
+</ul>
+</li>
+<li><strong>Subdomínio:</strong><ul>
+<li>Para configurar um subdomínio com o Mailgun, digite <code>QUALQUER_COISA.suaempresa.com</code>.</li>
+<li>Exemplos:<ul>
+<li><code>mg.suaempresa.com</code></li>
+<li><code>respostas.suaempresa.com</code></li>
+<li><code>suporte.suaempresa.com</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Configure o domínio ou subdomínio sob a região dos <strong>EUA</strong>, não a UE.</li>
+<li>Clique em "Add Domain" (Adicionar Domínio).</li>
+</ul>
+</li>
+<li><strong>Adicione os registros DNS no Namecheap:</strong><ul>
+<li>Faça login em sua conta Namecheap.</li>
+<li>Clique em "Domain List" (Lista de Domínios) &gt; "Manage" (Gerenciar) no domínio desejado.</li>
+<li>Clique em "Advanced DNS" (DNS Avançado).</li>
+</ul>
+</li>
+<li><strong>Adicione o primeiro registro TXT:</strong><ul>
+<li>Clique em "Add New Record" (Adicionar Novo Registro).</li>
+<li>Selecione "TXT Record" no menu dropdown.<ul>
+<li><strong>Host:</strong><ul>
+<li>Dependendo do subdomínio que você está tentando configurar:<ul>
+<li>Para <code>mg.suaempresa.com</code>, o nome do host será <code>mg</code>.</li>
+<li>Para <code>respostas.suaempresa.com</code>, o nome do host será <code>respostas</code>.</li>
+<li>Se você estiver configurando um domínio principal como <code>suaempresa.com</code>, o nome do host será <code>@</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Value:</strong><ul>
+<li>Copie o primeiro registro TXT do Mailgun: <code>v=spf1 include:mailgun.org ~all</code> e cole no campo "Value".</li>
+</ul>
+</li>
+<li>Clique na marca de verificação verde.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Adicione o segundo registro TXT:</strong><ul>
+<li>Clique em "Add New Record" (Adicionar Novo Registro).</li>
+<li>Selecione "TXT Record" no menu dropdown.<ul>
+<li><strong>Host:</strong><ul>
+<li>Copie tudo desde o início até a parte do subdomínio, NÃO copie o domínio principal.</li>
+</ul>
+</li>
+<li><strong>Value:</strong><ul>
+<li>Cole o segundo registro TXT longo do Mailgun.</li>
+</ul>
+</li>
+<li>Clique na marca de verificação verde.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Adicione os registros MX:</strong><ul>
+<li>Role para baixo até "MAIL SETTINGS" (Configurações de E-mail).</li>
+<li>Altere o menu dropdown para "Custom MX" (MX Personalizado).<ul>
+<li><strong>Importante:</strong> Isso pode afetar sua conta Gsuite se você estiver usando o Gmail. Certifique-se de usar um subdomínio para o Mailgun.</li>
+<li>
+<p>Se você usa Gsuite, adicione os seguintes registros MX de volta:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Host</th>
+<th style="text-align: left;">Time to Live (TTL*)</th>
+<th style="text-align: left;">Priority</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">@</td>
+<td style="text-align: left;">3600</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">ASPMX.L.GOOGLE.COM</td>
+</tr>
+<tr>
+<td style="text-align: left;">@</td>
+<td style="text-align: left;">3600</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">ALT1.ASPMX.L.GOOGLE.COM</td>
+</tr>
+<tr>
+<td style="text-align: left;">@</td>
+<td style="text-align: left;">3600</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">ALT2.ASPMX.L.GOOGLE.COM</td>
+</tr>
+<tr>
+<td style="text-align: left;">@</td>
+<td style="text-align: left;">3600</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">ALT3.ASPMX.L.GOOGLE.COM</td>
+</tr>
+<tr>
+<td style="text-align: left;">@</td>
+<td style="text-align: left;">3600</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">ALT4.ASPMX.L.GOOGLE.COM</td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Depois de adicionar os registros MX do Google, adicione os registros MX do Mailgun:</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Clique em "Add New Record" (Adicionar Novo Registro).</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Host:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Dependendo do subdomínio que você está tentando configurar:</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Para <code>mg.suaempresa.com</code>, o nome do host será <code>mg</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Para <code>respostas.suaempresa.com</code>, o nome do host será <code>respostas</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Se você estiver configurando um domínio principal como <code>suaempresa.com</code>, o nome do host será <code>@</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Value:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Cole <code>mxa.mailgun.org</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Priority:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Defina como <code>10</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Clique na marca de verificação verde.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Clique em "Add New Record" (Adicionar Novo Registro).</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Host:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Dependendo do subdomínio que você está tentando configurar:</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Para <code>mg.suaempresa.com</code>, o nome do host será <code>mg</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Para <code>respostas.suaempresa.com</code>, o nome do host será <code>respostas</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Se você estiver configurando um domínio principal como <code>suaempresa.com</code>, o nome do host será <code>@</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Value:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Cole <code>mxb.mailgun.org</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Priority:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Defina como <code>10</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Clique na marca de verificação verde.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">9.  <strong>Adicione o registro CNAME:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Role de volta para a seção "HOST RECORDS" (Registros de Host).</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Clique em "Add New Record" (Adicionar Novo Registro).</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Selecione "CNAME Record" no menu dropdown.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Host:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Dependendo do subdomínio que você está tentando configurar:</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Para <code>mg.suaempresa.com</code>, o nome do host será <code>email.mg</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Para <code>respostas.suaempresa.com</code>, o nome do host será <code>email.respostas</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Se você estiver configurando um domínio principal como <code>suaempresa.com</code>, o nome do host será <code>email</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   <strong>Value:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Cole <code>mailgun.org</code>.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Clique na marca de verificação verde.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">10. <strong>Verifique as configurações de DNS no Mailgun:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Volte para o Mailgun e clique em "Verify DNS Settings" (Verificar Configurações de DNS).</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Clique no mesmo botão novamente se alguns registros ainda não mostrarem a marca de verificação verde.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">11. <strong>Obtenha a chave API do Mailgun:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Depois de adicionar todos os registros DNS e verificar, obtenha a chave API do Mailgun.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">12. <strong>Teste o envio de e-mail:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">*   Envie um e-mail de teste para verificar se tudo está funcionando corretamente.</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_1">Requisitos</h3>
+<ul>
+<li>Conta no Mailgun</li>
+<li>Acesso à conta Namecheap com permissões para editar registros DNS</li>
+</ul>
+<h3 id="perguntas-frequentes_2">Perguntas Frequentes</h3>
+<p><strong>P: Posso usar o mesmo domínio para o Mailgun e para o Google Apps (ou outro servidor de e-mail)?</strong>
+R: Sim, mas é recomendado usar um subdomínio para o Mailgun para evitar conflitos com outros serviços de e-mail.</p>
+<p><strong>P: O que fazer se a verificação de DNS falhar no Mailgun?</strong>
+R: Verifique se todos os registros DNS foram adicionados corretamente no Namecheap e aguarde a propagação dos registros. Clique no botão "Verify DNS Settings" novamente após um tempo.</p>
+<hr />
+<h2 id="configuracao-do-mailgun-passo-a-passo-com-dominio-siteground">Configuração do Mailgun Passo a Passo com Domínio Siteground</h2>
+<p>Este guia detalha como configurar o Mailgun com um domínio Siteground para envio de emails através da nossa plataforma.</p>
+<h3 id="como-fazer_3">Como fazer</h3>
+<ol>
+<li><strong>Crie uma conta no Mailgun:</strong><ul>
+<li>Acesse <a href="http://mailgun.com/">Mailgun.com</a> e siga o processo de inscrição.</li>
+</ul>
+</li>
+<li><strong>Verifique seu endereço de email:</strong><ul>
+<li>Verifique a caixa de entrada do email que você usou para se cadastrar e clique no link de verificação.</li>
+</ul>
+</li>
+<li><strong>Adicione um novo domínio no Mailgun:</strong><ul>
+<li>Faça login no Mailgun.</li>
+<li>Clique em <strong>Sending (Envio)</strong> &gt; <strong>Add New Domain (Adicionar Novo Domínio)</strong>.</li>
+</ul>
+</li>
+<li><strong>Escolha o tipo de domínio:</strong><ul>
+<li>Você pode usar o domínio principal (ex: <code>suaempresa.com.br</code>) ou um subdomínio (ex: <code>mg.suaempresa.com.br</code>).<ul>
+<li><strong>Domínio Principal:</strong> Não deve ser usado com Gsuite ou outro provedor de email.</li>
+<li><strong>Subdomínio:</strong> Digite o subdomínio desejado. Exemplos:<ul>
+<li><code>mg.suaempresa.com.br</code></li>
+<li><code>resposta.suaempresa.com.br</code></li>
+<li><code>suporte.suaempresa.com.br</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Selecione a região <strong>US (Estados Unidos)</strong>.</li>
+<li>Clique em <strong>Add Domain (Adicionar Domínio)</strong>.</li>
+<li>Mantenha a página aberta, pois você precisará dela para o próximo passo.</li>
+</ul>
+</li>
+<li><strong>Adicione os registros DNS no Siteground:</strong><ul>
+<li>Faça login no Siteground.</li>
+<li>Vá para <strong>Site Tools (Ferramentas do Site)</strong> &gt; <strong>Domain (Domínio)</strong> &gt; <strong>DNS Zone Editor (Editor de Zona DNS)</strong>.</li>
+<li>Na seção <strong>Create New Record (Criar Novo Registro)</strong>, adicione os seguintes registros:</li>
+</ul>
+</li>
+</ol>
+<h4 id="adicionar-o-1o-registro-txt_1">Adicionar o 1º registro TXT</h4>
+<ol>
+<li>Clique na aba <strong>TXT</strong>.</li>
+<li><strong>Name (Nome):</strong> Depende do seu domínio.<ul>
+<li>Para subdomínios (ex: <code>mg.suaempresa.com.br</code>), insira apenas a parte do subdomínio (ex: <code>mg</code>).</li>
+<li>Para o domínio principal (ex: <code>suaempresa.com.br</code>), insira <code>@</code> ou deixe o campo vazio.</li>
+</ul>
+</li>
+<li><strong>Value (Valor):</strong> <code>v=spf1 include:mailgun.org ~all</code> (o mesmo para todos).</li>
+<li>Clique em <strong>Create (Criar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-2o-registro-txt_1">Adicionar o 2º registro TXT</h4>
+<ol>
+<li>Clique em <strong>+ Add Record (Adicionar Registro)</strong> novamente.</li>
+<li>Clique na aba <strong>TXT</strong>.</li>
+<li><strong>Name (Nome):</strong> Copie a parte inicial do nome fornecido pelo Mailgun, até a parte do subdomínio, SEM incluir o domínio raiz.<ul>
+<li>Exemplo para subdomínio: copie <code>mx._domainkey.helpdesk</code></li>
+<li>Exemplo para domínio principal: copie <code>mailo._domainkey</code></li>
+</ul>
+</li>
+<li><strong>Value (Valor):</strong> Copie o valor do 2º registro TXT fornecido pelo Mailgun.</li>
+<li>Clique em <strong>Create (Criar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-1o-registro-mx_1">Adicionar o 1º registro MX</h4>
+<ol>
+<li>Clique na aba <strong>MX</strong> &gt; Selecione <strong>Add your own MX records (Adicionar seus próprios registros MX)</strong>.<ul>
+<li>Se você usa Gsuite para receber emails no domínio principal, use um subdomínio para o Mailgun.</li>
+</ul>
+</li>
+<li><strong>Name (Nome):</strong> Depende do seu domínio.<ul>
+<li>Para subdomínios (ex: <code>mg.suaempresa.com.br</code>), insira apenas a parte do subdomínio (ex: <code>mg</code>).</li>
+<li>Para o domínio principal (ex: <code>suaempresa.com.br</code>), insira <code>@</code>.</li>
+</ul>
+</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code> (o mesmo para todos).</li>
+<li><strong>Destination (Destino):</strong> <code>mxa.mailgun.org</code> (o mesmo para todos).</li>
+<li>Clique em <strong>Create (Criar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-2o-registro-mx_1">Adicionar o 2º registro MX</h4>
+<ol>
+<li>Adicione outro registro MX.</li>
+<li><strong>Name (Nome):</strong> Depende do seu domínio.<ul>
+<li>Para subdomínios (ex: <code>mg.suaempresa.com.br</code>), insira apenas a parte do subdomínio (ex: <code>mg</code>).</li>
+<li>Para o domínio principal (ex: <code>suaempresa.com.br</code>), insira <code>@</code>.</li>
+</ul>
+</li>
+<li><strong>Priority (Prioridade):</strong> <code>10</code> (o mesmo para todos).</li>
+<li><strong>Destination (Destino):</strong> <code>mxb.mailgun.org</code> (o mesmo para todos).</li>
+<li>Clique em <strong>Create (Criar)</strong>.</li>
+</ol>
+<h4 id="adicionar-o-registro-cname_1">Adicionar o registro CNAME</h4>
+<ol>
+<li>Clique na aba <strong>CNAME</strong>.</li>
+<li><strong>Name (Nome):</strong> Copie a parte inicial do nome fornecido pelo Mailgun, até a parte do subdomínio, SEM incluir o domínio principal.<ul>
+<li>Para subdomínios (ex: <code>mg.suaempresa.com.br</code>), insira <code>email.mg</code>.</li>
+<li>Para subdomínios (ex: <code>resposta.suaempresa.com.br</code>), insira <code>email.resposta</code>.</li>
+<li>Para o domínio principal (ex: <code>suaempresa.com.br</code>), insira <code>email</code>.</li>
+</ul>
+</li>
+<li><strong>Resolves to (Resolve para):</strong> <code>mailgun.org</code> (o mesmo para todos).</li>
+<li>Clique em <strong>Create (Criar)</strong>.</li>
+<li><strong>Verifique as configurações DNS no Mailgun:</strong><ul>
+<li>Volte para a página do Mailgun e clique em <strong>Verify DNS Settings (Verificar Configurações DNS)</strong>.</li>
+<li>Clique novamente se alguns registros ainda não mostrarem o status de verificado (check verde).</li>
+</ul>
+</li>
+<li><strong>Copie a chave API do Mailgun:</strong><ul>
+<li>Após verificar todos os registros DNS, copie a chave API do Mailgun.</li>
+</ul>
+</li>
+<li><strong>Insira a chave API na plataforma:</strong><ul>
+<li>Cole a chave API do Mailgun nas configurações de email da nossa plataforma.</li>
+</ul>
+</li>
+<li><strong>Envie um email de teste:</strong><ul>
+<li>Envie um email de teste para verificar se a configuração está funcionando corretamente.</li>
+</ul>
+</li>
+</ol>
+<h3 id="requisitos_2">Requisitos</h3>
+<ul>
+<li>Conta ativa no Mailgun.</li>
+<li>Acesso às configurações de DNS do seu domínio no Siteground.</li>
+</ul>
+<h3 id="perguntas-frequentes_3">Perguntas Frequentes</h3>
+<p><strong>P: Posso usar o mesmo domínio para o Mailgun e para o Gsuite?</strong>
+R: Sim, mas é recomendado usar um subdomínio para o Mailgun se você já utiliza o Gsuite para receber emails no domínio principal.</p>
+<p><strong>P: Onde encontro a chave API do Mailgun?</strong>
+R: Após verificar os registros DNS no Mailgun, a chave API estará disponível nas configurações da sua conta.</p>
+<hr />
+<h2 id="configuracao-do-mailgun-passo-a-passo">Configuração do Mailgun Passo a Passo</h2>
+<p>Este guia detalha como configurar o Mailgun para envio de e-mails através da nossa plataforma.</p>
+<h3 id="como-fazer_4">Como fazer</h3>
+<ol>
+<li><strong>Crie uma conta no Mailgun:</strong></li>
+<li>Acesse <a href="https://www.mailgun.com/">Mailgun.com</a>.</li>
+<li>Verifique sua caixa de entrada e confirme seu endereço de e-mail.</li>
+<li><strong>Adicione um novo domínio no Mailgun:</strong></li>
+<li>Faça login no Mailgun.</li>
+<li>Clique em <strong>Sending (Envio)</strong> &gt; <strong>Add New Domain (Adicionar Novo Domínio)</strong>.</li>
+<li><strong>Escolha o tipo de domínio:</strong></li>
+<li>Se seu domínio é <code>suaempresa.com</code>, você pode configurar o domínio principal ou um subdomínio.<ul>
+<li><strong>Domínio Principal:</strong></li>
+<li>Não deve ser usado com Gsuite ou outro provedor de e-mail.</li>
+<li><strong>Subdomínio:</strong></li>
+<li>Digite algo como <code>QUALQUER_COISA.suaempresa.com</code>.</li>
+<li>Exemplos:<ul>
+<li><code>mg.suaempresa.com</code></li>
+<li><code>respostas.suaempresa.com</code></li>
+<li><code>suporte.suaempresa.com</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Selecione a região <strong>US (Estados Unidos)</strong>.</li>
+<li>Clique em <strong>Add Domain (Adicionar Domínio)</strong>.</li>
+<li>Mantenha a tela seguinte aberta, pois você precisará dela para adicionar registros DNS.</li>
+<li><strong>Adicione os registros DNS:</strong></li>
+<li>Acesse o painel de controle do seu provedor de DNS (ex: Cloudflare).</li>
+<li>Adicione os 5 registros DNS fornecidos pelo Mailgun.</li>
+</ol>
+<h4 id="adicionando-o-1o-registro-txt">Adicionando o 1º registro TXT</h4>
+<ol>
+<li>Clique em <strong>+ Add Record (+ Adicionar Registro)</strong>.</li>
+<li><strong>Type (Tipo):</strong> Selecione <strong>TXT</strong>.</li>
+<li><strong>Name (Nome):</strong> NÃO INCLUA O DOMÍNIO RAIZ.<ul>
+<li>Se você estiver configurando:</li>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome do host será <code>respostas</code>.</li>
+<li>Se estiver configurando o domínio principal (<code>suaempresa.com</code>), o nome do host será <code>@</code>.</li>
+</ul>
+</li>
+<li><strong>Content (Conteúdo):</strong> Cole o seguinte: <code>v=spf1 include:mailgun.org ~all</code></li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionando-o-2o-registro-txt">Adicionando o 2º registro TXT</h4>
+<ol>
+<li>Clique em <strong>+ Add Record (+ Adicionar Registro)</strong> novamente.</li>
+<li><strong>Type (Tipo):</strong> Selecione <strong>TXT</strong>.</li>
+<li><strong>Name (Nome):</strong> Copie tudo desde o início até a parte do subdomínio. NÃO INCLUA O DOMÍNIO RAIZ.<ul>
+<li>Exemplos:</li>
+<li>Subdomínio: Copie <code>mx._domainkey.helpdesk</code> como nome do host.</li>
+<li>Domínio principal: Copie <code>mailo._domainkey</code> como nome do host.</li>
+</ul>
+</li>
+<li><strong>Content (Conteúdo):</strong> Copie o 2º registro TXT do Mailgun.</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionando-o-1o-registro-mx">Adicionando o 1º registro MX</h4>
+<ol>
+<li>Clique em <strong>+ Add Record (+ Adicionar Registro)</strong> novamente.</li>
+<li><strong>Type (Tipo):</strong> Selecione <strong>MX</strong>.</li>
+<li><strong>Name (Nome):</strong><ul>
+<li>Se você estiver configurando:</li>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome do host será <code>respostas</code>.</li>
+<li>Se estiver configurando o domínio principal (<code>suaempresa.com</code>), o nome do host será <code>@</code>.</li>
+</ul>
+</li>
+<li><strong>Mail Server (Servidor de E-mail):</strong> Cole <code>mxa.mailgun.org</code>.</li>
+<li><strong>Priority (Prioridade):</strong> Defina como <code>10</code>.</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionando-o-2o-registro-mx">Adicionando o 2º registro MX</h4>
+<ol>
+<li>Clique em <strong>+ Add Record (+ Adicionar Registro)</strong> novamente.</li>
+<li><strong>Type (Tipo):</strong> Selecione <strong>MX</strong>.</li>
+<li><strong>Name (Nome):</strong><ul>
+<li>Se você estiver configurando:</li>
+<li><code>mg.suaempresa.com</code>, o nome do host será <code>mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome do host será <code>respostas</code>.</li>
+<li>Se estiver configurando o domínio principal (<code>suaempresa.com</code>), o nome do host será <code>@</code>.</li>
+</ul>
+</li>
+<li><strong>Mail Server (Servidor de E-mail):</strong> Cole <code>mxb.mailgun.org</code>.</li>
+<li><strong>Priority (Prioridade):</strong> Defina como <code>10</code>.</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+</ol>
+<h4 id="adicionando-o-registro-cname">Adicionando o registro CNAME</h4>
+<ol>
+<li>Clique em <strong>+ Add Record (+ Adicionar Registro)</strong> novamente.</li>
+<li><strong>Type (Tipo):</strong> Selecione <strong>CNAME</strong>.</li>
+<li><strong>Name (Nome):</strong> Copie tudo desde o início até a parte do subdomínio do Mailgun. NÃO copie o domínio principal.<ul>
+<li>Se você estiver configurando:</li>
+<li><code>mg.suaempresa.com</code>, o nome será <code>email.mg</code>.</li>
+<li><code>respostas.suaempresa.com</code>, o nome será <code>email.respostas</code>.</li>
+<li>Se estiver configurando o domínio principal (<code>suaempresa.com</code>), o nome será <code>email</code>.</li>
+</ul>
+</li>
+<li><strong>Target (Alvo):</strong> Cole <code>mailgun.org</code>.</li>
+<li>Desative o "Proxied (Proxy)" (nuvem laranja) para que fique apenas DNS.</li>
+<li>Clique em <strong>Save (Salvar)</strong>.</li>
+<li><strong>Verifique as configurações de DNS no Mailgun:</strong></li>
+<li>Volte para o Mailgun e clique em <strong>Verify DNS Settings (Verificar Configurações de DNS)</strong>.</li>
+<li>Clique novamente se alguns registros ainda não mostrarem a marca de verificação verde.</li>
+<li><strong>Obtenha a chave API do Mailgun:</strong></li>
+<li>Após adicionar e verificar todos os registros DNS, copie a chave API do Mailgun.</li>
+<li><strong>Insira a chave API na nossa plataforma:</strong></li>
+<li>Cole a chave API nas configurações de e-mail da nossa plataforma.</li>
+<li><strong>Envie um e-mail de teste:</strong></li>
+<li>Envie um e-mail de teste para verificar se tudo está funcionando corretamente.</li>
+</ol>
+<h3 id="requisitos_3">Requisitos</h3>
+<ul>
+<li>Acesso à conta do Mailgun.</li>
+<li>Acesso ao painel de controle do seu provedor de DNS (ex: Cloudflare).</li>
+</ul>
+<h3 id="perguntas-frequentes_4">Perguntas Frequentes</h3>
+<p><strong>P: Posso usar o mesmo domínio para o Mailgun e para o Gsuite?</strong>
+R: Se você usa Gsuite para receber e-mails no domínio principal, use um subdomínio para o Mailgun.</p>
+<p><strong>P: Onde encontro a chave API no Mailgun?</strong>
+R: A chave API está nas configurações da sua conta Mailgun.</p>
+        <footer>
+            © Full Funnel — Central de Ajuda
+        </footer>
+    </div>
+</body>
+</html>
