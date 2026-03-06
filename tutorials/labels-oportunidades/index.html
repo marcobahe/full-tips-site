@@ -57,7 +57,7 @@
   }
   .screenshot-wrapper {
     position: relative; width: 100%;
-    border-radius: var(--radius); overflow: hidden;
+    border-radius: var(--radius); overflow: visible;
     box-shadow: var(--shadow); border: 1px solid var(--border);
     background: var(--card-bg);
   }
@@ -96,8 +96,7 @@
     max-width: 320px; min-width: 220px;
     transition: left 0.15s ease, top 0.15s ease;
     overflow-wrap: break-word;
-    max-height: 90%;
-    overflow-y: auto;
+    overflow: visible;
   }
   .tooltip-step {
     display: inline-block;
@@ -234,54 +233,54 @@
 const STEPS = [
   {
     image: "passo-01.png",
-    hotspot: { x: 0.5, y: 6, w: 3.5, h: 5 },
-    tooltip: { x: 8, y: 15 },
-    line: { x1: 4, y1: 9, x2: 8, y2: 20 },
+    hotspot: { x: 3, y: 41.5, w: 12, h: 4.5 },
+    tooltip: { x: 18, y: 30 },
+    line: { x1: 15, y1: 44, x2: 18, y2: 36 },
     title: "Acesse a seção 'Leads' no menu lateral",
-    text: "No menu lateral esquerdo, clique no ícone de 'Leads' (funil). Esta seção contém todas as suas pipelines e oportunidades de venda organizadas no formato Kanban.",
+    text: "No menu lateral esquerdo, clique em 'Leads'. Esta seção contém todas as suas pipelines e oportunidades de venda organizadas no formato Kanban.",
     tip: "💡 A seção de Leads é onde você gerencia todo o seu funil comercial — desde prospects até clientes fechados."
   },
   {
     image: "passo-02.png",
-    hotspot: { x: 5.5, y: 12, w: 16, h: 5 },
-    tooltip: { x: 28, y: 25 },
-    line: { x1: 14, y1: 17, x2: 28, y2: 30 },
+    hotspot: { x: 18, y: 12, w: 17, h: 18 },
+    tooltip: { x: 40, y: 8 },
+    line: { x1: 35, y1: 20, x2: 40, y2: 14 },
     title: "Selecione a pipeline desejada",
     text: "Clique no seletor de pipeline (dropdown) para escolher em qual pipeline você quer trabalhar. Cada pipeline representa um funil diferente — comercial, suporte, etc.",
     tip: "💡 Neste exemplo, vamos usar o 'Funil Comercial' que já possui oportunidades cadastradas. Escolha a pipeline que melhor se aplica ao seu caso."
   },
   {
     image: "passo-01.png",
-    hotspot: { x: 5.5, y: 41, w: 20, h: 15 },
-    tooltip: { x: 30, y: 30 },
-    line: { x1: 16, y1: 48, x2: 30, y2: 38 },
+    hotspot: { x: 17.5, y: 38, w: 19, h: 13 },
+    tooltip: { x: 40, y: 30 },
+    line: { x1: 27, y1: 45, x2: 40, y2: 36 },
     title: "Identifique e clique no card da oportunidade",
     text: "No kanban, localize o card da oportunidade que deseja etiquetar. Cada card mostra o nome do contato, valor e ícones de ações. Clique no card para abrir os detalhes.",
     tip: "💡 Os cards são organizados por colunas (fases). Você pode arrastar cards entre colunas para mudar a fase da oportunidade."
   },
   {
     image: "passo-05.png",
-    hotspot: { x: 33, y: 75, w: 25, h: 8 },
-    tooltip: { x: 62, y: 55 },
-    line: { x1: 46, y1: 79, x2: 62, y2: 65 },
+    hotspot: { x: 32, y: 74, w: 6, h: 8 },
+    tooltip: { x: 55, y: 55 },
+    line: { x1: 38, y1: 78, x2: 55, y2: 65 },
     title: "Encontre o campo 'Tags' nos detalhes",
     text: "No modal de edição da oportunidade, role para baixo até encontrar o campo 'Tags'. Ele fica abaixo dos campos de Status, Valor, Proprietário e Fonte da oportunidade.",
     tip: "💡 Se não estiver vendo o campo Tags, desmarque a opção 'Ocultar campos vazios' no canto superior direito do modal."
   },
   {
     image: "passo-06.png",
-    hotspot: { x: 33, y: 43, w: 22, h: 38 },
-    tooltip: { x: 60, y: 30 },
-    line: { x1: 44, y1: 55, x2: 60, y2: 40 },
+    hotspot: { x: 32.5, y: 45, w: 20, h: 34 },
+    tooltip: { x: 57, y: 30 },
+    line: { x1: 42, y1: 55, x2: 57, y2: 40 },
     title: "Selecione ou crie uma tag",
     text: "Ao clicar no campo Tags, um dropdown será aberto mostrando todas as tags disponíveis. Selecione uma tag existente ou digite uma nova palavra-chave para criar uma tag personalizada.",
     tip: "💡 Use o campo 'Pesquisar / Criar palavras-chave' para buscar tags existentes ou criar novas. Tags são ótimas para categorizar oportunidades por tipo, campanha, prioridade, etc."
   },
   {
     image: "passo-05.png",
-    hotspot: { x: 74, y: 86, w: 9, h: 5 },
-    tooltip: { x: 35, y: 60 },
-    line: { x1: 78, y1: 88, x2: 60, y2: 70 },
+    hotspot: { x: 72, y: 85, w: 8, h: 5 },
+    tooltip: { x: 35, y: 45 },
+    line: { x1: 76, y1: 88, x2: 55, y2: 58 },
     title: "Clique em 'Atualizar' para salvar! 🎉",
     text: "Após selecionar as tags desejadas, clique no botão azul 'Atualizar' para salvar as alterações. A tag será aplicada ao card da oportunidade e você poderá usá-la para filtrar e organizar seu pipeline.",
     tip: "💡 Depois de aplicar tags, você pode usar os 'Filtros avançados' na tela do kanban para filtrar oportunidades por tag específica. Isso facilita muito a gestão do seu funil!"
